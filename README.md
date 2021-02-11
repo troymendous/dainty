@@ -1,2 +1,0 @@
-# dainty
-Dainty website
