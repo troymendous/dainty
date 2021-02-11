@@ -1,0 +1,7 @@
+@mixin baseTheme {
+   --text-color: yellowgreen;
+  }
+  
+:root {
+   @include baseTheme;
+}
