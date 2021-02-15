@@ -127,6 +127,10 @@ export default {
   display: flex;
   align-items: center;
 
+  > div {
+    width: 100%;
+  }
+
   @media (min-width: 1024px) {
     @apply col-span-8;
   }
@@ -167,7 +171,9 @@ export default {
   }
 
   @media (min-width: 1024px) {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
   }
 }
 
