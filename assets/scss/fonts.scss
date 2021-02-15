@@ -4,9 +4,8 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: local("Poppins Regular"), local("Poppins-Regular"),
-      url("~static/fonts/poppins-v15-latin-regular.woff2") format("woff2"),
-      url("~static/fonts/poppins-v15-latin-regular.woff") format("woff");
+    src: url("~static/fonts/poppins-v15-latin-regular.woff2") format("woff2"),
+         url("~static/fonts/poppins-v15-latin-regular.woff") format("woff");
   }
 
 /* poppins-500 - latin */
@@ -15,9 +14,8 @@
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: local("Poppins Medium"), local("Poppins-Medium"),
-      url("~static/fonts/poppins-v15-latin-500.woff2") format("woff2"),
-      url("~static/fonts/poppins-v15-latin-500.woff") format("woff");
+    src: url("~static/fonts/poppins-v15-latin-500.woff2") format("woff2"),
+         url("~static/fonts/poppins-v15-latin-500.woff") format("woff");
   }
 
   /* poppins-600 - latin */
