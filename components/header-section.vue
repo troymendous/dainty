@@ -127,22 +127,16 @@ export default {
   display: flex;
   align-items: center;
 
-  > div {
-    width: 100%;
-  }
-
   @media (min-width: 1024px) {
     @apply col-span-8;
   }
 
   @screen md {
     @apply col-span-4;
-    justify-content: center;
   }
 
   @screen sm {
     @apply col-span-6;
-    justify-content: flex-end;
   }
 }
 
@@ -156,6 +150,19 @@ export default {
 
   @screen md {
     display: block;
+  }
+}
+
+.menu_main > div {
+  width: 100%;
+  display: flex;
+
+  @screen md {
+    justify-content: center;
+  }
+
+  @screen sm {
+    justify-content: flex-end;
   }
 }
 
