@@ -1,7 +1,23 @@
 <template>
-  <div>
+  <div class="wrapper">
+    <header-section />
     <Nuxt />
   </div>
 </template>
 
-<style lang="scss"></style>
+<script>
+import HeaderSection from "../components/header-section.vue"
+export default {
+  components: {
+    HeaderSection,
+  },
+}
+</script>
+
+<style lang="scss">
+.wrapper {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+</style>
