@@ -1,7 +1,9 @@
 <template>
   <div class="wrapper">
     <header-section />
-    <Nuxt />
+    <div class="layout-inner">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
@@ -19,5 +21,9 @@ export default {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+}
+
+.layout-inner {
+  padding-top: 150px;
 }
 </style>

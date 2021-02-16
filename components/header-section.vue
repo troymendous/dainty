@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="menu">
+    <div ref="menuRef" class="menu">
       <div class="menu_logo">
         <img src="/logo/dainty_logo.png" alt="Dainty" width="150" height="50" />
       </div>
@@ -94,11 +94,28 @@ export default {
       showPopup: false,
     }
   },
+  mounted() {
+    // Note: do not add parentheses () for this.handleScroll
+    window.addEventListener("scroll", this.handleScroll)
+  },
+
+  methods: {
+    handleScroll() {
+      if (window.scrollY > 150) {
+        this.$refs.menuRef.classList.add("white-background")
+        console.log(this.$refs.menuRef.classList)
+      } else {
+        this.$refs.menuRef.classList.remove("white-background")
+      }
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 .menu {
+  position: fixed;
+  z-index: 999;
   padding: 0 1rem;
   width: 100%;
   margin: 0 auto;
@@ -109,6 +126,11 @@ export default {
     @apply text-darkColor;
     @apply font-medium;
   }
+}
+
+.white-background {
+  background: #fff !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .menu_logo {
