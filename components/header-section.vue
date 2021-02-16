@@ -115,6 +115,7 @@ export default {
 <style lang="scss">
 .menu {
   position: fixed;
+  top: 0;
   z-index: 999;
   padding: 0 1rem;
   width: 100%;
@@ -247,8 +248,11 @@ export default {
 }
 
 .menu_popup {
+  position: relative;
+  z-index: 990;
+  top: 130px;
   background: var(--dark-color);
-  padding: 0 1rem;
+  padding: 1rem 1rem;
   margin: 0 1rem;
   list-style: none;
 
