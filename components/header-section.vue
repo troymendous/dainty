@@ -101,7 +101,7 @@ export default {
 
   methods: {
     handleScroll() {
-      if (window.scrollY > 150) {
+      if (window.scrollY > 80) {
         this.$refs.menuRef.classList.add("white-background")
         console.log(this.$refs.menuRef.classList)
       } else {
@@ -135,9 +135,8 @@ export default {
 }
 
 .menu_logo {
-  @media (min-width: 1024px) {
-    @apply col-span-2;
-  }
+  @apply col-span-2;
+
   @screen md {
     @apply col-span-4;
   }
@@ -149,10 +148,7 @@ export default {
 .menu_main {
   display: flex;
   align-items: center;
-
-  @media (min-width: 1024px) {
-    @apply col-span-8;
-  }
+  @apply col-span-8;
 
   @screen md {
     @apply col-span-4;
@@ -166,10 +162,7 @@ export default {
 .menu_icon > svg {
   @apply font-semibold;
   @apply text-accentPink;
-
-  @media (min-width: 1024px) {
-    display: none;
-  }
+  display: none;
 
   @screen md {
     display: block;
@@ -190,7 +183,9 @@ export default {
 }
 
 .menu_links {
-  display: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 
   li {
     padding: 0.5rem 0;
@@ -200,10 +195,8 @@ export default {
     @apply text-accentPink;
   }
 
-  @media (min-width: 1024px) {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  @screen md {
+    display: none;
   }
 }
 
@@ -211,13 +204,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  @apply col-span-2;
 
   > a {
     padding: 16px 36px;
     @apply rounded-full;
     background: #fff;
     transition: 0.3s all linear;
-    border: 3px solid #5b39c9;
+    border: 3px solid transparent;
 
     &:hover {
       background: var(--dark-color);
@@ -225,20 +219,12 @@ export default {
       color: #fff;
     }
 
-    @media (min-width: 1024px) {
-      border: 3px solid transparent;
+    @screen md {
+      border: 3px solid #5b39c9;
     }
   }
 
-  @media (min-width: 1024px) {
-    display: flex;
-    justify-content: center;
-    @apply col-span-2;
-  }
-
   @screen md {
-    display: flex;
-    justify-content: center;
     @apply col-span-4;
   }
 
