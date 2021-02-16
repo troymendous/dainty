@@ -248,12 +248,14 @@ export default {
 }
 
 .menu_popup {
-  position: relative;
+  position: absolute;
   z-index: 990;
   top: 130px;
+  left: 1rem;
+  right: 1rem;
+  width: auto;
   background: var(--dark-color);
   padding: 1rem 1rem;
-  margin: 0 1rem;
   list-style: none;
 
   li {
