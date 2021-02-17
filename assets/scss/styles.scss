@@ -14,68 +14,74 @@ h1, h2, h3, h4, h5,h6 {
 }
 
 h1{
+    font-size: 3.125rem;
+    line-height: 3.438rem;
+
     @screen md{
         font-size: 2.5rem;
         line-height: 3.125rem;
     }
-
-    font-size: 3.125rem;
-    line-height: 3.438rem;
 }
 
 h2{
-    @screen sm{
-        @apply text-xl;
-        line-height: 2.25rem;
-    }
+    @apply font-semibold;
+    font-size: 2.5rem;
+    line-height: 3.438rem;
 
     @screen md{
         @apply text-4xl;  
     }
 
-    @apply font-semibold;
-    font-size: 2.5rem;
-    line-height: 3.438rem;  
+    @screen sm{
+        @apply text-xl;
+        line-height: 2.25rem;
+    } 
 }
 
 h3{
-    @screen sm{
-        @apply text-xl;
-        line-height: 1.5rem;
-    }
+    @apply font-medium;
+    font-size: 2.5rem;
+    line-height:  3.438rem;
 
     @screen md{
         @apply text-4xl;
         line-height: 3.438rem;
     }
 
-    @apply font-medium;
-    font-size: 2.5rem;
-    line-height:  3.438rem;
+    @screen sm{
+        @apply text-xl;
+        line-height: 1.5rem;
+    } 
 }
 
 h4{
-    @screen sm{
-        @apply text-xs;
-        line-height: 1.75rem;
-    }
+    @apply font-medium;
+    @apply text-3xl;
+    line-height: 3.125rem;
 
     @screen md{
         @apply text-base;
         line-height: 2.188rem;
     }
 
-    @apply font-medium;
-    @apply text-3xl;
-    line-height: 3.125rem;
+    @screen sm{
+        @apply text-xs;
+        line-height: 1.75rem;
+    }
+}
+
+h5{
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.5rem;
 }
 
 p{
-    @screen sm{
-       @apply text-sm;
-    }
-
     @apply text-lightColor;
     @apply text-base;
     line-height: 1.875rem;
+
+    @screen sm{
+       @apply text-sm;
+    }
 }
