@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: "Banner Section",
+  name: "BannerSection",
 }
 </script>
 
