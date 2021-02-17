@@ -1,5 +1,5 @@
 <template>
-  <div class="banner">
+  <section class="banner">
     <!-- <div class="banner-animations">
         <img src="/home/banner/animations/shaps1.png" class="shape shape1" alt="Animated shapes" />
         <img src="/home/banner/animations/shaps2.png" class="shape shape2" alt="Animated shapes" />
@@ -30,7 +30,7 @@
         <img src="/home/banner/showcase.png" alt="" />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
