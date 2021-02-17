@@ -1,55 +1,57 @@
 <template>
   <header>
     <div ref="menuRef" class="menu">
-      <div class="menu_logo">
-        <img src="/logo/dainty_logo.png" alt="Dainty" width="150" height="50" />
-      </div>
-      <div class="menu_main">
-        <div>
-          <div class="menu_icon" role="button" @click="showPopup = !showPopup">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="36"
-              height="36"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-menu"
-            >
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          </div>
-
-          <ul class="menu_links">
-            <li><NuxtLink to="/">Pricing</NuxtLink></li>
-            <li>
-              <NuxtLink to="/">Team</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/">Portfolio</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/">Web Development</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/">Terms of service</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/">About us</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/">Marketing</NuxtLink>
-            </li>
-          </ul>
+      <div class="menu-inner">
+        <div class="menu_logo">
+          <img src="/logo/dainty_logo.png" alt="Dainty" width="150" height="50" />
         </div>
-      </div>
-      <div class="menu_call">
-        <nuxt-link to="/"> Get Dainty </nuxt-link>
+        <div class="menu_main">
+          <div>
+            <div class="menu_icon" role="button" @click="showPopup = !showPopup">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-menu"
+              >
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </div>
+
+            <ul class="menu_links">
+              <li><NuxtLink to="/">Pricing</NuxtLink></li>
+              <li>
+                <NuxtLink to="/">Team</NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/">Portfolio</NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/">Web Development</NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/">Terms of service</NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/">About us</NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/">Marketing</NuxtLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="menu_call">
+          <nuxt-link to="/"> Get Dainty </nuxt-link>
+        </div>
       </div>
     </div>
 
@@ -117,8 +119,12 @@ export default {
   position: fixed;
   top: 0;
   z-index: 999;
-  padding: 0 1rem;
+  width: 100vw;
+}
+
+.menu-inner {
   width: 100%;
+  max-width: 1140px;
   margin: 0 auto;
   @apply grid;
   @apply grid-cols-12;
@@ -126,6 +132,10 @@ export default {
   a {
     @apply text-darkColor;
     @apply font-medium;
+  }
+
+  @screen sm {
+    padding: 0 1rem;
   }
 }
 
