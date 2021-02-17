@@ -52,7 +52,7 @@ export default {
 .banner-inner {
   position: relative;
   padding: 12rem 0;
-  margin: 0 2rem 8rem;
+  margin: 8rem 2rem;
 
   @screen md {
     padding-top: 6rem;
