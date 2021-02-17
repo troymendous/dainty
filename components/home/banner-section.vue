@@ -1,6 +1,7 @@
 <template>
   <section class="banner">
-    <!-- <div class="banner-animations">
+    <div class="banner-inner">
+      <!-- <div class="banner-animations">
         <img src="/home/banner/animations/shaps1.png" class="shape shape1" alt="Animated shapes" />
         <img src="/home/banner/animations/shaps2.png" class="shape shape2" alt="Animated shapes" />
         <img src="/home/banner/animations/shaps3.png" class="shape shape3" alt="Animated shapes" />
@@ -10,24 +11,25 @@
         <img src="/home/banner/animations/shaps7.png" class="shape shape7" alt="Animated shapes" />
       </div> -->
 
-    <div class="banner-content">
-      <div class="banner-content_text">
-        <h1>
-          Dainty is for your
-          <br />
-          internet app bussiness.
-        </h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Vivamus at augue eget arcu dictum.
-        </p>
-        <div class="banner-links">
-          <nuxt-link to="/" class="link-primary pink">Download</nuxt-link>
-          <nuxt-link to="/" class="link-primary purple">Get Started</nuxt-link>
+      <div class="banner-content">
+        <div class="banner-content_text">
+          <h1>
+            Dainty is for your
+            <br />
+            internet app bussiness.
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Vivamus at augue eget arcu dictum.
+          </p>
+          <div class="banner-links">
+            <nuxt-link to="/" class="link-primary pink">Download</nuxt-link>
+            <nuxt-link to="/" class="link-primary purple">Get Started</nuxt-link>
+          </div>
         </div>
-      </div>
-      <div class="banner-content_showcase">
-        <img src="/home/banner/showcase.png" alt="" />
+        <div class="banner-content_showcase">
+          <img src="/home/banner/showcase.png" alt="" />
+        </div>
       </div>
     </div>
   </section>
@@ -41,9 +43,16 @@ export default {
 
 <style lang="scss">
 .banner {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.banner-inner {
   position: relative;
-  padding-top: 12rem;
-  margin: 0 2rem;
+  padding: 12rem 0;
+  margin: 0 2rem 8rem;
 
   @screen md {
     padding-top: 6rem;
