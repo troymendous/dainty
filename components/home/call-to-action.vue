@@ -49,7 +49,7 @@ export default {}
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 6rem 0;
   @apply grid;
   @apply grid-flow-row;
   @apply grid-cols-12;
@@ -94,6 +94,15 @@ export default {}
 
   p {
     margin-bottom: 30px;
+  }
+
+  a {
+    @apply inline-block;
+    padding: 16px 36px;
+    margin-top: 1rem;
+    @apply rounded-full;
+    background: #fff;
+    border: 3px solid var(--acc-purple-color);
   }
 
   @screen md {

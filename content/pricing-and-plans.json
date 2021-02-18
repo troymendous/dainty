@@ -1,0 +1,44 @@
+[
+  {
+    "plan": "standard",
+    "monthlyPrice": 20,
+    "annualPrice": 200,
+    "services": [
+      { "type": "service1", "isOffered": true, "serviceId": "1" },
+      { "type": "service2", "isOffered": true, "serviceId": "2" },
+      { "type": "service3", "isOffered": false, "serviceId": "3" },
+      { "type": "service4", "isOffered": true, "serviceId": "4" },
+      { "type": "service5", "isOffered": true, "serviceId": "5" }
+    ],
+    "id": 1,
+    "slug": "standard-plan"
+  },
+  {
+    "plan": "business",
+    "monthlyPrice": 30,
+    "annualPrice": 300,
+    "services": [
+      { "type": "service1", "isOffered": true, "serviceId": "100" },
+      { "type": "service2", "isOffered": true, "serviceId": "200" },
+      { "type": "service3", "isOffered": true, "serviceId": "300" },
+      { "type": "service4", "isOffered": true, "serviceId": "400" },
+      { "type": "service5", "isOffered": true, "serviceId": "500" }
+    ],
+    "id": 2,
+    "slug": "business-plan"
+  },
+  {
+    "plan": "premium",
+    "monthlyPrice": 50,
+    "annualPrice": 550,
+    "services": [
+      { "type": "service1", "isOffered": true, "serviceId": "10" },
+      { "type": "service2", "isOffered": true, "serviceId": "20" },
+      { "type": "service3", "isOffered": true, "serviceId": "30" },
+      { "type": "service4", "isOffered": true, "serviceId": "40" },
+      { "type": "service5", "isOffered": true, "serviceId": "50" }
+    ],
+    "id": 3,
+    "slug": "premium-plan"
+  }
+]
