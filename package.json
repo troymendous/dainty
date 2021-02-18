@@ -20,7 +20,8 @@
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
     "swiper": "^5.4.5",
-    "vue-awesome-swiper": "^4.1.1"
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-js-counter": "^1.0.3"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
