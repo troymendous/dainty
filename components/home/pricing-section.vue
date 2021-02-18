@@ -147,7 +147,6 @@ export default {
 
   > div:nth-child(1),
   > div:nth-child(3) {
-    border: 3px solid yellow;
     width: 28%;
     border: 4px solid #f7f6f9;
 
