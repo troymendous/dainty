@@ -167,9 +167,14 @@ export default {
   }
 
   p {
+    text-transform: capitalize;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  svg {
+    margin-right: 0.3rem;
   }
 }
 
