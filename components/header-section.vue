@@ -244,7 +244,7 @@ export default {
 }
 
 .menu_popup {
-  position: absolute;
+  position: fixed;
   z-index: 990;
   top: 130px;
   left: 1rem;
