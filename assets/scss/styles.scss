@@ -58,16 +58,6 @@ h4{
     @apply font-medium;
     @apply text-3xl;
     line-height: 3.125rem;
-
-    @screen md{
-        @apply text-base;
-        line-height: 2.188rem;
-    }
-
-    @screen sm{
-        @apply text-xs;
-        line-height: 1.75rem;
-    }
 }
 
 h5{
