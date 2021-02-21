@@ -34,14 +34,16 @@
         >
           <h4>{{ plan }}</h4>
           <div class="pricing-plans_content-item-price">
-            <span v-if="isMonthly">${{ monthlyPrice }}</span>
-            <span v-else>${{ annualPrice }}</span>
+            <span>$</span>
+            <span v-if="isMonthly">{{ monthlyPrice }}</span>
+            <span v-else>{{ annualPrice }}</span>
           </div>
           <p v-for="{ type, isOffered, serviceId } in services" v-bind:key="serviceId">
             <check-icon v-if="isOffered" />
             <cross-icon v-else />
             <span>{{ type }}</span>
           </p>
+          <nuxt-link to="/">Select Plan</nuxt-link>
         </div>
       </div>
     </div>
@@ -124,44 +126,56 @@ export default {
 }
 
 .pricing-plans_content {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, 375px);
+  grid-gap: 1rem;
 
   > div {
+    padding: 50px 48px 60px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    box-shadow: 0 0 0 1px rgba(67, 84, 149, 0.1), 0 1px 5px 1px rgba(19, 47, 70, 0.08);
     text-align: center;
-    border-radius: 10px;
-    padding: 50px 0;
   }
 
-  > div:nth-child(2) {
-    border: 2px solid #5b39c9;
-    width: 28%;
-    margin: -20px 20px;
+  div:nth-child(1),
+  div:nth-child(3) {
+    > a {
+      border: 2px solid rgb(194, 203, 211);
+      @apply text-darkColor;
+      background: transparent;
 
-    @screen sm {
-      width: 100%;
-      margin: 1.5rem 0;
+      &:hover {
+        border: 2px solid var(--dark-color);
+      }
     }
   }
 
-  > div:nth-child(1),
-  > div:nth-child(3) {
-    width: 28%;
-    border: 4px solid #f7f6f9;
+  div:nth-child(2) {
+    > a {
+      border: 2px solid var(--dark-color);
+      color: #fff;
+      background: var(--dark-color);
+      box-shadow: 0 3px 30px -2px rgba(20, 45, 100, 0.25);
 
-    @screen sm {
-      width: 100%;
+      &:hover {
+        box-shadow: 0 8px 36px -3px rgba(20, 45, 100, 0.35);
+      }
     }
+  }
+
+  @screen md {
+    grid-template-columns: 375px;
+    grid-gap: 2rem;
+    justify-content: center;
   }
 
   @screen sm {
-    flex-direction: column;
+    grid-template-columns: 320px;
   }
 }
 .pricing-plans_content-item {
-  // padding: 50px 0;
-
   h4 {
     text-transform: capitalize;
   }
@@ -176,12 +190,45 @@ export default {
   svg {
     margin-right: 0.3rem;
   }
+
+  a {
+    display: inline-block;
+    height: 56px;
+    line-height: 50px;
+    max-width: 100%;
+    width: 265px;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
 }
 
 .pricing-plans_content-item-price {
-  > span {
+  position: relative;
+  text-align: left !important;
+
+  > span:first-child {
+    position: absolute;
+    font-size: 26px;
+    font-weight: 500;
+    top: 11px;
+    left: 5.5rem;
+    @apply text-darkColor;
+
+    @screen sm {
+      left: 4.8rem;
+    }
+  }
+  > span:not(:first-child) {
+    display: inline-block;
+    text-indent: 102px;
     @apply text-accentPink;
     font-size: 60px;
+
+    @screen sm {
+      text-indent: 90px;
+    }
   }
 }
 </style>

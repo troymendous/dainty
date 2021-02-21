@@ -1,11 +1,16 @@
 <template>
   <div>
-    <h1>Pricing</h1>
+    <pricing-section />
   </div>
 </template>
 
 <script>
-export default {}
+import PricingSection from "../components/home/pricing-section.vue"
+export default {
+  components: {
+    PricingSection,
+  },
+}
 </script>
 
 <style lang="scss"></style>
