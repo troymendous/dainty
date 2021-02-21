@@ -27,7 +27,7 @@
             </div>
 
             <ul class="menu_links">
-              <li><NuxtLink to="/">Pricing</NuxtLink></li>
+              <li><NuxtLink to="/pricing">Pricing</NuxtLink></li>
               <li>
                 <NuxtLink to="/">Team</NuxtLink>
               </li>
@@ -57,7 +57,7 @@
 
     <ul class="menu_popup" v-if="showPopup">
       <li>
-        <NuxtLink to="/">Pricing</NuxtLink>
+        <NuxtLink to="/pricing">Pricing</NuxtLink>
         <hr />
       </li>
       <li>
