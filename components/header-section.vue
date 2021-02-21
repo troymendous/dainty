@@ -3,7 +3,7 @@
     <div ref="menuRef" class="menu">
       <div class="menu-inner">
         <div class="menu_logo">
-          <img src="/logo/dainty_logo.png" alt="Dainty" width="150" height="50" />
+          <Logo />
         </div>
         <div class="menu_main">
           <div>
@@ -89,8 +89,13 @@
 </template>
 
 <script>
+import Logo from "./logo.vue"
+
 export default {
   name: "HeaderSection",
+  components: {
+    Logo,
+  },
   data() {
     return {
       showPopup: false,
@@ -126,6 +131,7 @@ export default {
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
+  padding: 1rem 0;
   @apply grid;
   @apply grid-cols-12;
 
@@ -145,6 +151,10 @@ export default {
 }
 
 .menu_logo {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+
   @apply col-span-2;
 
   @screen md {

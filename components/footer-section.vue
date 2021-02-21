@@ -3,7 +3,7 @@
     <div class="footer-inner">
       <div class="footer-primary">
         <div class="footer-primary_headliner">
-          <img src="/logo/dainty_logo.png" alt="Dainty" width="150" height="50" />
+          <Logo />
           <p>Tools for the world's most customer-centric businesses</p>
         </div>
         <div class="footer-primary_links">
@@ -75,7 +75,13 @@
 </template>
 
 <script>
-export default {}
+import Logo from "./logo.vue"
+
+export default {
+  components: {
+    Logo,
+  },
+}
 </script>
 
 <style lang="scss" scoped>
