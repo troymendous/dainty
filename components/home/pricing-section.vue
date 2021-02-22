@@ -28,7 +28,7 @@
       </div>
       <div class="pricing-plans_content">
         <div
-          v-for="{ plan, id, monthlyPrice, annualPrice, services } in plans"
+          v-for="{ plan, id, monthlyPrice, annualPrice, headliner, services } in plans"
           v-bind:key="id"
           class="pricing-plans_content-item"
         >
@@ -38,6 +38,9 @@
             <span v-if="isMonthly">{{ monthlyPrice }}</span>
             <span v-else>{{ annualPrice }}</span>
           </div>
+          <p class="pricing-plans_content-item-headliner">
+            {{ headliner }}
+          </p>
           <p v-for="{ type, isOffered, serviceId } in services" v-bind:key="serviceId">
             <check-icon v-if="isOffered" />
             <cross-icon v-else />
@@ -184,7 +187,7 @@ export default {
     text-transform: capitalize;
     display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
   }
 
   svg {
@@ -202,6 +205,10 @@ export default {
     font-weight: 500;
     transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   }
+
+  &-headliner {
+    margin-bottom: 1rem;
+  }
 }
 
 .pricing-plans_content-item-price {
@@ -218,6 +225,7 @@ export default {
 
     @screen sm {
       left: 4.8rem;
+      font-size: 16px;
     }
   }
   > span:not(:first-child) {
@@ -228,6 +236,7 @@ export default {
 
     @screen sm {
       text-indent: 90px;
+      font-size: 40px;
     }
   }
 }

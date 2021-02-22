@@ -3,26 +3,27 @@
     "plan": "standard",
     "monthlyPrice": 20,
     "annualPrice": 200,
+    "headliner": " Reporting, automation, and integrations for support teams",
     "services": [
-      { "type": "service1", "isOffered": true, "serviceId": "1" },
-      { "type": "service2", "isOffered": true, "serviceId": "2" },
-      { "type": "service3", "isOffered": false, "serviceId": "3" },
-      { "type": "service4", "isOffered": true, "serviceId": "4" },
-      { "type": "service5", "isOffered": true, "serviceId": "5" }
+      { "type": "3 Mailboxes, 1 Docs site ", "isOffered": true, "serviceId": "1" },
+      { "type": "Beacon with live chat", "isOffered": true, "serviceId": "2" },
+      { "type": "Messages", "isOffered": false, "serviceId": "3" },
+      { "type": "Customer Properties ", "isOffered": true, "serviceId": "4" },
+      { "type": "Automated Workflows", "isOffered": true, "serviceId": "5" }
     ],
-    "id": 1,
     "slug": "standard-plan"
   },
   {
     "plan": "business",
     "monthlyPrice": 30,
     "annualPrice": 300,
+    "headliner": "Advanced features and reporting for teams at scale",
     "services": [
-      { "type": "service1", "isOffered": true, "serviceId": "100" },
-      { "type": "service2", "isOffered": true, "serviceId": "200" },
-      { "type": "service3", "isOffered": true, "serviceId": "300" },
-      { "type": "service4", "isOffered": true, "serviceId": "400" },
-      { "type": "service5", "isOffered": true, "serviceId": "500" }
+      { "type": "3 Mailboxes, 1 Docs site", "isOffered": true, "serviceId": "100" },
+      { "type": "Beacon with live chat", "isOffered": true, "serviceId": "200" },
+      { "type": "Messages", "isOffered": true, "serviceId": "300" },
+      { "type": "Customer Properties ", "isOffered": true, "serviceId": "400" },
+      { "type": "Automated Workflows", "isOffered": true, "serviceId": "500" }
     ],
     "id": 2,
     "slug": "business-plan"
@@ -31,12 +32,13 @@
     "plan": "premium",
     "monthlyPrice": 50,
     "annualPrice": 550,
+    "headliner": "Reporting, automation, and integrations for support teams",
     "services": [
-      { "type": "service1", "isOffered": true, "serviceId": "10" },
-      { "type": "service2", "isOffered": true, "serviceId": "20" },
-      { "type": "service3", "isOffered": true, "serviceId": "30" },
-      { "type": "service4", "isOffered": true, "serviceId": "40" },
-      { "type": "service5", "isOffered": true, "serviceId": "50" }
+      { "type": "3 Mailboxes, 1 Docs site", "isOffered": true, "serviceId": "10" },
+      { "type": "Beacon with live chat", "isOffered": true, "serviceId": "20" },
+      { "type": "Messages", "isOffered": true, "serviceId": "30" },
+      { "type": "Customer Properties ", "isOffered": true, "serviceId": "40" },
+      { "type": "Automated Workflows", "isOffered": true, "serviceId": "50" }
     ],
     "id": 3,
     "slug": "premium-plan"

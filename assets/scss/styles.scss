@@ -58,6 +58,10 @@ h4{
     @apply font-medium;
     @apply text-3xl;
     line-height: 3.125rem;
+
+    @screen sm{
+    @apply text-base;  
+    }
 }
 
 h5{
