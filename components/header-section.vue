@@ -129,7 +129,7 @@ export default {
 
 .menu-inner {
   width: 100%;
-  max-width: 1140px;
+  max-width: 1152px;
   margin: 0 auto;
   padding: 1rem 0;
   @apply grid;
@@ -140,8 +140,8 @@ export default {
     @apply font-medium;
   }
 
-  @screen sm {
-    padding: 0 1rem;
+  @screen md {
+    padding: 1rem;
   }
 }
 
@@ -153,7 +153,7 @@ export default {
 .menu_logo {
   display: flex;
   align-items: center;
-  padding-left: 1.5rem;
+  // padding-left: 1.5rem;
 
   @apply col-span-2;
 
