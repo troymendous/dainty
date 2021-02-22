@@ -7,7 +7,7 @@
         </div>
         <div class="menu_main">
           <div>
-            <div class="menu_icon" role="button" @click="showPopup = !showPopup">
+            <div class="menu_icon" role="button" @click="handleMenu">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="36"
@@ -55,7 +55,7 @@
       </div>
     </div>
 
-    <ul class="menu_popup" v-if="showPopup">
+    <ul class="menu_popup" v-if="menuIsActive">
       <li>
         <NuxtLink to="/pricing">Pricing</NuxtLink>
         <hr />
@@ -96,17 +96,14 @@ export default {
   components: {
     Logo,
   },
-  data() {
-    return {
-      showPopup: false,
-    }
-  },
   mounted() {
     // Note: do not add parentheses () for this.handleScroll
     window.addEventListener("scroll", this.handleScroll)
   },
-
   methods: {
+    handleMenu() {
+      this.$store.commit("toggleMenuState")
+    },
     handleScroll() {
       if (window.scrollY > 80) {
         this.$refs.menuRef.classList.add("white-background")
@@ -114,6 +111,11 @@ export default {
       } else {
         this.$refs.menuRef.classList.remove("white-background")
       }
+    },
+  },
+  computed: {
+    menuIsActive() {
+      return this.$store.state.menuIsActive
     },
   },
 }
