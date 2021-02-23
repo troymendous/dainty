@@ -1,11 +1,11 @@
 [
   {
     "category": "Task/Job Limitations",
-    "id": 0,
+    "id": 10,
     "services": [
       {
-        "service": "",
-        "serviceId": "",
+        "service": "Total simultaneous tasks",
+        "serviceId": 1,
         "availability": {
           "standard": "1",
           "business": "2",
@@ -14,14 +14,15 @@
       },
       {
         "service": "Tasks submissions per month",
-        "serviceId": "",
+        "serviceId": 2,
         "availability": {
           "standard": "Unlimited",
           "business": "Unlimited",
           "premium": "Unlimited"
         }
       }
-    ]
+    ],
+    "slug": "tasks-category"
   },
   {
     "category": "features",
@@ -353,7 +354,7 @@
         "availability": {
           "standard": "",
           "business": "",
-          "premium": "Coming Soon***"
+          "premium": "Coming Soon"
         }
       },
       {

@@ -192,6 +192,8 @@ export default {
 
   svg {
     margin-right: 0.3rem;
+    width: 12px;
+    height: 12px;
   }
 
   a {

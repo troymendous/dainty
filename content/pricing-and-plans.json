@@ -1,6 +1,6 @@
 [
   {
-    "plan": "standard",
+    "plan": "core",
     "monthlyPrice": 20,
     "annualPrice": 200,
     "headliner": " Reporting, automation, and integrations for support teams",
@@ -11,10 +11,10 @@
       { "type": "Customer Properties ", "isOffered": true, "serviceId": "4" },
       { "type": "Automated Workflows", "isOffered": true, "serviceId": "5" }
     ],
-    "slug": "standard-plan"
+    "slug": "core-plan"
   },
   {
-    "plan": "business",
+    "plan": "plus",
     "monthlyPrice": 30,
     "annualPrice": 300,
     "headliner": "Advanced features and reporting for teams at scale",
@@ -26,10 +26,10 @@
       { "type": "Automated Workflows", "isOffered": true, "serviceId": "500" }
     ],
     "id": 2,
-    "slug": "business-plan"
+    "slug": "plus-plan"
   },
   {
-    "plan": "premium",
+    "plan": "enterprise",
     "monthlyPrice": 50,
     "annualPrice": 550,
     "headliner": "Reporting, automation, and integrations for support teams",
@@ -41,6 +41,6 @@
       { "type": "Automated Workflows", "isOffered": true, "serviceId": "50" }
     ],
     "id": 3,
-    "slug": "premium-plan"
+    "slug": "enterprise-plan"
   }
 ]
