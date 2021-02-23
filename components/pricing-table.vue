@@ -75,7 +75,7 @@ th {
 
 th {
   position: sticky;
-  top: 100px;
+  top: 90px;
   z-index: 3;
   font-size: 20px;
   line-height: 75px;
