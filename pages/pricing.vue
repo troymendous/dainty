@@ -1,14 +1,18 @@
 <template>
   <div>
-    <pricing-section />
+    <pricing-cards />
+    <pricing-table />
   </div>
 </template>
 
 <script>
-import PricingSection from "../components/home/pricing-section.vue"
+import PricingCards from "../components/home/pricing-cards.vue"
+import PricingTable from "../components/pricing-table.vue"
+
 export default {
   components: {
-    PricingSection,
+    PricingCards,
+    PricingTable,
   },
 }
 </script>

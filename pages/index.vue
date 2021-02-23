@@ -3,7 +3,7 @@
     <banner-section />
     <features-section />
     <call-to-action />
-    <pricing-section />
+    <pricing-cards />
   </div>
 </template>
 
@@ -11,14 +11,14 @@
 import BannerSection from "../components/home/banner-section"
 import CallToAction from "../components/home/call-to-action.vue"
 import FeaturesSection from "../components/home/features-section"
-import PricingSection from "../components/home/pricing-section.vue"
+import PricingCards from "../components/home/pricing-cards.vue"
 
 export default {
   components: {
     BannerSection,
     FeaturesSection,
     CallToAction,
-    PricingSection,
+    PricingCards,
   },
 }
 </script>
