@@ -33,7 +33,6 @@
 
 <script>
 import checkIcon from "./home/plans/check-icon.vue"
-// import CheckIcon from "./plans/check-icon.vue"
 export default {
   components: { checkIcon },
   data() {
@@ -69,7 +68,6 @@ table {
 table,
 td,
 th {
-  //   border: 1px solid red;
   border-bottom: 2px solid #eef2f6;
 }
 
@@ -81,6 +79,10 @@ th {
   line-height: 75px;
   @apply text-darkColor;
   background: #fff;
+
+  @screen md {
+    font-size: 16px;
+  }
 }
 
 .pricing-features_table-row-heading,
@@ -90,11 +92,14 @@ th {
 
 .pricing-features_table-row-heading {
   text-transform: capitalize;
+
+  @screen sm {
+    line-height: 1;
+  }
 }
 
 .pricing-features_table-heading {
-  background: deeppink;
-  line-height: 75px;
+  line-height: 60px;
   font-weight: 700;
 }
 
@@ -104,11 +109,29 @@ th {
   font-size: 15px;
   opacity: 0.8;
   white-space: nowrap;
+
+  @screen md {
+    font-size: 12px;
+  }
+
+  @screen sm {
+    white-space: normal;
+    line-height: normal;
+  }
 }
 
 .pricing-features_table-column-heading {
   text-align: center;
   width: 220px;
+
+  @screen md {
+    width: 100px;
+  }
+
+  @screen sm {
+    width: 60px;
+    line-height: 1;
+  }
 }
 
 .pricing-features_table-cell {
@@ -121,6 +144,10 @@ th {
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+
+  @screen md {
+    font-size: 11px;
   }
 }
 </style>
