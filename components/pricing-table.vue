@@ -1,6 +1,10 @@
 <template>
   <section class="pricing-table">
-    <h2>Features Comparison</h2>
+    <div class="pricing-table_headliner">
+      <h2>Features Comparison</h2>
+      <p>Compare our plans and select the best for your business</p>
+    </div>
+
     <table v-for="{ category, id, services } in pricingTable" :key="id">
       <thead>
         <tr>
@@ -53,10 +57,19 @@ export default {
   max-width: 1140px;
   margin: 0 auto;
   padding: 6rem 2rem;
+
+  @screen sm {
+    padding: 3rem 2rem;
+  }
 }
 
-h2 {
-  padding: 3rem 0;
+.pricing-table_headliner {
+  text-align: center;
+  margin: 3rem 0;
+
+  h2 {
+    margin-bottom: 30px;
+  }
 }
 
 table {
