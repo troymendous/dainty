@@ -142,6 +142,8 @@ th {
 .pricing-features_table-column-heading {
   text-align: center;
   width: 220px;
+  color: rgba(54, 50, 74, 0.8);
+  font-weight: 500 !important;
 
   @screen md {
     width: 100px;

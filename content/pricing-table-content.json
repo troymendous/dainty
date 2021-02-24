@@ -291,9 +291,9 @@
         "service": "Icons for website sections",
         "serviceId": 20,
         "availability": {
-          "core": "",
-          "plus": "",
-          "enterprise": ""
+          "core": "Available",
+          "plus": "Available",
+          "enterprise": "Available"
         }
       },
       {
