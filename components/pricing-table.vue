@@ -94,7 +94,7 @@ th {
   text-transform: capitalize;
 
   @screen sm {
-    line-height: 1;
+    line-height: 1.5rem;
   }
 }
 
@@ -117,6 +117,7 @@ th {
   @screen sm {
     white-space: normal;
     line-height: normal;
+    padding-left: 16px;
   }
 }
 
