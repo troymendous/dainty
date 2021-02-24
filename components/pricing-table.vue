@@ -83,6 +83,10 @@ th {
   @screen md {
     font-size: 16px;
   }
+
+  @screen sm {
+    top: 8vh;
+  }
 }
 
 .pricing-features_table-row-heading,
@@ -94,7 +98,8 @@ th {
   text-transform: capitalize;
 
   @screen sm {
-    line-height: 1.5rem;
+    line-height: 1;
+    padding: 1.3rem 0;
   }
 }
 
