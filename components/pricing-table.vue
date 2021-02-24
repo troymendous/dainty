@@ -130,7 +130,7 @@ th {
 
   @screen sm {
     width: 60px;
-    line-height: 1;
+    line-height: 1.5rem;
   }
 }
 
