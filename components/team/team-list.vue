@@ -36,6 +36,9 @@ export default {
 </script>
 
 <style lang="scss">
+footer {
+  clear: left;
+}
 .container {
   float: left;
   width: 100%;
