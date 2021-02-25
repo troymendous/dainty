@@ -48,7 +48,7 @@ footer {
   width: 1170px;
 }
 .team {
-  padding-top: 40px;
+  padding: 40px 0;
   .box {
     float: left;
     overflow: hidden;
@@ -88,11 +88,11 @@ footer {
         width: 0;
         overflow: hidden;
         color: #ffffff;
-        background: linear-gradient(90deg, orange 0%, red 100%);
+        background: linear-gradient(90deg, var(--acc-pink-color) 0%, var(--acc-purple-color) 100%);
       }
       .line {
         width: 3px;
-        background: linear-gradient(180deg, orange 0%, red 100%);
+        background: linear-gradient(180deg, var(--acc-pink-color) 0%, var(--acc-purple-color) 100%);
         height: 100%;
       }
     }
