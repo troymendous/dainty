@@ -216,6 +216,7 @@ footer {
         width: 470px;
         .text {
           bottom: 0;
+          right: 0;
           -webkit-clip-path: polygon(
             0 0,
             0 100%,
@@ -237,6 +238,7 @@ footer {
         float: right;
         .text {
           bottom: 0;
+          right: 0;
         }
         .triangle {
           border-bottom: 80px solid transparent;
@@ -295,6 +297,7 @@ footer {
         width: 470px;
         .text {
           bottom: 0;
+          right: 0;
         }
         .triangle {
           border-top: 80px solid transparent;
@@ -309,6 +312,7 @@ footer {
         margin-right: 180px;
         .text {
           bottom: 0;
+          right: 0;
         }
       }
       &:nth-child(7n + 7) {
@@ -316,6 +320,7 @@ footer {
         float: right;
         .text {
           bottom: 0;
+          right: 0;
           -webkit-clip-path: polygon(
             0 0,
             0 100%,
