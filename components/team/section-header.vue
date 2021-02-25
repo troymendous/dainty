@@ -26,9 +26,10 @@ export default {
 
 <style lang="scss">
 .section-header_title {
+  padding: 0 3rem;
   z-index: 10;
   h1 {
-    font-size: 8rem;
+    font-size: 10rem;
     font-weight: 600;
   }
 }
