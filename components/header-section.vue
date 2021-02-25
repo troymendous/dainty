@@ -29,7 +29,7 @@
             <ul class="menu_links">
               <li><NuxtLink to="/pricing">Pricing</NuxtLink></li>
               <li>
-                <NuxtLink to="/">Team</NuxtLink>
+                <NuxtLink to="/team">Team</NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/">Portfolio</NuxtLink>
@@ -61,7 +61,7 @@
         <hr />
       </li>
       <li>
-        <NuxtLink to="/">Team</NuxtLink>
+        <NuxtLink to="/team">Team</NuxtLink>
         <hr />
       </li>
       <li>
