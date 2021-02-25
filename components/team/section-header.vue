@@ -57,6 +57,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
+  max-height: 600px;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -65,6 +66,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
+  max-height: 600px;
   height: 100%;
   width: 100%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%),
