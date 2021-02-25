@@ -2,14 +2,14 @@
   <div
     class="box"
     :style="`
-      background-image: url('https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg');
+      background-image: url('${img}');
       height: ${height};
     `"
   >
     <div class="text">
       <div class="container padding">
-        <div class="name">Nathan Hookway</div>
-        <a href="https://www.linkedin.com/in/webdesignnewcastle/" target="_blank" class="linkedin">
+        <div class="name">{{ name }}</div>
+        <a :href="link" target="_blank" class="linkedin">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path
               fill="#322F31"
@@ -17,14 +17,14 @@
             ></path>
           </svg>
         </a>
-        <div class="role">General Manager</div>
+        <div class="role">{{ role }}</div>
       </div>
       <div class="line"></div>
     </div>
     <div class="text hover">
       <div class="container padding">
-        <div class="name">Nathan Hookway</div>
-        <a href="https://www.linkedin.com/in/webdesignnewcastle/" target="_blank" class="linkedin">
+        <div class="name">{{ name }}</div>
+        <a :href="link" target="_blank" class="linkedin">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path
               fill="#FFFFFF"
@@ -32,7 +32,7 @@
             ></path>
           </svg>
         </a>
-        <div class="role">General Manager</div>
+        <div class="role">{{ role }}</div>
       </div>
     </div>
     <div class="triangle tri1"></div>
@@ -43,7 +43,13 @@
 <script>
 export default {
   name: "TeamMember",
-  props: ["height"],
+  props: {
+    height: String,
+    name: String,
+    link: String,
+    img: String,
+    role: String,
+  },
 }
 </script>
 

@@ -1,27 +1,124 @@
 <template>
   <div id="team" class="container team">
-    <div class="wrapper">
+    <div v-if="members" class="wrapper">
       <div class="container section1">
-        <team-member :height="`450px`"></team-member>
-        <team-member :height="`305px`"></team-member>
-        <team-member :height="`255px`"></team-member>
+        <team-member
+          :height="`450px`"
+          :name="members[0].name"
+          :role="members[0].role"
+          :link="members[0].link"
+          :img="members[0].img"
+        ></team-member>
+        <team-member
+          :height="`305px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        >
+        </team-member>
+        <team-member
+          :height="`255px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
       </div>
       <div class="container section2">
-        <team-member :height="`255px`"></team-member>
-        <team-member :height="`374px`"></team-member>
+        <team-member
+          :height="`255px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
+        <team-member
+          :height="`374px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
       </div>
       <div class="container section3" style="height: 1994px">
-        <team-member :height="`305px`"></team-member>
-        <team-member :height="`450px`"></team-member>
-        <team-member :height="`305px`"></team-member>
-        <team-member :height="`374px`"></team-member>
-        <team-member :height="`305px`"></team-member>
-        <team-member :height="`346px`"></team-member>
-        <team-member :height="`255px`"></team-member>
-        <team-member :height="`305px`"></team-member>
-        <team-member :height="`450px`"></team-member>
-        <team-member :height="`305px`"></team-member>
-        <team-member :height="`374px`"></team-member>
+        <team-member
+          :height="`305px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
+        <team-member
+          :height="`450px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
+        <team-member
+          :height="`305px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
+        <team-member
+          :height="`374px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
+        <team-member
+          :height="`305px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
+        <team-member
+          :height="`346px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
+        <team-member
+          :height="`255px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
+        <team-member
+          :height="`305px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
+        <team-member
+          :height="`450px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
+        <team-member
+          :height="`305px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
+        <team-member
+          :height="`374px`"
+          :name="members[1].name"
+          :role="members[1].role"
+          :link="members[1].link"
+          :img="members[1].img"
+        ></team-member>
       </div>
     </div>
   </div>
@@ -32,6 +129,30 @@ import TeamMember from "./team-member"
 export default {
   name: "TeamList",
   components: { TeamMember },
+  data() {
+    return {
+      members: [
+        {
+          name: "Nathan Hookway",
+          link: "https://www.linkedin.com/in/webdesignnewcastle/",
+          img: "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
+          role: "General Manager",
+        },
+        {
+          name: "Nathan Hookway",
+          link: "https://www.linkedin.com/in/webdesignnewcastle/",
+          img: "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
+          role: "General Manager",
+        },
+        {
+          name: "Nathan Hookway",
+          link: "https://www.linkedin.com/in/webdesignnewcastle/",
+          img: "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
+          role: "General Manager",
+        },
+      ],
+    }
+  },
 }
 </script>
 
