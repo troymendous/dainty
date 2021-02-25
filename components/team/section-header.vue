@@ -6,7 +6,14 @@
           <h1>Team</h1>
         </div>
       </div>
-      <div id="team-background" class="section-header_background"></div>
+      <div
+        :style="`
+      background-image: url(/_nuxt/static/team/team-rs.webp);
+      height: 100%;
+    `"
+        class="section-header_background"
+      ></div>
+      <div class="fade"></div>
     </section>
   </div>
 </template>
@@ -19,6 +26,7 @@ export default {
 
 <style lang="scss">
 .section-header_title {
+  z-index: 10;
   h1 {
     font-size: 8rem;
     font-weight: 600;
@@ -42,7 +50,6 @@ export default {
   }
 }
 .section-header_background {
-  opacity: 30%;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -53,7 +60,14 @@ export default {
   width: 100%;
   z-index: -1;
 }
-.section-header_background#team-background {
-  background-image: url("../../static/team/team-rs.webp");
+.fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 100%);
+  z-index: 0;
 }
 </style>
