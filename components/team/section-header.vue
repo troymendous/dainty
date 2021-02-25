@@ -8,7 +8,7 @@
       </div>
       <div
         :style="`
-      background-image: url(/_nuxt/static/team/team-rs.webp);
+      background-image: url(https://zimple.digital/storage/app/webp/team-rs.webp);
       height: 100%;
     `"
         class="section-header_background"
