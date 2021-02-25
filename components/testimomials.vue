@@ -32,7 +32,9 @@ export default {
     return {
       swiperOption: {
         // slidesPerView: 3,
-        // spaceBetween: 0,
+        // spaceBetween: 120,
+        centeredSlides: true,
+        freeMode: true,
         grabCursor: true,
         loop: true,
         pagination: {
@@ -40,17 +42,21 @@ export default {
           clickable: true,
         },
         breakpoints: {
+          1665: {
+            slidesPerView: 4,
+            spaceBetween: 195,
+          },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 195,
           },
           768: {
             slidesPerView: 2,
-            spaceBetween: 15,
+            spaceBetween: 80,
           },
           320: {
             slidesPerView: 1,
-            spaceBetween: 10,
+            spaceBetween: 0,
           },
         },
       },
@@ -105,22 +111,19 @@ export default {
 // -swiper-theme-color: green;
 
 .testimonials-headliner {
+  text-align: center;
   margin-bottom: 60px;
 }
 
-// .testimonials-carousel {
-//   background: deepskyblue;
-// }
-
 .testimonials-card {
-  width: 100%;
+  width: 535px;
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 15px 35px 0 rgba(46, 46, 84, 0.1), 0 5px 15px 0 rgba(0, 0, 0, 0.07);
   padding: 20px 25px;
   opacity: 0.5;
-  // margin-left: 195px;
-  // transition: opacity, 0.3s, transform 0.3s;
+  transform: scale(0.89);
+  transition: opacity, 0.3s, transform 0.3s;
 
   img {
     width: 50px;
@@ -137,49 +140,23 @@ export default {
   }
 
   @screen md {
-    opacity: 1;
+    width: 430px;
+  }
+
+  @screen sm {
+    width: 310px;
   }
 }
 
 .swiper {
   height: 300px;
   width: 100%;
-  // background: deeppink;
   padding: 60px 0;
-}
-
-.swiper-slide {
-  width: 535px !important;
-
-  @screen md {
-    width: 435px !important;
-  }
-
-  @screen sm {
-    width: 310px !important;
-  }
-}
-
-.swiper-slide {
-  transform: scale(0.89);
-  // opacity: 0;
-}
-
-.swiper-slide-active {
-  position: relative;
-  transform: scale(1);
-  width: 700px !important;
-
-  @screen md {
-    width: 435px !important;
-  }
-
-  @screen sm {
-    width: 310px !important;
-  }
+  background: rgba(111, 108, 127, 0.1);
 }
 
 .swiper-slide-active > .testimonials-card {
   opacity: 1;
+  transform: scale(1);
 }
 </style>
