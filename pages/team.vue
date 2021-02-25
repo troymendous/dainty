@@ -1,6 +1,8 @@
 <template>
-  <section-header></section-header>
-  <team-list></team-list>
+  <div>
+    <section-header></section-header>
+    <team-list></team-list>
+  </div>
 </template>
 
 <script>
