@@ -31,13 +31,27 @@ export default {
   data() {
     return {
       swiperOption: {
-        slidesPerView: 3,
-        spaceBetween: 0,
+        // slidesPerView: 3,
+        // spaceBetween: 0,
         grabCursor: true,
         loop: true,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
         },
       },
       testimonials: [
@@ -106,7 +120,7 @@ export default {
   padding: 20px 25px;
   opacity: 0.5;
   // margin-left: 195px;
-  transition: opacity, 0.3s, transform 0.3s;
+  // transition: opacity, 0.3s, transform 0.3s;
 
   img {
     width: 50px;
@@ -121,6 +135,10 @@ export default {
   > div {
     display: flex;
   }
+
+  @screen md {
+    opacity: 1;
+  }
 }
 
 .swiper {
@@ -134,7 +152,7 @@ export default {
   width: 535px !important;
 
   @screen md {
-    width: 410px !important;
+    width: 435px !important;
   }
 
   @screen sm {
@@ -150,7 +168,15 @@ export default {
 .swiper-slide-active {
   position: relative;
   transform: scale(1);
-  // width: 700px !important;
+  width: 700px !important;
+
+  @screen md {
+    width: 435px !important;
+  }
+
+  @screen sm {
+    width: 310px !important;
+  }
 }
 
 .swiper-slide-active > .testimonials-card {
