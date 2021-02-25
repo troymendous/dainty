@@ -14,17 +14,24 @@
       <div class="banner-content">
         <div class="banner-content_text">
           <h1>
-            Dainty is for your
+            Get help with
             <br />
-            internet app bussiness.
+            failing charges.
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Vivamus at augue eget arcu dictum.
-          </p>
+          <span>
+            Your business is leaking money every month to failed payments and losing customers to
+            delinquent churn. It's time to get it back.
+          </span>
           <div class="banner-links">
-            <nuxt-link to="/" class="link-primary pink">Download</nuxt-link>
-            <nuxt-link to="/" class="link-primary purple">Get Started</nuxt-link>
+            <nuxt-link to="/" class="link-primary pink">Start Free Trial</nuxt-link>
+            <nuxt-link to="/" class="link-primary purple">Learn more</nuxt-link>
+          </div>
+          <div class="banner-user-review">
+            <p>“Recover helped us reduce our churn and save over $10k+ in less than 3 months.”</p>
+            <div>
+              <img src="/testimonials/testimonial-01.webp" alt="Avatar" />
+              <span>Tushar Mahajan, Statusbrew</span>
+            </div>
           </div>
         </div>
         <div class="banner-content_showcase">
@@ -56,6 +63,7 @@ export default {
 
   @screen md {
     padding-top: 6rem;
+    margin: 3rem 2rem;
   }
 
   @screen sm {
@@ -129,6 +137,47 @@ export default {
   width: 100%;
 }
 
+.banner-content_text > span {
+  display: block;
+  font-size: 20px;
+  @apply text-lightColor;
+  line-height: 1.875rem;
+  margin-bottom: 40px;
+
+  @screen md {
+    font-size: 18px;
+  }
+
+  @screen sm {
+    font-size: 16px;
+  }
+}
+
+.banner-user-review {
+  margin-top: 1.2rem;
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+
+  p {
+    margin-bottom: 1rem !important;
+  }
+
+  span {
+    display: inline-block;
+    margin-left: 6px;
+    color: #b8b8d9;
+  }
+}
+
 .banner-content_showcase {
   animation: MoveUpDown 2s linear infinite;
 
@@ -171,12 +220,12 @@ export default {
 
 .banner-links {
   .link-primary {
-    @apply rounded-full;
     @apply inline-block;
     @apply p-4;
     @apply mr-4;
     @apply mb-4;
     @apply font-medium;
+    border-radius: 8px;
     width: 180px;
     text-align: center;
     font-size: 14px;

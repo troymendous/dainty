@@ -14,8 +14,10 @@ h1, h2, h3, h4, h5,h6 {
 }
 
 h1{
+    @apply font-semibold;
     font-size: 3.125rem;
     line-height: 3.438rem;
+    letter-spacing: -0.02em;
 
     @screen md{
         font-size: 2.5rem;
