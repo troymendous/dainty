@@ -41,7 +41,7 @@
           :img="members[1].img"
         ></team-member>
       </div>
-      <div class="container section3" style="height: 1994px">
+      <div class="container section3">
         <team-member
           :height="`305px`"
           :name="members[1].name"
@@ -167,6 +167,10 @@ footer {
 .wrapper {
   margin: 0 auto;
   width: 1170px;
+
+  @screen md {
+    width: 100%;
+  }
 }
 .team {
   padding: 40px 0;
@@ -226,6 +230,9 @@ footer {
     }
     .triangle {
       position: absolute;
+      @screen md {
+        display: none;
+      }
     }
   }
   .section1 {
@@ -236,6 +243,10 @@ footer {
         position: absolute;
         bottom: 0;
         left: 0;
+        @screen md {
+          position: relative;
+          width: 100%;
+        }
         .text {
           left: 0;
           bottom: 30px;
@@ -250,6 +261,10 @@ footer {
       &:nth-child(2) {
         width: 470px;
         float: right;
+        @screen md {
+          float: left;
+          width: 100%;
+        }
         .text {
           left: 0;
           bottom: 0;
@@ -274,6 +289,10 @@ footer {
         float: right;
         clear: right;
         margin-right: 100px;
+        @screen md {
+          float: left;
+          width: 100%;
+        }
         .text {
           bottom: 0;
           right: 0;
@@ -283,9 +302,15 @@ footer {
   }
   .section2 {
     padding: 0 80px 0 100px;
+    @screen md {
+      padding: 0;
+    }
     .box {
       &:nth-child(1) {
         width: 370px;
+        @screen md {
+          width: 100%;
+        }
         .text {
           left: 0;
           bottom: 0;
@@ -302,6 +327,10 @@ footer {
       &:nth-child(2) {
         width: 620px;
         float: right;
+        @screen md {
+          float: left;
+          width: 100%;
+        }
         .text {
           left: 0;
           bottom: 119px;
@@ -325,6 +354,10 @@ footer {
   }
   .section3 {
     position: relative;
+    height: 1994px;
+    @screen md {
+      height: auto;
+    }
     .box {
       top: 0;
       &.column1 {
@@ -335,6 +368,9 @@ footer {
       }
       &:nth-child(7n + 1) {
         width: 470px;
+        @screen md {
+          width: 100%;
+        }
         .text {
           bottom: 0;
           right: 0;
@@ -357,6 +393,10 @@ footer {
       &:nth-child(7n + 2) {
         width: 700px;
         float: right;
+        @screen md {
+          float: left;
+          width: 100%;
+        }
         .text {
           bottom: 0;
           right: 0;
@@ -370,6 +410,9 @@ footer {
       }
       &:nth-child(7n + 3) {
         width: 470px;
+        @screen md {
+          width: 100%;
+        }
         .text {
           left: 0;
           bottom: 0;
@@ -387,6 +430,10 @@ footer {
         width: 600px;
         float: right;
         margin-right: 100px;
+        @screen md {
+          float: left;
+          width: 100%;
+        }
         .text {
           left: 0;
           top: 0;
@@ -416,6 +463,9 @@ footer {
       }
       &:nth-child(7n + 5) {
         width: 470px;
+        @screen md {
+          width: 100%;
+        }
         .text {
           bottom: 0;
           right: 0;
@@ -431,6 +481,10 @@ footer {
         width: 520px;
         float: right;
         margin-right: 180px;
+        @screen md {
+          float: left;
+          width: 100%;
+        }
         .text {
           bottom: 0;
           right: 0;
@@ -439,6 +493,10 @@ footer {
       &:nth-child(7n + 7) {
         width: 390px;
         float: right;
+        @screen md {
+          float: left;
+          width: 100%;
+        }
         .text {
           bottom: 0;
           right: 0;
