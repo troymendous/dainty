@@ -2,16 +2,17 @@
   <div
     class="box"
     :style="`
-      background-image: url('${img}');
+      background-image: url('${member.img}');
       background-repeat: no-repeat;
       height: ${height};
     `"
+    @click="$emit('memberClicked', member)"
   >
-    <img :src="img" style="visibility: hidden; height: 100%; width: 100%" />
+    <img :src="member.img" style="visibility: hidden; height: 100%; width: 100%" />
     <div class="text">
       <div class="container padding">
-        <div class="name">{{ name }}</div>
-        <a :href="link" target="_blank" class="linkedin">
+        <div class="name">{{ member.name }}</div>
+        <a :href="member.link" target="_blank" class="linkedin">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path
               fill="#322F31"
@@ -19,14 +20,14 @@
             ></path>
           </svg>
         </a>
-        <div class="role">{{ role }}</div>
+        <div class="role">{{ member.role }}</div>
       </div>
       <div class="line"></div>
     </div>
     <div class="text hover">
       <div class="container padding">
-        <div class="name">{{ name }}</div>
-        <a :href="link" target="_blank" class="linkedin">
+        <div class="name">{{ member.name }}</div>
+        <a :href="member.link" target="_blank" class="linkedin">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path
               fill="#FFFFFF"
@@ -34,7 +35,7 @@
             ></path>
           </svg>
         </a>
-        <div class="role">{{ role }}</div>
+        <div class="role">{{ member.role }}</div>
       </div>
     </div>
     <div class="triangle tri1"></div>
@@ -47,10 +48,7 @@ export default {
   name: "TeamMember",
   props: {
     height: String,
-    name: String,
-    link: String,
-    img: String,
-    role: String,
+    member: Object,
   },
 }
 </script>

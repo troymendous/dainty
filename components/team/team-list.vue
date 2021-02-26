@@ -4,121 +4,28 @@
       <div class="container section1 slide-in">
         <team-member
           :height="`450px`"
-          :name="members[0].name"
-          :role="members[0].role"
-          :link="members[0].link"
-          :img="members[0].img"
+          :member="members[0]"
+          @memberClicked="toggleModal"
         ></team-member>
-        <team-member
-          :height="`305px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        >
-        </team-member>
-        <team-member
-          :height="`255px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
+        <team-member :height="`305px`" :member="members[1]"> </team-member>
+        <team-member :height="`255px`" :member="members[1]"></team-member>
       </div>
       <div class="container section2">
-        <team-member
-          :height="`255px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
-        <team-member
-          :height="`374px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
+        <team-member :height="`255px`" :member="members[1]"></team-member>
+        <team-member :height="`374px`" :member="members[1]"></team-member>
       </div>
       <div class="container section3">
-        <team-member
-          :height="`305px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
-        <team-member
-          :height="`450px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
-        <team-member
-          :height="`305px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
-        <team-member
-          :height="`374px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
-        <team-member
-          :height="`305px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
-        <team-member
-          :height="`346px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
-        <team-member
-          :height="`255px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
-        <team-member
-          :height="`305px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
-        <team-member
-          :height="`450px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
-        <team-member
-          :height="`305px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
-        <team-member
-          :height="`374px`"
-          :name="members[1].name"
-          :role="members[1].role"
-          :link="members[1].link"
-          :img="members[1].img"
-        ></team-member>
+        <team-member :height="`305px`" :member="members[1]"></team-member>
+        <team-member :height="`450px`" :member="members[1]"></team-member>
+        <team-member :height="`305px`" :member="members[1]"></team-member>
+        <team-member :height="`374px`" :member="members[1]"></team-member>
+        <team-member :height="`305px`" :member="members[1]"></team-member>
+        <team-member :height="`346px`" :member="members[1]"></team-member>
+        <team-member :height="`255px`" :member="members[1]"></team-member>
+        <team-member :height="`305px`" :member="members[1]"></team-member>
+        <team-member :height="`450px`" :member="members[1]"></team-member>
+        <team-member :height="`305px`" :member="members[1]"></team-member>
+        <team-member :height="`374px`" :member="members[1]"></team-member>
       </div>
     </div>
   </div>
@@ -133,18 +40,21 @@ export default {
     return {
       members: [
         {
+          id: 0,
           name: "Nathan Hookway",
           link: "https://www.linkedin.com/in/webdesignnewcastle/",
           img: "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
           role: "General Manager",
         },
         {
+          id: 1,
           name: "Nathan Hookway",
           link: "https://www.linkedin.com/in/webdesignnewcastle/",
           img: "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
           role: "General Manager",
         },
         {
+          id: 2,
           name: "Nathan Hookway",
           link: "https://www.linkedin.com/in/webdesignnewcastle/",
           img: "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
@@ -175,9 +85,12 @@ export default {
     },
     isElemVisible(el) {
       const rect = el.getBoundingClientRect()
-      const elemTop = rect.top + 200 // 200 = buffer
+      const elemTop = rect.top + 200
       const elemBottom = rect.bottom
       return elemTop < window.innerHeight && elemBottom >= 0
+    },
+    toggleModal(member) {
+      console.log(member.id)
     },
   },
 }
