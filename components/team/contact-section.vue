@@ -27,5 +27,8 @@ export default {
   a {
     color: var(--acc-pink-color);
   }
+  @screen md {
+    font-size: 2rem;
+  }
 }
 </style>
