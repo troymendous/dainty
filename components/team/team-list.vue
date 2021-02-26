@@ -183,6 +183,11 @@ footer {
     @screen md {
       background-position: center;
       background-size: cover;
+      height: 85% !important;
+      width: 85% !important;
+      float: none !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
     .text {
       position: absolute;
@@ -249,11 +254,21 @@ footer {
         left: 0;
         @screen md {
           position: relative;
-          width: 100%;
         }
         .text {
           left: 0;
           bottom: 30px;
+          @screen md {
+            bottom: 0;
+            -webkit-clip-path: polygon(
+              0 0,
+              0 100%,
+              100% 100%,
+              100% 30px,
+              -webkit-calc(100% - 30px) 0
+            );
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 30px, calc(100% - 30px) 0);
+          }
         }
         .triangle {
           border-bottom: 80px solid transparent;
@@ -265,10 +280,6 @@ footer {
       &:nth-child(2) {
         width: 470px;
         float: right;
-        @screen md {
-          float: left;
-          width: 100%;
-        }
         .text {
           left: 0;
           bottom: 0;
@@ -293,13 +304,20 @@ footer {
         float: right;
         clear: right;
         margin-right: 100px;
-        @screen md {
-          float: left;
-          width: 100%;
-        }
         .text {
           bottom: 0;
           right: 0;
+          @screen md {
+            left: 0;
+            -webkit-clip-path: polygon(
+              0 0,
+              0 100%,
+              100% 100%,
+              100% 30px,
+              -webkit-calc(100% - 30px) 0
+            );
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 30px, calc(100% - 30px) 0);
+          }
         }
       }
     }
@@ -312,9 +330,6 @@ footer {
     .box {
       &:nth-child(1) {
         width: 370px;
-        @screen md {
-          width: 100%;
-        }
         .text {
           left: 0;
           bottom: 0;
@@ -331,10 +346,6 @@ footer {
       &:nth-child(2) {
         width: 620px;
         float: right;
-        @screen md {
-          float: left;
-          width: 100%;
-        }
         .text {
           left: 0;
           bottom: 119px;
@@ -346,6 +357,17 @@ footer {
             100% 0
           );
           clip-path: polygon(0 0, 0 100%, calc(100% - 30px) 100%, 100% calc(100% - 30px), 100% 0);
+          @screen md {
+            bottom: 0;
+            -webkit-clip-path: polygon(
+              0 0,
+              0 100%,
+              100% 100%,
+              100% 30px,
+              -webkit-calc(100% - 30px) 0
+            );
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 30px, calc(100% - 30px) 0);
+          }
         }
         .triangle {
           border-bottom: 80px solid transparent;
@@ -386,6 +408,9 @@ footer {
             -webkit-calc(100% - 30px) 0
           );
           clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 30px, calc(100% - 30px) 0);
+          @screen md {
+            left: 0;
+          }
         }
         .triangle {
           border-bottom: 80px solid transparent;
@@ -404,6 +429,17 @@ footer {
         .text {
           bottom: 0;
           right: 0;
+          @screen md {
+            left: 0;
+            -webkit-clip-path: polygon(
+              0 0,
+              0 100%,
+              100% 100%,
+              100% 30px,
+              -webkit-calc(100% - 30px) 0
+            );
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 30px, calc(100% - 30px) 0);
+          }
         }
         .triangle {
           border-bottom: 80px solid transparent;
@@ -449,6 +485,18 @@ footer {
             100% 0
           );
           clip-path: polygon(0 0, 0 100%, calc(100% - 30px) 100%, 100% calc(100% - 30px), 100% 0);
+          @screen md {
+            bottom: 0;
+            top: auto;
+            -webkit-clip-path: polygon(
+              0 0,
+              0 100%,
+              100% 100%,
+              100% 30px,
+              -webkit-calc(100% - 30px) 0
+            );
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 30px, calc(100% - 30px) 0);
+          }
         }
         .triangle {
           &.tri1 {
@@ -473,6 +521,17 @@ footer {
         .text {
           bottom: 0;
           right: 0;
+          @screen md {
+            left: 0;
+            -webkit-clip-path: polygon(
+              0 0,
+              0 100%,
+              100% 100%,
+              100% 30px,
+              -webkit-calc(100% - 30px) 0
+            );
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 30px, calc(100% - 30px) 0);
+          }
         }
         .triangle {
           border-top: 80px solid transparent;
@@ -492,6 +551,17 @@ footer {
         .text {
           bottom: 0;
           right: 0;
+          @screen md {
+            left: 0;
+            -webkit-clip-path: polygon(
+              0 0,
+              0 100%,
+              100% 100%,
+              100% 30px,
+              -webkit-calc(100% - 30px) 0
+            );
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 30px, calc(100% - 30px) 0);
+          }
         }
       }
       &:nth-child(7n + 7) {
@@ -512,6 +582,9 @@ footer {
             -webkit-calc(100% - 30px) 0
           );
           clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 30px, calc(100% - 30px) 0);
+          @screen md {
+            left: 0;
+          }
         }
         .triangle {
           border-top: 80px solid transparent;

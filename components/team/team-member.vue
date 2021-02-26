@@ -55,10 +55,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.box {
-  @screen md {
-    height: 100% !important;
-  }
-}
-</style>
+<style lang="scss"></style>
