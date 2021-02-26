@@ -28,6 +28,7 @@
         <team-member :height="`374px`" :member="members[1]"></team-member>
       </div>
     </div>
+    <div v-if="modalActive" class="team-modal">// TODO a modal should be here</div>
   </div>
 </template>
 
@@ -62,6 +63,8 @@ export default {
         },
       ],
       slideInElements: [],
+      modalActive: false,
+      memberSelected: null,
     }
   },
   mounted() {
@@ -90,7 +93,8 @@ export default {
       return elemTop < window.innerHeight && elemBottom >= 0
     },
     toggleModal(member) {
-      console.log(member.id)
+      this.memberSelected = member
+      this.modalActive = !this.modalActive
     },
   },
 }
