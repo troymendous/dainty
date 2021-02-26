@@ -2,7 +2,7 @@
   <div>
     <section>
       <div class="section-header">
-        <div class="section-header_title">
+        <div class="section-header_title slide-in">
           <h1>Team</h1>
         </div>
       </div>

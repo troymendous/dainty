@@ -1,7 +1,7 @@
 <template>
   <div id="team" class="container team">
     <div v-if="members" class="wrapper">
-      <div class="container section1">
+      <div class="container section1 slide-in">
         <team-member
           :height="`450px`"
           :name="members[0].name"
@@ -151,7 +151,34 @@ export default {
           role: "General Manager",
         },
       ],
+      slideInElements: [],
     }
+  },
+  mounted() {
+    this.slideInElements = Array.from(document.getElementsByClassName("slide-in"))
+    document.addEventListener("scroll", this.handleScroll)
+    this.handleScroll()
+  },
+  beforeDestroy() {
+    document.removeEventListener("scroll", this.handleScroll)
+  },
+  methods: {
+    handleScroll(evt) {
+      for (let i = 0; i < this.slideInElements.length; i++) {
+        const elem = this.slideInElements[i]
+        if (this.isElemVisible(elem)) {
+          elem.style.opacity = "1"
+          elem.style.transform = "scale(1)"
+          this.slideInElements.splice(i, 1)
+        }
+      }
+    },
+    isElemVisible(el) {
+      const rect = el.getBoundingClientRect()
+      const elemTop = rect.top + 200 // 200 = buffer
+      const elemBottom = rect.bottom
+      return elemTop < window.innerHeight && elemBottom >= 0
+    },
   },
 }
 </script>
@@ -223,6 +250,11 @@ footer {
         overflow: hidden;
         color: #ffffff;
         background: linear-gradient(90deg, var(--acc-pink-color) 0%, var(--acc-purple-color) 100%);
+        transition: all 0.5s cubic-bezier(0.55, 0, 0.28, 1);
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(0.55, 0, 0.28, 1);
+        transition-delay: 0s;
       }
       .line {
         width: 3px;
