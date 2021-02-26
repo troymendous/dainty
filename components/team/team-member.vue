@@ -3,9 +3,11 @@
     class="box"
     :style="`
       background-image: url('${img}');
+      background-repeat: no-repeat;
       height: ${height};
     `"
   >
+    <img :src="img" style="visibility: hidden; height: 100%; width: 100%" />
     <div class="text">
       <div class="container padding">
         <div class="name">{{ name }}</div>
@@ -53,4 +55,10 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style lang="scss">
+.box {
+  @screen md {
+    height: 100% !important;
+  }
+}
+</style>

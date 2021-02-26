@@ -180,6 +180,10 @@ footer {
     position: relative;
     cursor: pointer;
     margin-top: 0;
+    @screen md {
+      background-position: center;
+      background-size: cover;
+    }
     .text {
       position: absolute;
       background: #ffffff;
