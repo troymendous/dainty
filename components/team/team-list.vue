@@ -34,18 +34,43 @@
         <div class="modal-wrapper">
           <div class="modal-container" @click.stop>
             <swiper class="swiper" :options="swiperOption">
-              <swiper-slide v-for="{ name, role, id } in members" :key="id">
-                <div class="features-carousel-wrapper">
-                  <h4>{{ name }}</h4>
-                  <h5>{{ role }}</h5>
+              <swiper-slide v-for="{ name, role, link, id } in members" :key="id">
+                <div class="modal-container-text text-scroll">
+                  <h4 class="modal-container_name">
+                    {{ name }}
+                    <a :href="link" target="_blank" class="linkedin">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="#322F31"
+                          d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                        ></path>
+                      </svg>
+                    </a>
+                  </h4>
+                  <h5 class="modal-container_role">{{ role }}</h5>
+                  <h6 class="modal-container_value">VALUE TO THE ROOM</h6>
                   <p>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum."
+                    culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum."
                   </p>
+                  <nuxt-link to="/about">
+                    <div class="modal-container_read">Read About Us</div>
+                  </nuxt-link>
                 </div>
               </swiper-slide>
             </swiper>
@@ -56,10 +81,19 @@
                   :style="`
                     background-image: url('${img}');
                   `"
-                ></div>
+                >
+                  <div class="container nav">
+                    <div slot="button-prev" class="item modal-button-prev">
+                      <div class="container bg"></div>
+                      <span>Prev</span>
+                    </div>
+                    <div slot="button-next" class="item modal-button-next">
+                      <div class="container bg"></div>
+                      <span>Next</span>
+                    </div>
+                  </div>
+                </div>
               </swiper-slide>
-              <div slot="button-prev" class="swiper-button-prev"></div>
-              <div slot="button-next" class="swiper-button-next"></div>
             </swiper>
           </div>
         </div>
@@ -100,8 +134,8 @@ export default {
       memberSelected: null,
       swiperOption: {
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: ".modal-button-next",
+          prevEl: ".modal-button-prev",
         },
         initialSlide: 0,
         width: 500,
@@ -607,11 +641,101 @@ footer {
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
     transition: all 0.3s ease;
+    -webkit-clip-path: polygon(
+      0 0,
+      0 calc(100% - 80px),
+      80px 100%,
+      100% 100%,
+      100% 80px,
+      calc(100% - 80px) 0
+    );
+    clip-path: polygon(
+      0 0,
+      0 calc(100% - 80px),
+      80px 100%,
+      100% 100%,
+      100% 80px,
+      calc(100% - 80px) 0
+    );
+    .text-scroll {
+      max-height: 500px;
+      overflow: scroll;
+    }
+    .modal-container-text {
+      padding: 40px 50px 80px 40px;
+      .modal-container_name {
+        font-weight: 600;
+        a {
+          float: right;
+          margin-top: 15px;
+        }
+      }
+      .modal-container_role {
+        font-weight: 400;
+        margin-bottom: 40px;
+      }
+      .modal-container_value {
+        color: var(--acc-purple-color);
+        font-family: "sofia-pro", sans-serif;
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      .modal-container_read {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 90px;
+        font-family: "sofia-pro", sans-serif;
+        font-weight: 600;
+        line-height: 60px;
+        color: #e9e9e9;
+        background-color: var(--acc-purple-color);
+      }
+    }
     .modal-container_img {
       background-repeat: no-repeat;
       background-position: center;
       height: 500px;
       background-size: auto 100%;
+    }
+    .nav {
+      position: absolute;
+      bottom: 0;
+      .item {
+        float: left;
+        line-height: 60px;
+        padding: 0 20px;
+        font-size: 16px;
+        width: 50%;
+        cursor: pointer;
+        font-weight: bold;
+        opacity: 0.5;
+        span {
+          background-size: 20px;
+          background-repeat: no-repeat;
+        }
+        &.modal-button-prev {
+          background-color: #e9e9e9;
+          span {
+            padding-left: 40px;
+            /*background-image: url(../images/arrow-left.svg);*/
+            background-position: left center;
+          }
+        }
+        &.modal-button-next {
+          color: white;
+          background-color: black;
+          text-align: right;
+          span {
+            padding-right: 40px;
+            /*background-image: url(../images/arrow-right.svg);*/
+            background-position: right center;
+          }
+        }
+      }
     }
   }
 }
