@@ -664,7 +664,7 @@ footer {
       width: 20px;
       height: 20px;
       top: 0px;
-      right: g0px;
+      right: 0px;
       background-image: url(../../static/icons/x.svg);
       background-position: center center;
       background-size: cover;
