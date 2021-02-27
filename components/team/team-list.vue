@@ -33,6 +33,7 @@
       <div class="modal-mask" @click="toggleModal">
         <div class="modal-wrapper">
           <div class="modal-container" @click.stop>
+            <div class="close"></div>
             <swiper class="swiper" :options="swiperOption">
               <swiper-slide v-for="{ name, role, link, id } in members" :key="id">
                 <div class="modal-container-text text-scroll">
@@ -636,6 +637,7 @@ footer {
   }
   .modal-container {
     display: flex;
+    position: relative;
     width: 1000px;
     margin: 0px auto;
     background-color: #fff;
@@ -657,6 +659,19 @@ footer {
       100% 80px,
       calc(100% - 80px) 0
     );
+    .close {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 0px;
+      right: g0px;
+      background-image: url(../../static/icons/x.svg);
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      z-index: 10;
+    }
     .text-scroll {
       max-height: 500px;
       overflow: scroll;
@@ -721,7 +736,7 @@ footer {
           background-color: #e9e9e9;
           span {
             padding-left: 40px;
-            /*background-image: url(../images/arrow-left.svg);*/
+            background-image: url(../../static/icons/arrow-left.svg);
             background-position: left center;
           }
         }
@@ -731,7 +746,7 @@ footer {
           text-align: right;
           span {
             padding-right: 40px;
-            /*background-image: url(../images/arrow-right.svg);*/
+            background-image: url(../../static/icons/arrow-right.svg);
             background-position: right center;
           }
         }
