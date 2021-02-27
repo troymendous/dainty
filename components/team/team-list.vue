@@ -3,42 +3,30 @@
     <div v-if="members" class="wrapper">
       <div class="container section1 slide-in">
         <team-member
-          :height="`450px`"
-          :member="members[0]"
-          @memberClicked="showMember"
-        ></team-member>
-        <team-member :height="`305px`" :member="members[1]" @memberClicked="showMember">
-        </team-member>
-        <team-member
-          :height="`255px`"
-          :member="members[2]"
+          v-for="i in [0, 1, 2]"
+          :key="i"
+          :height="heights[i]"
+          :member="members[i]"
           @memberClicked="showMember"
         ></team-member>
       </div>
       <div class="container section2">
         <team-member
-          :height="`255px`"
-          :member="members[3]"
-          @memberClicked="showMember"
-        ></team-member>
-        <team-member
-          :height="`374px`"
-          :member="members[4]"
+          v-for="i in [3, 4]"
+          :key="i"
+          :height="heights[i]"
+          :member="members[i]"
           @memberClicked="showMember"
         ></team-member>
       </div>
       <div class="container section3">
-        <team-member :height="`305px`" :member="members[1]"></team-member>
-        <team-member :height="`450px`" :member="members[1]"></team-member>
-        <team-member :height="`305px`" :member="members[1]"></team-member>
-        <team-member :height="`374px`" :member="members[1]"></team-member>
-        <team-member :height="`305px`" :member="members[1]"></team-member>
-        <team-member :height="`346px`" :member="members[1]"></team-member>
-        <team-member :height="`255px`" :member="members[1]"></team-member>
-        <team-member :height="`305px`" :member="members[1]"></team-member>
-        <team-member :height="`450px`" :member="members[1]"></team-member>
-        <team-member :height="`305px`" :member="members[1]"></team-member>
-        <team-member :height="`374px`" :member="members[1]"></team-member>
+        <team-member
+          v-for="i in [5, 6, 6, 8, 9, 10, 11, 12, 13, 14, 15]"
+          :key="i"
+          :height="heights[i]"
+          :member="members[i]"
+          @memberClicked="showMember"
+        ></team-member>
       </div>
     </div>
     <div v-if="modalActive" class="team-modal">
@@ -72,6 +60,24 @@ export default {
   data() {
     return {
       members: json,
+      heights: [
+        "450px",
+        "305px",
+        "255px",
+        "255px",
+        "374px",
+        "305px",
+        "450px",
+        "305px",
+        "374px",
+        "305px",
+        "346px",
+        "255px",
+        "305px",
+        "450px",
+        "305px",
+        "374px",
+      ],
       slideInElements: [],
       modalActive: false,
       memberSelected: null,
@@ -350,10 +356,6 @@ footer {
   }
   .section3 {
     position: relative;
-    height: 1994px;
-    @screen md {
-      height: auto;
-    }
     .box {
       top: 0;
       &.column1 {
