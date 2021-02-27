@@ -34,12 +34,29 @@
         <div class="modal-wrapper">
           <div class="modal-container" @click.stop>
             <swiper class="swiper" :options="swiperOption">
-              <swiper-slide v-for="{ name, img, id } in members" :key="id">
+              <swiper-slide v-for="{ name, role, id } in members" :key="id">
                 <div class="features-carousel-wrapper">
-                  <img :src="img" />
-                  <h5>{{ id }}</h5>
-                  <p>{{ name }}</p>
+                  <h4>{{ name }}</h4>
+                  <h5>{{ role }}</h5>
+                  <p>
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum."
+                  </p>
                 </div>
+              </swiper-slide>
+            </swiper>
+            <swiper class="swiper" :options="swiperOption">
+              <swiper-slide v-for="{ img, id } in members" :key="id">
+                <div
+                  class="features-carousel-wrapper modal-container_img"
+                  :style="`
+                    background-image: url('${img}');
+                  `"
+                ></div>
               </swiper-slide>
               <div slot="button-prev" class="swiper-button-prev"></div>
               <div slot="button-next" class="swiper-button-next"></div>
@@ -87,6 +104,7 @@ export default {
           prevEl: ".swiper-button-prev",
         },
         initialSlide: 0,
+        width: 500,
       },
     }
   },
@@ -578,21 +596,23 @@ footer {
     display: table;
     transition: opacity 0.3s ease;
   }
-
   .modal-wrapper {
     display: table-cell;
     vertical-align: middle;
   }
-
   .modal-container {
-    width: 300px;
+    display: flex;
+    width: 1000px;
     margin: 0px auto;
-    padding: 20px 30px;
     background-color: #fff;
-    border-radius: 2px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
     transition: all 0.3s ease;
-    font-family: Helvetica, Arial, sans-serif;
+    .modal-container_img {
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 500px;
+      background-size: auto 100%;
+    }
   }
 }
 </style>
