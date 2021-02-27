@@ -7,12 +7,25 @@
           :member="members[0]"
           @memberClicked="toggleModal"
         ></team-member>
-        <team-member :height="`305px`" :member="members[1]"> </team-member>
-        <team-member :height="`255px`" :member="members[1]"></team-member>
+        <team-member :height="`305px`" :member="members[1]" @memberClicked="toggleModal">
+        </team-member>
+        <team-member
+          :height="`255px`"
+          :member="members[2]"
+          @memberClicked="toggleModal"
+        ></team-member>
       </div>
       <div class="container section2">
-        <team-member :height="`255px`" :member="members[1]"></team-member>
-        <team-member :height="`374px`" :member="members[1]"></team-member>
+        <team-member
+          :height="`255px`"
+          :member="members[3]"
+          @memberClicked="toggleModal"
+        ></team-member>
+        <team-member
+          :height="`374px`"
+          :member="members[4]"
+          @memberClicked="toggleModal"
+        ></team-member>
       </div>
       <div class="container section3">
         <team-member :height="`305px`" :member="members[1]"></team-member>
@@ -28,43 +41,41 @@
         <team-member :height="`374px`" :member="members[1]"></team-member>
       </div>
     </div>
-    <div v-if="modalActive" class="team-modal">// TODO a modal should be here</div>
+    <div v-if="modalActive" class="team-modal">
+      <swiper class="swiper" :options="swiperOption">
+        <swiper-slide v-for="{ name, img, id } in members" :key="id">
+          <div class="features-carousel-wrapper">
+            <img :src="img" />
+            <h5>{{ id }}</h5>
+            <p>{{ name }}</p>
+          </div>
+        </swiper-slide>
+        <div slot="button-prev" class="swiper-button-prev"></div>
+        <div slot="button-next" class="swiper-button-next"></div>
+      </swiper>
+    </div>
   </div>
 </template>
 
 <script>
+import json from "../../content/team-members"
 import TeamMember from "./team-member"
 export default {
   name: "TeamList",
   components: { TeamMember },
   data() {
     return {
-      members: [
-        {
-          id: 0,
-          name: "Nathan Hookway",
-          link: "https://www.linkedin.com/in/webdesignnewcastle/",
-          img: "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
-          role: "General Manager",
-        },
-        {
-          id: 1,
-          name: "Nathan Hookway",
-          link: "https://www.linkedin.com/in/webdesignnewcastle/",
-          img: "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
-          role: "General Manager",
-        },
-        {
-          id: 2,
-          name: "Nathan Hookway",
-          link: "https://www.linkedin.com/in/webdesignnewcastle/",
-          img: "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
-          role: "General Manager",
-        },
-      ],
+      members: json,
       slideInElements: [],
       modalActive: false,
       memberSelected: null,
+      swiperOption: {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        initialSlide: 0,
+      },
     }
   },
   mounted() {
@@ -93,6 +104,7 @@ export default {
       return elemTop < window.innerHeight && elemBottom >= 0
     },
     toggleModal(member) {
+      this.swiperOption.initialSlide = member.id
       this.memberSelected = member
       this.modalActive = !this.modalActive
     },
