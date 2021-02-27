@@ -5,26 +5,26 @@
         <team-member
           :height="`450px`"
           :member="members[0]"
-          @memberClicked="toggleModal"
+          @memberClicked="showMember"
         ></team-member>
-        <team-member :height="`305px`" :member="members[1]" @memberClicked="toggleModal">
+        <team-member :height="`305px`" :member="members[1]" @memberClicked="showMember">
         </team-member>
         <team-member
           :height="`255px`"
           :member="members[2]"
-          @memberClicked="toggleModal"
+          @memberClicked="showMember"
         ></team-member>
       </div>
       <div class="container section2">
         <team-member
           :height="`255px`"
           :member="members[3]"
-          @memberClicked="toggleModal"
+          @memberClicked="showMember"
         ></team-member>
         <team-member
           :height="`374px`"
           :member="members[4]"
-          @memberClicked="toggleModal"
+          @memberClicked="showMember"
         ></team-member>
       </div>
       <div class="container section3">
@@ -42,17 +42,23 @@
       </div>
     </div>
     <div v-if="modalActive" class="team-modal">
-      <swiper class="swiper" :options="swiperOption">
-        <swiper-slide v-for="{ name, img, id } in members" :key="id">
-          <div class="features-carousel-wrapper">
-            <img :src="img" />
-            <h5>{{ id }}</h5>
-            <p>{{ name }}</p>
+      <div class="modal-mask" @click="toggleModal">
+        <div class="modal-wrapper">
+          <div class="modal-container" @click.stop>
+            <swiper class="swiper" :options="swiperOption">
+              <swiper-slide v-for="{ name, img, id } in members" :key="id">
+                <div class="features-carousel-wrapper">
+                  <img :src="img" />
+                  <h5>{{ id }}</h5>
+                  <p>{{ name }}</p>
+                </div>
+              </swiper-slide>
+              <div slot="button-prev" class="swiper-button-prev"></div>
+              <div slot="button-next" class="swiper-button-next"></div>
+            </swiper>
           </div>
-        </swiper-slide>
-        <div slot="button-prev" class="swiper-button-prev"></div>
-        <div slot="button-next" class="swiper-button-next"></div>
-      </swiper>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -103,9 +109,12 @@ export default {
       const elemBottom = rect.bottom
       return elemTop < window.innerHeight && elemBottom >= 0
     },
-    toggleModal(member) {
+    showMember(member) {
       this.swiperOption.initialSlide = member.id
       this.memberSelected = member
+      this.toggleModal()
+    },
+    toggleModal() {
       this.modalActive = !this.modalActive
     },
   },
@@ -555,6 +564,33 @@ footer {
         }
       }
     }
+  }
+  .modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: table;
+    transition: opacity 0.3s ease;
+  }
+
+  .modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .modal-container {
+    width: 300px;
+    margin: 0px auto;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+    transition: all 0.3s ease;
+    font-family: Helvetica, Arial, sans-serif;
   }
 }
 </style>
