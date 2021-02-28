@@ -1,3 +1,11 @@
+const dynamicRoutes = async () => {
+  const pricingSlugRoutes = ["core", "plus", "enterprise"]
+
+  return new Promise((resolve) => {
+    resolve(pricingSlugRoutes.map((slug) => `pricing/${slug}`))
+  })
+}
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
@@ -50,8 +58,9 @@ export default {
     middleware: "menu",
   },
 
-  // Client Only - Environmental Variables
-  privateRuntimeConfig: {
-    stripePublishableKey: process.env.STRIPE_PK,
+  // Register Pricing slug routes in the nuxt generate command
+
+  generate: {
+    routes: dynamicRoutes,
   },
 }

@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import PricingCards from "../components/home/pricing-cards.vue"
-import PricingTable from "../components/pricing-table.vue"
-import Testimomials from "../components/testimomials.vue"
+import PricingCards from "../../components/home/pricing-cards.vue"
+import PricingTable from "../../components/pricing-table.vue"
+import Testimomials from "../../components/testimomials.vue"
 
 export default {
   components: {

@@ -46,7 +46,7 @@
             <cross-icon v-else />
             <span>{{ type }}</span>
           </p>
-          <nuxt-link to="/">Select Plan</nuxt-link>
+          <nuxt-link :to="`/pricing/${plan}`">Select Plan</nuxt-link>
         </div>
       </div>
     </div>
