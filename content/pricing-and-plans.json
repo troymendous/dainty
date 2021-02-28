@@ -1,8 +1,10 @@
 [
   {
     "plan": "core",
-    "monthlyPrice": 20,
-    "annualPrice": 200,
+    "monthlyPrice": 5,
+    "annualPrice": 555,
+    "monthlyPriceId": "price_1IPLXICD5ZUxyIJE0taqatlw",
+    "annualPriceId": "price_1IPLXICD5ZUxyIJEBBqGaw5G",
     "headliner": " Reporting, automation, and integrations for support teams",
     "services": [
       { "type": "3 Mailboxes, 1 Docs site ", "isOffered": true, "serviceId": "1" },
@@ -14,9 +16,11 @@
     "slug": "core-plan"
   },
   {
-    "plan": "plus",
-    "monthlyPrice": 30,
-    "annualPrice": 300,
+    "plan": "pro",
+    "monthlyPrice": 7.99,
+    "annualPrice": 680,
+    "monthlyPriceId": "price_1IPnKPCD5ZUxyIJEaAGVMhtU",
+    "annualPriceId": "price_1IPnKPCD5ZUxyIJEvlkrOdxL",
     "headliner": "Advanced features and reporting for teams at scale",
     "services": [
       { "type": "3 Mailboxes, 1 Docs site", "isOffered": true, "serviceId": "100" },
@@ -30,8 +34,10 @@
   },
   {
     "plan": "enterprise",
-    "monthlyPrice": 50,
-    "annualPrice": 550,
+    "monthlyPrice": 7.5,
+    "annualPrice": 700,
+    "monthlyPriceId": "price_1IPnLcCD5ZUxyIJEmGBQ9X9I",
+    "annualPriceId": "price_1IPnLcCD5ZUxyIJETYvNfXtF",
     "headliner": "Reporting, automation, and integrations for support teams",
     "services": [
       { "type": "3 Mailboxes, 1 Docs site", "isOffered": true, "serviceId": "10" },
