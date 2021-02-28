@@ -1,7 +1,6 @@
 <template>
   <div>
     <pricing-cards />
-    <button @click="checkout">Buy Now!</button>
     <testimomials />
     <pricing-table />
   </div>
