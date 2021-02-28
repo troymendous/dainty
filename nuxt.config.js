@@ -14,6 +14,7 @@ export default {
       { hid: "description", name: "description", content: "" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    script: [{ hid: "stripe", src: "https://js.stripe.com/v3/", defer: true }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -35,6 +36,7 @@ export default {
     // https://go.nuxtjs.dev/eslint
     "@nuxtjs/eslint-module",
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/dotenv",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -46,5 +48,10 @@ export default {
   // Router Middleware
   router: {
     middleware: "menu",
+  },
+
+  // Client Only - Environmental Variables
+  privateRuntimeConfig: {
+    stripePublishableKey: process.env.STRIPE_PK,
   },
 }
