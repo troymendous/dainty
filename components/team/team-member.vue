@@ -2,13 +2,16 @@
   <div
     class="box"
     :style="`
-      background-image: url('${member.img}');
+      background-image: url(${member.img});
       background-repeat: no-repeat;
       height: ${height};
     `"
     @click="$emit('memberClicked', member)"
   >
-    <img :src="member.img" style="visibility: hidden; height: 100%; width: 100%" />
+    <img
+      src="../../static/team/members/troy.jpg"
+      style="visibility: hidden; height: 100%; width: 100%"
+    />
     <div class="text">
       <div class="container padding">
         <div class="name">{{ member.name }}</div>

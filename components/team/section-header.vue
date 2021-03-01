@@ -6,13 +6,7 @@
           <h1>Team</h1>
         </div>
       </div>
-      <div
-        :style="`
-      background-image: url(https://zimple.digital/storage/app/webp/team-rs.webp);
-      height: 100%;
-    `"
-        class="section-header_background"
-      ></div>
+      <div class="section-header_background"></div>
       <div class="fade"></div>
     </section>
   </div>
@@ -59,6 +53,7 @@ export default {
   }
 }
 .section-header_background {
+  background-image: url("../../static/team/team-rs.webp");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;

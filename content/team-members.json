@@ -1,51 +1,51 @@
 [
   {
     "id": 0,
-    "name": "Nathan Hookway 1",
+    "name": "Troy",
     "link": "https://www.linkedin.com/in/webdesignnewcastle/",
-    "img": "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
+    "img": "/team/members/troy.jpg",
     "role": "General Manager"
   },
   {
     "id": 1,
-    "name": "Nathan Hookway 2",
+    "name": "Nicolas",
     "link": "https://www.linkedin.com/in/webdesignnewcastle/",
-    "img": "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
+    "img": "/team/members/nicolas.jpg",
     "role": "General Manager"
   },
   {
     "id": 2,
-    "name": "Nathan Hookway 3",
+    "name": "John",
     "link": "https://www.linkedin.com/in/webdesignnewcastle/",
-    "img": "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
+    "img": "/team/members/john.png",
     "role": "General Manager"
   },
   {
     "id": 3,
-    "name": "Nathan Hookway 4",
+    "name": "Reka",
     "link": "https://www.linkedin.com/in/webdesignnewcastle/",
-    "img": "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
+    "img": "/team/members/reka.png",
     "role": "General Manager"
   },
   {
     "id": 4,
-    "name": "Nathan Hookway 5",
+    "name": "Kevin",
     "link": "https://www.linkedin.com/in/webdesignnewcastle/",
-    "img": "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
+    "img": "/team/members/kevin.jpg",
     "role": "General Manager"
   },
   {
     "id": 5,
-    "name": "Nathan Hookway 6",
+    "name": "Valeria",
     "link": "https://www.linkedin.com/in/webdesignnewcastle/",
-    "img": "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
+    "img": "/team/members/valeria.jpg",
     "role": "General Manager"
   },
   {
     "id": 6,
-    "name": "Nathan Hookway 7",
+    "name": "Jacqueline",
     "link": "https://www.linkedin.com/in/webdesignnewcastle/",
-    "img": "https://zimple.digital/storage/app/media/Nathan%20Hookway.jpg",
+    "img": "/team/members/jacqueline.jpg",
     "role": "General Manager"
   },
   {
