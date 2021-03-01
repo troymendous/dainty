@@ -29,9 +29,6 @@
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
             deserunt mollit anim id est laborum."
           </p>
-          <nuxt-link to="/about">
-            <div class="modal-container_read">Read About Us</div>
-          </nuxt-link>
         </div>
       </swiper-slide>
     </swiper>
@@ -42,20 +39,22 @@
           :style="`
                     background-image: url('${img}');
                   `"
-        >
-          <div class="container nav">
-            <div slot="button-prev" class="item modal-button-prev">
-              <div class="container bg"></div>
-              <span>Prev</span>
-            </div>
-            <div slot="button-next" class="item modal-button-next">
-              <div class="container bg"></div>
-              <span>Next</span>
-            </div>
-          </div>
-        </div>
+        ></div>
       </swiper-slide>
     </swiper>
+    <nuxt-link class="modal-link_read" to="/about">
+      <div class="modal-container_read">Read About Us</div>
+    </nuxt-link>
+    <div class="container nav">
+      <div slot="button-prev" class="item modal-button-prev">
+        <div class="container bg"></div>
+        <span>Prev</span>
+      </div>
+      <div slot="button-next" class="item modal-button-next">
+        <div class="container bg"></div>
+        <span>Next</span>
+      </div>
+    </div>
   </div>
 </template>
 

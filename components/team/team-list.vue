@@ -77,7 +77,6 @@ export default {
         "305px",
         "374px",
       ],
-      slideInElements: [],
       modalActive: false,
       memberSelected: null,
       swiperOption: {
@@ -652,18 +651,21 @@ footer {
         font-weight: bold;
         margin-bottom: 30px;
       }
-      .modal-container_read {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 0 90px;
-        font-family: "sofia-pro", sans-serif;
-        font-weight: 600;
-        line-height: 60px;
-        color: #e9e9e9;
-        background-color: var(--acc-purple-color);
-      }
+    }
+    .modal-link_read {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      z-index: 999;
+    }
+    .modal-container_read {
+      padding: 0 90px;
+      font-family: "sofia-pro", sans-serif;
+      font-weight: 600;
+      line-height: 60px;
+      color: #e9e9e9;
+      background-color: var(--acc-purple-color);
     }
     .modal-container_img {
       background-repeat: no-repeat;
@@ -681,7 +683,10 @@ footer {
     }
     .nav {
       position: absolute;
+      z-index: 999;
+      width: 50%;
       bottom: 0;
+      right: 0;
       .item {
         float: left;
         line-height: 60px;
@@ -691,6 +696,9 @@ footer {
         cursor: pointer;
         font-weight: bold;
         opacity: 0.5;
+        outline: 0;
+        border: none;
+        -moz-outline-style: none;
         span {
           background-size: 20px;
           background-repeat: no-repeat;
