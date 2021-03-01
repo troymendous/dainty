@@ -16,7 +16,10 @@
         <span v-else>{{ selectedPlan[0].annualPrice }}</span>
       </div>
       <div>
-        <button @click="checkout" class="checkout-btn">Proceed to checkout</button>
+        <button @click="checkout" :disabled="isLoadingCheckout" class="checkout-btn">
+          <loader v-if="isLoadingCheckout" class="animate-spin h-5 w-10 mr-3" />
+          <span v-else>Proceed to checkout</span>
+        </button>
       </div>
       <!-- 
       <pre>
@@ -29,9 +32,10 @@
 
 <script>
 import toggle from "../../components/pricing/pre-checkout/toggle.vue"
+import loader from "../../components/loader.vue"
 
 export default {
-  components: { toggle },
+  components: { toggle, loader },
   data() {
     return {
       slug: this.$route.params.slug,
@@ -39,6 +43,7 @@ export default {
       isMonthly: false,
       successUrl: "http://localhost:3000/",
       cancelUrl: "http://localhost:3000/",
+      isLoadingCheckout: false,
     }
   },
   async fetch() {
@@ -63,6 +68,8 @@ export default {
       this.isMonthly = checked
     },
     checkout: function (event) {
+      this.isLoadingCheckout = true
+
       this.stripe
         .redirectToCheckout({
           lineItems: [
@@ -76,6 +83,8 @@ export default {
           cancelUrl: this.cancelUrl,
         })
         .then(function (result) {
+          this.isLoadingCheckout = false
+
           if (result.error) {
             const displayError = document.getElementById("error-message")
             displayError.textContent = result.error.message
@@ -98,6 +107,11 @@ export default {
 
   &:hover {
     color: var(--acc-pink-color);
+  }
+
+  &:disabled {
+    color: #d3d3d3;
+    // opacity: 0.6;
   }
 }
 </style>
