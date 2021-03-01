@@ -131,9 +131,6 @@ footer {
 }
 .team {
   padding: 40px 0;
-  @screen sm {
-    padding: 0;
-  }
   .box {
     float: left;
     overflow: hidden;
@@ -658,6 +655,9 @@ footer {
       left: 0;
       width: 50%;
       z-index: 999;
+      @screen md {
+        width: 100%;
+      }
     }
     .modal-container_read {
       padding: 0 90px;

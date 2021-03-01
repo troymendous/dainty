@@ -32,7 +32,7 @@
         voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
         cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       </p>
-      <nuxt-link to="/about">
+      <nuxt-link to="/about" class="modal-link_read">
         <div class="modal-container_read">Read About Us</div>
       </nuxt-link>
     </div>
