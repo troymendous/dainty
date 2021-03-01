@@ -32,7 +32,7 @@
     <div v-if="modalActive" class="team-modal">
       <div class="modal-mask" @click="toggleModal">
         <div class="modal-wrapper">
-          <div class="modal-wrapper-inner">
+          <div class="modal-wrapper-inner screen-lg">
             <div class="close"></div>
             <team-swiper :members="this.members" :swiper-option="swiperOption"></team-swiper>
           </div>
@@ -121,6 +121,11 @@ export default {
 </script>
 
 <style lang="scss">
+.screen-lg {
+  @screen md {
+    display: none !important;
+  }
+}
 footer {
   clear: left;
 }
