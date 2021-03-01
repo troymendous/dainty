@@ -39,49 +39,7 @@
           <div class="modal-wrapper-inner screen-sm">
             <div class="close"></div>
             <div class="modal-container" @click.stop>
-              <div
-                class="modal-container_img"
-                :style="`
-                    background-image: url('${memberSelected.img}');
-                  `"
-              ></div>
-              <div class="modal-container-text text-scroll">
-                <h4 class="modal-container_name">
-                  {{ memberSelected.name }}
-                  <a :href="memberSelected.link" target="_blank" class="linkedin">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="#322F31"
-                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                      ></path>
-                    </svg>
-                  </a>
-                </h4>
-                <h5 class="modal-container_role">{{ memberSelected.role }}</h5>
-                <h6 class="modal-container_value">VALUE TO THE ROOM</h6>
-                <p>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                  voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                  est laborum."
-                </p>
-                <nuxt-link to="/about">
-                  <div class="modal-container_read">Read About Us</div>
-                </nuxt-link>
-              </div>
+              <team-member-card :member="memberSelected"></team-member-card>
             </div>
           </div>
         </div>
@@ -94,9 +52,10 @@
 import json from "../../content/team-members"
 import TeamMember from "./team-member"
 import TeamSwiper from "./team-swiper"
+import TeamMemberCard from "./team-member-card"
 export default {
   name: "TeamList",
-  components: { TeamSwiper, TeamMember },
+  components: { TeamMemberCard, TeamSwiper, TeamMember },
   data() {
     return {
       members: json,
