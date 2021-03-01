@@ -22,7 +22,6 @@ export default {
       { hid: "description", name: "description", content: "" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    script: [{ hid: "stripe", src: "https://js.stripe.com/v3/", defer: true }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

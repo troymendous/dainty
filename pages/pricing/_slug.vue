@@ -15,7 +15,8 @@
         <span v-if="isMonthly">{{ selectedPlan[0].monthlyPrice }}</span>
         <span v-else>{{ selectedPlan[0].annualPrice }}</span>
       </div>
-      <div>
+      <div v-if="isStripeLoaded">
+        <div id="error-message">Test Error</div>
         <button @click="checkout" :disabled="isLoadingCheckout" class="checkout-btn">
           <loader v-if="isLoadingCheckout" class="animate-spin h-5 w-10 mr-3" />
           <span v-else>Proceed to checkout</span>
@@ -44,15 +45,27 @@ export default {
       successUrl: "http://localhost:3000/",
       cancelUrl: "http://localhost:3000/",
       isLoadingCheckout: false,
+      isStripeLoaded: false,
+    }
+  },
+  head() {
+    return {
+      script: [
+        {
+          hid: "stripe",
+          src: "https://js.stripe.com/v3/",
+          defer: true,
+          callback: () => {
+            this.isStripeLoaded = true
+          },
+        },
+      ],
     }
   },
   async fetch() {
     this.selectedPlan = await this.$content("pricing-and-plans")
       .where({ plan: `${this.slug}` })
       .fetch()
-  },
-  mounted() {
-    this.stripe = Stripe(process.env.stripePublishableKey)
   },
   computed: {
     priceId: function () {
@@ -68,6 +81,8 @@ export default {
       this.isMonthly = checked
     },
     checkout: function (event) {
+      this.stripe = Stripe(process.env.stripePublishableKey)
+
       this.isLoadingCheckout = true
 
       this.stripe
