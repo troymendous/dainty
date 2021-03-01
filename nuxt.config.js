@@ -59,8 +59,11 @@ export default {
   },
 
   // Register Pricing slug routes in the nuxt generate command
-
   generate: {
     routes: dynamicRoutes,
+  },
+
+  env: {
+    stripePublishableKey: process.env.STRIPE_PK,
   },
 }

@@ -47,7 +47,7 @@ export default {
       .fetch()
   },
   mounted() {
-    this.stripe = Stripe(process.env.STRIPE_PK)
+    this.stripe = Stripe(process.env.stripePublishableKey)
   },
   computed: {
     priceId: function () {
