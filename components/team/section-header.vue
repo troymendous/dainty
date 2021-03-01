@@ -2,7 +2,7 @@
   <div>
     <section>
       <div class="section-header">
-        <div class="section-header_title slide-in">
+        <div class="section-header_title">
           <h1>Team</h1>
         </div>
       </div>
@@ -54,7 +54,8 @@ export default {
 
   @screen sm {
     padding-top: 3rem;
-    min-height: 400px;
+    margin: 0;
+    min-height: 300px;
   }
 }
 .section-header_background {

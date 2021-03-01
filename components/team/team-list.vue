@@ -1,7 +1,7 @@
 <template>
   <div id="team" class="container team">
     <div v-if="members" class="wrapper">
-      <div class="container section1 slide-in">
+      <div class="container section1">
         <team-member
           v-for="i in [0, 1, 2]"
           :key="i"
@@ -91,29 +91,16 @@ export default {
     }
   },
   mounted() {
-    this.slideInElements = Array.from(document.getElementsByClassName("slide-in"))
-    document.addEventListener("scroll", this.handleScroll)
-    this.handleScroll()
-  },
-  beforeDestroy() {
-    document.removeEventListener("scroll", this.handleScroll)
+    // this.animate()
   },
   methods: {
-    handleScroll(evt) {
-      for (let i = 0; i < this.slideInElements.length; i++) {
-        const elem = this.slideInElements[i]
-        if (this.isElemVisible(elem)) {
-          elem.style.opacity = "1"
-          elem.style.transform = "scale(1)"
-          this.slideInElements.splice(i, 1)
-        }
+    animate() {
+      const slideInElements = Array.from(document.getElementsByClassName("slide-in"))
+      for (let i = 0; i < slideInElements.length; i++) {
+        const elem = slideInElements[i]
+        elem.style.opacity = "1"
+        elem.style.transform = "scale(1)"
       }
-    },
-    isElemVisible(el) {
-      const rect = el.getBoundingClientRect()
-      const elemTop = rect.top + 200
-      const elemBottom = rect.bottom
-      return elemTop < window.innerHeight && elemBottom >= 0
     },
     showMember(member) {
       this.swiperOption.initialSlide = member.id
@@ -156,6 +143,9 @@ footer {
 }
 .team {
   padding: 40px 0;
+  @screen sm {
+    padding: 0;
+  }
   .box {
     float: left;
     overflow: hidden;

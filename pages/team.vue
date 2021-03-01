@@ -16,10 +16,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.slide-in {
-  opacity: 0;
-  transition: 0.3s all ease-out;
-  transform: translateY(100px);
-}
-</style>
+<style lang="scss"></style>
