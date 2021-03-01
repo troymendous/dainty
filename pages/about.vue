@@ -1,10 +1,14 @@
 <template>
-  <div>This is an about page</div>
+  <div>
+    <about-header></about-header>
+  </div>
 </template>
 
 <script>
+import AboutHeader from "../components/about/about-header"
 export default {
   name: "About",
+  components: { AboutHeader },
 }
 </script>
 
