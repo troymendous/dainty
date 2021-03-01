@@ -21,7 +21,7 @@
       </div>
       <div class="container section3">
         <team-member
-          v-for="i in [5, 6, 6, 8, 9, 10, 11, 12, 13, 14, 15]"
+          v-for="i in [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]"
           :key="i"
           :height="heights[i]"
           :member="members[i]"
@@ -90,18 +90,7 @@ export default {
       },
     }
   },
-  mounted() {
-    // this.animate()
-  },
   methods: {
-    animate() {
-      const slideInElements = Array.from(document.getElementsByClassName("slide-in"))
-      for (let i = 0; i < slideInElements.length; i++) {
-        const elem = slideInElements[i]
-        elem.style.opacity = "1"
-        elem.style.transform = "scale(1)"
-      }
-    },
     showMember(member) {
       this.swiperOption.initialSlide = member.id
       this.memberSelected = member
