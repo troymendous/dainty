@@ -14,7 +14,7 @@
                 <nuxt-link to="/">Pricing</nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/">Team</nuxt-link>
+                <nuxt-link to="/team">Team</nuxt-link>
               </li>
               <li>
                 <nuxt-link to="/">Web Development</nuxt-link>
