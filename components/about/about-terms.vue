@@ -17,9 +17,9 @@
           <collapse-button></collapse-button>
         </div>
         <div class="collapsible-content">
-          When you join Pebbled, you're not paying for a product, a logo, a website mockup, a
-          certain design, or a particular piece of stationery. You're paying for the use of our team
-          who will provide digital products to you.
+          When you join Dainty, you're not paying for a product, a logo, a website mockup, a certain
+          design, or a particular piece of stationery. You're paying for the use of our team who
+          will provide digital products to you.
           <br /><br />
           However, design is incredibly subjective.
           <br /><br />
@@ -59,7 +59,7 @@
             <br /><br />
             Cancellations cannot be for a future date.
             <br /><br />
-            When a subscription has been canceled, any service provided by Pebbled will be
+            When a subscription has been canceled, any service provided by Dainty will be
             immediately suspended and/or canceled until the subscription has been renewed. This is
             inclusive of any pending jobs, tasks, revisions, hosting and support.
           </div>
@@ -334,7 +334,7 @@
         <div class="collapsible-content">
           <div class="about-list_header"></div>
           <div class="about-list_description">
-            At Pebbled, we take privacy and security very seriously, so much so that it's even an
+            At Dainty, we take privacy and security very seriously, so much so that it's even an
             internal procedure between staff. We need to, and are legally obligated to not make this
             a joking matter. <br /><br />
             So, here is our privacy agreement is below! 🙂
@@ -381,14 +381,14 @@
             Any agreement we feel strays outside of the normal privacy agreement will need to be
             adjusted prior to signing.
             <br /><br />
-            We authorize our Creative Directors at Pebbled permission to sign these documents on the
+            We authorize our Creative Directors at Dainty permission to sign these documents on the
             company's behalf once it's been reviewed by our privacy culture team.
             <br /><br />
             And hold no responsibility for anything once it's in the public domain.
           </div>
           <div class="about-list_header">Marketing and re-targeting</div>
           <div class="about-list_description">
-            That by visiting pebbled.io third party advertises may place cookies on users’ browsers
+            That by visiting dainty.io third party advertises may place cookies on users’ browsers
             for targeted advertising purposes. <br /><br />
             IP addresses, cookie identifiers, website activity will be collected for targeted
             advertising.

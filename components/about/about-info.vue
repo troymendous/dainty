@@ -7,8 +7,8 @@
       <li>
         <div class="about-list_header">An open way of looking at things</div>
         <div class="about-list_description">
-          Pebbled thinks about design and web design mockups a little differently. We don’t think
-          you should have to chase a gaggle of different freelancers or pay a truckload of money for
+          Dainty thinks about design and web design mockups a little differently. We don’t think you
+          should have to chase a gaggle of different freelancers or pay a truckload of money for
           sexy designs. So we’ve wedged ourselves somewhere in the middle. Into the sweet spot!
           <br />
           <br />
@@ -19,14 +19,14 @@
         </div>
       </li>
       <li>
-        <div class="about-list_header">We hear you ask “So how can Pebbled help me?”</div>
+        <div class="about-list_header">We hear you ask “So how can Dainty help me?”</div>
         <div class="about-list_description">
           We know what we do best. We keep our subscription prices low by making sure our team can
           deliver the the most bang for your buck. How do we do it? We have specially crafted our
           <a href="/donts">do's and don’ts list</a>, and built a team to match, ensuring we can
           offer the most essential services you’d need for your project or business. Websites
           mockups, web and print designs, that’s our jam. Wanna see? Mmmm…
-          <a href="/portfolio">Pebbled flavoured jam.</a>
+          <a href="/portfolio">Dainty flavoured jam.</a>
         </div>
       </li>
       <li>
