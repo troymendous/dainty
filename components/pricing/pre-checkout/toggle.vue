@@ -29,12 +29,9 @@ export default {
 
 <style lang="scss" scoped>
 .toggle-checkbox:checked {
-  @apply right-0 border-green-400;
+  @apply right-0;
+  border-color: var(--dark-color);
+  @apply bg-darkColor;
   right: 0;
-  border-color: #68d391;
-}
-.toggle-checkbox:checked {
-  @apply bg-green-400;
-  background-color: #68d391;
 }
 </style>

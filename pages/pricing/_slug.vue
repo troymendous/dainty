@@ -1,42 +1,76 @@
 <template>
-  <div class="pre-checkout">
-    <div v-if="selectedPlan">
-      <div>
-        <span>Plan</span>
-        <span>{{ selectedPlan[0].plan }}</span>
+  <div class="pre-checkout-wrapper">
+    <div v-if="selectedPlan" class="pre-checkout">
+      <button @click="goToPricingPage" class="back-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke=" #5b39c9"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-arrow-left"
+        >
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </button>
+
+      <div class="pre-checkout-field">
+        <span class="heading">Plan</span>
+        <span class="text">{{ selectedPlan[0].plan }}</span>
       </div>
-      <div>
-        <span>Billing Cycle</span>
-        <span>Yearly</span>
+
+      <div class="pre-checkout-field">
+        <span class="heading">Billing Cycle</span>
+        <label>Yearly</label>
         <toggle @change="toggleBillingCycle" />
-        <span>Monthly</span>
+        <label>Monthly</label>
+        <subscription-price
+          :annualPrice="selectedPlan[0].annualPrice"
+          :monthlyPrice="selectedPlan[0].monthlyPrice"
+          :isMonthly="isMonthly"
+        />
       </div>
-      <div>
-        <span v-if="isMonthly">{{ selectedPlan[0].monthlyPrice }}</span>
-        <span v-else>{{ selectedPlan[0].annualPrice }}</span>
+
+      <div class="services">
+        <p
+          v-for="{ type, isOffered, serviceId } in selectedPlan[0].services"
+          v-bind:key="serviceId"
+        >
+          <check-icon v-if="isOffered" />
+          <cross-icon v-else />
+          <span>{{ type }}</span>
+        </p>
       </div>
+
       <div v-if="isStripeLoaded">
-        <div id="error-message">Test Error</div>
-        <button @click="checkout" :disabled="isLoadingCheckout" class="checkout-btn">
-          <loader v-if="isLoadingCheckout" class="animate-spin h-5 w-10 mr-3" />
-          <span v-else>Proceed to checkout</span>
-        </button>
+        <div id="error-message"></div>
+        <div class="checkout-btn-wrapper">
+          <button :disabled="isLoadingCheckout" class="checkout-btn" @click="checkout">
+            <div class="checkout-btn-inner">
+              <loader v-if="isLoadingCheckout" class="animate-spin h-5 w-10 mr-3" />
+              <span>Proceed to checkout</span>
+            </div>
+          </button>
+        </div>
       </div>
-      <!-- 
-      <pre>
-      {{ selectedPlan[0] }}
-    </pre -->
     </div>
-    <p v-else>Loading</p>
+    <loader v-else />
   </div>
 </template>
 
 <script>
 import toggle from "../../components/pricing/pre-checkout/toggle.vue"
 import loader from "../../components/loader.vue"
+import SubscriptionPrice from "../../components/pricing/subscription-price.vue"
 
 export default {
-  components: { toggle, loader },
+  layout: "stripe-checkout-layout",
+  components: { toggle, loader, SubscriptionPrice },
   data() {
     return {
       slug: this.$route.params.slug,
@@ -47,6 +81,11 @@ export default {
       isLoadingCheckout: false,
       isStripeLoaded: false,
     }
+  },
+  async fetch() {
+    this.selectedPlan = await this.$content("pricing-and-plans")
+      .where({ plan: `${this.slug}` })
+      .fetch()
   },
   head() {
     return {
@@ -62,13 +101,8 @@ export default {
       ],
     }
   },
-  async fetch() {
-    this.selectedPlan = await this.$content("pricing-and-plans")
-      .where({ plan: `${this.slug}` })
-      .fetch()
-  },
   computed: {
-    priceId: function () {
+    priceId() {
       if (this.isMonthly) {
         return this.selectedPlan[0].monthlyPriceId
       } else {
@@ -76,16 +110,28 @@ export default {
       }
     },
   },
+  watch: {
+    $route(to, from) {
+      this.isLoadingCheckout = false
+    },
+  },
   methods: {
     toggleBillingCycle(checked) {
       this.isMonthly = checked
     },
-    checkout: function (event) {
-      this.stripe = Stripe(process.env.stripePublishableKey)
+    checkout(event) {
+      /*
+       * The logic below is only executed when the Stripe script has been fully loaded
+       * When this page is mounted Stripe does not exist, when in dev mode eslint picks up that issue and kills the server
+       * So we disable the eslint-no-undef rule to prevent constantly restarting the server
+       */
+
+      /* eslint-disable-next-line */
+      const stripe = Stripe(process.env.stripePublishableKey)
 
       this.isLoadingCheckout = true
 
-      this.stripe
+      stripe
         .redirectToCheckout({
           lineItems: [
             {
@@ -98,13 +144,15 @@ export default {
           cancelUrl: this.cancelUrl,
         })
         .then(function (result) {
-          this.isLoadingCheckout = false
-
+          // TODO Logic to handle custom errors
           if (result.error) {
             const displayError = document.getElementById("error-message")
             displayError.textContent = result.error.message
           }
         })
+    },
+    goToPricingPage() {
+      this.$router.go(-1)
     },
   },
 }
@@ -112,21 +160,83 @@ export default {
 
 <style lang="scss" scoped>
 .pre-checkout {
-  margin-top: 6rem;
+  margin: 2rem 0 6rem;
+
+  .services {
+    margin-bottom: 2.5rem;
+
+    p {
+      display: flex;
+      align-items: center;
+    }
+  }
 }
 
 .checkout-btn {
   width: 300px;
   height: 60px;
-  border: 1px solid var(--dark-color);
+  @apply text-accentPurple;
+  border: 2px solid var(--acc-purple-color);
+  border-radius: 8px;
 
   &:hover {
-    color: var(--acc-pink-color);
+    background: var(--acc-purple-color);
+    color: #fff;
   }
 
   &:disabled {
-    color: #d3d3d3;
-    // opacity: 0.6;
+    opacity: 0.2;
+  }
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      display: block;
+    }
+  }
+}
+
+.back-btn {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+
+  &:hover {
+    @apply animate-bounce;
+  }
+}
+
+.pre-checkout-field {
+  margin-bottom: 1.5rem;
+
+  > span {
+    display: block;
+  }
+
+  .heading {
+    @apply text-darkColor;
+    font-weight: 500;
+  }
+
+  .text {
+    text-transform: capitalize;
+  }
+
+  .pricing {
+    position: relative;
+
+    span:nth-child(1) {
+      // position: absolute;
+      top: 0;
+      font-size: 10px;
+    }
   }
 }
 </style>

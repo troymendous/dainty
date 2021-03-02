@@ -33,11 +33,12 @@
           class="pricing-plans_content-item"
         >
           <h4>{{ plan }}</h4>
-          <div class="pricing-plans_content-item-price">
-            <span>$</span>
-            <span v-if="isMonthly">{{ monthlyPrice }}</span>
-            <span v-else>{{ annualPrice }}</span>
-          </div>
+          <subscription-price
+            :isMonthly="isMonthly"
+            :annualPrice="annualPrice"
+            :monthlyPrice="monthlyPrice"
+          />
+
           <p class="pricing-plans_content-item-headliner">
             {{ headliner }}
           </p>
