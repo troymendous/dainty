@@ -457,6 +457,9 @@ export default {
   font-weight: 600;
   font-size: 1.2rem;
   padding: 2rem 0;
+  @screen sm {
+    font-size: 0.95rem;
+  }
   .collapsible-button-img {
     display: inline;
     float: right;
@@ -471,6 +474,12 @@ export default {
     -ms-transition: all 0.1s linear;
     -o-transition: all 0.1s linear;
     transition: all 0.1s linear;
+    @screen sm {
+      margin-right: 0;
+      width: 20px;
+      height: 20px;
+      border: none;
+    }
   }
   .collapsible-button-img_plus {
     border-color: var(--acc-purple-color);
