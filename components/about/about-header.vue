@@ -3,7 +3,10 @@
     <section>
       <div class="about-header">
         <div class="about-header_title">
-          <h2>Who the heck are we</h2>
+          <h2>
+            Who the heck are we
+            <img class="text-img" src="/about/common_questions.png" width="50px" alt="" />
+          </h2>
         </div>
       </div>
     </section>
@@ -28,5 +31,9 @@ export default {
 }
 .about-header_title {
   margin: 0 auto;
+}
+.text-img {
+  display: inline-block;
+  vertical-align: baseline;
 }
 </style>
