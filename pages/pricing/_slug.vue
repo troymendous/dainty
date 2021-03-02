@@ -76,10 +76,11 @@ export default {
       slug: this.$route.params.slug,
       selectedPlan: null,
       isMonthly: false,
-      successUrl: `${process.env.baseUrl}/subscription/sucess`,
+      successUrl: `${process.env.baseUrl}/subscription/success`,
       cancelUrl: `${process.env.baseUrl}/subscription/cancel`,
       isLoadingCheckout: false,
       isStripeLoaded: false,
+      stripeError: "",
     }
   },
   async fetch() {
