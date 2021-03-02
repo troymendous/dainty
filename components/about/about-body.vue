@@ -3,6 +3,7 @@
     <about-info></about-info>
     <about-values></about-values>
     <about-started></about-started>
+    <about-terms></about-terms>
   </section>
 </template>
 
@@ -10,9 +11,10 @@
 import AboutInfo from "./about-info"
 import AboutValues from "./about-values"
 import AboutStarted from "./about-started"
+import AboutTerms from "./about-terms"
 export default {
   name: "AboutBody",
-  components: { AboutStarted, AboutValues, AboutInfo },
+  components: { AboutTerms, AboutStarted, AboutValues, AboutInfo },
 }
 </script>
 
