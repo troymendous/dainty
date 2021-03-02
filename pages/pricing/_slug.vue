@@ -76,8 +76,8 @@ export default {
       slug: this.$route.params.slug,
       selectedPlan: null,
       isMonthly: false,
-      successUrl: "http://localhost:3000/",
-      cancelUrl: "http://localhost:3000/",
+      successUrl: `${process.env.baseUrl}/subscription/sucess`,
+      cancelUrl: `${process.env.baseUrl}/subscription/cancel`,
       isLoadingCheckout: false,
       isStripeLoaded: false,
     }
