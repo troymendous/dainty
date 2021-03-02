@@ -139,6 +139,7 @@ footer {
     margin-top: 0;
     background-position: center;
     background-size: cover;
+    background-blend-mode: saturation;
     @screen md {
       height: 85% !important;
       width: 85% !important;
@@ -672,6 +673,7 @@ footer {
       background-position: center;
       height: 500px;
       background-size: cover;
+      background-blend-mode: saturation;
       @screen md {
         width: 400px;
         height: 300px;

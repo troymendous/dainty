@@ -53,7 +53,7 @@ export default {
   }
 }
 .section-header_background {
-  background-image: url("../../static/team/team-rs.webp");
+  background-image: url("/team/team-rs.webp");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;

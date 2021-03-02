@@ -37,7 +37,7 @@
         <div
           class="features-carousel-wrapper modal-container_img"
           :style="`
-                    background-image: url('${img}');
+                    background-image: linear-gradient(black, black), url('${img}');
                   `"
         ></div>
       </swiper-slide>

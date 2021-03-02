@@ -2,7 +2,7 @@
   <div
     class="box"
     :style="`
-      background-image: url(${member.img});
+      background-image: linear-gradient(black, black), url(${member.img});
       background-repeat: no-repeat;
       height: ${height};
     `"
