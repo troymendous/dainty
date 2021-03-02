@@ -2,15 +2,17 @@
   <section class="about-body">
     <about-info></about-info>
     <about-values></about-values>
+    <about-started></about-started>
   </section>
 </template>
 
 <script>
 import AboutInfo from "./about-info"
 import AboutValues from "./about-values"
+import AboutStarted from "./about-started"
 export default {
   name: "AboutBody",
-  components: { AboutValues, AboutInfo },
+  components: { AboutStarted, AboutValues, AboutInfo },
 }
 </script>
 
@@ -45,7 +47,7 @@ export default {
     line-height: 1.5;
   }
   .about-list_img {
-    margin: 5px 20px 0 0;
+    margin: 0 20px 0 0;
     max-width: none;
   }
 }
@@ -58,7 +60,7 @@ export default {
 .section-title {
   padding: 30px 0;
 }
-.about-body_values {
+.about-body_section {
   padding-top: 50px;
 }
 </style>

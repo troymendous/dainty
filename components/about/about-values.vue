@@ -1,5 +1,5 @@
 <template>
-  <div class="about-body_values">
+  <div class="about-body_section">
     <div class="section-title">
       <h2>Core Values</h2>
     </div>
@@ -17,7 +17,7 @@
             alt="value icon"
           />
         </div>
-        <div class="info-text">
+        <div>
           <div class="about-list_header">Add value</div>
           <div class="about-list_description">
             Our mission is to make life easier for our clients. We know that when you run your own
@@ -34,7 +34,7 @@
             alt="value icon"
           />
         </div>
-        <div class="info-text">
+        <div>
           <div class="about-list_header">Be human and be excited</div>
           <div class="about-list_description">
             We believe in having personality, and not being a boring professional robot that’s just
@@ -47,7 +47,7 @@
         <div>
           <img class="about-list_img" src="/about/getting_started_overview.png" alt="value icon" />
         </div>
-        <div class="info-text">
+        <div>
           <div class="about-list_header">Be hungry to grow and learn</div>
           <div class="about-list_description">
             Our entire team is driven to find solutions for growth inside of our company, and we’re
@@ -64,7 +64,7 @@
             alt="value icon"
           />
         </div>
-        <div class="info-text">
+        <div>
           <div class="about-list_header">Build a positive team spirit</div>
           <div class="about-list_description">
             We’re close, I mean really close ... We’re always joking with each other and creating a
@@ -81,7 +81,7 @@
             alt="value icon"
           />
         </div>
-        <div class="info-text">
+        <div>
           <div class="about-list_header">Do more with less</div>
           <div class="about-list_description">
             We’re all about efficiency, and we won’t try something on just for fun or to see how
