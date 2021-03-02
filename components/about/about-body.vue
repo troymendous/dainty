@@ -25,10 +25,13 @@ export default {
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 5% 5%;
-  margin: 20px auto;
+  margin: 20px auto 80px;
   li {
     padding: 1.5rem 0 2rem;
     border-bottom: 2px solid #e9edf5;
+  }
+  li.collapsible-item {
+    padding: 0;
   }
   a {
     color: var(--acc-purple-color);
