@@ -42,11 +42,9 @@
           <p class="pricing-plans_content-item-headliner">
             {{ headliner }}
           </p>
-          <p v-for="{ type, isOffered, serviceId } in services" v-bind:key="serviceId">
-            <check-icon v-if="isOffered" />
-            <cross-icon v-else />
-            <span>{{ type }}</span>
-          </p>
+
+          <services :services="services" />
+
           <nuxt-link :to="`/pricing/${plan}`">Select Plan</nuxt-link>
         </div>
       </div>
@@ -55,19 +53,27 @@
 </template>
 
 <script>
-import crossIcon from "./plans/cross-icon.vue"
-import CheckIcon from "./plans/check-icon.vue"
+import Services from "../pricing/services.vue"
 
 export default {
-  components: { crossIcon, CheckIcon },
+  components: { Services },
   data() {
     return {
       isMonthly: true,
       plans: [],
+      show: false,
     }
   },
   async fetch() {
     this.plans = await this.$content("pricing-and-plans").fetch()
+  },
+  computed: {
+    newPlans() {
+      return this.plans.map((plan) => {
+        Object.assign(plan, { isActive: false })
+        return plan
+      })
+    },
   },
 }
 </script>
@@ -131,7 +137,7 @@ export default {
 
 .pricing-plans_content {
   display: grid;
-  align-items: center;
+  // align-items: center;
   grid-template-columns: repeat(3, 375px);
   grid-gap: 1rem;
 
@@ -191,11 +197,11 @@ export default {
     // justify-content: center;
   }
 
-  svg {
-    margin-right: 0.3rem;
-    width: 12px;
-    height: 12px;
-  }
+  // svg {
+  //   margin-right: 0.3rem;
+  //   width: 12px;
+  //   height: 12px;
+  // }
 
   a {
     display: inline-block;

@@ -13,7 +13,7 @@ export default {}
 <style lang="scss" scoped>
 .stripe-checkout-layout {
   width: 90%;
-  max-width: 407px;
+  max-width: 600px;
   margin: 0 auto;
 }
 

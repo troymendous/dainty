@@ -17,46 +17,55 @@
           <line x1="19" y1="12" x2="5" y2="12"></line>
           <polyline points="12 19 5 12 12 5"></polyline>
         </svg>
+        Back
       </button>
 
       <div class="pre-checkout-field">
-        <span class="heading">Plan</span>
+        <span class="heading">Selected Plan</span>
         <span class="text">{{ selectedPlan[0].plan }}</span>
       </div>
 
-      <div class="pre-checkout-field">
-        <span class="heading">Billing Cycle</span>
-        <label>Yearly</label>
-        <toggle @change="toggleBillingCycle" />
-        <label>Monthly</label>
-        <subscription-price
-          :annualPrice="selectedPlan[0].annualPrice"
-          :monthlyPrice="selectedPlan[0].monthlyPrice"
-          :isMonthly="isMonthly"
-        />
+      <div class="pre-checkout-billing">
+        <div class="pre-checkout-field">
+          <span class="heading">Billing Cycle</span>
+          <label>Yearly</label>
+          <toggle @change="toggleBillingCycle" />
+          <label>Monthly</label>
+          <subscription-price
+            :annualPrice="selectedPlan[0].annualPrice"
+            :monthlyPrice="selectedPlan[0].monthlyPrice"
+            :isMonthly="isMonthly"
+          />
+        </div>
+        <div v-if="!isMonthly" class="pre-checkout-billing_image-wrapper">
+          <img src="/pricing/save-dainty.png" alt="" />
+        </div>
       </div>
 
-      <div class="services">
-        <p
+      <ul class="services">
+        <li
           v-for="{ type, isOffered, serviceId } in selectedPlan[0].services"
           v-bind:key="serviceId"
         >
           <check-icon v-if="isOffered" />
           <cross-icon v-else />
           <span>{{ type }}</span>
-        </p>
-      </div>
+        </li>
+      </ul>
 
       <div v-if="isStripeLoaded">
         <div id="error-message"></div>
         <div class="checkout-btn-wrapper">
           <button :disabled="isLoadingCheckout" class="checkout-btn" @click="checkout">
             <div class="checkout-btn-inner">
-              <loader v-if="isLoadingCheckout" class="animate-spin h-5 w-10 mr-3" />
               <span>Proceed to checkout</span>
+              <loader v-if="isLoadingCheckout" class="animate-spin h-5 w-10 mr-3" />
             </div>
           </button>
         </div>
+      </div>
+      <div v-else class="skeleton-btn-wrapper">
+        <div class="skeleton-btn"></div>
       </div>
     </div>
     <loader v-else />
@@ -164,25 +173,62 @@ export default {
   margin: 2rem 0 6rem;
 
   .services {
-    margin-bottom: 2.5rem;
+    margin: 0 0 3rem;
 
-    p {
-      display: flex;
-      align-items: center;
+    svg {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-right: 0.3rem;
+    }
+
+    li {
+      padding: 0.6rem 0;
     }
   }
 }
 
+.pre-checkout-billing {
+  display: flex;
+
+  // pre-checkout-billing_image-wrapper
+
+  &_image-wrapper {
+    width: 45%;
+    max-width: 260px;
+    padding-top: 15px;
+
+    @screen sm {
+      padding-top: 37px;
+    }
+  }
+}
+
+.skeleton-btn {
+  width: 300px;
+  height: 60px;
+  border-radius: 8px;
+  background: #f3f3f3;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .checkout-btn {
+  position: relative;
   width: 300px;
   height: 60px;
   @apply text-accentPurple;
   border: 2px solid var(--acc-purple-color);
   border-radius: 8px;
+  transition: top ease 0.5s;
 
   &:hover {
-    background: var(--acc-purple-color);
-    color: #fff;
+    // background: var(--acc-purple-color);
+    // color: #fff;
+    top: -10px;
   }
 
   &:disabled {
@@ -208,6 +254,7 @@ export default {
 .back-btn {
   padding: 1rem 0;
   margin-bottom: 2rem;
+  @apply text-darkColor;
 
   &:hover {
     @apply animate-bounce;

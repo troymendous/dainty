@@ -5,7 +5,7 @@
     height="24"
     viewBox="0 0 24 24"
     fill="none"
-    stroke="rgb(106, 195, 118)"
+    stroke=" #5b39c9"
     stroke-width="3"
     stroke-linecap="round"
     stroke-linejoin="round"
