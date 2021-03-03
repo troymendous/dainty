@@ -2,7 +2,7 @@
   <div class="section-header">
     <div
       class="section-header_background"
-      style="background-image: url('/portfolio/hallmark.jpg')"
+      style="background-image: url('/portfolio/hallmark.jpg'); background-position-y: top"
     ></div>
   </div>
 </template>
@@ -14,7 +14,9 @@ export default {
 </script>
 
 <style lang="scss">
-.portfolio-header {
-  min-height: 400px;
+.portfolio {
+  .section-header {
+    min-height: 600px;
+  }
 }
 </style>

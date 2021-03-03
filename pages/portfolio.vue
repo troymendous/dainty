@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="portfolio">
     <portfolio-header></portfolio-header>
   </div>
 </template>
