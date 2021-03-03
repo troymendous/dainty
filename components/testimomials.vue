@@ -34,7 +34,8 @@ export default {
         // slidesPerView: 3,
         // spaceBetween: 120,
         centeredSlides: true,
-        freeMode: true,
+        // centeredSlides: true,
+        // freeMode: true,
         grabCursor: true,
         loop: true,
         pagination: {
@@ -44,7 +45,7 @@ export default {
         breakpoints: {
           1665: {
             slidesPerView: 4,
-            spaceBetween: 195,
+            spaceBetween: 95,
           },
           1024: {
             slidesPerView: 3,
@@ -56,7 +57,7 @@ export default {
           },
           320: {
             slidesPerView: 1,
-            spaceBetween: 0,
+            spaceBetween: 15,
           },
         },
       },
@@ -116,7 +117,7 @@ export default {
 }
 
 .testimonials-card {
-  width: 535px;
+  width: 700px;
   border-radius: 4px;
   background-color: #fff;
   box-shadow: 0 15px 35px 0 rgba(46, 46, 84, 0.1), 0 5px 15px 0 rgba(0, 0, 0, 0.07);
@@ -139,12 +140,17 @@ export default {
     display: flex;
   }
 
+  @media (max-width: 1440px) {
+    width: 535px;
+  }
+
   @screen md {
     width: 430px;
   }
 
   @screen sm {
-    width: 310px;
+    width: 375px;
+    max-width: 460px;
   }
 }
 

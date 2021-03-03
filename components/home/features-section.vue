@@ -32,7 +32,8 @@ export default {
   data() {
     return {
       swiperOption: {
-        spaceBetween: 30,
+        centeredSlides: true,
+        // spaceBetween: 30,
         freeMode: true,
         loop: true,
         autoplay: {
@@ -54,7 +55,7 @@ export default {
           },
           320: {
             slidesPerView: 1,
-            spaceBetween: 15,
+            spaceBetween: 45,
           },
         },
       },
@@ -110,50 +111,37 @@ export default {
   }
 }
 
-//Features Carousel Styles
-.swiper {
-  height: 80vh;
-}
-
-.swiper-container-horizontal > .swiper-pagination-bullets {
-  @screen md {
-    bottom: 245px;
-  }
-
-  @screen sm {
-    bottom: 150px;
-  }
-}
-
 // TODO=>Customise active links
-.swiper-container-horizontal > .swiper-pagination-bullets > .swiper-pagination-bullet-active {
-  background: chartreuse !important;
-  width: 10px !important;
-  height: 10px !important;
-}
+// .swiper-container-horizontal > .swiper-pagination-bullets > .swiper-pagination-bullet-active {
+//   background: chartreuse !important;
+//   width: 10px !important;
+//   height: 10px !important;
+// }
 
 .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
   display: inline-block;
   border-radius: 100%;
-  background: red;
-  opacity: 0.2;
 }
 
-.swiper-slide-next .features-carousel-wrapper {
+.swiper-slide-active .features-carousel-wrapper {
   border: 4px solid var(--acc-purple-color) !important;
   border-radius: 15px;
   margin: 5px -10px 50px -10px;
-  width: 359px !important;
-  height: 451px !important;
+  transform: scale(1);
+
+  @screen sm {
+    border: 4px solid transparent !important;
+  }
 }
 
 .features-carousel-wrapper {
   width: 330px;
   height: 451px;
-  padding: 74px 10px 66px;
+  padding: 74px 16px 66px;
   text-align: center;
+  transform: scale(0.89);
 
   > img {
     display: block;
@@ -167,7 +155,9 @@ export default {
   }
 
   @sreen sm {
-    width: 310px;
+    width: 235px;
+    height: 380px;
+    padding: 74px 16px 33px;
   }
 }
 </style>
