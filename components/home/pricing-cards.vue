@@ -217,6 +217,7 @@ export default {
 
   &-headliner {
     margin-bottom: 1rem;
+    color: rgb(116, 132, 148) !important;
   }
 }
 

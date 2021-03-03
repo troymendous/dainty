@@ -62,7 +62,7 @@ h4{
     line-height: 3.125rem;
 
     @screen sm{
-    @apply text-base;  
+    @apply text-2xl;  
     }
 }
 
@@ -76,8 +76,4 @@ p{
     @apply text-lightColor;
     @apply text-base;
     line-height: 1.875rem;
-
-    @screen sm{
-       @apply text-sm;
-    }
 }

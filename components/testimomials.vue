@@ -9,7 +9,7 @@
         <swiper class="swiper" :options="swiperOption">
           <swiper-slide v-for="{ url, name, text, id, company } in testimonials" v-bind:key="id">
             <div class="testimonials-card">
-              <p>"{{ text }}"</p>
+              <p>“{{ text }}“</p>
               <div>
                 <img :src="require(`../static/testimonials/${url}`)" alt="Avatar" />
                 <div>
