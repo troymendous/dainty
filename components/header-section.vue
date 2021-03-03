@@ -41,7 +41,7 @@
                 <NuxtLink to="/">Terms of service</NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/">About us</NuxtLink>
+                <NuxtLink to="/about">About us</NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/">Marketing</NuxtLink>
