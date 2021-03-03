@@ -148,7 +148,7 @@ export default {
     width: 430px;
   }
 
-  @screen sm {
+  @media (max-width: 375px) {
     width: 375px;
     max-width: 460px;
   }

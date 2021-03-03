@@ -198,7 +198,7 @@ export default {
     max-width: 260px;
     padding-top: 15px;
 
-    @screen sm {
+    @media (max-width: 360px) {
       padding-top: 37px;
     }
   }
