@@ -6,7 +6,10 @@
           <h1>Team</h1>
         </div>
       </div>
-      <div class="section-header_background"></div>
+      <div
+        class="section-header_background"
+        style="background-image: url('/team/team-rs.webp')"
+      ></div>
       <div class="fade"></div>
     </section>
   </div>
@@ -40,7 +43,6 @@ export default {
   min-height: 500px;
   height: auto;
   padding: 2rem;
-  margin: 2rem;
 
   @screen md {
     padding-top: 6rem;
@@ -53,7 +55,6 @@ export default {
   }
 }
 .section-header_background {
-  background-image: url("/team/team-rs.webp");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
