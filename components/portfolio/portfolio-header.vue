@@ -38,7 +38,7 @@ export default {
     align-items: center;
     text-align: center;
     width: 320px;
-    height: 80px;
+    height: 75px;
     font-size: 20px;
     font-weight: 600;
     margin: 30px 0;
