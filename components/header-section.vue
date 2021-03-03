@@ -32,7 +32,7 @@
                 <NuxtLink to="/team">Team</NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/">Portfolio</NuxtLink>
+                <NuxtLink to="/portfolio">Portfolio</NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/">Web Development</NuxtLink>
