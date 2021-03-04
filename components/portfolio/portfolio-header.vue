@@ -22,6 +22,9 @@ export default {
 .portfolio {
   .section-header {
     min-height: 600px;
+    @screen md {
+      padding: 0;
+    }
     @screen sm {
       min-height: 300px;
     }
