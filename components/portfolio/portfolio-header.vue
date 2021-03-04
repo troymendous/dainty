@@ -22,14 +22,30 @@ export default {
 .portfolio {
   .section-header {
     min-height: 600px;
+    @screen sm {
+      min-height: 300px;
+    }
   }
   .portfolio-header-text {
-    padding: 50px;
+    padding: 40px;
     margin-bottom: 40px;
+    width: 40vw;
     h5,
     h2,
     a {
       color: white;
+      line-height: 1.2;
+    }
+    h5 {
+      margin-bottom: 10px;
+    }
+    @screen sm {
+      padding: 20px;
+      margin-bottom: 0;
+
+      h5 {
+        font-size: 0.9rem;
+      }
     }
   }
   .portfolio-header_button {
@@ -65,6 +81,17 @@ export default {
     }
     &:hover:before {
       left: 43%;
+    }
+    @screen md {
+      width: 260px;
+      height: 60px;
+    }
+    @screen sm {
+      width: 180px;
+      height: 40px;
+      font-size: 16px;
+      margin: 10px 0 0 0;
+      border: 2px solid white;
     }
   }
 }
