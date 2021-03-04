@@ -3,7 +3,7 @@
     "plan": "core",
     "monthlyPrice": 99,
     "annualPrice": 1000,
-    "monthlyPriceId": "price_1IPLXICD5ZUxyIJE0taqatlw",
+    "monthlyPriceId": "price_1IRIwiCD5ZUxyIJEU4jaghEZ",
     "annualPriceId": "price_1IPLXICD5ZUxyIJEBBqGaw5G",
     "headliner": " Reporting, automation, and integrations for support teams",
     "services": [
@@ -30,9 +30,9 @@
   },
   {
     "plan": "plus",
-    "monthlyPrice": 299,
+    "monthlyPrice": 249,
     "annualPrice": 3000,
-    "monthlyPriceId": "price_1IPnKPCD5ZUxyIJEaAGVMhtU",
+    "monthlyPriceId": "price_1IRIzDCD5ZUxyIJETz8vAYeR",
     "annualPriceId": "price_1IPnKPCD5ZUxyIJEvlkrOdxL",
     "headliner": "Advanced features and reporting for teams at scale",
     "services": [
@@ -53,7 +53,7 @@
     "plan": "enterprise",
     "monthlyPrice": 599,
     "annualPrice": 6000,
-    "monthlyPriceId": "price_1IPnLcCD5ZUxyIJEmGBQ9X9I",
+    "monthlyPriceId": "price_1IRJ0mCD5ZUxyIJETbusbjQX",
     "annualPriceId": "price_1IPnLcCD5ZUxyIJETYvNfXtF",
     "headliner": "Reporting, automation, and integrations for support teams",
     "services": [
