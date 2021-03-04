@@ -1,35 +1,68 @@
 <template>
   <div class="mosaic">
-    <div class="test"></div>
-    <div class="test cols2" style="background-color: aquamarine"></div>
-    <div class="test"></div>
-    <div class="test"></div>
-    <div class="test rows2" style="background-color: rosybrown"></div>
-    <div class="test"></div>
-    <div class="test"></div>
-    <div class="test"></div>
-    <div class="test"></div>
-    <div class="test cols2" style="background-color: aquamarine"></div>
-    <div class="test"></div>
-    <div class="test"></div>
-    <div class="test rows2" style="background-color: rosybrown"></div>
-    <div class="test"></div>
-    <div class="test"></div>
-    <div class="test"></div>
+    <div
+      v-for="item in items"
+      :key="item.id"
+      :class="`mosaic-item ${item.class}`"
+      :style="`background-image: url(${item.img})`"
+    ></div>
   </div>
 </template>
 
 <script>
 export default {
   name: "PortfolioBody",
+  data() {
+    return {
+      items: [
+        {
+          id: 0,
+          img: "/team/members/jacqueline.jpg",
+          class: "",
+        },
+        {
+          id: 1,
+          img: "/team/members/john.png",
+          class: "col2",
+        },
+        {
+          id: 2,
+          img: "/team/members/kevin.jpg",
+          class: "",
+        },
+        {
+          id: 3,
+          img: "/team/members/nicolas.jpg",
+          class: "row2",
+        },
+        {
+          id: 4,
+          img: "/team/members/reka.png",
+          class: "row2",
+        },
+        {
+          id: 5,
+          img: "/team/members/troy.jpg",
+          class: "col2",
+        },
+        {
+          id: 6,
+          img: "/team/members/valeria.jpg",
+          class: "",
+        },
+      ],
+    }
+  },
 }
 </script>
 
 <style lang="scss">
-.test {
+.mosaic-item {
   min-height: 260px;
   height: auto;
-  background-color: #b8b8d9;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .mosaic {
   display: grid;
@@ -39,12 +72,12 @@ export default {
   grid-auto-flow: dense;
   padding: 1rem;
 }
-.cols2 {
+.col2 {
   @media (min-width: 580px) {
     grid-column: span 2;
   }
 }
-.rows2 {
+.row2 {
   @media (min-width: 580px) {
     grid-row: span 2;
   }
