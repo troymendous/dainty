@@ -1,11 +1,30 @@
 <template>
-  <div class="mosaic">
-    <div
-      v-for="item in items"
-      :key="item.id"
-      :class="`mosaic-item ${item.class}`"
-      :style="`background-image: url(${item.img})`"
-    ></div>
+  <div class="portfolio-body">
+    <div class="mosaic">
+      <div
+        v-for="item in items"
+        :key="item.id"
+        :class="`mosaic-item ${item.class}`"
+        :style="`background-image: url(${item.img})`"
+        @click="showItem(item.id)"
+      ></div>
+    </div>
+    <div v-if="modalActive" class="portfolio-modal">
+      <div class="portfolio-swiper-wrapper">
+        <div>
+          <swiper :options="swiperOptions">
+            <swiper-slide v-for="item in items" :key="item.id">
+              <div class="portfolio-modal-img">
+                <img :src="item.img" alt="" />
+              </div>
+            </swiper-slide>
+            <div slot="pagination" class="swiper-pagination"></div>
+            <div slot="button-prev" class="swiper-button-prev"></div>
+            <div slot="button-next" class="swiper-button-next"></div>
+          </swiper>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -14,6 +33,20 @@ export default {
   name: "PortfolioBody",
   data() {
     return {
+      modalActive: false,
+      swiperOptions: {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        slidesPerView: 1,
+        initialSlide: 0,
+        loop: true,
+      },
       items: [
         {
           id: 0,
@@ -53,6 +86,15 @@ export default {
       ],
     }
   },
+  methods: {
+    showItem(id) {
+      this.swiperOptions.initialSlide = id
+      this.toggleModal()
+    },
+    toggleModal() {
+      this.modalActive = !this.modalActive
+    },
+  },
 }
 </script>
 
@@ -80,6 +122,34 @@ export default {
 .row2 {
   @media (min-width: 580px) {
     grid-row: span 2;
+  }
+}
+.portfolio-modal {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2001;
+  background: rgba(0, 0, 0, 0.8);
+  .portfolio-swiper-wrapper {
+    position: relative;
+    width: 100%;
+    .swiper-wrapper {
+      align-items: center;
+    }
+    .portfolio-modal-img {
+      margin: 0 auto;
+      max-height: 700px;
+      max-width: 700px;
+      img {
+        margin: 0 auto;
+      }
+    }
   }
 }
 </style>
