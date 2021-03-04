@@ -1,7 +1,9 @@
 <template>
   <section class="testimonials">
     <div class="testimonials-headliner">
-      <h2>What some of our awesome customers are saying...</h2>
+      <VueSparkles>
+        <h2>What some of our awesome customers are saying...</h2>
+      </VueSparkles>
     </div>
 
     <div class="testimonials-carousel">
