@@ -46,6 +46,7 @@ export default {
         slidesPerView: 1,
         initialSlide: 0,
         loop: true,
+        spaceBetween: 50,
       },
       items: [
         {
@@ -161,6 +162,10 @@ export default {
         max-height: 80vh;
         max-width: 60vw;
         width: auto;
+        @screen sm {
+          max-height: 90vh;
+          max-width: 95vw;
+        }
       }
     }
   }
