@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import json from "../../content/portfolio-items"
 export default {
   name: "PortfolioBody",
   data() {
@@ -48,43 +49,7 @@ export default {
         loop: true,
         spaceBetween: 50,
       },
-      items: [
-        {
-          id: 0,
-          img: "/team/members/jacqueline.jpg",
-          class: "",
-        },
-        {
-          id: 1,
-          img: "/team/members/john.png",
-          class: "col2",
-        },
-        {
-          id: 2,
-          img: "/team/members/kevin.jpg",
-          class: "",
-        },
-        {
-          id: 3,
-          img: "/team/members/nicolas.jpg",
-          class: "row2",
-        },
-        {
-          id: 4,
-          img: "/team/members/reka.png",
-          class: "row2",
-        },
-        {
-          id: 5,
-          img: "/team/members/troy.jpg",
-          class: "col2",
-        },
-        {
-          id: 6,
-          img: "/team/members/valeria.jpg",
-          class: "",
-        },
-      ],
+      items: json,
     }
   },
   methods: {
