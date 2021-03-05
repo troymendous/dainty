@@ -118,6 +118,11 @@ export default {
       .swiper-button-prev,
       .swiper-button-next {
         color: white;
+        padding: 50px;
+        outline: none;
+        @screen sm {
+          padding: 0;
+        }
       }
     }
     .portfolio-modal-img {
