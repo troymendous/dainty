@@ -9,9 +9,9 @@
         @click="showItem(item.id)"
       ></div>
     </div>
-    <div v-if="modalActive" class="portfolio-modal">
+    <div v-if="modalActive" class="portfolio-modal" @click="toggleModal">
       <div class="portfolio-swiper-wrapper">
-        <div>
+        <div class="close">
           <swiper :options="swiperOptions">
             <swiper-slide v-for="item in items" :key="item.id">
               <div class="portfolio-modal-img">
@@ -19,8 +19,8 @@
               </div>
             </swiper-slide>
             <div slot="pagination" class="swiper-pagination"></div>
-            <div slot="button-prev" class="swiper-button-prev"></div>
-            <div slot="button-next" class="swiper-button-next"></div>
+            <div slot="button-prev" class="swiper-button-prev" @click.stop></div>
+            <div slot="button-next" class="swiper-button-next" @click.stop></div>
           </swiper>
         </div>
       </div>
@@ -142,12 +142,25 @@ export default {
     .swiper-wrapper {
       align-items: center;
     }
+    .swiper-container {
+      overflow: visible;
+      .swiper-pagination {
+        bottom: -35px;
+        color: white;
+        font-weight: 600;
+      }
+      .swiper-button-prev,
+      .swiper-button-next {
+        color: white;
+      }
+    }
     .portfolio-modal-img {
       margin: 0 auto;
-      max-height: 700px;
-      max-width: 700px;
       img {
         margin: 0 auto;
+        max-height: 80vh;
+        max-width: 60vw;
+        width: auto;
       }
     }
   }
