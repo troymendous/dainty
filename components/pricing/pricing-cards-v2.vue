@@ -255,6 +255,10 @@ export default {
     animation: shimmer 3s infinite;
     content: "";
   }
+
+  @screen sm {
+    width: 270px;
+  }
 }
 @keyframes shimmer {
   100% {
