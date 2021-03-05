@@ -65,7 +65,7 @@
         <hr />
       </li>
       <li>
-        <NuxtLink to="/">Portfolio</NuxtLink>
+        <NuxtLink to="/portfolio">Portfolio</NuxtLink>
         <hr />
       </li>
       <li>
