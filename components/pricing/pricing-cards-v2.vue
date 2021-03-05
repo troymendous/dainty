@@ -128,6 +128,10 @@ export default {
     border-radius: 6px;
     box-shadow: 0 0 0 1px rgba(67, 84, 149, 0.1), 0 1px 5px 1px rgba(19, 47, 70, 0.08);
     text-align: center;
+
+    @screen md {
+      padding: 50px 16px 60px;
+    }
   }
 
   div:nth-child(1),

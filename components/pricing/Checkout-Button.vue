@@ -68,5 +68,9 @@ button {
   &:disabled {
     opacity: 0.2;
   }
+
+  @screen sm {
+    width: 270px;
+  }
 }
 </style>
