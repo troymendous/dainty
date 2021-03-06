@@ -20,7 +20,7 @@
                 <nuxt-link to="/">Web Development</nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/">Portfolio</nuxt-link>
+                <nuxt-link to="/portfolio">Portfolio</nuxt-link>
               </li>
               <li>
                 <nuxt-link to="/">Terms of Service</nuxt-link>
