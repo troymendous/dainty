@@ -38,12 +38,12 @@
           </div>
         </div>
         <div class="menu_call">
-          <nuxt-link to="/"> Get Dainty </nuxt-link>
+          <nuxt-link to="/"> 15 Days Free </nuxt-link>
         </div>
       </div>
     </div>
 
-    <ul class="menu_popup" v-if="menuIsActive">
+    <ul v-if="menuIsActive" class="menu_popup">
       <li>
         <NuxtLink to="/portfolio">Portfolio</NuxtLink>
         <hr />
@@ -68,6 +68,11 @@ export default {
   components: {
     Logo,
   },
+  computed: {
+    menuIsActive() {
+      return this.$store.state.menuIsActive
+    },
+  },
   mounted() {
     // Note: do not add parentheses () for this.handleScroll
     window.addEventListener("scroll", this.handleScroll)
@@ -83,11 +88,6 @@ export default {
       } else {
         this.$refs.menuRef.classList.remove("white-background")
       }
-    },
-  },
-  computed: {
-    menuIsActive() {
-      return this.$store.state.menuIsActive
     },
   },
 }
@@ -201,20 +201,21 @@ export default {
   @apply col-span-2;
 
   > a {
-    padding: 16px 36px;
-    @apply rounded-full;
+    @apply inline-block;
+    @apply p-3;
+    @apply font-medium;
+    border-radius: 8px;
+    width: 140px;
+    text-align: center;
+    font-size: 14px;
     background: #fff;
-    transition: 0.3s all linear;
-    border: 3px solid transparent;
+    color: var(--acc-purple-color);
+    border: 2px solid var(--acc-purple-color);
 
     &:hover {
-      background: var(--dark-color);
+      background: var(--acc-pink-color);
       border: 3px solid transparent;
       color: #fff;
-    }
-
-    @screen md {
-      border: 3px solid #5b39c9;
     }
   }
 
