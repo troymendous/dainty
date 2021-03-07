@@ -14,17 +14,17 @@
       <div class="banner-content">
         <div class="banner-content_text">
           <h1>
-            Get help with
+            Need a design done affordably?
             <br />
-            failing charges.
+            We got you.
           </h1>
           <span>
-            Your business is leaking money every month to failed payments and losing customers to
-            delinquent churn. It's time to get it back.
+            Unlimited graphic design requests and revisions for one monthly rate, No hourly billing
+            or contracts, cancel anytime. Start your free trial today!
           </span>
           <div class="banner-links">
             <nuxt-link to="/" class="link-primary pink">Start Free Trial</nuxt-link>
-            <nuxt-link to="/" class="link-primary purple">Learn more</nuxt-link>
+            <nuxt-link to="/" class="link-primary purple">Learn More</nuxt-link>
           </div>
           <div class="banner-user-review">
             <p>“Recover helped us reduce our churn and save over $10k+ in less than 3 months.”</p>
