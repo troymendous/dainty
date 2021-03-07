@@ -29,22 +29,10 @@
             <ul class="menu_links">
               <li><NuxtLink to="/pricing">Pricing</NuxtLink></li>
               <li>
-                <NuxtLink to="/team">Team</NuxtLink>
-              </li>
-              <li>
                 <NuxtLink to="/portfolio">Portfolio</NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/">Web Development</NuxtLink>
-              </li>
-              <li>
-                <NuxtLink to="/">Terms of service</NuxtLink>
-              </li>
-              <li>
                 <NuxtLink to="/about">About us</NuxtLink>
-              </li>
-              <li>
-                <NuxtLink to="/">Marketing</NuxtLink>
               </li>
             </ul>
           </div>
@@ -61,27 +49,11 @@
         <hr />
       </li>
       <li>
-        <NuxtLink to="/team">Team</NuxtLink>
-        <hr />
-      </li>
-      <li>
         <NuxtLink to="/portfolio">Portfolio</NuxtLink>
         <hr />
       </li>
       <li>
-        <NuxtLink to="/">Web Development</NuxtLink>
-        <hr />
-      </li>
-      <li>
-        <NuxtLink to="/">Terms of service</NuxtLink>
-        <hr />
-      </li>
-      <li>
         <NuxtLink to="/">About us</NuxtLink>
-        <hr />
-      </li>
-      <li>
-        <NuxtLink to="/">Marketing</NuxtLink>
         <hr />
       </li>
     </ul>
@@ -207,7 +179,7 @@ export default {
 .menu_links {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   li {
     padding: 0.5rem 0;
