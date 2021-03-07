@@ -27,13 +27,13 @@
             </div>
 
             <ul class="menu_links">
-              <li><NuxtLink to="/pricing">Pricing</NuxtLink></li>
               <li>
                 <NuxtLink to="/portfolio">Portfolio</NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/about">About us</NuxtLink>
               </li>
+              <li><NuxtLink to="/pricing">Pricing</NuxtLink></li>
             </ul>
           </div>
         </div>
@@ -45,15 +45,15 @@
 
     <ul class="menu_popup" v-if="menuIsActive">
       <li>
-        <NuxtLink to="/pricing">Pricing</NuxtLink>
-        <hr />
-      </li>
-      <li>
         <NuxtLink to="/portfolio">Portfolio</NuxtLink>
         <hr />
       </li>
       <li>
         <NuxtLink to="/">About us</NuxtLink>
+        <hr />
+      </li>
+      <li>
+        <NuxtLink to="/pricing">Pricing</NuxtLink>
         <hr />
       </li>
     </ul>

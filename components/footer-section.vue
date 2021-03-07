@@ -11,13 +11,13 @@
             <h5>Features</h5>
             <ul>
               <li>
-                <nuxt-link to="/">Pricing</nuxt-link>
-              </li>
-              <li>
                 <nuxt-link to="/portfolio">Portfolio</nuxt-link>
               </li>
               <li>
                 <nuxt-link to="/about">About us</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/">Pricing</nuxt-link>
               </li>
             </ul>
           </div>
