@@ -17,7 +17,7 @@
                 <nuxt-link to="/about">About us</nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/">Pricing</nuxt-link>
+                <nuxt-link to="/pricing">Pricing</nuxt-link>
               </li>
             </ul>
           </div>
