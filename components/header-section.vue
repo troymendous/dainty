@@ -179,10 +179,11 @@ export default {
 .menu_links {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
 
   li {
     padding: 0.5rem 0;
+    margin: 1rem;
   }
 
   a:hover {
