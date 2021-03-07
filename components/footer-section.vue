@@ -14,16 +14,10 @@
                 <nuxt-link to="/">Pricing</nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/team">Team</nuxt-link>
-              </li>
-              <li>
-                <nuxt-link to="/">Web Development</nuxt-link>
-              </li>
-              <li>
                 <nuxt-link to="/portfolio">Portfolio</nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/">Terms of Service</nuxt-link>
+                <nuxt-link to="/about">About us</nuxt-link>
               </li>
             </ul>
           </div>
