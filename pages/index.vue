@@ -1,6 +1,7 @@
 <template>
   <div>
     <banner-section />
+    <media-section />
     <features-section />
     <call-to-action />
     <testimomials />
@@ -14,9 +15,11 @@ import CallToAction from "../components/home/call-to-action.vue"
 import FeaturesSection from "../components/home/features-section"
 import PricingCardsV2 from "../components/pricing/pricing-cards-v2.vue"
 import Testimomials from "../components/testimomials.vue"
+import MediaSection from "../components/home/media-section"
 
 export default {
   components: {
+    MediaSection,
     BannerSection,
     FeaturesSection,
     CallToAction,
