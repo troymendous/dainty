@@ -36,24 +36,6 @@ export default {
     }
   }
 }
-.section-header {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  min-height: 500px;
-  height: auto;
-  padding: 2rem;
-
-  @screen md {
-    padding-top: 6rem;
-  }
-
-  @screen sm {
-    padding-top: 3rem;
-    margin: 0;
-    min-height: 300px;
-  }
-}
 .fade {
   position: absolute;
   top: 0;
