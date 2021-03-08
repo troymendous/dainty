@@ -77,3 +77,8 @@ p{
     @apply text-base;
     line-height: 1.875rem;
 }
+
+
+.nonid-icon-training:before {
+    content: "\e907";
+  }

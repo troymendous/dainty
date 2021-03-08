@@ -1,6 +1,7 @@
 <template>
   <div>
     <banner-section />
+    <services-section />
     <media-section />
     <features-section />
     <call-to-action />
