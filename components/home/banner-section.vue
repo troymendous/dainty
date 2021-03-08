@@ -27,7 +27,12 @@
             <nuxt-link to="/" class="link-primary purple">Learn More</nuxt-link>
           </div>
           <div class="banner-user-review">
-            <p>“Recover helped us reduce our churn and save over $10k+ in less than 3 months.”</p>
+            <p>
+              “Dainty has been a huge help for our agency, I highly recommend these guys for any
+              agency or even an individual just wanting some regular designs or web development
+              done”
+            </p>
+            <!-- TODO name & image -->
             <div>
               <img src="/testimonials/testimonial-01.webp" alt="Avatar" />
               <span>Tushar Mahajan, Statusbrew</span>
