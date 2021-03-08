@@ -215,7 +215,7 @@ export default {
 
     &:hover {
       background: var(--acc-pink-color);
-      border: 3px solid transparent;
+      border: 2px solid transparent;
       color: #fff;
     }
   }
