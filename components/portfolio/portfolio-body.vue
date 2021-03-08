@@ -11,7 +11,7 @@
     </div>
     <div v-if="modalActive" class="portfolio-modal" @click="toggleModal">
       <div class="portfolio-swiper-wrapper">
-        <div class="close">
+        <div>
           <swiper :options="swiperOptions">
             <swiper-slide v-for="item in items" :key="item.id">
               <div class="portfolio-modal-img">
@@ -65,6 +65,22 @@ export default {
 </script>
 
 <style lang="scss">
+.section-header_background {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-height: 600px;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+
+  @screen sm {
+    max-height: 400px;
+  }
+}
 .mosaic-item {
   min-height: 260px;
   height: auto;
