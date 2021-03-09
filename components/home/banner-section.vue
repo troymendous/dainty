@@ -63,8 +63,8 @@ export default {
 
 .banner-inner {
   position: relative;
-  padding: 12rem 0;
-  margin: 8rem 2rem;
+  padding: 12rem 0 4rem;
+  margin: 8rem 2rem 2rem;
 
   @screen md {
     padding-top: 6rem;
