@@ -1,130 +1,115 @@
 [
   {
     "id": 0,
-    "name": "Troy",
+    "name": "John",
     "link": "https://www.linkedin.com/",
-    "img": "/team/members/troy.jpg",
-    "role": "General Manager",
-    "position": "top"
+    "img": "/team/members/john.jpg",
+    "role": "General Manager"
   },
   {
     "id": 1,
     "name": "Kevin",
     "link": "https://www.linkedin.com/",
     "img": "/team/members/kevin.jpg",
-    "role": "General Manager",
-    "position": "top"
+    "role": "General Manager"
   },
   {
     "id": 2,
-    "name": "John",
+    "name": "Troy",
     "link": "https://www.linkedin.com/",
-    "img": "/team/members/john.png",
-    "role": "General Manager",
-    "position": "top"
+    "img": "/team/members/troy.jpg",
+    "role": "General Manager"
   },
   {
     "id": 3,
     "name": "Reka",
     "link": "https://www.linkedin.com/",
     "img": "/team/members/reka.png",
-    "role": "General Manager",
-    "position": "center"
+    "role": "General Manager"
   },
+
   {
     "id": 4,
-    "name": "Nicolas",
+    "name": "Steve",
     "link": "https://www.linkedin.com/",
-    "img": "/team/members/nicolas.jpg",
-    "role": "General Manager",
-    "position": "17%"
+    "img": "/team/members/steve.jpg",
+    "role": "General Manager"
   },
   {
     "id": 5,
-    "name": "Valeria",
+    "name": "Nicolas",
     "link": "https://www.linkedin.com/",
-    "img": "/team/members/valeria.jpg",
-    "role": "General Manager",
-    "position": "top"
+    "img": "/team/members/nicolas.jpg",
+    "role": "General Manager"
   },
   {
     "id": 6,
-    "name": "Jacqueline",
+    "name": "Valeria",
     "link": "https://www.linkedin.com/",
-    "img": "/team/members/jacqueline.jpg",
-    "role": "General Manager",
-    "position": "center"
+    "img": "/team/members/valeria.jpg",
+    "role": "General Manager"
   },
   {
     "id": 7,
-    "name": "Nathan Hookway 8",
+    "name": "Jacqueline",
     "link": "https://www.linkedin.com/",
-    "img": "/team/members/troy.jpg",
-    "role": "General Manager",
-    "position": "top"
+    "img": "/team/members/jacqueline.jpg",
+    "role": "General Manager"
   },
   {
     "id": 8,
-    "name": "Nathan Hookway 9",
+    "name": "Nathan Hookway 8",
     "link": "https://www.linkedin.com/",
     "img": "/team/members/troy.jpg",
-    "role": "General Manager",
-    "position": "top"
+    "role": "General Manager"
   },
   {
     "id": 9,
-    "name": "Nathan Hookway 10",
+    "name": "Nathan Hookway 9",
     "link": "https://www.linkedin.com/",
     "img": "/team/members/troy.jpg",
-    "role": "General Manager",
-    "position": "top"
+    "role": "General Manager"
   },
   {
     "id": 10,
-    "name": "Nathan Hookway 11",
+    "name": "Nathan Hookway 10",
     "link": "https://www.linkedin.com/",
     "img": "/team/members/troy.jpg",
-    "role": "General Manager",
-    "position": "top"
+    "role": "General Manager"
   },
   {
     "id": 11,
-    "name": "Nathan Hookway 12",
+    "name": "Nathan Hookway 11",
     "link": "https://www.linkedin.com/",
     "img": "/team/members/troy.jpg",
-    "role": "General Manager",
-    "position": "top"
+    "role": "General Manager"
   },
   {
     "id": 12,
-    "name": "Nathan Hookway 13",
+    "name": "Nathan Hookway 12",
     "link": "https://www.linkedin.com/",
     "img": "/team/members/troy.jpg",
-    "role": "General Manager",
-    "position": "top"
+    "role": "General Manager"
   },
   {
     "id": 13,
-    "name": "Nathan Hookway 14",
+    "name": "Nathan Hookway 13",
     "link": "https://www.linkedin.com/",
     "img": "/team/members/troy.jpg",
-    "role": "General Manager",
-    "position": "top"
+    "role": "General Manager"
   },
   {
     "id": 14,
-    "name": "Nathan Hookway 15",
+    "name": "Nathan Hookway 14",
     "link": "https://www.linkedin.com/",
     "img": "/team/members/troy.jpg",
-    "role": "General Manager",
-    "position": "top"
+    "role": "General Manager"
   },
   {
     "id": 15,
-    "name": "Nathan Hookway 16",
+    "name": "Nathan Hookway 15",
     "link": "https://www.linkedin.com/",
     "img": "/team/members/troy.jpg",
-    "role": "General Manager",
-    "position": "top"
+    "role": "General Manager"
   }
 ]
