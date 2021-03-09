@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>Nodin agency can boost up your web traffic</h2>
+    <h2>Dainty is your one-stop development and digital marketing agency</h2>
     <div>
       <div v-for="{ heading, text, icon, id } in services" :key="id">
         <span :class="`dainty-icon dainty-icon-${icon}`"></span>
