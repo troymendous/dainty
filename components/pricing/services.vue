@@ -12,7 +12,7 @@
         <li role="button" class="toggle-services_desktop" @click="showOverlay(cardId)">
           View more
         </li>
-        <ul v-if="cardId === id">
+        <ul v-if="cardId === id" class="position-relative">
           <div class="popup-services_desktop">
             <h4>{{ plan }}</h4>
             <button @click="hideOverlay">View less</button>
@@ -127,6 +127,10 @@ li {
   padding: 0.6rem 0;
 }
 
+.position-relative {
+  position: relative;
+}
+
 .card-btn,
 .toggle-services_desktop {
   @apply text-accentPink;
@@ -147,12 +151,12 @@ h4 {
 }
 
 .popup-services_desktop {
-  position: absolute;
-  top: 58%;
+  position: fixed;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 45;
-  width: 80%;
+  width: 70vw;
   max-width: 0 1144px;
   margin: 0 auto;
   background: #fff;
