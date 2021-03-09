@@ -3,7 +3,7 @@
     <div
       class="modal-container_img"
       :style="`
-                    background-image: linear-gradient(black, black), url('${member.img}');
+                    background-image: url('${member.img}');
                   `"
     ></div>
     <div class="modal-container-text text-scroll">
