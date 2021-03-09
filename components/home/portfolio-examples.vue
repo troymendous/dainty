@@ -73,6 +73,12 @@ export default {
     a {
       margin: 1rem 11rem 3rem auto;
     }
+    @screen sm {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+      padding-left: 1rem;
+    }
   }
   .examples-title {
     width: 70%;
@@ -80,6 +86,10 @@ export default {
     margin: 0 auto;
     h2 {
       margin-bottom: 20px;
+    }
+    @screen sm {
+      width: 90%;
+      padding: 1rem;
     }
   }
   .examples-body {
