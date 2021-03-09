@@ -150,7 +150,7 @@ footer {
     margin-top: 0;
     background-position: center;
     background-size: cover;
-    g @screen md {
+    @screen md {
       height: 85% !important;
       width: 85% !important;
       float: none !important;
