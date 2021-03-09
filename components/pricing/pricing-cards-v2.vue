@@ -1,7 +1,8 @@
 <template>
   <section class="pricing">
     <div class="pricing-headliner">
-      <h2>Choose Plans and Pricing</h2>
+      <h2 v-if="isAtHome">Plans and Pricing</h2>
+      <h2 v-else>Choose Plans and Pricing</h2>
       <p>All the subscription prices are pegged in US Dollars.</p>
     </div>
     <div class="pricing-plans">
@@ -21,18 +22,27 @@
         >
           <h4>{{ plan }}</h4>
           <subscription-price
-            :isMonthly="isMonthly"
-            :annualPrice="annualPrice"
-            :monthlyPrice="monthlyPrice"
+            :is-monthly="isMonthly"
+            :annual-price="annualPrice"
+            :monthly-price="monthlyPrice"
           />
           <p class="pricing-plans_content-item-headliner">
             {{ headliner }}
           </p>
-          <services :services="services" />
-          <checkout-button v-if="isStripeLoaded" :monthlyPriceId="monthlyPriceId" />
-          <div v-else class="skeleton-btn"></div>
+          <services :services="services" :card-id="id" :plan="plan" />
+          <div v-if="!isAtHome">
+            <checkout-button
+              v-if="isStripeLoaded"
+              :monthly-price-id="monthlyPriceId"
+              :plan="plan"
+            />
+            <div v-else class="skeleton-btn"></div>
+          </div>
         </div>
       </div>
+      <nuxt-link v-if="isAtHome" to="/pricing" class="pricing-link"
+        >Learn more about our plans and pricing</nuxt-link
+      >
     </div>
   </section>
 </template>
@@ -41,13 +51,14 @@
 import Services from "./services.vue"
 
 export default {
+  components: { Services },
   props: {
     isStripeLoaded: Boolean,
   },
-  components: { Services },
   data() {
     return {
       isMonthly: true,
+      isAtHome: null,
       plans: [],
       show: false,
       isLoadingCheckout: false,
@@ -56,6 +67,11 @@ export default {
   },
   async fetch() {
     this.plans = await this.$content("pricing-and-plans").fetch()
+  },
+  created() {
+    if (this.$route.path === "/pricing") this.isAtHome = false
+
+    if (this.$route.path === "/") this.isAtHome = true
   },
 }
 </script>
@@ -194,6 +210,7 @@ export default {
   }
 
   &-headliner {
+    height: 150px;
     margin-bottom: 1rem;
     color: rgb(116, 132, 148) !important;
   }
@@ -263,6 +280,17 @@ export default {
 @keyframes shimmer {
   100% {
     transform: translateX(100%);
+  }
+}
+
+.pricing-link {
+  display: block;
+  text-align: right;
+  @apply text-accentPurple;
+  margin-top: 40px;
+
+  @screen md {
+    text-align: center;
   }
 }
 </style>

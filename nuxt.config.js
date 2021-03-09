@@ -56,7 +56,7 @@ export default {
 
   // Router Middleware
   router: {
-    middleware: "menu",
+    middleware: ["menu", "pricingOverlay"],
   },
 
   // Register Pricing slug routes in the nuxt generate command
