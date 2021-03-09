@@ -46,10 +46,20 @@ export default {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-        slidesPerView: 4,
         initialSlide: 0,
         loop: true,
-        spaceBetween: 50,
+        spaceBetween: 30,
+        breakpoints: {
+          1280: {
+            slidesPerView: 5,
+          },
+          480: {
+            slidesPerView: 4,
+          },
+          0: {
+            slidesPerView: 1,
+          },
+        },
       },
     }
   },
@@ -75,11 +85,19 @@ export default {
   .examples-body {
     margin: 0 20px;
     .examples-item {
-      height: 300px;
-      width: 300px;
+      height: 19vw;
+      width: 19vw;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+      @screen md {
+        height: 23vw;
+        width: 23vw;
+      }
+      @screen sm {
+        width: 95vw;
+        height: 95vw;
+      }
     }
   }
 }
