@@ -70,7 +70,7 @@ footer {
 
 a {
   display: inline-block;
-  padding: 0.8rem 0;
+  padding: 2rem 0;
 }
 
 .footer-inner {
