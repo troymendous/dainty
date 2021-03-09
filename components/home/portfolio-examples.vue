@@ -31,15 +31,15 @@ export default {
   data() {
     return {
       exampleItems: [
+        "1.jpg",
         "2.jpg",
         "3.jpg",
-        "11.jpg",
-        "10.jpg",
-        "12.jpg",
-        "18.jpg",
-        "13.jpg",
+        "5.png",
+        "8.jpg",
         "14.jpg",
-        "17.jpg",
+        "38.jpg",
+        "16.jpg",
+        "36.jpg",
       ],
       swiperOptions: {
         navigation: {
