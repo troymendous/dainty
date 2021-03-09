@@ -99,6 +99,22 @@ export default {
         height: 95vw;
       }
     }
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: #fff;
+      color: var(--acc-purple-color);
+      -webkit-box-shadow: 0 1px 4px 1px #7c7878;
+      -moz-box-shadow: 0 1px 4px 1px #7c7878;
+      box-shadow: 0 1px 7px 2px #7c7878;
+
+      &:after {
+        font-size: 24px;
+        font-weight: 600;
+      }
+    }
   }
 }
 </style>
