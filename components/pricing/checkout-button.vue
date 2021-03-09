@@ -1,6 +1,7 @@
 <template>
   <button :disabled="isLoadingCheckout" @click="checkout(monthlyPriceId)">
-    Select Plan
+    <span v-if="plan === 'core'">15 Days Free</span>
+    <span v-else>Select Plan</span>
     <loader v-if="isLoadingCheckout" class="animate-spin h-5 w-10 mr-3" />
   </button>
 </template>
@@ -8,7 +9,8 @@
 <script>
 export default {
   props: {
-    monthlyPriceId: Number,
+    monthlyPriceId: String,
+    plan: String,
   },
   data() {
     return {
@@ -56,17 +58,28 @@ export default {
 
 <style lang="scss" scoped>
 button {
-  width: 300px;
+  width: 250px;
   height: 60px;
   border-radius: 8px;
   margin: 1rem 0 0;
+  color: var(--acc-purple-color);
+  border: 2px solid var(--acc-purple-color);
+  font-weight: 500;
+
+  &:hover,
+  &:active,
+  &:disabled {
+    background: var(--acc-pink-color);
+    border: 3px solid transparent;
+    color: #fff;
+  }
 
   > svg {
     display: inline-block;
   }
 
   &:disabled {
-    opacity: 0.2;
+    opacity: 0.8;
   }
 
   @screen sm {

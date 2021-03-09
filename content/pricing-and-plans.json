@@ -5,7 +5,7 @@
     "annualPrice": 1000,
     "monthlyPriceId": "price_1IRIwiCD5ZUxyIJEU4jaghEZ",
     "annualPriceId": "price_1IPLXICD5ZUxyIJEBBqGaw5G",
-    "headliner": " Reporting, automation, and integrations for support teams",
+    "headliner": "Perfect for an individual or a single business needing regular designs done for one project at a time.",
     "services": [
       { "type": "Unlimited concepts and revisions", "isOffered": true, "serviceId": "1" },
       { "type": "All source files", "isOffered": true, "serviceId": "3" },
@@ -26,6 +26,7 @@
       { "type": "and more...", "isOffered": true, "serviceId": "18" },
       { "type": "No contracts - cancel anytime", "isOffered": true, "serviceId": "19" }
     ],
+    "id": 1,
     "slug": "core-plan"
   },
   {
@@ -34,7 +35,7 @@
     "annualPrice": 3000,
     "monthlyPriceId": "price_1IRIzDCD5ZUxyIJETz8vAYeR",
     "annualPriceId": "price_1IPnKPCD5ZUxyIJEvlkrOdxL",
-    "headliner": "Advanced features and reporting for teams at scale",
+    "headliner": "If you’re a marketer with multiple clients or a larger business that needs faster turnarounds on marketing assets, this is the plan for you.",
     "services": [
       { "type": "All in Core", "isOffered": true, "serviceId": "100" },
       { "type": "Presentation templates", "isOffered": true, "serviceId": "200" },
@@ -55,15 +56,13 @@
     "annualPrice": 6000,
     "monthlyPriceId": "price_1IRJ0mCD5ZUxyIJETbusbjQX",
     "annualPriceId": "price_1IPnLcCD5ZUxyIJETYvNfXtF",
-    "headliner": "Reporting, automation, and integrations for support teams",
+    "headliner": "If you’re a marketer with multiple clients or a larger business that needs faster turnarounds on marketing assets, this is the plan for you.",
     "services": [
       { "type": "All in Core & Plus", "isOffered": true, "serviceId": "10" },
       { "type": "Unlimited concepts and revisions", "isOffered": true, "serviceId": "20" },
-      { "type": "All source files", "isOffered": true, "serviceId": "30" },
       { "type": "White-labelling", "isOffered": true, "serviceId": "40" },
       { "type": "Agency support", "isOffered": true, "serviceId": "50" },
       { "type": "Priority support", "isOffered": true, "serviceId": "60" },
-      { "type": "Smart watch UI design", "isOffered": true, "serviceId": "70" },
       { "type": "Basic Custom Illustrations", "isOffered": true, "serviceId": "1000" },
       { "type": "Fillable PDFs", "isOffered": true, "serviceId": "80" },
       { "type": "Powerpoint / Presentation templates", "isOffered": true, "serviceId": "90" },
