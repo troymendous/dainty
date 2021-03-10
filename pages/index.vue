@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="homepage">
     <banner-section />
     <services-section />
     <media-section />
@@ -49,4 +49,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.homepage {
+  position: relative;
+}
+</style>

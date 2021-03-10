@@ -5,15 +5,20 @@
     <div class="reviews-section_inner">
       <div class="review-card" v-for="{ review, name, slug } in reviews" v-bind:key="slug">
         <h5>{{ name }}</h5>
-        <p>{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…") }}</p>
+        <p>“{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…") }}“</p>
         <button
           class="show-review-btn"
           v-if="review.match(/(\w+)/g).length > 36"
-          @click="showHomeOverlay = true"
+          @click="handleShowPopup(slug)"
         >
           Continue reading
         </button>
       </div>
+    </div>
+    <div class="reviews-popup" v-if="showHomeOverlay">
+      <button @click="handleHidePopup">Close</button>
+      <h5>{{ selectedReview.name }}</h5>
+      <p>“{{ selectedReview.review }}“</p>
     </div>
   </section>
 </template>
@@ -24,10 +29,23 @@ export default {
     return {
       reviews: [],
       showHomeOverlay: false,
+      selectedReview: {},
     }
   },
   async fetch() {
     this.reviews = await this.$content("reviews").fetch()
+  },
+  methods: {
+    handleShowPopup(slug) {
+      this.showHomeOverlay = true
+      this.selectedReview = this.reviews.find((review) => review.slug === slug)
+      document.body.style.overflow = "hidden"
+    },
+    handleHidePopup() {
+      this.showHomeOverlay = false
+      this.selectedReview = {}
+      document.body.style.overflow = "auto"
+    },
   },
 }
 </script>
@@ -62,5 +80,35 @@ export default {
 .show-review-btn {
   display: inline-block;
   @apply text-accentPink;
+}
+
+.overlay {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.reviews-popup {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  width: 600px;
+  margin: 30px auto;
+  background: white;
+  padding: 25px;
+
+  // p,
+  // button {
+  //   color: white !important;
+  // }
 }
 </style>
