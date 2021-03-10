@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="pricing">
+    <div v-if="isActive" class="overlay"></div>
     <PricingCardsV2 :isStripeLoaded="isStripeLoaded" />
     <testimomials />
     <pricing-table />
@@ -39,7 +40,28 @@ export default {
       ],
     }
   },
+  computed: {
+    isActive() {
+      return this.$store.state.showOverlay
+    },
+  },
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+.pricing {
+  position: relative;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index: 35;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+</style>
