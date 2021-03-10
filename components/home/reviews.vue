@@ -4,20 +4,7 @@
     <h2>Reviews</h2>
     <div class="reviews-section_inner">
       <div class="review-card" v-for="{ review, name, slug } in reviews" v-bind:key="slug">
-        <!-- <div class="review-card_heading">
-          <img src="/testimonials/testimonial-01.webp" alt="avatar" />
-          <div>
-            <h5 class="review-name">{{ name }}</h5>
-            <span class="review_date">Mar 2021</span>
-          </div>
-        </div>
-
-        <div class="star-review">
-          <star v-for="n in numberOfReviews" :key="n" />
-        </div> -->
-
         <heading :name="name" :numberOfStars="numberOfStars" />
-
         <p class="review-content">“{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…") }}“</p>
         <button
           class="show-review-btn"
@@ -30,7 +17,6 @@
     </div>
     <div class="reviews-popup" v-if="showHomeOverlay">
       <button @click="handleHidePopup"><span>×</span></button>
-      <!-- <h5>{{ selectedReview.name }}</h5> -->
       <heading :name="selectedReview.name" :numberOfStars="numberOfStars" />
       <p class="review-content">“{{ selectedReview.review }}“</p>
     </div>
@@ -141,34 +127,7 @@ export default {
   }
 }
 
-// .review-card_heading {
-//   display: flex;
-
-//   img {
-//     width: 55px;
-//     height: 55px;
-//     border-radius: 50%;
-//     margin-right: 10px;
-//   }
-
-//   .review-date {
-//     font-size: 15px;
-//     font-weight: 500;
-//   }
-// }
-
 .review-content {
   margin-top: 1rem;
 }
-
-// Review Stars
-// .star-review {
-//   display: flex;
-//   margin-top: 10px;
-
-//   svg {
-//     margin: 5px 0;
-//     width: 18px;
-//   }
-// }
 </style>
