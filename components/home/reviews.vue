@@ -10,7 +10,10 @@
           v-bind:key="slug"
         >
           <heading :name="name" :numberOfStars="numberOfStars" />
-          <p class="review-content">“{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…") }}“</p>
+          <p class="review-content">
+            “{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…")
+            }}<span v-if="review.match(/(\w+)/g).length < 36">“</span>
+          </p>
           <button
             class="show-review-btn"
             v-if="review.match(/(\w+)/g).length > 36"
@@ -31,7 +34,10 @@
           v-bind:key="slug"
         >
           <heading :name="name" :numberOfStars="numberOfStars" />
-          <p class="review-content">“{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…") }}“</p>
+          <p class="review-content">
+            “{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…")
+            }}<span v-if="review.match(/(\w+)/g).length < 36">“</span>
+          </p>
           <button
             class="show-review-btn"
             v-if="review.match(/(\w+)/g).length > 36"
