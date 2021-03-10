@@ -36,40 +36,6 @@ export default {
     }
   }
 }
-.section-header {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  min-height: 500px;
-  height: auto;
-  padding: 2rem;
-
-  @screen md {
-    padding-top: 6rem;
-  }
-
-  @screen sm {
-    padding-top: 3rem;
-    margin: 0;
-    min-height: 300px;
-  }
-}
-.section-header_background {
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-height: 600px;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-
-  @screen sm {
-    max-height: 400px;
-  }
-}
 .fade {
   position: absolute;
   top: 0;

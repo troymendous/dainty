@@ -5,6 +5,7 @@
     <media-section />
     <features-section />
     <call-to-action />
+    <portfolio-examples />
     <pricing-cards-v-2 :isStripeLoaded="isStripeLoaded" />
   </div>
 </template>
@@ -15,9 +16,11 @@ import CallToAction from "../components/home/call-to-action.vue"
 import FeaturesSection from "../components/home/features-section"
 import PricingCardsV2 from "../components/pricing/pricing-cards-v2.vue"
 import MediaSection from "../components/home/media-section"
+import PortfolioExamples from "../components/home/portfolio-examples"
 
 export default {
   components: {
+    PortfolioExamples,
     MediaSection,
     BannerSection,
     FeaturesSection,

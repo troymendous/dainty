@@ -11,7 +11,7 @@
     </div>
     <div v-if="modalActive" class="portfolio-modal" @click="toggleModal">
       <div class="portfolio-swiper-wrapper">
-        <div class="close">
+        <div>
           <swiper :options="swiperOptions">
             <swiper-slide v-for="item in items" :key="item.id">
               <div class="portfolio-modal-img">
