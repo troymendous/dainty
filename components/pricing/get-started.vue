@@ -8,7 +8,7 @@
       Mailbox, 1 Docs site, and Beacon — all for just $99 per User per Month.
     </div>
     <nuxt-link to="/">
-      <div class="get-started_btn">Free 15-day trial <span> > </span></div>
+      <div class="pricing-btn_animated">Free 15-day trial <span> > </span></div>
     </nuxt-link>
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .get-started_img {
   margin: 20px auto;
 }
@@ -32,7 +32,7 @@ export default {
     width: 90%;
   }
 }
-.get-started_btn {
+.pricing-btn_animated {
   position: relative;
   text-align: center;
   width: fit-content;
