@@ -5,7 +5,6 @@
     <get-started />
     <pricing-discount />
     <pricing-support />
-    <testimomials />
     <pricing-table />
   </div>
 </template>
@@ -14,7 +13,6 @@
 // import PricingCards from "../../components/home/pricing-cards.vue"
 import PricingTable from "../../components/pricing-table.vue"
 import PricingCardsV2 from "../../components/pricing/pricing-cards-v2.vue"
-import Testimomials from "../../components/testimomials.vue"
 import GetStarted from "../../components/pricing/get-started"
 import PricingDiscount from "../../components/pricing/pricing-discount"
 import PricingSupport from "../../components/pricing/pricing-support"
@@ -26,7 +24,6 @@ export default {
     GetStarted,
     // PricingCards,
     PricingTable,
-    Testimomials,
     PricingCardsV2,
   },
   data() {
