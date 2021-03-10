@@ -24,7 +24,7 @@
           <stop offset="1" stop-color="#5a24f6" />
         </linearGradient>
       </defs>
-      <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_2" data-name="Layer 2" style="fill: url(#linear-gradient)">
         <g id="Layer_1-2" data-name="Layer 1">
           <path
             class="cls-1"
