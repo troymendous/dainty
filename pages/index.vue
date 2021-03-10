@@ -6,7 +6,6 @@
     <features-section />
     <call-to-action />
     <portfolio-examples />
-    <testimomials />
     <pricing-cards-v-2 :isStripeLoaded="isStripeLoaded" />
   </div>
 </template>
