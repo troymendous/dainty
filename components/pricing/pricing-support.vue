@@ -1,7 +1,7 @@
 <template>
   <div class="pricing-support">
     <div class="pricing-support_item">
-      <div class="info">
+      <div class="info info-left">
         <div class="title"><h5>You can count on us</h5></div>
         <div class="text">
           We're here to help from day one, with 24/6 outstanding support, backed up by a 30-day
@@ -18,8 +18,19 @@
         </div>
       </div>
     </div>
-    <div class="pricing-support_item"></div>
-    <div class="pricing-support_item"></div>
+    <div class="pricing-support_item">
+      <img src="/pricing/one-tree.png" alt="" />
+    </div>
+    <div class="pricing-support_item">
+      <div class="info info-right">
+        <div class="title"><h5>One tree per customer</h5></div>
+        <div class="text">
+          As a certified B Corp, we’re doing what we can to leave the world better than we found it.
+          When you become a customer, we’re planting a tree with The Nature Conservancy to say
+          thanks.
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -36,10 +47,10 @@ export default {
   .pricing-support_item {
     height: auto;
     width: 50%;
+    margin-bottom: 80px;
     .info {
-      width: 70%;
-      margin: 0 auto;
-      padding: 60px 0 60px 60px;
+      width: 60%;
+      padding: 70px 0;
       .title {
         margin: 30px 0;
       }
@@ -48,6 +59,14 @@ export default {
         line-height: 1.8;
         color: #556575;
       }
+    }
+    .info-left {
+      margin-right: 10%;
+      margin-left: auto;
+    }
+    .info-right {
+      margin-left: 10%;
+      margin-right: auto;
     }
     .image {
       .background {
@@ -78,6 +97,10 @@ export default {
           }
         }
       }
+    }
+    img {
+      width: 80%;
+      margin-left: auto;
     }
   }
 }
