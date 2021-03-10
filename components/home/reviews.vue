@@ -3,16 +3,43 @@
     <div class="overlay" v-if="showHomeOverlay"></div>
     <h2>Reviews</h2>
     <div class="reviews-section_inner">
-      <div class="review-card" v-for="{ review, name, slug } in reviews" v-bind:key="slug">
-        <heading :name="name" :numberOfStars="numberOfStars" />
-        <p class="review-content">“{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…") }}“</p>
-        <button
-          class="show-review-btn"
-          v-if="review.match(/(\w+)/g).length > 36"
-          @click="handleShowPopup(slug)"
+      <div class="reviews-grid">
+        <div
+          class="review-card"
+          v-for="{ review, name, slug } in reviews.slice(0, 12)"
+          v-bind:key="slug"
         >
-          Continue reading
-        </button>
+          <heading :name="name" :numberOfStars="numberOfStars" />
+          <p class="review-content">“{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…") }}“</p>
+          <button
+            class="show-review-btn"
+            v-if="review.match(/(\w+)/g).length > 36"
+            @click="handleShowPopup(slug)"
+          >
+            Continue reading
+          </button>
+        </div>
+      </div>
+      <div class="show-more-cards-wrapper">
+        <button v-if="!showMoreCards" @click="showMoreCards = !showMoreCards">View More</button>
+      </div>
+
+      <div class="reviews-grid" v-if="showMoreCards">
+        <div
+          class="review-card"
+          v-for="{ review, name, slug } in reviews.slice(13)"
+          v-bind:key="slug"
+        >
+          <heading :name="name" :numberOfStars="numberOfStars" />
+          <p class="review-content">“{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…") }}“</p>
+          <button
+            class="show-review-btn"
+            v-if="review.match(/(\w+)/g).length > 36"
+            @click="handleShowPopup(slug)"
+          >
+            Continue reading
+          </button>
+        </div>
       </div>
     </div>
     <div class="reviews-popup" v-if="showHomeOverlay">
@@ -31,6 +58,7 @@ export default {
       showHomeOverlay: false,
       selectedReview: {},
       numberOfStars: 5,
+      showMoreCards: false,
     }
   },
   async fetch() {
@@ -59,7 +87,7 @@ export default {
   padding: 6rem 2rem;
 }
 
-.reviews-section_inner {
+.reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 350px);
   justify-content: space-between;
@@ -129,5 +157,28 @@ export default {
 
 .review-content {
   margin-top: 1rem;
+}
+
+.show-more-cards-wrapper {
+  text-align: center;
+
+  button {
+    @apply text-accentPurple;
+    padding: 0.75rem;
+    font-weight: 500;
+    border-radius: 8px;
+    width: 140px;
+    text-align: center;
+    font-size: 14px;
+    background: #fff;
+    border: 2px solid var(--acc-purple-color);
+    margin-top: 1.5rem;
+
+    &:hover {
+      background: var(--acc-pink-color);
+      border: 2px solid transparent;
+      color: #fff;
+    }
+  }
 }
 </style>
