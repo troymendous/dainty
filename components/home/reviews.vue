@@ -4,8 +4,21 @@
     <h2>Reviews</h2>
     <div class="reviews-section_inner">
       <div class="review-card" v-for="{ review, name, slug } in reviews" v-bind:key="slug">
-        <h5>{{ name }}</h5>
-        <p>“{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…") }}“</p>
+        <!-- <div class="review-card_heading">
+          <img src="/testimonials/testimonial-01.webp" alt="avatar" />
+          <div>
+            <h5 class="review-name">{{ name }}</h5>
+            <span class="review_date">Mar 2021</span>
+          </div>
+        </div>
+
+        <div class="star-review">
+          <star v-for="n in numberOfReviews" :key="n" />
+        </div> -->
+
+        <heading :name="name" :numberOfStars="numberOfStars" />
+
+        <p class="review-content">“{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…") }}“</p>
         <button
           class="show-review-btn"
           v-if="review.match(/(\w+)/g).length > 36"
@@ -16,9 +29,10 @@
       </div>
     </div>
     <div class="reviews-popup" v-if="showHomeOverlay">
-      <button @click="handleHidePopup">Close</button>
-      <h5>{{ selectedReview.name }}</h5>
-      <p>“{{ selectedReview.review }}“</p>
+      <button @click="handleHidePopup"><span>×</span></button>
+      <!-- <h5>{{ selectedReview.name }}</h5> -->
+      <heading :name="selectedReview.name" :numberOfStars="numberOfStars" />
+      <p class="review-content">“{{ selectedReview.review }}“</p>
     </div>
   </section>
 </template>
@@ -30,6 +44,7 @@ export default {
       reviews: [],
       showHomeOverlay: false,
       selectedReview: {},
+      numberOfStars: 5,
     }
   },
   async fetch() {
@@ -62,6 +77,10 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 350px);
   justify-content: space-between;
+
+  @screen md {
+    grid-template-columns: 1fr;
+  }
 }
 
 .review-card {
@@ -71,15 +90,12 @@ export default {
   border: 1px solid #eaebec;
   border-radius: 5px;
   box-shadow: 0 1px 5px 3px #f7f3f3;
-
-  p {
-    color: black !important;
-  }
 }
 
 .show-review-btn {
   display: inline-block;
   @apply text-accentPink;
+  margin-top: 1rem;
 }
 
 .overlay {
@@ -106,9 +122,53 @@ export default {
   background: white;
   padding: 25px;
 
-  // p,
-  // button {
-  //   color: white !important;
-  // }
+  button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1002;
+    opacity: 0.2;
+    font-size: 21px;
+    font-weight: 500;
+  }
+
+  @screen md {
+    top: 5%;
+  }
+
+  @screen sm {
+    width: 355px;
+  }
 }
+
+// .review-card_heading {
+//   display: flex;
+
+//   img {
+//     width: 55px;
+//     height: 55px;
+//     border-radius: 50%;
+//     margin-right: 10px;
+//   }
+
+//   .review-date {
+//     font-size: 15px;
+//     font-weight: 500;
+//   }
+// }
+
+.review-content {
+  margin-top: 1rem;
+}
+
+// Review Stars
+// .star-review {
+//   display: flex;
+//   margin-top: 10px;
+
+//   svg {
+//     margin: 5px 0;
+//     width: 18px;
+//   }
+// }
 </style>
