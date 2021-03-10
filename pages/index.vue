@@ -3,6 +3,7 @@
     <banner-section />
     <services-section />
     <media-section />
+    <reviews />
     <call-to-action />
     <portfolio-examples />
     <pricing-cards-v-2 :isStripeLoaded="isStripeLoaded" />
@@ -15,6 +16,7 @@ import CallToAction from "../components/home/call-to-action.vue"
 import PricingCardsV2 from "../components/pricing/pricing-cards-v2.vue"
 import MediaSection from "../components/home/media-section"
 import PortfolioExamples from "../components/home/portfolio-examples"
+import Reviews from "../components/home/reviews.vue"
 
 export default {
   components: {
@@ -23,6 +25,7 @@ export default {
     BannerSection,
     CallToAction,
     PricingCardsV2,
+    Reviews,
   },
   data() {
     return {
