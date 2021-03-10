@@ -1,13 +1,18 @@
 <template>
   <section class="reviews-section">
+    <div class="overlay" v-if="showHomeOverlay"></div>
     <h2>Reviews</h2>
     <div class="reviews-section_inner">
       <div class="review-card" v-for="{ review, name, slug } in reviews" v-bind:key="slug">
         <h5>{{ name }}</h5>
         <p>{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…") }}</p>
-        <span class="show-review-btn" v-if="review.match(/(\w+)/g).length > 36" role="button"
-          >Continue reading</span
+        <button
+          class="show-review-btn"
+          v-if="review.match(/(\w+)/g).length > 36"
+          @click="showHomeOverlay = true"
         >
+          Continue reading
+        </button>
       </div>
     </div>
   </section>
@@ -18,6 +23,7 @@ export default {
   data() {
     return {
       reviews: [],
+      showHomeOverlay: false,
     }
   },
   async fetch() {
