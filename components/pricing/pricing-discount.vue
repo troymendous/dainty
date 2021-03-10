@@ -38,24 +38,33 @@ export default {
   }
   .discount-options {
     display: flex;
+    @screen md {
+      flex-direction: column;
+    }
   }
   .discount-options {
     width: 80%;
     margin: 0 auto;
     .discount-options_item {
       background: white;
-      height: 340px;
-      width: 540px;
-      padding: 70px 50px;
+      height: auto;
+      padding: 50px;
       text-align: center;
       border-bottom: 1px solid #f1f3f5;
       z-index: 8;
       transition: all 0.3s;
+      @screen sm {
+        padding: 20px;
+      }
       &:nth-child(1) {
         border-left: 1px solid #f1f3f5;
         border-right: 1px solid #f1f3f5;
         box-shadow: -10px 15px 25px 1px #f1f3f5;
         border-radius: 6px 0 0 6px;
+        @screen md {
+          border-radius: 6px 6px 0 0;
+          box-shadow: 0 20px 25px 5px #f1f3f5;
+        }
         .title {
           span {
             position: relative;
@@ -63,7 +72,7 @@ export default {
               content: "";
               background: url("/pricing/title-underline.png") no-repeat top left;
               background-size: 113px 10px;
-              bottom: -2px;
+              bottom: -5px;
               height: 10px;
               right: 0;
               position: absolute;
@@ -77,6 +86,11 @@ export default {
         border-right: 1px solid #f1f3f5;
         box-shadow: 10px 15px 25px 1px #f1f3f5;
         border-radius: 0 6px 6px 0;
+        @screen md {
+          border-radius: 0 0 6px 6px;
+          box-shadow: 0 20px 25px 5px #f1f3f5;
+          border-left: 1px solid #f1f3f5;
+        }
         .title {
           span {
             background-image: url("/pricing/rocket-icon.png");
@@ -87,6 +101,10 @@ export default {
             height: 48px;
             margin-left: 8px;
             text-indent: -9999px;
+            @screen sm {
+              position: relative;
+              vertical-align: middle;
+            }
           }
         }
       }
@@ -98,7 +116,10 @@ export default {
       }
       .title {
         font-size: 28px;
-        margin: 20px;
+        margin: 20px 0;
+        @screen sm {
+          font-size: 22px;
+        }
       }
       .text {
         font-size: 20px;
@@ -106,6 +127,9 @@ export default {
         line-height: 1.8;
         color: #556575;
         margin-bottom: 30px;
+        @screen sm {
+          font-size: 18px;
+        }
       }
     }
   }
