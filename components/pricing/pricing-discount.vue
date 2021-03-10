@@ -31,7 +31,7 @@ export default {
   margin: 50px 0;
   .pricing-discount_title {
     width: fit-content;
-    margin: 15px auto;
+    margin: 30px auto;
   }
   .discount-options {
     display: flex;
@@ -40,11 +40,14 @@ export default {
     width: 80%;
     margin: 0 auto;
     .discount-options_item {
+      background: white;
       height: 340px;
       width: 540px;
       padding: 70px 50px;
       text-align: center;
       border-bottom: 1px solid #f1f3f5;
+      z-index: 8;
+      transition: all 0.3s;
       &:nth-child(1) {
         border-left: 1px solid #f1f3f5;
         border-right: 1px solid #f1f3f5;
@@ -55,6 +58,12 @@ export default {
         border-right: 1px solid #f1f3f5;
         box-shadow: 10px 15px 25px 1px #f1f3f5;
         border-radius: 0 6px 6px 0;
+      }
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 20px 5px #c0c2c4;
+        border-radius: 6px;
+        z-index: 10;
       }
       .title {
         font-size: 28px;
