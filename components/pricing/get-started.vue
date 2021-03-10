@@ -28,6 +28,9 @@ export default {
   margin: 0 auto;
   text-align: center;
   line-height: 1.7;
+  @screen sm {
+    width: 90%;
+  }
 }
 .get-started_btn {
   position: relative;
