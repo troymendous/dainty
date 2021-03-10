@@ -2,6 +2,7 @@
   <div class="pricing">
     <div v-if="isActive" class="overlay" @click="hideOverlay"></div>
     <PricingCardsV2 :isStripeLoaded="isStripeLoaded" ref="cards2" />
+    <get-started />
     <testimomials />
     <pricing-table />
   </div>
@@ -12,9 +13,11 @@
 import PricingTable from "../../components/pricing-table.vue"
 import PricingCardsV2 from "../../components/pricing/pricing-cards-v2.vue"
 import Testimomials from "../../components/testimomials.vue"
+import GetStarted from "../../components/pricing/get-started"
 
 export default {
   components: {
+    GetStarted,
     // PricingCards,
     PricingTable,
     Testimomials,
