@@ -1,33 +1,37 @@
 <template>
-  <div class="pricing-support">
-    <div class="pricing-support_item">
-      <div class="info info-left">
-        <div class="title"><h5>You can count on us</h5></div>
-        <div class="text">
-          We're here to help from day one, with 24/6 outstanding support, backed up by a 30-day
-          money back guarantee. This is the beginning of a beautiful friendship.
+  <div>
+    <div class="pricing-support">
+      <div class="pricing-support_item">
+        <div class="info info-left">
+          <div class="title"><h5>You can count on us</h5></div>
+          <div class="text">
+            We're here to help from day one, with 24/6 outstanding support, backed up by a 30-day
+            money back guarantee. This is the beginning of a beautiful friendship.
+          </div>
+        </div>
+      </div>
+      <div class="pricing-support_item">
+        <div class="image">
+          <div class="background" style="background-image: url('/pricing/team-brush.jpg')">
+            <img src="/pricing/team--1.jpg" alt="" />
+            <img src="/pricing/team--2.jpg" alt="" />
+            <img src="/pricing/team--3.jpg" alt="" />
+          </div>
         </div>
       </div>
     </div>
-    <div class="pricing-support_item">
-      <div class="image">
-        <div class="background" style="background-image: url('/pricing/team-brush.jpg')">
-          <img src="/pricing/team--1.jpg" alt="" width="50px" />
-          <img src="/pricing/team--2.jpg" alt="" width="50px" />
-          <img src="/pricing/team--3.jpg" alt="" width="50px" />
-        </div>
+    <div class="pricing-support">
+      <div class="pricing-support_item">
+        <img src="/pricing/one-tree.png" alt="" />
       </div>
-    </div>
-    <div class="pricing-support_item">
-      <img src="/pricing/one-tree.png" alt="" />
-    </div>
-    <div class="pricing-support_item">
-      <div class="info info-right">
-        <div class="title"><h5>One tree per customer</h5></div>
-        <div class="text">
-          As a certified B Corp, we’re doing what we can to leave the world better than we found it.
-          When you become a customer, we’re planting a tree with The Nature Conservancy to say
-          thanks.
+      <div class="pricing-support_item">
+        <div class="info info-right">
+          <div class="title"><h5>One tree per customer</h5></div>
+          <div class="text">
+            As a certified B Corp, we’re doing what we can to leave the world better than we found
+            it. When you become a customer, we’re planting a tree with The Nature Conservancy to say
+            thanks.
+          </div>
         </div>
       </div>
     </div>
@@ -44,13 +48,29 @@ export default {
 .pricing-support {
   display: flex;
   flex-wrap: wrap;
+  @screen md {
+    flex-direction: column;
+  }
+  &:nth-child(2) {
+    @screen md {
+      flex-direction: column-reverse;
+    }
+  }
   .pricing-support_item {
     height: auto;
     width: 50%;
     margin-bottom: 80px;
+    @screen md {
+      width: 100%;
+      margin-bottom: 0;
+    }
     .info {
       width: 60%;
       padding: 70px 0;
+      @screen md {
+        width: 90%;
+        padding: 30px 0;
+      }
       .title {
         margin: 30px 0;
       }
@@ -63,10 +83,16 @@ export default {
     .info-left {
       margin-right: 10%;
       margin-left: auto;
+      @screen md {
+        margin: 0 auto;
+      }
     }
     .info-right {
       margin-left: 10%;
       margin-right: auto;
+      @screen md {
+        margin: 0 auto;
+      }
     }
     .image {
       .background {
@@ -76,6 +102,11 @@ export default {
         background-size: cover;
         height: 395px;
         width: 530px;
+        @screen md {
+          width: 80vw;
+          height: 55vw;
+          margin: 0 auto 10%;
+        }
         img {
           border-radius: 50%;
           left: 50%;
@@ -85,15 +116,26 @@ export default {
           &:nth-child(1) {
             transform: translate(20%, -44%);
             height: 180px;
+            @screen md {
+              height: 35vw;
+            }
           }
           &:nth-child(2) {
             transform: translate(-150%, 0);
             height: 150px;
+            @screen md {
+              height: 30vw;
+            }
           }
           &:nth-child(3) {
             margin-left: -112.5px;
             margin-top: 35px;
             height: 220px;
+            @screen md {
+              margin-left: -25%;
+              margin-top: 8%;
+              height: 45vw;
+            }
           }
         }
       }
@@ -101,6 +143,9 @@ export default {
     img {
       width: 80%;
       margin-left: auto;
+      @screen md {
+        margin: 0 auto 30px;
+      }
     }
   }
 }
