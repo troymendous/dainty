@@ -4,6 +4,7 @@
     <PricingCardsV2 :isStripeLoaded="isStripeLoaded" ref="cards2" />
     <get-started />
     <pricing-discount />
+    <pricing-support />
     <testimomials />
     <pricing-table />
   </div>
@@ -16,9 +17,11 @@ import PricingCardsV2 from "../../components/pricing/pricing-cards-v2.vue"
 import Testimomials from "../../components/testimomials.vue"
 import GetStarted from "../../components/pricing/get-started"
 import PricingDiscount from "../../components/pricing/pricing-discount"
+import PricingSupport from "../../components/pricing/pricing-support"
 
 export default {
   components: {
+    PricingSupport,
     PricingDiscount,
     GetStarted,
     // PricingCards,
