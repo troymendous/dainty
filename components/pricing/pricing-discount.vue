@@ -4,14 +4,17 @@
     <div class="discount-options">
       <div class="discount-options_item">
         <nuxt-link to="/">
-          <div class="title">Help Dainty for Good</div>
+          <div class="title">
+            Help Dainty
+            <span>for Good</span>
+          </div>
           <div class="text">For organizations with a focus on the environment & social impact.</div>
           <div class="pricing-btn_animated">Learn more <span> > </span></div>
         </nuxt-link>
       </div>
       <div class="discount-options_item">
         <nuxt-link to="/">
-          <div class="title">Help Dainty for Startups</div>
+          <div class="title">Help Dainty for Startups <span></span></div>
           <div class="text">For new companies that could use a price break for the first year.</div>
           <div class="pricing-btn_animated">Learn more <span> > </span></div>
         </nuxt-link>
@@ -53,11 +56,39 @@ export default {
         border-right: 1px solid #f1f3f5;
         box-shadow: -10px 15px 25px 1px #f1f3f5;
         border-radius: 6px 0 0 6px;
+        .title {
+          span {
+            position: relative;
+            &:before {
+              content: "";
+              background: url("/pricing/title-underline.png") no-repeat top left;
+              background-size: 113px 10px;
+              bottom: -2px;
+              height: 10px;
+              right: 0;
+              position: absolute;
+              width: 113px;
+              z-index: 1;
+            }
+          }
+        }
       }
       &:nth-child(2) {
         border-right: 1px solid #f1f3f5;
         box-shadow: 10px 15px 25px 1px #f1f3f5;
         border-radius: 0 6px 6px 0;
+        .title {
+          span {
+            background-image: url("/pricing/rocket-icon.png");
+            background-size: 100% auto;
+            position: absolute;
+            display: inline-block;
+            width: 44px;
+            height: 48px;
+            margin-left: 8px;
+            text-indent: -9999px;
+          }
+        }
       }
       &:hover {
         transform: scale(1.05);
