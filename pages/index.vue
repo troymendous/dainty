@@ -15,7 +15,6 @@ import BannerSection from "../components/home/banner-section"
 import CallToAction from "../components/home/call-to-action.vue"
 import FeaturesSection from "../components/home/features-section"
 import PricingCardsV2 from "../components/pricing/pricing-cards-v2.vue"
-import Testimomials from "../components/testimomials.vue"
 import MediaSection from "../components/home/media-section"
 import PortfolioExamples from "../components/home/portfolio-examples"
 
@@ -26,7 +25,6 @@ export default {
     BannerSection,
     FeaturesSection,
     CallToAction,
-    Testimomials,
     PricingCardsV2,
   },
   data() {
