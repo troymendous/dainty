@@ -1,64 +1,46 @@
 <template>
   <footer>
     <div class="footer-inner">
+      <hr />
       <div class="footer-primary">
         <div class="footer-primary_headliner">
           <Logo />
-          <p>Tools for the world's most customer-centric businesses</p>
+          <p>
+            You know that feeling when you swipe right on what you feel is your soul mate and they
+            match you? Well yeah, that’s us…
+          </p>
         </div>
-        <div class="footer-primary_links">
-          <div>
-            <h5>Features</h5>
-            <ul>
-              <li>
-                <nuxt-link to="/portfolio">Portfolio</nuxt-link>
-              </li>
-              <li>
-                <nuxt-link to="/about">About us</nuxt-link>
-              </li>
-              <li>
-                <nuxt-link to="/pricing">Pricing</nuxt-link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h5>Plans</h5>
-            <ul>
-              <li>
-                <nuxt-link to="/">Standard</nuxt-link>
-              </li>
-              <li>
-                <nuxt-link to="/">Premium</nuxt-link>
-              </li>
-              <li>
-                <nuxt-link to="/">Bussiness</nuxt-link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h5>Get Help</h5>
-            <ul>
-              <li><nuxt-link to="/">Docs</nuxt-link></li>
-              <li><nuxt-link to="/">Blog</nuxt-link></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-secondary">
-        <hr />
-        <div class="footer-secondary_inner">
-          <div class="footer-secondary_socials">
-            <nuxt-link to="/">
-              <twitter-icon />
-            </nuxt-link>
-            <nuxt-link to="/">
-              <ig-icon />
-            </nuxt-link>
-            <nuxt-link to="/">
-              <linkedin-icon />
-            </nuxt-link>
-          </div>
+        <div class="footer-body">
+          <ul class="footer_main-links">
+            <li>
+              <nuxt-link to="/about">About</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/portfolio">Portfolio</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/pricing">Pricing</nuxt-link>
+            </li>
+          </ul>
 
+          <!-- ToDo waiting for socials to be set up -->
+
+          <!-- <ul class="footer-socials">
+            <li>
+              <nuxt-link to="/"><twitter-icon /></nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/"><ig-icon /> </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/"><linkedin-icon /></nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/"></nuxt-link>
+            </li>
+          </ul> -->
+        </div>
+        <div class="footer-secondary">
           <div class="footer-secondary_copyright">
             <span>© 2021 Dainty</span>
           </div>
@@ -70,23 +52,25 @@
 
 <script>
 import Logo from "./logo.vue"
+// import TwitterIcon from "./social-icons/twitter-icon.vue"
 
 export default {
   components: {
     Logo,
+    // TwitterIcon,
   },
 }
 </script>
 
 <style lang="scss" scoped>
 footer {
-  width: 100;
-  background: #f7f6f9;
+  width: 100%;
+  // background: #f7f6f9;
 }
 
 a {
   display: inline-block;
-  padding: 0.8rem 0;
+  padding: 2rem 0;
 }
 
 .footer-inner {
@@ -94,85 +78,49 @@ a {
   max-width: 1140px;
   margin: 0 auto;
   padding: 6rem 0rem 3rem;
-}
-
-.footer-primary {
-  @apply grid;
-  @apply grid-cols-5;
-  padding-bottom: 4rem;
 
   @screen md {
-    display: block;
-    padding: 0 1rem;
+    padding: 3rem 1rem 3rem;
   }
 }
 
-.footer-primary_headliner {
-  @apply col-span-2;
-
-  > p {
-    font-size: 1.5rem !important;
-    font-weight: 500;
-    margin-top: 1rem;
-    width: 300px;
-  }
-}
-
-.footer-primary_links {
-  @apply col-span-2;
-  display: flex;
-  justify-content: space-between;
-
-  a {
-    @apply text-darkColor;
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
-  a:hover {
-    @apply text-accentPink;
-  }
-
-  h5 {
-    font-size: 1rem !important;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
-
-    @screen sm {
-      margin-top: 1.5rem;
-    }
-  }
-
-  @screen md {
-    margin-top: 3rem;
-  }
-
-  @screen sm {
-    flex-direction: column;
-  }
-}
-
-.footer-secondary {
-  color: grey;
-
-  @screen sm {
-    padding: 0 1rem;
-  }
-}
-
-.footer-secondary_inner,
-.footer-secondary_socials {
+.footer-body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    padding-right: 1rem;
+  }
+
+  @screen md {
+    flex-direction: column-reverse;
+    align-items: initial;
+  }
 }
 
-.footer-secondary_socials > a {
-  padding-right: 0.8rem;
+.footer_main-links {
+  a {
+    @apply text-darkColor;
+    font-weight: 500;
+
+    &:hover {
+      @apply text-accentPink;
+    }
+  }
+}
+
+.footer-secondary_copyright {
+  margin-top: 0.5rem;
 }
 
 .footer-secondary_copyright > span {
-  font-size: 0.8rem;
+  color: #3e3d3f;
+  font-size: 1rem;
   font-weight: 500;
 }
 </style>
