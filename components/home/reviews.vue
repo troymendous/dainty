@@ -125,13 +125,14 @@ export default {
 
 .reviews-popup {
   position: fixed;
-  top: 10%;
+  top: 7%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1001;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
-  width: 600px;
+  width: 850px;
+  min-height: 350px;
   margin: 30px auto;
   background: white;
   padding: 25px;
@@ -147,6 +148,7 @@ export default {
   }
 
   @screen md {
+    width: 600px;
     top: 5%;
   }
 
