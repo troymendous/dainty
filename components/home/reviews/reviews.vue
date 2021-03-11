@@ -10,10 +10,7 @@
           v-bind:key="slug"
         >
           <heading :name="name" :numberOfStars="numberOfStars" />
-          <p class="review-content">
-            “{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…")
-            }}<span v-if="review.match(/(\w+)/g).length < 36">“</span>
-          </p>
+          <review-content :review="review" />
           <button
             class="show-review-btn"
             v-if="review.match(/(\w+)/g).length > 36"
@@ -34,10 +31,7 @@
           v-bind:key="slug"
         >
           <heading :name="name" :numberOfStars="numberOfStars" />
-          <p class="review-content">
-            “{{ review.replace(/(([^\s]+\s\s*){35})(.*)/, "$1…")
-            }}<span v-if="review.match(/(\w+)/g).length < 36">“</span>
-          </p>
+          <review-content :review="review" />
           <button
             class="show-review-btn"
             v-if="review.match(/(\w+)/g).length > 36"
@@ -57,7 +51,9 @@
 </template>
 
 <script>
+import reviewContent from "./review-content.vue"
 export default {
+  components: { reviewContent },
   data() {
     return {
       reviews: [],
@@ -112,12 +108,6 @@ export default {
   box-shadow: 0 1px 5px 3px #f7f3f3;
 }
 
-.show-review-btn {
-  display: inline-block;
-  @apply text-accentPink;
-  margin-top: 1rem;
-}
-
 .overlay {
   position: absolute;
   top: 80px;
@@ -163,7 +153,8 @@ export default {
   }
 }
 
-.review-content {
+.show-review-btn {
+  @apply text-accentPink;
   margin-top: 1rem;
 }
 
