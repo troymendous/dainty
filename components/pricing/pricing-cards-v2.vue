@@ -1,5 +1,5 @@
 <template>
-  <section class="pricing">
+  <section class="pricing-cards-section">
     <div class="pricing-headliner">
       <h2 v-if="isAtHome">Plans and Pricing</h2>
       <h2 v-else>Choose Plans and Pricing</h2>
@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pricing {
+.pricing-cards-section {
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;

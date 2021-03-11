@@ -29,7 +29,18 @@
               </div>
               <div>
                 <li
-                  v-for="{ type, isOffered, serviceId } in services.slice(8)"
+                  v-for="{ type, isOffered, serviceId } in services.slice(8, 15)"
+                  v-bind:key="serviceId"
+                >
+                  <check-icon v-if="isOffered" />
+                  <cross-icon v-else />
+                  <span>{{ type }}</span>
+                </li>
+              </div>
+
+              <div v-if="services.length > 14">
+                <li
+                  v-for="{ type, isOffered, serviceId } in services.slice(16)"
                   v-bind:key="serviceId"
                 >
                   <check-icon v-if="isOffered" />
@@ -152,7 +163,7 @@ h4 {
 
 .popup-services_desktop {
   position: fixed;
-  top: 20%;
+  top: 18%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 45;
@@ -160,7 +171,7 @@ h4 {
   max-width: 0 1144px;
   margin: 0 auto;
   background: #fff;
-  padding: 60px;
+  padding: 30px 60px;
   box-shadow: 0 0 0 1px rgba(67, 84, 149, 0.1), 0 1px 5px 1px rgba(19, 47, 70, 0.08);
 
   button {
@@ -173,8 +184,8 @@ h4 {
 }
 
 .popup-services-inner_desktop {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  justify-content: space-between;
 }
 
 .popup-services_mobile {
