@@ -114,21 +114,18 @@ export default {
   @screen md {
     flex-direction: column;
   }
-  &:nth-child(odd) {
-    @screen md {
-      flex-direction: column-reverse;
-    }
-  }
   .development-section_item {
     width: 50%;
     height: auto;
     align-self: center;
-    margin-bottom: 20px;
+    margin: 30px 0;
+    padding: 20px;
     @screen md {
       width: 100%;
     }
     .info {
-      padding: 30px;
+      width: 90%;
+      margin-right: auto;
       .title {
         font-size: 1.1rem;
         font-weight: 600;
@@ -148,8 +145,16 @@ export default {
         }
       }
     }
-    img {
-      padding: 30px;
+  }
+  &:nth-child(odd) {
+    @screen md {
+      flex-direction: column-reverse;
+    }
+    .development-section_item {
+      .info {
+        margin-right: 0;
+        margin-left: auto;
+      }
     }
   }
 }
