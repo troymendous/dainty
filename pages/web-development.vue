@@ -82,7 +82,7 @@
         </div>
         <div class="development-section">
           <div class="development-section_item">
-            <img src="/web-development/4.jpg" alt="" />
+            <img src="/web-development/4.png" alt="" />
           </div>
           <div class="development-section_item">
             <div class="info">
