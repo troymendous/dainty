@@ -90,7 +90,7 @@ export default {
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
-  padding: 6rem 2rem;
+  padding: 0 2rem 6rem;
 }
 
 .reviews-grid {
