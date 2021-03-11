@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="pricing-link-wrapper">
-        <nuxt-link v-if="isAtHome" to="/pricing" class="pricing-link">View </nuxt-link>
+        <nuxt-link v-if="isAtHome" to="/pricing" class="pricing-link">View More </nuxt-link>
       </div>
     </div>
   </section>
