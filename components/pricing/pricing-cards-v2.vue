@@ -40,9 +40,9 @@
           </div>
         </div>
       </div>
-      <nuxt-link v-if="isAtHome" to="/pricing" class="pricing-link"
-        >Learn more about our plans and pricing</nuxt-link
-      >
+      <div class="pricing-link-wrapper">
+        <nuxt-link v-if="isAtHome" to="/pricing" class="pricing-link">View More </nuxt-link>
+      </div>
     </div>
   </section>
 </template>
@@ -79,9 +79,9 @@ export default {
 <style lang="scss" scoped>
 .pricing-cards-section {
   width: 100%;
-  max-width: 1140px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 6rem 2rem;
+  padding: 6rem 2rem 0;
 }
 
 .pricing-headliner {
@@ -283,11 +283,28 @@ export default {
   }
 }
 
+.pricing-link-wrapper {
+  text-align: center;
+}
+
 .pricing-link {
-  display: block;
-  text-align: right;
-  @apply text-accentPurple;
-  margin-top: 40px;
+  display: inline-block;
+  padding: 0.75rem;
+  margin-top: 2.5rem;
+  font-weight: 500;
+  border-radius: 8px;
+  width: 140px;
+  text-align: center;
+  font-size: 14px;
+  background: #fff;
+  color: var(--acc-purple-color);
+  border: 2px solid var(--acc-purple-color);
+
+  &:hover {
+    background: var(--acc-pink-color);
+    border: 2px solid transparent;
+    color: #fff;
+  }
 
   @screen md {
     text-align: center;
