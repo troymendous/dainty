@@ -2,9 +2,8 @@
   <div
     class="box"
     :style="`
-      background-image: linear-gradient(black, black), url(${member.img});
+      background-image: url(${member.img});
       background-repeat: no-repeat;
-      background-position-y: ${member.position};
       height: ${height};
     `"
     @click="$emit('memberClicked', member)"

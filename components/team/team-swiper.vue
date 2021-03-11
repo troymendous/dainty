@@ -1,11 +1,11 @@
 <template>
   <div class="modal-container" @click.stop>
     <swiper class="swiper" :options="swiperOption">
-      <swiper-slide v-for="{ name, role, link, id } in members" :key="id">
+      <swiper-slide v-for="member in members" :key="member.id">
         <div class="modal-container-text text-scroll">
           <h4 class="modal-container_name">
-            {{ name }}
-            <a :href="link" target="_blank" class="linkedin">
+            {{ member.name }}
+            <a :href="member.link" target="_blank" class="linkedin">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path
                   fill="#322F31"
@@ -14,20 +14,10 @@
               </svg>
             </a>
           </h4>
-          <h5 class="modal-container_role">{{ role }}</h5>
+          <h5 class="modal-container_role">{{ member.role }}</h5>
           <h6 class="modal-container_value">VALUE TO THE ROOM</h6>
           <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-            deserunt mollit anim id est laborum."
+            {{ member.bio }}
           </p>
         </div>
       </swiper-slide>
@@ -37,7 +27,7 @@
         <div
           class="features-carousel-wrapper modal-container_img"
           :style="`
-                    background-image: linear-gradient(black, black), url('${img}');
+                    background-image: url('${img}');
                   `"
         ></div>
       </swiper-slide>
