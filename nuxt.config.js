@@ -6,7 +6,7 @@ const dynamicRoutes = async () => {
   })
 }
 
-let development = process.env.NODE_ENV !== "production"
+const development = process.env.NODE_ENV !== "production"
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -35,7 +35,10 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: "~/plugins/vue-awesome-swiper.js", mode: "client" }],
+  plugins: [
+    { src: "~/plugins/vue-awesome-swiper.js", mode: "client" },
+    { src: "~/plugins/tawk.js", ssr: false },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
