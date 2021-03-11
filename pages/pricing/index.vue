@@ -1,8 +1,10 @@
 <template>
   <div class="pricing">
-    <div v-if="isActive" class="overlay"></div>
-    <PricingCardsV2 :isStripeLoaded="isStripeLoaded" />
-    <testimomials />
+    <div v-if="isActive" class="overlay" @click="hideOverlay"></div>
+    <PricingCardsV2 :isStripeLoaded="isStripeLoaded" ref="cards2" />
+    <get-started />
+    <pricing-discount />
+    <pricing-support />
     <pricing-table />
   </div>
 </template>
@@ -11,19 +13,33 @@
 // import PricingCards from "../../components/home/pricing-cards.vue"
 import PricingTable from "../../components/pricing-table.vue"
 import PricingCardsV2 from "../../components/pricing/pricing-cards-v2.vue"
-import Testimomials from "../../components/testimomials.vue"
+import GetStarted from "../../components/pricing/get-started"
+import PricingDiscount from "../../components/pricing/pricing-discount"
+import PricingSupport from "../../components/pricing/pricing-support"
 
 export default {
   components: {
+    PricingSupport,
+    PricingDiscount,
+    GetStarted,
     // PricingCards,
     PricingTable,
-    Testimomials,
     PricingCardsV2,
   },
   data() {
     return {
       isStripeLoaded: false,
     }
+  },
+  methods: {
+    hideOverlay() {
+      const services = this.$refs.cards2.$refs.services
+      for (let i = 0; i < services.length; i++) {
+        if (services[i].id !== "") {
+          services[i].hideOverlay()
+        }
+      }
+    },
   },
 
   head() {

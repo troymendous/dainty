@@ -29,7 +29,7 @@
           <p class="pricing-plans_content-item-headliner">
             {{ headliner }}
           </p>
-          <services :services="services" :card-id="id" :plan="plan" />
+          <services :services="services" :card-id="id" :plan="plan" ref="services" />
           <div v-if="!isAtHome">
             <checkout-button
               v-if="isStripeLoaded"
