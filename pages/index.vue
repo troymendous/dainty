@@ -16,7 +16,7 @@ import CallToAction from "../components/home/call-to-action.vue"
 import PricingCardsV2 from "../components/pricing/pricing-cards-v2.vue"
 import MediaSection from "../components/home/media-section"
 import PortfolioExamples from "../components/home/portfolio-examples"
-import Reviews from "../components/home/reviews.vue"
+import Reviews from "../components/home/reviews/reviews.vue"
 
 export default {
   components: {
