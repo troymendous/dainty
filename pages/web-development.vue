@@ -122,10 +122,15 @@ export default {
     padding: 20px;
     @screen md {
       width: 100%;
+      margin: 10px 0;
     }
     .info {
       width: 90%;
       margin-right: auto;
+      @screen md {
+        width: 100%;
+        margin-right: 0;
+      }
       .title {
         font-size: 1.1rem;
         font-weight: 600;
@@ -154,6 +159,9 @@ export default {
       .info {
         margin-right: 0;
         margin-left: auto;
+        @screen md {
+          margin-left: 0;
+        }
       }
     }
   }
