@@ -1,5 +1,5 @@
 <template>
-  <h1>Free Trial</h1>
+  <h2>Welcome</h2>
 </template>
 
 <script>

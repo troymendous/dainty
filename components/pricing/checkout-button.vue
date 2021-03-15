@@ -29,7 +29,7 @@ export default {
 
       /* eslint-disable-next-line */
       const stripe = Stripe(process.env.stripePublishableKey)
-      const corePlanPriceID = "price_1IRIwiCD5ZUxyIJEU4jaghEZ"
+      const corePlanPriceID = "price_1IVHF9F5dr8554IRZ1W1mOMI"
 
       this.isLoadingCheckout = true
 
