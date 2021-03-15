@@ -31,6 +31,9 @@
                 <NuxtLink to="/portfolio">Portfolio</NuxtLink>
               </li>
               <li>
+                <NuxtLink to="/web-development">Web development</NuxtLink>
+              </li>
+              <li>
                 <NuxtLink to="/about">About us</NuxtLink>
               </li>
               <li><NuxtLink to="/pricing">Pricing</NuxtLink></li>
@@ -46,6 +49,10 @@
     <ul v-if="menuIsActive" class="menu_popup">
       <li>
         <NuxtLink to="/portfolio">Portfolio</NuxtLink>
+        <hr />
+      </li>
+      <li>
+        <NuxtLink to="/web-development">Web Development</NuxtLink>
         <hr />
       </li>
       <li>
