@@ -290,24 +290,8 @@ export default {
 .pricing-link {
   display: inline-block;
   padding: 0.75rem;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   font-weight: 500;
-  border-radius: 8px;
-  width: 140px;
-  text-align: center;
-  font-size: 14px;
-  background: #fff;
   color: var(--acc-purple-color);
-  border: 2px solid var(--acc-purple-color);
-
-  &:hover {
-    background: var(--acc-pink-color);
-    border: 2px solid transparent;
-    color: #fff;
-  }
-
-  @screen md {
-    text-align: center;
-  }
 }
 </style>
