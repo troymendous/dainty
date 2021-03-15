@@ -60,16 +60,20 @@ export default {
   // Router Middleware
   router: {
     middleware: ["menu", "pricingOverlay"],
-    scrollBehavior: async (to, from, savedPosition) => {
+
+    async scrollBehavior(to, from, savedPosition) {
       if (savedPosition) {
         return savedPosition
       }
 
       // eslint-disable-next-line require-await
-      const findEl = async (hash, x) => {
+      const findEl = async (hash, x = 0) => {
         return (
           document.querySelector(hash) ||
-          new Promise((resolve, reject) => {
+          new Promise((resolve) => {
+            if (x > 50) {
+              return resolve(document.querySelector("#app"))
+            }
             setTimeout(() => {
               resolve(findEl(hash, ++x || 1))
             }, 100)
@@ -79,7 +83,11 @@ export default {
 
       if (to.hash) {
         const el = await findEl(to.hash)
-        return window.scrollTo({ top: el.offsetTop - 200, behavior: "smooth" })
+        if ("scrollBehavior" in document.documentElement.style) {
+          return window.scrollTo({ top: el.offsetTop, behavior: "smooth" })
+        } else {
+          return window.scrollTo(0, el.offsetTop)
+        }
       }
 
       return { x: 0, y: 0 }
