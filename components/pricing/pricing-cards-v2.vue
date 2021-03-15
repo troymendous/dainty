@@ -17,7 +17,7 @@
             headliner,
             services,
           } in plans"
-          v-bind:key="id"
+          :key="id"
           class="pricing-plans_content-item"
         >
           <h4>{{ plan }}</h4>
@@ -29,7 +29,7 @@
           <p class="pricing-plans_content-item-headliner">
             {{ headliner }}
           </p>
-          <services :services="services" :card-id="id" :plan="plan" ref="services" />
+          <services ref="services" :services="services" :card-id="id" :plan="plan" />
           <div v-if="!isAtHome">
             <checkout-button
               v-if="isStripeLoaded"
@@ -41,7 +41,12 @@
         </div>
       </div>
       <div class="pricing-link-wrapper">
-        <nuxt-link v-if="isAtHome" to="/pricing" class="pricing-link">View More </nuxt-link>
+        <nuxt-link
+          v-if="isAtHome"
+          :to="{ path: '/pricing', hash: '#pricing-table-headliner' }"
+          class="pricing-link"
+          >View More
+        </nuxt-link>
       </div>
     </div>
   </section>

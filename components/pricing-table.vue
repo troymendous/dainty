@@ -1,6 +1,6 @@
 <template>
   <section class="pricing-table">
-    <div class="pricing-table_headliner">
+    <div class="pricing-table_headliner" id="pricing-table-headliner">
       <h2>Features Comparison</h2>
       <p>Compare our plans and select the best for your business</p>
     </div>

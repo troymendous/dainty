@@ -60,6 +60,30 @@ export default {
   // Router Middleware
   router: {
     middleware: ["menu", "pricingOverlay"],
+    scrollBehavior: async (to, from, savedPosition) => {
+      if (savedPosition) {
+        return savedPosition
+      }
+
+      // eslint-disable-next-line require-await
+      const findEl = async (hash, x) => {
+        return (
+          document.querySelector(hash) ||
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve(findEl(hash, ++x || 1))
+            }, 100)
+          })
+        )
+      }
+
+      if (to.hash) {
+        const el = await findEl(to.hash)
+        return window.scrollTo({ top: el.offsetTop - 200, behavior: "smooth" })
+      }
+
+      return { x: 0, y: 0 }
+    },
   },
 
   // Register Pricing slug routes in the nuxt generate command
