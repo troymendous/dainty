@@ -4,15 +4,15 @@
     <services-section />
     <media-section />
     <reviews />
-    <call-to-action />
+    <!--    <call-to-action />-->
     <portfolio-examples />
-    <pricing-cards-v-2 :isStripeLoaded="isStripeLoaded" />
+    <pricing-cards-v-2 :is-stripe-loaded="isStripeLoaded" />
   </div>
 </template>
 
 <script>
 import BannerSection from "../components/home/banner-section"
-import CallToAction from "../components/home/call-to-action.vue"
+// import CallToAction from "../components/home/call-to-action.vue"
 import PricingCardsV2 from "../components/pricing/pricing-cards-v2.vue"
 import MediaSection from "../components/home/media-section"
 import PortfolioExamples from "../components/home/portfolio-examples"
@@ -23,7 +23,7 @@ export default {
     PortfolioExamples,
     MediaSection,
     BannerSection,
-    CallToAction,
+    // CallToAction,
     PricingCardsV2,
     Reviews,
   },
