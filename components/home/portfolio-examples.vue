@@ -7,7 +7,7 @@
         always a qualified designer for the job.
       </h6>
     </div>
-    <div class="menu_call">
+    <div class="examples_btn">
       <nuxt-link to="/portfolio">View More</nuxt-link>
     </div>
     <div class="examples-body">
@@ -69,9 +69,11 @@ export default {
 <style lang="scss">
 .examples {
   margin-bottom: 30px;
-  .menu_call {
+  .examples_btn {
+    text-align: center;
+    margin: 3rem auto 1rem auto;
     a {
-      margin: 1rem 11rem 3rem auto;
+      color: var(--acc-purple-color);
     }
     @screen sm {
       display: block;
