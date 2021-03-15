@@ -6,8 +6,7 @@
         <cross-icon v-else />
         <span>{{ type }}</span>
       </li>
-      <li class="dots" v-if="isAtHome">...</li>
-      <div v-else>
+      <div v-if="!isAtHome">
         <div></div>
         <li role="button" class="toggle-services_desktop" @click="showOverlay(cardId)">
           View more
@@ -155,10 +154,6 @@ li {
 
 h4 {
   text-transform: capitalize;
-}
-
-.dots {
-  font-size: 24px;
 }
 
 .popup-services_desktop {
