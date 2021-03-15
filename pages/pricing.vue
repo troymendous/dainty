@@ -11,11 +11,11 @@
 
 <script>
 // import PricingCards from "../../components/home/pricing-cards.vue"
-import PricingTable from "../../components/pricing-table.vue"
-import PricingCardsV2 from "../../components/pricing/pricing-cards-v2.vue"
-import GetStarted from "../../components/pricing/get-started"
-import PricingDiscount from "../../components/pricing/pricing-discount"
-import PricingSupport from "../../components/pricing/pricing-support"
+import PricingTable from "../components/pricing-table.vue"
+import PricingCardsV2 from "../components/pricing/pricing-cards-v2.vue"
+import GetStarted from "../components/pricing/get-started"
+import PricingDiscount from "../components/pricing/pricing-discount"
+import PricingSupport from "../components/pricing/pricing-support"
 
 export default {
   components: {
