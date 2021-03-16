@@ -4,7 +4,7 @@
       <img src="/testimonials/testimonial-01.webp" alt="avatar" />
       <div>
         <h5 class="review-name">{{ name }}</h5>
-        <span class="review_date">Mar 2021</span>
+        <span class="review_date">{{ date }}</span>
       </div>
     </div>
 
@@ -21,6 +21,7 @@ export default {
   props: {
     name: String,
     numberOfStars: Number,
+    date: String,
   },
   //   components: {
   //     star,
