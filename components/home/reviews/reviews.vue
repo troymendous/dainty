@@ -6,7 +6,7 @@
       <div class="reviews-grid">
         <div
           class="review-card"
-          v-for="{ review, name, slug } in reviews.slice(0, 12)"
+          v-for="{ review, name, slug } in reviews.slice(0, 3)"
           v-bind:key="slug"
         >
           <heading :name="name" :numberOfStars="numberOfStars" />
@@ -27,7 +27,7 @@
       <div class="reviews-grid" v-if="showMoreCards">
         <div
           class="review-card"
-          v-for="{ review, name, slug } in reviews.slice(13)"
+          v-for="{ review, name, slug } in reviews.slice(4)"
           v-bind:key="slug"
         >
           <heading :name="name" :numberOfStars="numberOfStars" />
