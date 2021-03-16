@@ -20,21 +20,6 @@
         </div>
       </div>
     </div>
-    <div class="pricing-support">
-      <div class="pricing-support_item">
-        <img src="/pricing/one-tree.png" alt="" />
-      </div>
-      <div class="pricing-support_item">
-        <div class="info info-right">
-          <div class="title"><h5>One tree per customer</h5></div>
-          <div class="text">
-            As a certified B Corp, we’re doing what we can to leave the world better than we found
-            it. When you become a customer, we’re planting a tree with The Nature Conservancy to say
-            thanks.
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -59,7 +44,6 @@ export default {
   .pricing-support_item {
     height: auto;
     width: 50%;
-    margin-bottom: 80px;
     @screen md {
       width: 100%;
       margin-bottom: 0;
