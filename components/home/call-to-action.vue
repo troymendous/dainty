@@ -13,7 +13,7 @@
             dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <nuxt-link to="/">Get Started</nuxt-link>
+          <nuxt-link to="/coming">Get Started</nuxt-link>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
           dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <nuxt-link to="/">Get Started</nuxt-link>
+        <nuxt-link to="/coming">Get Started</nuxt-link>
       </div>
       <div class="call-to-action_image">
         <img src="/home/call-to-action/feedback.svg" alt="" />
