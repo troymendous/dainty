@@ -82,8 +82,4 @@ li {
 h4 {
   text-transform: capitalize;
 }
-
-.dots {
-  font-size: 24px;
-}
 </style>
