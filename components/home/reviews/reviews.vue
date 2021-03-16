@@ -1,15 +1,15 @@
 <template>
   <section class="reviews-section">
-    <div class="overlay" v-if="showHomeOverlay"></div>
+    <div class="overlay" v-if="showHomeOverlay" @click="handleHidePopup"></div>
     <h2>Reviews</h2>
     <div class="reviews-section_inner">
       <div class="reviews-grid">
         <div
           class="review-card"
-          v-for="{ review, name, slug } in reviews.slice(0, 12)"
+          v-for="{ review, name, slug, stars, date, img } in reviews.slice(0, 3)"
           v-bind:key="slug"
         >
-          <heading :name="name" :numberOfStars="numberOfStars" />
+          <heading :name="name" :numberOfStars="stars" :date="date" :img="img" />
           <review-content :review="review" />
           <button
             class="show-review-btn"
@@ -27,10 +27,10 @@
       <div class="reviews-grid" v-if="showMoreCards">
         <div
           class="review-card"
-          v-for="{ review, name, slug } in reviews.slice(13)"
+          v-for="{ review, name, slug, stars, date, img } in reviews.slice(4)"
           v-bind:key="slug"
         >
-          <heading :name="name" :numberOfStars="numberOfStars" />
+          <heading :name="name" :numberOfStars="stars" :date="date" :img="img" />
           <review-content :review="review" />
           <button
             class="show-review-btn"
@@ -59,7 +59,6 @@ export default {
       reviews: [],
       showHomeOverlay: false,
       selectedReview: {},
-      numberOfStars: 5,
       showMoreCards: false,
     }
   },
@@ -129,6 +128,8 @@ export default {
   border-radius: 6px;
   width: 850px;
   min-height: 350px;
+  max-height: 90vh;
+  overflow-y: scroll;
   margin: 30px auto;
   background: white;
   padding: 25px;
