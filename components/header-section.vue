@@ -36,6 +36,9 @@
               <li>
                 <NuxtLink to="/about">About us</NuxtLink>
               </li>
+              <li>
+                <NuxtLink to="/team">Team</NuxtLink>
+              </li>
               <li><NuxtLink to="/pricing">Pricing</NuxtLink></li>
             </ul>
           </div>
@@ -57,6 +60,10 @@
       </li>
       <li>
         <NuxtLink to="/">About us</NuxtLink>
+        <hr />
+      </li>
+      <li>
+        <NuxtLink to="/team">Team</NuxtLink>
         <hr />
       </li>
       <li>
