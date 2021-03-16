@@ -1,6 +1,6 @@
 <template>
   <section class="reviews-section">
-    <div class="overlay" v-if="showHomeOverlay"></div>
+    <div class="overlay" v-if="showHomeOverlay" @click="handleHidePopup"></div>
     <h2>Reviews</h2>
     <div class="reviews-section_inner">
       <div class="reviews-grid">
