@@ -155,39 +155,4 @@ li {
 h4 {
   text-transform: capitalize;
 }
-
-.popup-services_desktop {
-  position: fixed;
-  top: 18%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 45;
-  width: 70vw;
-  max-width: 0 1144px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 30px 60px;
-  box-shadow: 0 0 0 1px rgba(67, 84, 149, 0.1), 0 1px 5px 1px rgba(19, 47, 70, 0.08);
-
-  button {
-    @apply text-accentPink;
-  }
-
-  @screen md {
-    display: none;
-  }
-}
-
-.popup-services-inner_desktop {
-  display: flex;
-  justify-content: space-between;
-}
-
-.popup-services_mobile {
-  display: none;
-
-  @screen md {
-    display: block;
-  }
-}
 </style>
