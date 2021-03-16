@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="review-card_heading">
-      <img src="/testimonials/testimonial-01.webp" alt="avatar" />
+      <img :src="img" alt="avatar" />
       <div>
         <h5 class="review-name">{{ name }}</h5>
         <span class="review_date">{{ date }}</span>
@@ -22,6 +22,7 @@ export default {
     name: String,
     numberOfStars: Number,
     date: String,
+    img: String,
   },
   //   components: {
   //     star,

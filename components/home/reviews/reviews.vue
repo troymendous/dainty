@@ -6,10 +6,10 @@
       <div class="reviews-grid">
         <div
           class="review-card"
-          v-for="{ review, name, slug, stars, date } in reviews.slice(0, 3)"
+          v-for="{ review, name, slug, stars, date, img } in reviews.slice(0, 3)"
           v-bind:key="slug"
         >
-          <heading :name="name" :numberOfStars="stars" :date="date" />
+          <heading :name="name" :numberOfStars="stars" :date="date" :img="img" />
           <review-content :review="review" />
           <button
             class="show-review-btn"
@@ -27,10 +27,10 @@
       <div class="reviews-grid" v-if="showMoreCards">
         <div
           class="review-card"
-          v-for="{ review, name, slug, stars, date } in reviews.slice(4)"
+          v-for="{ review, name, slug, stars, date, img } in reviews.slice(4)"
           v-bind:key="slug"
         >
-          <heading :name="name" :numberOfStars="stars" :date="date" />
+          <heading :name="name" :numberOfStars="stars" :date="date" :img="img" />
           <review-content :review="review" />
           <button
             class="show-review-btn"
