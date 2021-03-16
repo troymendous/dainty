@@ -128,6 +128,8 @@ export default {
   border-radius: 6px;
   width: 850px;
   min-height: 350px;
+  max-height: 90vh;
+  overflow-y: scroll;
   margin: 30px auto;
   background: white;
   padding: 25px;
