@@ -6,8 +6,7 @@
         <cross-icon v-else />
         <span>{{ type }}</span>
       </li>
-      <li v-if="isAtHome" class="dots">...</li>
-      <div v-else>
+      <div v-if="!isAtHome">
         <div></div>
         <li
           role="button"
