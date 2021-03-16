@@ -70,9 +70,6 @@ li.flex {
     flex-direction: column;
   }
 }
-.about-body_info {
-  padding-top: 60px;
-}
 .text-center {
   text-align: center;
 }
