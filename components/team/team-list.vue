@@ -19,15 +19,16 @@
           @memberClicked="showMember"
         ></team-member>
       </div>
-      <div class="container section3">
-        <team-member
-          v-for="i in [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]"
-          :key="i"
-          :height="heights[i]"
-          :member="members[i]"
-          @memberClicked="showMember"
-        ></team-member>
-      </div>
+      <!-- TODO uncomment this once photos are ready-->
+      <!--      <div class="container section3">-->
+      <!--        <team-member-->
+      <!--          v-for="i in [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]"-->
+      <!--          :key="i"-->
+      <!--          :height="heights[i]"-->
+      <!--          :member="members[i]"-->
+      <!--          @memberClicked="showMember"-->
+      <!--        ></team-member>-->
+      <!--      </div>-->
     </div>
     <div v-if="modalActive" class="team-modal">
       <div class="modal-mask" @click="toggleModal">
