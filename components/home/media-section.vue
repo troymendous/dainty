@@ -120,12 +120,16 @@ export default {
         }
         .icon-wrap {
           flex: 30%;
+          padding: 0 15px;
           @screen sm {
             flex: 100%;
           }
           img {
             width: 160px;
             margin: 0 auto;
+            @screen md {
+              width: 100px;
+            }
           }
         }
         .media-info {
