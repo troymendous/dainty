@@ -1,6 +1,6 @@
 const stripe = require("stripe")(process.env.STRIPE_SK)
 
-const corePlanPriceID = "price_1IRIwiCD5ZUxyIJEU4jaghEZ"
+const corePlanPriceID = "price_1IVImBF5dr8554IROIgLmOEH"
 
 module.exports = async (req, res) => {
   try {
