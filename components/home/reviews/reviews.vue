@@ -1,19 +1,19 @@
 <template>
   <section class="reviews-section">
-    <div class="overlay" v-if="showHomeOverlay" @click="handleHidePopup"></div>
+    <div v-if="showHomeOverlay" class="overlay" @click="handleHidePopup"></div>
     <h2>Reviews</h2>
     <div class="reviews-section_inner">
       <div class="reviews-grid">
         <div
-          class="review-card"
           v-for="{ review, name, slug, stars, date, img } in reviews.slice(0, 3)"
-          v-bind:key="slug"
+          :key="slug"
+          class="review-card"
         >
-          <heading :name="name" :numberOfStars="stars" :date="date" :img="img" />
+          <heading :name="name" :number-of-stars="stars" :date="date" :img="img" />
           <review-content :review="review" />
           <button
-            class="show-review-btn"
             v-if="review.match(/(\w+)/g).length > 36"
+            class="show-review-btn"
             @click="handleShowPopup(slug)"
           >
             Continue reading
@@ -24,17 +24,17 @@
         <button v-if="!showMoreCards" @click="showMoreCards = !showMoreCards">View More</button>
       </div>
 
-      <div class="reviews-grid" v-if="showMoreCards">
+      <div v-if="showMoreCards" class="reviews-grid">
         <div
-          class="review-card"
           v-for="{ review, name, slug, stars, date, img } in reviews.slice(4)"
-          v-bind:key="slug"
+          :key="slug"
+          class="review-card"
         >
-          <heading :name="name" :numberOfStars="stars" :date="date" :img="img" />
+          <heading :name="name" :number-of-stars="stars" :date="date" :img="img" />
           <review-content :review="review" />
           <button
-            class="show-review-btn"
             v-if="review.match(/(\w+)/g).length > 36"
+            class="show-review-btn"
             @click="handleShowPopup(slug)"
           >
             Continue reading
@@ -42,9 +42,14 @@
         </div>
       </div>
     </div>
-    <div class="reviews-popup" v-if="showHomeOverlay">
+    <div v-if="showHomeOverlay" class="reviews-popup">
       <button @click="handleHidePopup"><span>×</span></button>
-      <heading :name="selectedReview.name" :numberOfStars="numberOfStars" />
+      <heading
+        :name="selectedReview.name"
+        :img="selectedReview.img"
+        :date="selectedReview.date"
+        :number-of-stars="selectedReview.stars"
+      />
       <p class="review-content">“{{ selectedReview.review }}“</p>
     </div>
   </section>
