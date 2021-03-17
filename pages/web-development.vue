@@ -136,12 +136,10 @@ export default {
       .text {
         ul {
           margin: 10px;
+          list-style-type: "📌";
           li {
             padding: 0 5px;
             border-bottom: none;
-            &:before {
-              content: "📌";
-            }
           }
         }
       }
