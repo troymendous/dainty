@@ -116,7 +116,6 @@ export default {
     height: auto;
     align-self: center;
     margin: 30px 0;
-    padding: 20px;
     @screen md {
       width: 100%;
       margin: 10px 0;
