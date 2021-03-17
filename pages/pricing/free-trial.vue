@@ -7,9 +7,13 @@
           An all-in-one customer service platform that helps you balance everything your customers
           need to be happy.
         </p>
-        <form @submit.prevent="createFreeTrial">
-          <input type="email" placeholder="Work Email*" required v-model="customer.email" />
-          <input type="submit" value="Free 15-day Trial" class="submit-button" />
+        <form @submit.prevent="handleSubmit">
+          <input type="email" placeholder="Work Email*" required v-model="email" />
+          <div v-show="isStripeLoaded" id="card-element">
+            <!-- A Stripe card Element will be inserted here. -->
+          </div>
+          <div id="card-errors" role="alert"></div>
+          <input type="submit" value="Link your card" />
         </form>
       </div>
     </div>
@@ -20,30 +24,74 @@
 export default {
   data() {
     return {
-      customer: {},
+      email: "",
       error: "",
+      isStripeLoaded: false,
+      stripe: "",
+      setupIntent: {},
+    }
+  },
+  head() {
+    return {
+      script: [
+        {
+          hid: "stripe",
+          src: "https://js.stripe.com/v3/",
+          defer: true,
+          callback: () => {
+            this.isStripeLoaded = true
+          },
+        },
+      ],
     }
   },
   methods: {
-    async createFreeTrial() {
-      const result = await fetch("/api/customers", {
-        method: "POST",
+    async handleSubmit() {
+      this.stripe
+        .confirmCardSetup(this.setupIntent.client_secret, {
+          payment_method: {
+            card: card,
+            billing_details: { email: this.email },
+          },
+        })
+        .then(function (result) {
+          if (result.error) {
+            // changeLoadingState(false)
+            var displayError = document.getElementById("card-errors")
+            displayError.textContent = result.error.message
+          } else {
+            // The PaymentMethod was successfully set up
+            orderComplete(stripe, this.setupIntent.client_secret)
+          }
+        })
+    },
+    getSetupIntent() {
+      return fetch("/create-setup-intent", {
+        method: "post",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(this.customer),
       })
+        .then(function (response) {
+          return response.json()
+        })
+        .then(function (result) {
+          this.setupIntent = result
+        })
+    },
+  },
+  watch: {
+    isStripeLoaded(newVal, oldVal) {
+      if (newVal === true) {
+        console.log("Stripe has been loaded")
+        /* eslint-disable-next-line */
+        this.stripe = Stripe(process.env.stripePublishableKey)
+        const elements = this.stripe.elements()
+        const card = elements.create("card")
 
-      const { status } = result.json()
+        card.mount("#card-element")
 
-      this.customer.email = ""
-
-      if (status === 200) {
-        this.$router.push("welcome")
-      }
-
-      if (status === 500) {
-        this.error = result.json().error
+        this.getSetupIntent()
       }
     },
   },
