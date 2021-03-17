@@ -10,8 +10,8 @@
     </div>
     <ul class="about-list">
       <li class="flex">
-        <div>
-          <img class="about-list_img" src="/about/getting_started_overview.png" alt="value icon" />
+        <div class="about-list_img">
+          <img src="/about/get-started.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_description">
@@ -24,8 +24,8 @@
         </div>
       </li>
       <li class="flex">
-        <div>
-          <img class="about-list_img" src="/about/getting_started_facebook.png" alt="value icon" />
+        <div class="about-list_img">
+          <img src="/about/facebook.svg" alt="value icon" style="min-width: 52px" />
         </div>
         <div>
           <div class="about-list_description">
@@ -37,12 +37,8 @@
         </div>
       </li>
       <li class="flex">
-        <div class="icon-wrap img-wrap">
-          <img
-            class="about-list_img"
-            src="/about/getting_started_contact_us.png"
-            alt="value icon"
-          />
+        <div class="about-list_img">
+          <img src="/about/help.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_description">

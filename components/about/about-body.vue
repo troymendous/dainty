@@ -59,7 +59,9 @@ export default {
   }
   .about-list_img {
     margin: 0 20px 0 0;
-    max-width: none;
+    img {
+      min-width: 60px;
+    }
     @screen sm {
       margin: 20px auto;
     }
