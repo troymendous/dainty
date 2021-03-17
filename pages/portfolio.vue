@@ -1,16 +1,16 @@
 <template>
   <div class="portfolio">
-    <portfolio-header></portfolio-header>
+    <portfolio-header-temp></portfolio-header-temp>
     <portfolio-body></portfolio-body>
   </div>
 </template>
 
 <script>
-import PortfolioHeader from "../components/portfolio/portfolio-header"
 import PortfolioBody from "../components/portfolio/portfolio-body"
+import PortfolioHeaderTemp from "../components/portfolio/portfolio-header_temp"
 export default {
   name: "Portfolio",
-  components: { PortfolioBody, PortfolioHeader },
+  components: { PortfolioHeaderTemp, PortfolioBody },
 }
 </script>
 
