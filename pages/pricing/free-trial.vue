@@ -76,7 +76,8 @@ export default {
           return response.json()
         })
         .then(function (result) {
-          this.setupIntent = result
+          console.log(result)
+          // this.setupIntent = result
         })
     },
   },
