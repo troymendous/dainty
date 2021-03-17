@@ -4,10 +4,7 @@
       <section>
         <div class="about-header">
           <div class="about-header_title">
-            <h2>
-              How we are working
-              <img class="text-img" src="/about/common_questions.png" alt="" />
-            </h2>
+            <h2>You're beautiful & so should be your website</h2>
           </div>
         </div>
       </section>
@@ -119,7 +116,6 @@ export default {
     height: auto;
     align-self: center;
     margin: 30px 0;
-    padding: 20px;
     @screen md {
       width: 100%;
       margin: 10px 0;
@@ -140,12 +136,10 @@ export default {
       .text {
         ul {
           margin: 10px;
+          list-style-type: "📌";
           li {
             padding: 0 5px;
             border-bottom: none;
-            &:before {
-              content: "📌";
-            }
           }
         }
       }
