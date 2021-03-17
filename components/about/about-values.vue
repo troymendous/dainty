@@ -10,12 +10,8 @@
     </div>
     <ul class="about-list">
       <li class="flex">
-        <div>
-          <img
-            class="about-list_img"
-            src="/about/getting_started_help_center.png"
-            alt="value icon"
-          />
+        <div class="about-list_img">
+          <img src="/about/add-value.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_header">Add value</div>
@@ -27,12 +23,8 @@
         </div>
       </li>
       <li class="flex">
-        <div>
-          <img
-            class="about-list_img"
-            src="/about/getting_started_other_teams.png"
-            alt="value icon"
-          />
+        <div class="about-list_img">
+          <img src="/about/be-human.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_header">Be human and be excited</div>
@@ -44,8 +36,8 @@
         </div>
       </li>
       <li class="flex">
-        <div>
-          <img class="about-list_img" src="/about/getting_started_overview.png" alt="value icon" />
+        <div class="about-list_img">
+          <img src="/about/be-hungry.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_header">Be hungry to grow and learn</div>
@@ -57,12 +49,8 @@
         </div>
       </li>
       <li class="flex">
-        <div>
-          <img
-            class="about-list_img"
-            src="/about/getting_started_contact_us.png"
-            alt="value icon"
-          />
+        <div class="about-list_img">
+          <img src="/about/team.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_header">Build a positive team spirit</div>
@@ -74,12 +62,8 @@
         </div>
       </li>
       <li class="flex">
-        <div>
-          <img
-            class="about-list_img"
-            src="/about/getting_started_contact_us.png"
-            alt="value icon"
-          />
+        <div class="about-list_img">
+          <img src="/about/do-more.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_header">Do more with less</div>
