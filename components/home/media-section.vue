@@ -125,7 +125,7 @@ export default {
             flex: 100%;
           }
           img {
-            width: 160px;
+            width: 140px;
             margin: 0 auto;
             @screen md {
               width: 100px;
