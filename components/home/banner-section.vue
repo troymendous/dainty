@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class="banner-content_showcase">
-          <img src="/home/banner/showcase.png" alt="" />
+          <img src="/home/banner/banner.png" alt="" />
         </div>
       </div>
     </div>
@@ -184,19 +184,11 @@ export default {
 }
 
 .banner-content_showcase {
-  animation: MoveUpDown 2s linear infinite;
-
   img {
-    position: absolute;
+    position: relative;
     z-index: 990;
-    top: -7rem;
-    width: auto;
+    width: 100%;
     height: auto;
-
-    @screen md {
-      position: relative;
-      top: 0rem;
-    }
 
     @screen sm {
       position: relative;
@@ -210,16 +202,6 @@ export default {
 
   @screen sm {
     width: 100%;
-  }
-}
-
-@keyframes MoveUpDown {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-40px);
   }
 }
 
