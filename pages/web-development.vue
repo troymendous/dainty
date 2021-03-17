@@ -4,10 +4,7 @@
       <section>
         <div class="about-header">
           <div class="about-header_title">
-            <h2>
-              How we are working
-              <img class="text-img" src="/about/common_questions.png" alt="" />
-            </h2>
+            <h2>You're beautiful & so should be your website</h2>
           </div>
         </div>
       </section>
