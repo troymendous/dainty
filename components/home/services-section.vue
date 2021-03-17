@@ -147,21 +147,33 @@ h2 {
   div:nth-child(1) {
     &:hover {
       background: $iconGreen;
+      .dainty-icon {
+        background: $iconGreen;
+      }
     }
   }
   div:nth-child(2) {
     &:hover {
       background: $iconPurple;
+      .dainty-icon {
+        background: $iconPurple;
+      }
     }
   }
   div:nth-child(3) {
     &:hover {
       background: $iconPink;
+      .dainty-icon {
+        background: $iconPink;
+      }
     }
   }
   div:nth-child(4) {
     &:hover {
       background: $iconYellow;
+      .dainty-icon {
+        background: $iconYellow;
+      }
     }
   }
   @screen md {
