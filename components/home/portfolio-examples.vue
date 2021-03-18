@@ -70,8 +70,8 @@ export default {
 .examples {
   margin-bottom: 30px;
   .examples-title {
+    text-align: center;
     width: 70%;
-    padding-right: 15%;
     margin: 0 auto;
     h2 {
       margin-bottom: 20px;
