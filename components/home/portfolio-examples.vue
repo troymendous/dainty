@@ -7,7 +7,7 @@
         always a qualified designer for the job.
       </h6>
     </div>
-    <div class="examples_btn">
+    <div class="text-btn">
       <nuxt-link to="/portfolio">View More</nuxt-link>
     </div>
     <div class="examples-body">
@@ -69,19 +69,6 @@ export default {
 <style lang="scss">
 .examples {
   margin-bottom: 30px;
-  .examples_btn {
-    text-align: center;
-    margin: 3rem auto 1rem auto;
-    a {
-      color: var(--acc-purple-color);
-    }
-    @screen sm {
-      display: block;
-      width: 90%;
-      margin: 0 auto;
-      padding-left: 1rem;
-    }
-  }
   .examples-title {
     width: 70%;
     padding-right: 15%;

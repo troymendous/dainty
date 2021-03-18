@@ -20,7 +20,7 @@
           </button>
         </div>
       </div>
-      <div class="show-more-cards-wrapper">
+      <div class="text-btn">
         <button v-if="!showMoreCards" @click="showMoreCards = !showMoreCards">View More</button>
       </div>
 
