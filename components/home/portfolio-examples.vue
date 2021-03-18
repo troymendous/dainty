@@ -7,9 +7,6 @@
         always a qualified designer for the job.
       </h6>
     </div>
-    <div class="examples_btn">
-      <nuxt-link to="/portfolio">View More</nuxt-link>
-    </div>
     <div class="examples-body">
       <swiper :options="swiperOptions">
         <swiper-slide v-for="item in exampleItems" :key="item">
@@ -21,6 +18,9 @@
         <div slot="button-prev" class="swiper-button-prev"></div>
         <div slot="button-next" class="swiper-button-next"></div>
       </swiper>
+    </div>
+    <div class="text-btn">
+      <nuxt-link to="/portfolio">View More</nuxt-link>
     </div>
   </div>
 </template>
@@ -69,23 +69,10 @@ export default {
 <style lang="scss">
 .examples {
   margin-bottom: 30px;
-  .examples_btn {
-    text-align: center;
-    margin: 3rem auto 1rem auto;
-    a {
-      color: var(--acc-purple-color);
-    }
-    @screen sm {
-      display: block;
-      width: 90%;
-      margin: 0 auto;
-      padding-left: 1rem;
-    }
-  }
   .examples-title {
+    text-align: center;
     width: 70%;
-    padding-right: 15%;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     h2 {
       margin-bottom: 20px;
     }

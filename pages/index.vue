@@ -49,8 +49,22 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .homepage {
   position: relative;
+}
+.text-btn {
+  text-align: center;
+  margin: 3rem auto 1rem auto;
+  a,
+  button {
+    color: var(--acc-purple-color);
+  }
+  @screen sm {
+    display: block;
+    width: 90%;
+    margin: 1rem auto;
+    padding-left: 1rem;
+  }
 }
 </style>
