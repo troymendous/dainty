@@ -2,7 +2,7 @@
   <div>
     <section>
       <div class="section-header">
-        <div class="section-header_title">
+        <div class="section-header_title team-header">
           <h1>Team</h1>
         </div>
       </div>
@@ -49,6 +49,16 @@ export default {
 
   @screen sm {
     max-height: 401px;
+  }
+}
+.team-header {
+  width: 1170px;
+  margin: 0 auto;
+  padding: 0;
+  @screen md {
+    padding: 0 3rem;
+  }
+  h1 {
   }
 }
 </style>
