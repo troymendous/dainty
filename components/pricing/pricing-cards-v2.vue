@@ -91,6 +91,7 @@ export default {
 
 .pricing-headliner {
   text-align: center;
+  padding-top: 6rem;
 
   h2,
   p {
