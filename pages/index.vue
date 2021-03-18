@@ -63,7 +63,7 @@ export default {
   @screen sm {
     display: block;
     width: 90%;
-    margin: 0 auto;
+    margin: 1rem auto;
     padding-left: 1rem;
   }
 }
