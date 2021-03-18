@@ -12,10 +12,10 @@
       </div>
       <div class="pricing-support_item">
         <div class="image">
-          <div class="background" style="background-image: url('/pricing/team-brush.jpg')">
-            <img src="/pricing/team--1.jpg" alt="" />
-            <img src="/pricing/team--2.jpg" alt="" />
-            <img src="/pricing/team--3.jpg" alt="" />
+          <div class="background" style="background-image: url('/pricing/Business.svg')">
+            <!--            <img src="/pricing/team&#45;&#45;1.jpg" alt="" />-->
+            <!--            <img src="/pricing/team&#45;&#45;2.jpg" alt="" />-->
+            <!--            <img src="/pricing/team&#45;&#45;3.jpg" alt="" />-->
           </div>
         </div>
       </div>
@@ -86,10 +86,13 @@ export default {
         background-size: cover;
         height: 395px;
         width: 530px;
+        margin-top: 20px;
         @screen md {
-          width: 80vw;
-          height: 55vw;
-          margin: 0 auto 10%;
+          margin: 5% auto 5%;
+        }
+        @screen sm {
+          width: 90vw;
+          height: 80vw;
         }
         img {
           border-radius: 50%;
