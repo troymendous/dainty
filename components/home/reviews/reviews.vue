@@ -1,7 +1,7 @@
 <template>
   <section class="reviews-section">
     <div v-if="showHomeOverlay" class="overlay" @click="handleHidePopup"></div>
-    <h2>Reviews</h2>
+    <div class="reviews_title"><h2>Reviews</h2></div>
     <div class="reviews-section_inner">
       <div class="reviews-grid">
         <div
@@ -91,6 +91,9 @@ export default {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 2rem 6rem;
+  .reviews_title {
+    text-align: center;
+  }
 }
 
 .reviews-grid {
