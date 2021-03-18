@@ -4,7 +4,7 @@
       <section>
         <div class="about-header">
           <div class="about-header_title">
-            <h2>You're beautiful & so should be your website</h2>
+            <h2>You’re beautiful & your website should be too</h2>
           </div>
         </div>
       </section>
