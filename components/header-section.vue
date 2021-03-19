@@ -59,7 +59,7 @@
         <hr />
       </li>
       <li>
-        <NuxtLink to="/">About us</NuxtLink>
+        <NuxtLink to="/about">About us</NuxtLink>
         <hr />
       </li>
       <li>
