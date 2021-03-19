@@ -186,7 +186,6 @@ export default {
 .banner-content_showcase {
   img {
     position: relative;
-    z-index: 990;
     width: 100%;
     height: auto;
 
