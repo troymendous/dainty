@@ -13,7 +13,7 @@
             <h5>{{ heading }}</h5>
           </nuxt-link>
           <p>{{ text }}</p>
-          <nuxt-link class="arrow-link" to="/"></nuxt-link>
+          <!--          <nuxt-link class="arrow-link" to="/"></nuxt-link>-->
         </div>
       </div>
     </div>
