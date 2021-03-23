@@ -31,12 +31,7 @@
           </p>
           <services ref="services" :services="services" :card-id="id" :plan="plan" />
           <div v-if="!isAtHome">
-            <checkout-button
-              v-if="isStripeLoaded"
-              :monthly-price-id="monthlyPriceId"
-              :plan="plan"
-            />
-            <div v-else class="skeleton-btn"></div>
+            <checkout-button :monthly-price-id="monthlyPriceId" :plan="plan" />
           </div>
         </div>
       </div>

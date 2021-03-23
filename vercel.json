@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/vercel-builder",
+      "config": {
+        "generateStaticRoutes": true,
+        "serverFiles": [".nuxt/content/**", "content/**", "server-middleware/**"]
+      }
+    },
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/create-setup-intent",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/api/create-setup-intent", "destination": "/api/create-setup-intent" },
+    { "source": "/api/subscriptions", "destination": "/api/subscriptions" }
+  ]
+}
