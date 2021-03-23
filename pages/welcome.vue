@@ -26,6 +26,11 @@
           we’re working on. :-)
         </div>
         <br />
+        <div class="invite-form">
+          <input type="email" />
+          <button>Invite me</button>
+        </div>
+        <br />
         <div class="text">
           Alternatively, if you don’t want to wait for us, you can send us an email with your design
           description here <a href="mailto:hello@dainty.io">hello@dainty.io</a> and we’ll let you
@@ -42,4 +47,42 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.invite-form {
+  width: 420px;
+  margin: 1rem auto;
+  input {
+    display: inline;
+    border: 2px solid var(--light-color);
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    height: 40px;
+    width: 300px;
+    vertical-align: bottom;
+    padding: 0 0.5rem;
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    display: inline;
+    position: absolute;
+    background: #fff;
+    color: var(--acc-purple-color);
+    border: 2px solid var(--acc-purple-color);
+    height: 40px;
+    width: 120px;
+    text-align: center;
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    font-weight: 600;
+    &:hover {
+      background-color: var(--acc-purple-color);
+      color: white;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+</style>
