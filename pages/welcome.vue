@@ -26,7 +26,10 @@
           we’re working on. :-)
         </div>
         <br />
-        <div class="contact-btn" @click="openChat">Contact Us</div>
+        <div class="text">
+          If you’d like a slack invite just let us know by
+          <span class="contact-btn" @click="openChat">clicking here</span>
+        </div>
         <br />
         <div class="text">
           Alternatively, if you don’t want to wait for us, you can send us an email with your design
@@ -52,17 +55,9 @@ export default {
 
 <style lang="scss" scoped>
 .contact-btn {
-  padding: 0.8rem 2rem;
-  border-radius: 8px;
-  border: 2px solid var(--acc-purple-color);
   color: var(--acc-purple-color);
-  font-weight: 600;
-  font-size: 14px;
-  width: fit-content;
-  margin: 0 auto;
   &:hover {
-    background-color: var(--acc-purple-color);
-    color: white;
+    color: var(--acc-pink-color);
   }
 }
 </style>
