@@ -26,10 +26,7 @@
           we’re working on. :-)
         </div>
         <br />
-        <div class="invite-form">
-          <input type="email" />
-          <button>Invite me</button>
-        </div>
+        <div class="contact-btn" @click="openChat">Contact Us</div>
         <br />
         <div class="text">
           Alternatively, if you don’t want to wait for us, you can send us an email with your design
@@ -44,45 +41,28 @@
 <script>
 export default {
   name: "Welcome",
+  methods: {
+    openChat() {
+      // eslint-disable-next-line no-undef
+      Tawk_API.toggle()
+    },
+  },
 }
 </script>
 
-<style lang="scss">
-.invite-form {
-  width: 420px;
-  margin: 1rem auto;
-  input {
-    display: inline;
-    border: 2px solid var(--light-color);
-    border-right: none;
-    border-radius: 8px 0 0 8px;
-    height: 40px;
-    width: 300px;
-    vertical-align: bottom;
-    padding: 0 0.5rem;
-    &:focus {
-      outline: none;
-    }
-  }
-  button {
-    display: inline;
-    position: absolute;
-    background: #fff;
-    color: var(--acc-purple-color);
-    border: 2px solid var(--acc-purple-color);
-    height: 40px;
-    width: 120px;
-    text-align: center;
-    border-radius: 0 8px 8px 0;
-    font-size: 14px;
-    font-weight: 600;
-    &:hover {
-      background-color: var(--acc-purple-color);
-      color: white;
-    }
-    &:focus {
-      outline: none;
-    }
+<style lang="scss" scoped>
+.contact-btn {
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  border: 2px solid var(--acc-purple-color);
+  color: var(--acc-purple-color);
+  font-weight: 600;
+  font-size: 14px;
+  width: fit-content;
+  margin: 0 auto;
+  &:hover {
+    background-color: var(--acc-purple-color);
+    color: white;
   }
 }
 </style>
