@@ -1,6 +1,9 @@
 export const state = () => ({
   menuIsActive: false,
   showOverlay: false,
+  email: "",
+  fullname: "",
+  setupIntent: {},
 })
 
 export const mutations = {
@@ -10,5 +13,17 @@ export const mutations = {
 
   toggleOverlay(state) {
     state.showOverlay = !state.showOverlay
+  },
+
+  updateEmail(state, payload) {
+    state.email = payload
+  },
+
+  updateFullname(state, payload) {
+    state.fullname = payload
+  },
+
+  updateSetupIntent(state, payload) {
+    state.setupIntent = payload
   },
 }

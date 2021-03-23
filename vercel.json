@@ -6,12 +6,16 @@
       "use": "@nuxtjs/vercel-builder",
       "config": {
         "generateStaticRoutes": true,
-        "serverFiles": [".nuxt/content/**", "content/**"]
+        "serverFiles": [".nuxt/content/**", "content/**", "server-middleware/**"]
       }
     },
     {
       "src": "api/**/*.js",
       "use": "@vercel/node"
     }
+  ],
+  "rewrites": [
+    { "source": "/api/create-setup-intent", "destination": "/api/create-setup-intent" },
+    { "source": "/api/subscriptions", "destination": "/api/subscriptions" }
   ]
 }
