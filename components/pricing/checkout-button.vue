@@ -30,7 +30,14 @@ export default {
       /* eslint-disable-next-line */
       const stripe = Stripe(process.env.stripePublishableKey)
 
+      const corePlanPriceID = "price_1IVImBF5dr8554IROIgLmOEH"
+
       this.isLoadingCheckout = true
+
+      if (priceId === corePlanPriceID) {
+        this.$router.push({ path: "/free-trial" })
+        return
+      }
 
       stripe
         .redirectToCheckout({
