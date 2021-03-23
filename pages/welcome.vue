@@ -28,8 +28,8 @@
         <br />
         <div class="text">
           Alternatively, if you don’t want to wait for us, you can send us an email with your design
-          description here hello@dainty.io and we’ll let you know if we have any questions to fill
-          in any missing gaps.
+          description here <a href="mailto:hello@dainty.io">hello@dainty.io</a> and we’ll let you
+          know if we have any questions to fill in any missing gaps.
         </div>
       </div>
     </section>
