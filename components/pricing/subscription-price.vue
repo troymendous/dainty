@@ -1,6 +1,6 @@
 <template>
   <div class="pricing-plans_content-item-price">
-    <span>$</span>
+    <!--    <span>$</span>-->
     <span v-if="isMonthly">{{ monthlyPrice }}</span>
     <span v-else>{{ annualPrice }}</span>
   </div>
@@ -19,30 +19,30 @@ export default {
 <style lang="scss" scoped>
 .pricing-plans_content-item-price {
   position: relative;
-  text-align: left !important;
-
+  text-align: center !important;
   > span:first-child {
-    position: absolute;
-    font-size: 26px;
-    font-weight: 500;
-    top: 11px;
-    left: 5.5rem;
-    @apply text-darkColor;
-
-    @screen sm {
-      left: 4.8rem;
-      font-size: 16px;
-    }
-  }
-  > span:not(:first-child) {
-    display: inline-block;
+    display: inline;
     text-indent: 102px;
+    position: relative;
     @apply text-accentPink;
     font-size: 60px;
 
     @screen sm {
       text-indent: 90px;
       font-size: 40px;
+    }
+    &:before {
+      content: "$";
+      position: absolute;
+      right: 100%;
+      font-size: 26px;
+      font-weight: 500;
+      vertical-align: text-top;
+      @apply text-darkColor;
+
+      @screen sm {
+        font-size: 16px;
+      }
     }
   }
 }
