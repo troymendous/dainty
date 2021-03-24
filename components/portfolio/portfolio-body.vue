@@ -90,6 +90,19 @@ export default {
     grid-row: span 2;
   }
 }
+.portfolio-modal-img {
+  margin: 0 auto;
+  img {
+    margin: 0 auto;
+    max-height: 80vh;
+    max-width: 60vw;
+    width: auto;
+    @screen sm {
+      max-height: 90vh;
+      max-width: 95vw;
+    }
+  }
+}
 .portfolio-modal {
   align-items: center;
   display: flex;
@@ -122,19 +135,6 @@ export default {
         outline: none;
         @screen sm {
           padding: 0;
-        }
-      }
-    }
-    .portfolio-modal-img {
-      margin: 0 auto;
-      img {
-        margin: 0 auto;
-        max-height: 80vh;
-        max-width: 60vw;
-        width: auto;
-        @screen sm {
-          max-height: 90vh;
-          max-width: 95vw;
         }
       }
     }
