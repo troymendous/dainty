@@ -13,6 +13,7 @@
             <div class="email-alert"></div>
             <input type="text" placeholder="Full name*" required v-model="fullname" />
             <input type="email" placeholder="Work Email*" required v-model="email" />
+            <div id="email-alert">Please enter a valid email!</div>
             <button type="submit" :disabled="isLoading">
               <span>Proceed</span>
               <loader v-if="isLoading" class="animate-spin h-5 w-10 mr-3" />
@@ -105,7 +106,6 @@ export default {
   },
   methods: {
     async getSetupIntent() {
-      this.validateEmail(this.email)
       this.isLoading = true
       const res = await fetch("/api/create-setup-intent", {
         method: "post",
@@ -128,13 +128,6 @@ export default {
     closeSetupIntentStep() {
       this.showSetupIntentStep = false
     },
-  },
-  validateEmail(email) {
-    const emailAlert = document.querySelector(".email-alert")
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-      emailAlert.textContent = "Please enter a valid email address"
-      return
-    }
   },
 }
 </script>
