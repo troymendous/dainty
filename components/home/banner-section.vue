@@ -35,7 +35,7 @@
             <!-- TODO name & image -->
             <div>
               <img src="/testimonials/testimonial-01.webp" alt="Avatar" />
-              <span>Tushar Mahajan, Statusbrew</span>
+              <span>Sophia Lewis, Statusbrew</span>
             </div>
           </div>
         </div>
