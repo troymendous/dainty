@@ -1,5 +1,5 @@
 <template>
-  <div class="portfolio-header-temp"><h2>Portfolio</h2></div>
+  <div class="page-header"><h2>Portfolio</h2></div>
 </template>
 
 <script>
@@ -8,8 +8,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.portfolio-header-temp {
+<style lang="scss">
+.page-header {
   min-height: 200px;
   text-align: center;
   padding: 12rem 0 8rem 0;
