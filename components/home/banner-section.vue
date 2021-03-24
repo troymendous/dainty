@@ -23,8 +23,8 @@
             or contracts, cancel anytime. Start your free trial today!
           </span>
           <div class="banner-links">
-            <nuxt-link to="/coming" class="link-primary pink">Start Free Trial</nuxt-link>
-            <nuxt-link to="/coming" class="link-primary purple">Learn More</nuxt-link>
+            <nuxt-link to="/pricing" class="link-primary pink">Start Free Trial</nuxt-link>
+            <nuxt-link to="/pricing" class="link-primary purple">Learn More</nuxt-link>
           </div>
           <div class="banner-user-review">
             <p>
