@@ -70,7 +70,6 @@ export default {
   //   this.plans = await this.$content("pricing-and-plans").fetch()
   // },
   created() {
-    console.log(plans)
     if (this.$route.path === "/pricing") this.isAtHome = false
 
     if (this.$route.path === "/") this.isAtHome = true
