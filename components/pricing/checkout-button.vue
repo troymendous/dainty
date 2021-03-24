@@ -15,8 +15,6 @@ export default {
   data() {
     return {
       isLoadingCheckout: false,
-      successUrl: `${process.env.baseUrl}/subscription/success`,
-      cancelUrl: `${process.env.baseUrl}/subscription/cancel`,
     }
   },
   methods: {
@@ -38,26 +36,6 @@ export default {
         this.$router.push({ path: "/free-trial" })
         return
       }
-
-      stripe
-        .redirectToCheckout({
-          lineItems: [
-            {
-              price: priceId,
-              quantity: 1,
-            },
-          ],
-          mode: "subscription",
-          successUrl: this.successUrl,
-          cancelUrl: this.cancelUrl,
-        })
-        .then(function (result) {
-          // TODO Logic to handle custom errors
-          if (result.error) {
-            const displayError = document.getElementById("error-message")
-            displayError.textContent = result.error.message
-          }
-        })
     },
   },
 }
