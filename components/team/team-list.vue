@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import json from "../../content/team-members"
+import json from "../../static/data/team-members"
 import TeamMember from "./team-member"
 import TeamSwiper from "./team-swiper"
 import TeamMemberCard from "./team-member-card"
