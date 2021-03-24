@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import plans from "../../static/data/pricing-plans.json"
 import Services from "./services.vue"
 
 export default {
@@ -59,16 +60,17 @@ export default {
     return {
       isMonthly: true,
       isAtHome: null,
-      plans: [],
+      plans,
       show: false,
       isLoadingCheckout: false,
       stripeError: "",
     }
   },
-  async fetch() {
-    this.plans = await this.$content("pricing-and-plans").fetch()
-  },
+  // async fetch() {
+  //   this.plans = await this.$content("pricing-and-plans").fetch()
+  // },
   created() {
+    console.log(plans)
     if (this.$route.path === "/pricing") this.isAtHome = false
 
     if (this.$route.path === "/") this.isAtHome = true
