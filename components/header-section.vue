@@ -49,28 +49,30 @@
       </div>
     </div>
 
-    <ul v-if="menuIsActive" class="menu_popup">
-      <li>
-        <NuxtLink to="/portfolio">Portfolio</NuxtLink>
-        <hr />
-      </li>
-      <li>
-        <NuxtLink to="/web-development">Web Development</NuxtLink>
-        <hr />
-      </li>
-      <li>
-        <NuxtLink to="/about">About us</NuxtLink>
-        <hr />
-      </li>
-      <li>
-        <NuxtLink to="/team">Team</NuxtLink>
-        <hr />
-      </li>
-      <li>
-        <NuxtLink to="/pricing">Pricing</NuxtLink>
-        <hr />
-      </li>
-    </ul>
+    <div v-if="menuIsActive" class="menu_popup-wrapper" @click="handleMenu">
+      <ul class="menu_popup" @click.stop>
+        <li>
+          <NuxtLink to="/portfolio">Portfolio</NuxtLink>
+          <hr />
+        </li>
+        <li>
+          <NuxtLink to="/web-development">Web Development</NuxtLink>
+          <hr />
+        </li>
+        <li>
+          <NuxtLink to="/about">About us</NuxtLink>
+          <hr />
+        </li>
+        <li>
+          <NuxtLink to="/team">Team</NuxtLink>
+          <hr />
+        </li>
+        <li>
+          <NuxtLink to="/pricing">Pricing</NuxtLink>
+          <hr />
+        </li>
+      </ul>
+    </div>
   </header>
 </template>
 
@@ -277,6 +279,13 @@ export default {
   }
 }
 
+.menu_popup-wrapper {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+}
 .menu_popup {
   position: fixed;
   z-index: 990;
@@ -284,7 +293,8 @@ export default {
   left: 1rem;
   right: 1rem;
   width: auto;
-  background: var(--dark-color);
+  background: var(--acc-purple-color);
+  border-radius: 8px;
   padding: 1rem 1rem;
   list-style: none;
 
@@ -293,8 +303,8 @@ export default {
   }
 
   a {
-    color: #979caf;
     padding: 1rem 0;
+    color: white;
     @apply font-medium;
   }
 }
