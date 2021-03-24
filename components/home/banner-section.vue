@@ -218,13 +218,13 @@ export default {
   }
 
   .pink {
-    background: var(--acc-pink-color);
-    color: #fff;
+    background: white;
+    color: var(--acc-pink-color);
     border: 2px solid var(--acc-pink-color);
 
     &:hover {
-      background: white;
-      color: var(--acc-pink-color);
+      background: var(--acc-pink-color);
+      color: #fff;
     }
   }
 
