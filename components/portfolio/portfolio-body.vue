@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import json from "../../content/portfolio-items"
+import json from "../../static/data/portfolio-items"
 export default {
   name: "PortfolioBody",
   data() {

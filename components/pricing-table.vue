@@ -36,18 +36,19 @@
 </template>
 
 <script>
+import pricingTable from "../static/data/pricing-table-content.json"
 import checkIcon from "./home/plans/check-icon.vue"
 export default {
   components: { checkIcon },
   data() {
     return {
-      pricingTable: [],
+      pricingTable,
       headings: ["Core", "Plus", "Enterprise"],
     }
   },
-  async fetch() {
-    this.pricingTable = await this.$content("pricing-table-content").fetch()
-  },
+  // async fetch() {
+  //   this.pricingTable = await this.$content("pricing-table-content").fetch()
+  // },
 }
 </script>
 
