@@ -9,14 +9,14 @@
             <span>for Good</span>
           </div>
           <div class="text">For organizations with a focus on the environment & social impact.</div>
-          <div class="pricing-btn_animated">Learn more <span> > </span></div>
+          <!--          <div class="pricing-btn_animated">Learn more <span> > </span></div>-->
         </nuxt-link>
       </div>
       <div class="discount-options_item">
         <nuxt-link to="/">
           <div class="title">Help Dainty for Startups <span></span></div>
           <div class="text">For new companies that could use a price break for the first year.</div>
-          <div class="pricing-btn_animated">Learn more <span> > </span></div>
+          <!--          <div class="pricing-btn_animated">Learn more <span> > </span></div>-->
         </nuxt-link>
       </div>
     </div>

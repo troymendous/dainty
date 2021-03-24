@@ -13,6 +13,7 @@
           <div
             class="examples-item"
             :style="`background-image: url(/portfolio/projects/${item})`"
+            @click="openImg(item)"
           ></div>
         </swiper-slide>
         <div slot="button-prev" class="swiper-button-prev"></div>
@@ -21,6 +22,9 @@
     </div>
     <div class="text-btn">
       <nuxt-link to="/portfolio">View More</nuxt-link>
+    </div>
+    <div v-if="showPopUp" class="overlay" @click="togglePopUp">
+      <div class="portfolio-modal-img"><img :src="imageSelected" alt="" /></div>
     </div>
   </div>
 </template>
@@ -41,6 +45,8 @@ export default {
         "16.jpg",
         "36.jpg",
       ],
+      showPopUp: false,
+      imageSelected: "",
       swiperOptions: {
         navigation: {
           nextEl: ".swiper-button-next",
@@ -62,6 +68,15 @@ export default {
         },
       },
     }
+  },
+  methods: {
+    openImg(img) {
+      this.imageSelected = `/portfolio/projects/${img}`
+      this.togglePopUp()
+    },
+    togglePopUp() {
+      this.showPopUp = !this.showPopUp
+    },
   },
 }
 </script>
@@ -114,6 +129,16 @@ export default {
         font-weight: 600;
       }
     }
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
   }
 }
 </style>
