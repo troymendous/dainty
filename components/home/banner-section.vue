@@ -223,8 +223,8 @@ export default {
     border: 2px solid var(--acc-pink-color);
 
     &:hover {
-      background: var(--dark-color);
-      border: 2px solid var(--dark-color);
+      background: white;
+      color: var(--acc-pink-color);
     }
   }
 
