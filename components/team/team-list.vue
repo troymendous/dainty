@@ -142,7 +142,7 @@ footer {
   transition: opacity 0.3s ease;
 }
 .team {
-  padding: 40px 0;
+  padding-bottom: 40px;
   .box {
     float: left;
     overflow: hidden;
