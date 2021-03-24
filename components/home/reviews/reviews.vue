@@ -56,19 +56,17 @@
 </template>
 
 <script>
+import reviews from "../../../static/data/reviews.json"
 import reviewContent from "./review-content.vue"
 export default {
   components: { reviewContent },
   data() {
     return {
-      reviews: [],
+      reviews,
       showHomeOverlay: false,
       selectedReview: {},
       showMoreCards: false,
     }
-  },
-  async fetch() {
-    this.reviews = await this.$content("reviews").fetch()
   },
   methods: {
     handleShowPopup(slug) {
