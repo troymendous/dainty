@@ -284,7 +284,8 @@ export default {
   left: 1rem;
   right: 1rem;
   width: auto;
-  background: var(--dark-color);
+  background: var(--acc-purple-color);
+  border-radius: 8px;
   padding: 1rem 1rem;
   list-style: none;
 
@@ -293,8 +294,8 @@ export default {
   }
 
   a {
-    color: #979caf;
     padding: 1rem 0;
+    color: white;
     @apply font-medium;
   }
 }
