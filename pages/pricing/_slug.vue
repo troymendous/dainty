@@ -72,7 +72,7 @@ export default {
   components: { checkIcon, loader, paymentIntent },
   data() {
     return {
-      showPaymentIntentStep: true,
+      showPaymentIntentStep: false,
       isLoading: false,
       slug: "",
       plusServices: [
@@ -160,7 +160,7 @@ export default {
     closePaymentIntentStep() {
       this.showPaymentIntentStep = false
     },
-    createCustomer() {
+    async createCustomer() {
       this.isLoading = true
 
       const res = await fetch("/api/customers", {
@@ -171,7 +171,7 @@ export default {
         body: JSON.stringify({ email: this.email, name: this.fullname }),
       })
 
-      const {customer} = await res.json()
+      const { customer } = await res.json()
 
       console.log(customer)
 
