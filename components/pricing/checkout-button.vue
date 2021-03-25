@@ -29,12 +29,22 @@ export default {
       const stripe = Stripe(process.env.stripePublishableKey)
 
       const corePlanPriceID = "price_1IVImBF5dr8554IROIgLmOEH"
+      const plusPlanPriceID = "price_1IVInFF5dr8554IR6PCOPrGq"
+      const enterprisePlanPriceID = "price_1IVIqyF5dr8554IRJNZvIHjq"
 
       this.isLoadingCheckout = true
 
       if (priceId === corePlanPriceID) {
         this.$router.push({ path: "/free-trial" })
         return
+      }
+
+      if (priceId === plusPlanPriceID) {
+        this.$router.push("/pricing/plus")
+      }
+
+      if (priceId === enterprisePlanPriceID) {
+        this.$router.push("/pricing/enterprise")
       }
     },
   },

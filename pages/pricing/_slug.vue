@@ -1,290 +1,286 @@
 <template>
-  <div class="pre-checkout-wrapper">
-    <div v-if="selectedPlan" class="pre-checkout">
-      <button @click="goToPricingPage" class="back-btn">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke=" #5b39c9"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="feather feather-arrow-left"
-        >
-          <line x1="19" y1="12" x2="5" y2="12"></line>
-          <polyline points="12 19 5 12 12 5"></polyline>
-        </svg>
-        Back
-      </button>
-
-      <div class="pre-checkout-field">
-        <span class="heading">Selected Plan</span>
-        <span class="text">{{ selectedPlan[0].plan }}</span>
-      </div>
-
-      <div class="pre-checkout-billing">
-        <div class="pre-checkout-field">
-          <span class="heading">Billing Cycle</span>
-          <label>Yearly</label>
-          <toggle @change="toggleBillingCycle" />
-          <label>Monthly</label>
-          <subscription-price
-            :annualPrice="selectedPlan[0].annualPrice"
-            :monthlyPrice="selectedPlan[0].monthlyPrice"
-            :isMonthly="isMonthly"
-          />
-        </div>
-        <div v-if="!isMonthly" class="pre-checkout-billing_image-wrapper">
-          <img src="/pricing/save-dainty.png" alt="" />
+  <div class="free-trial">
+    <h2>Checkout</h2>
+    <div class="free-trial_inner">
+      <div class="free-trial_content-wrapper">
+        <div class="free-trial_content">
+          <form
+            @submit.prevent="createCustomer"
+            v-if="!showPaymentIntentStep"
+            class="setup-intent-form"
+          >
+            <h4>Heading 1</h4>
+            <input type="text" placeholder="Full name*" required v-model="fullname" />
+            <input type="email" placeholder="Work Email*" required v-model="email" />
+            <button type="submit" :disabled="isLoading">
+              <span>Proceed</span>
+              <loader v-if="isLoading" class="animate-spin h-5 w-10 mr-3" />
+            </button>
+            <p class="policy-agreement">
+              By clicking this button, you agree to our Terms, Privacy Policy and Security Policy.
+            </p>
+          </form>
+          <paymentIntent v-else v-on:closePaymentIntent="closePaymentIntentStep" />
         </div>
       </div>
 
-      <ul class="services">
-        <li
-          v-for="{ type, isOffered, serviceId } in selectedPlan[0].services"
-          v-bind:key="serviceId"
-        >
-          <check-icon v-if="isOffered" />
-          <cross-icon v-else />
-          <span>{{ type }}</span>
-        </li>
-      </ul>
-
-      <div v-if="isStripeLoaded">
-        <div id="error-message"></div>
-        <div class="checkout-btn-wrapper">
-          <button :disabled="isLoadingCheckout" class="checkout-btn" @click="checkout">
-            <div class="checkout-btn-inner">
-              <span>Proceed to checkout</span>
-              <loader v-if="isLoadingCheckout" class="animate-spin h-5 w-10 mr-3" />
-            </div>
-          </button>
+      <div class="free-trial_content-side" v-if="slug === 'plus'">
+        <div class="free-trial_content-side-headliner">
+          <div>
+            <h4>Plus</h4>
+            <p>$249/month</p>
+          </div>
         </div>
+
+        <ul>
+          <div>
+            <li v-for="service in plusServices" :key="service.length">
+              <check-icon />
+              <span> {{ service }}</span>
+            </li>
+          </div>
+        </ul>
       </div>
-      <div v-else class="skeleton-btn-wrapper">
-        <div class="skeleton-btn"></div>
+
+      <div class="free-trial_content-side" v-else>
+        <div class="free-trial_content-side-headliner">
+          <div>
+            <h4>Enteprise</h4>
+            <p>$599/month</p>
+          </div>
+        </div>
+
+        <ul>
+          <div>
+            <li v-for="service in enterpriseServices" :key="service.length">
+              <check-icon />
+              <span> {{ service }}</span>
+            </li>
+          </div>
+        </ul>
       </div>
     </div>
-    <loader v-else />
   </div>
 </template>
 
 <script>
-import toggle from "../../components/pricing/pre-checkout/toggle.vue"
+import paymentIntent from "../../components/payment-intent/payment-intent.vue"
+import checkIcon from "../../components/home/plans/check-icon.vue"
 import loader from "../../components/loader.vue"
-import SubscriptionPrice from "../../components/pricing/subscription-price.vue"
 
 export default {
-  layout: "stripe-checkout-layout",
-  components: { toggle, loader, SubscriptionPrice },
+  components: { checkIcon, loader, paymentIntent },
   data() {
     return {
-      slug: this.$route.params.slug,
-      selectedPlan: null,
-      isMonthly: false,
-      successUrl: `${process.env.baseUrl}/subscription/success`,
-      cancelUrl: `${process.env.baseUrl}/subscription/cancel`,
-      isLoadingCheckout: false,
-      isStripeLoaded: false,
-      stripeError: "",
-    }
-  },
-  async fetch() {
-    this.selectedPlan = await this.$content("pricing-and-plans")
-      .where({ plan: `${this.slug}` })
-      .fetch()
-  },
-  head() {
-    return {
-      script: [
-        {
-          hid: "stripe",
-          src: "https://js.stripe.com/v3/",
-          defer: true,
-          callback: () => {
-            this.isStripeLoaded = true
-          },
-        },
+      showPaymentIntentStep: true,
+      isLoading: false,
+      slug: "",
+      plusServices: [
+        "Unlimited concepts and revisions",
+        "All source files",
+        "High quality work",
+        "Social Media Posts",
+        "Advertisements",
+        "Logo Design",
+        "Business Card Design",
+        "Letterhead Design",
+        "Stationary",
+        "E-Book Cover",
+        "Infographic",
+        "Flyer",
+        "Brochure",
+        "Packaging",
+        "T-shirt",
+        "and more...",
+        "No contracts - cancel anytime",
+      ],
+      enterpriseServices: [
+        "Unlimited concepts and revisions",
+        "All source files",
+        "High quality work",
+        "Social Media Posts",
+        "Advertisements",
+        "Logo Design",
+        "Business Card Design",
+        "Letterhead Design",
+        "Stationary",
+        "E-Book Cover",
+        "Infographic",
+        "Flyer",
+        "Brochure",
+        "Packaging",
+        "T-shirt",
+        "and more...",
+        "No contracts - cancel anytime",
       ],
     }
   },
-  computed: {
-    priceId() {
-      if (this.isMonthly) {
-        return this.selectedPlan[0].monthlyPriceId
-      } else {
-        return this.selectedPlan[0].annualPriceId
-      }
-    },
+  mounted() {
+    this.slug = this.$route.params.slug
   },
-  watch: {
-    $route(to, from) {
-      this.isLoadingCheckout = false
+  computed: {
+    email: {
+      get() {
+        return this.$store.state.email
+      },
+      set(value) {
+        this.$store.commit("updateEmail", value)
+      },
+    },
+    fullname: {
+      get() {
+        return this.$store.state.fullname
+      },
+      set(value) {
+        this.$store.commit("updateFullname", value)
+      },
     },
   },
   methods: {
-    toggleBillingCycle(checked) {
-      this.isMonthly = checked
+    async getSetupIntent() {
+      this.isLoading = true
+      const res = await fetch("/api/create-setup-intent", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: this.email, name: this.fullname }),
+      })
+
+      const setupIntent = await res.json()
+
+      this.$store.commit("updateSetupIntent", setupIntent)
+
+      this.isLoading = false
+
+      this.showSetupIntentStep = true
+
+      // this.$router.push("/pricing/free-trial/finish")
     },
-    checkout(event) {
-      /*
-       * The logic below is only executed when the Stripe script has been fully loaded
-       * When this page is mounted Stripe does not exist, when in dev mode eslint picks up that issue and kills the server
-       * So we disable the eslint-no-undef rule to prevent constantly restarting the server
-       */
-
-      /* eslint-disable-next-line */
-      const stripe = Stripe(process.env.stripePublishableKey)
-
-      this.isLoadingCheckout = true
-
-      stripe
-        .redirectToCheckout({
-          lineItems: [
-            {
-              price: this.priceId,
-              quantity: 1,
-            },
-          ],
-          mode: "subscription",
-          successUrl: this.successUrl,
-          cancelUrl: this.cancelUrl,
-        })
-        .then(function (result) {
-          // TODO Logic to handle custom errors
-          if (result.error) {
-            const displayError = document.getElementById("error-message")
-            displayError.textContent = result.error.message
-          }
-        })
+    closePaymentIntentStep() {
+      this.showPaymentIntentStep = false
     },
-    goToPricingPage() {
-      this.$router.go(-1)
+    createCustomer() {
+      this.isLoading = true
+
+      const res = await fetch("/api/customers", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: this.email, name: this.fullname }),
+      })
+
+      const {customer} = await res.json()
+
+      console.log(customer)
+
+      this.showPaymentIntentStep = true
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.pre-checkout {
-  margin: 2rem 0 6rem;
+.free-trial {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-top: 9rem;
 
-  .services {
-    margin: 0 0 3rem;
+  h2 {
+    text-align: center;
+  }
+}
+
+.free-trial_inner {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+}
+
+.free-trial_content-wrapper {
+  border-top: 1px solid #d5d5d5;
+  padding: 30px 60px 60px;
+}
+
+.setup-intent-form {
+  h1 {
+    font-weight: 500;
+    margin-bottom: 8px;
+    @apply text-darkColor;
+    font-size: 23px;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    background: transparent;
+    // border: 1px solid rgb(165, 178, 189);
+    height: 50px;
+    padding: 0 1rem;
+    margin: 1rem 0;
+    font-size: 14px;
+  }
+
+  input[type="email"],
+  input[type="text"] {
+    border: 1px solid rgb(165, 178, 189);
+    border-radius: 3px;
+  }
+
+  button[type="submit"] {
+    border: 2px solid var(--acc-purple-color);
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-weight: 500;
+    @apply text-accentPurple;
+    margin-top: 1rem;
+    width: 220px;
 
     svg {
       display: inline-block;
-      width: 12px;
-      height: 12px;
-      margin-right: 0.3rem;
     }
 
-    li {
-      padding: 0.6rem 0;
+    &:hover,
+    &:active,
+    &:disabled {
+      background: var(--acc-pink-color);
+      border: 2px solid transparent;
+      color: #fff;
     }
+
+    &:disabled {
+      opacity: 0.8;
+    }
+  }
+
+  .policy-agreement {
+    font-size: 12px;
+    color: #556575;
   }
 }
 
-.pre-checkout-billing {
-  display: flex;
+.free-trial_content-side {
+  border-top: 6px solid var(--acc-purple-color);
+  padding: 30px 70px 60px;
+  box-shadow: 0 5px 30px 0 rgba(39, 63, 74, 0.15);
 
-  // pre-checkout-billing_image-wrapper
-
-  &_image-wrapper {
-    width: 45%;
-    max-width: 260px;
-    padding-top: 15px;
-
-    @media (max-width: 360px) {
-      padding-top: 37px;
-    }
-  }
-}
-
-.skeleton-btn {
-  width: 300px;
-  height: 60px;
-  border-radius: 8px;
-  background: #f3f3f3;
-
-  &-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-.checkout-btn {
-  position: relative;
-  width: 300px;
-  height: 60px;
-  @apply text-accentPurple;
-  border: 2px solid var(--acc-purple-color);
-  border-radius: 8px;
-  transition: top ease 0.5s;
-
-  &:hover {
-    // background: var(--acc-purple-color);
-    // color: #fff;
-    top: -10px;
-  }
-
-  &:disabled {
-    opacity: 0.2;
-  }
-
-  &-wrapper {
+  &-headliner {
     display: flex;
     justify-content: center;
   }
 
-  &-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    span {
-      display: block;
-    }
-  }
-}
-
-.back-btn {
-  padding: 1rem 0;
-  margin-bottom: 2rem;
-  @apply text-darkColor;
-
-  &:hover {
-    @apply animate-bounce;
-  }
-}
-
-.pre-checkout-field {
-  margin-bottom: 1.5rem;
-
-  > span {
-    display: block;
+  li {
+    padding: 0.6rem 0;
   }
 
-  .heading {
-    @apply text-darkColor;
-    font-weight: 500;
-  }
-
-  .text {
-    text-transform: capitalize;
-  }
-
-  .pricing {
-    position: relative;
-
-    span:nth-child(1) {
-      // position: absolute;
-      top: 0;
-      font-size: 10px;
-    }
+  svg {
+    display: inline-block !important;
+    margin-right: 0.3rem;
+    width: 12px;
+    height: 12px;
   }
 }
 </style>
