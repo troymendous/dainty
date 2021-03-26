@@ -115,14 +115,6 @@ export default {
       }
     },
     async createSubscription(id) {
-      const price = ""
-      if (this.slug === "plus") {
-        price = "price_1IVInFF5dr8554IR6PCOPrGq"
-      } else {
-        price = "price_1IVIqyF5dr8554IRJNZvIHjq"
-      }
-
-      console.log({ price })
       const res = await fetch("/api/subscribe", {
         method: "post",
         headers: {
