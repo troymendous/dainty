@@ -15,8 +15,6 @@ export default {
   data() {
     return {
       isLoadingCheckout: false,
-      successUrl: `${process.env.baseUrl}/subscription/success`,
-      cancelUrl: `${process.env.baseUrl}/subscription/cancel`,
     }
   },
   methods: {
@@ -31,6 +29,8 @@ export default {
       const stripe = Stripe(process.env.stripePublishableKey)
 
       const corePlanPriceID = "price_1IVImBF5dr8554IROIgLmOEH"
+      const plusPlanPriceID = "price_1IVInFF5dr8554IR6PCOPrGq"
+      const enterprisePlanPriceID = "price_1IVIqyF5dr8554IRJNZvIHjq"
 
       this.isLoadingCheckout = true
 
@@ -39,25 +39,13 @@ export default {
         return
       }
 
-      stripe
-        .redirectToCheckout({
-          lineItems: [
-            {
-              price: priceId,
-              quantity: 1,
-            },
-          ],
-          mode: "subscription",
-          successUrl: this.successUrl,
-          cancelUrl: this.cancelUrl,
-        })
-        .then(function (result) {
-          // TODO Logic to handle custom errors
-          if (result.error) {
-            const displayError = document.getElementById("error-message")
-            displayError.textContent = result.error.message
-          }
-        })
+      if (priceId === plusPlanPriceID) {
+        this.$router.push("/pricing/plus")
+      }
+
+      if (priceId === enterprisePlanPriceID) {
+        this.$router.push("/pricing/enterprise")
+      }
     },
   },
 }
