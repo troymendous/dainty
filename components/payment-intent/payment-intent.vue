@@ -116,7 +116,7 @@ export default {
       if (res.error) {
         this.displayError(error.message)
       } else {
-        this.createSubscription(result.paymentMethod.id)
+        this.createSubscription(res.paymentMethod.id)
       }
 
       // // Reset the store
