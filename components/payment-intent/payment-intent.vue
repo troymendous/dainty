@@ -105,7 +105,7 @@ export default {
     async handleSubmit() {
       this.isLoading = true
       console.log("***********************")
-      console.log(this.stripe.paymentMethods)
+      console.log(this.stripe)
       console.log("***********************")
 
       const res = await this.stripe.paymentMethods.create({
