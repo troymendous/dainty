@@ -23,7 +23,7 @@
             </div>
             <div class="sr-field-error" id="card-errors" role="alert"></div>
             <button type="submit" :disabled="isLoading">
-              <span id="button-text"> Link your card to your account </span>
+              <span id="button-text">Subscribe</span>
               <loader v-if="isLoading" class="animate-spin h-5 w-10 mr-3" />
             </button>
           </form>
@@ -133,12 +133,11 @@ export default {
       this.isLoading = false
 
       if (result.status === 400) {
-        console.log(result.message)
+        this.displayError(result.message)
       }
 
       if (result.status === 200) {
-        console.log(result.body)
-        // Reset the store
+        this.$router.push("/welcome")
         this.$store.commit("updateEmail", "")
         this.$store.commit("updateFullname", "")
       }
