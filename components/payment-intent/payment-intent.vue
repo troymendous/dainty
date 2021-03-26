@@ -91,15 +91,6 @@ export default {
     email() {
       return this.$store.state.email
     },
-    planPrice() {
-      if (this.slug === "plus") {
-        return "price_1IVInFF5dr8554IR6PCOPrGq"
-      }
-
-      if (this.slug === "enterprise") {
-        return "price_1IVIqyF5dr8554IRJNZvIHjq"
-      }
-    },
   },
   methods: {
     async handleSubmit() {
@@ -116,7 +107,14 @@ export default {
       }
     },
     async createSubscription(id) {
-      console.log(this.planPrice)
+      const price = ""
+      if (this.slug === "plus") {
+        price = "price_1IVInFF5dr8554IR6PCOPrGq"
+      } else {
+        price = "price_1IVIqyF5dr8554IRJNZvIHjq"
+      }
+
+      console.log({ price })
       const res = await fetch("/api/subscribe", {
         method: "post",
         headers: {
@@ -126,7 +124,7 @@ export default {
           name: this.$store.state.fullname,
           email: this.email,
           payment_id: id,
-          price: this.planPrice,
+          price,
         }),
       })
 
