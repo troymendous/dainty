@@ -80,8 +80,6 @@ export default {
     }
     this.card = elements.create("card", { style })
 
-    console.log({ card: this.card })
-
     this.card.mount("#card-element")
 
     // Element focus ring
@@ -134,7 +132,7 @@ export default {
       this.isLoading = false
 
       console.log("****************")
-      console.log(result)
+      console.log({ result })
 
       if (result.status === 400) {
         this.displayError(result.message)
