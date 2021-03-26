@@ -72,6 +72,8 @@ export default {
     }
     this.card = elements.create("card", { style })
 
+    console.log({ card: this.card })
+
     this.card.mount("#card-element")
 
     // Element focus ring
@@ -83,10 +85,6 @@ export default {
     this.card.on("blur", function () {
       const el = document.getElementById("card-element")
       el.classList.remove("focused")
-    })
-
-    card.on("change", function (event) {
-      displayError(event)
     })
   },
   computed: {
