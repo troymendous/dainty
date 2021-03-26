@@ -22,6 +22,7 @@ module.exports = async (req, res) => {
     })
   } catch (error) {
     console.log("//////Here/////")
+    console.log({ error })
     res.json({
       status: 400,
       message: error.message,
