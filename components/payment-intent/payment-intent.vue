@@ -114,9 +114,9 @@ export default {
       })
 
       if (res.error) {
-        displayError(error.message)
+        this.displayError(error.message)
       } else {
-        this.zcreateSubscription(result.paymentMethod.id)
+        this.createSubscription(result.paymentMethod.id)
       }
 
       // // Reset the store
