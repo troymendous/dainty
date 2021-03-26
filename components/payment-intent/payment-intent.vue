@@ -105,7 +105,7 @@ export default {
     async handleSubmit() {
       this.isLoading = true
       console.log("***********************")
-      console.log(this.stripe)
+      console.log(this.stripe.createPaymentMethod)
       console.log("***********************")
 
       const res = await this.stripe.createPaymentMethod({
@@ -113,6 +113,7 @@ export default {
         card: this.card,
       })
 
+      console.log("++++++++++++++++++++++++++++++++++++++")
       const result = await res.json()
 
       if (result.error) {
