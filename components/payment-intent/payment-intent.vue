@@ -113,10 +113,7 @@ export default {
         card: this.card,
       })
 
-      console.log({ res })
-      const result = await res.json()
-
-      if (result.error) {
+      if (res.error) {
         displayError(error.message)
       } else {
         createSubscription(result.paymentMethod.id)
