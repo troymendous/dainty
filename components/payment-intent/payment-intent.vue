@@ -136,7 +136,7 @@ export default {
       },
       body: JSON.stringify({
         name: this.$store.state.fullname,
-        email,
+        email: this.email,
         payment_id: id,
         plan_price: this.planPrice,
       }),
@@ -146,11 +146,11 @@ export default {
 
     this.isLoading = false
 
-    if (result.satus === 400) {
+    if (result.status === 400) {
       console.log(result.message)
     }
 
-    if (result.satus === 200) {
+    if (result.status === 200) {
       console.log(result.body)
       // Reset the store
       this.$store.commit("updateEmail", "")

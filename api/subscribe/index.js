@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
         items: [{ price: plusPlanPriceId }],
       })
 
-      res.status(200).json({
+      res.json({
         status: 200,
         body: subscription.id,
         message: "SUCCESS",
@@ -32,14 +32,14 @@ module.exports = async (req, res) => {
         items: [{ price: enterprisePlanPriceId }],
       })
 
-      res.status(200).json({
+      res.json({
         status: 200,
         body: subscription.id,
         message: "SUCCESS",
       })
     }
   } catch (error) {
-    res.status(400).json({
+    res.json({
       status: 400,
       message: error.message,
     })
