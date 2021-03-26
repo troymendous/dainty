@@ -118,13 +118,7 @@ export default {
       } else {
         this.createSubscription(res.paymentMethod.id)
       }
-
-      // // Reset the store
-      // this.$store.commit("updateEmail", "")
-      // this.$store.commit("updateFullname", "")
-      // this.$store.commit("updateSetupIntent", {})
     },
-  },
   async createSubscription(id) {
     const res = await fetch("/api/subscribe", {
       method: "post",
