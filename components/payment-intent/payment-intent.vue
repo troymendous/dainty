@@ -108,7 +108,7 @@ export default {
       console.log(this.stripe)
       console.log("***********************")
 
-      const res = await this.stripe.paymentMethods.create({
+      const res = await this.stripe.createPaymentMethod({
         type: "card",
         card: this.card,
       })
