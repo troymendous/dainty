@@ -127,14 +127,9 @@ export default {
         }),
       })
 
-      console.log({ res })
-
       const result = await res.json()
 
       this.isLoading = false
-
-      console.log("****************")
-      console.log({ result })
 
       if (result.status === 400) {
         this.displayError(result.message)
