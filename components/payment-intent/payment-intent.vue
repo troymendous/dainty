@@ -109,7 +109,7 @@ export default {
       })
 
       if (res.error) {
-        this.displayError(error.message)
+        this.displayError(result.error.message)
       } else {
         this.createSubscription(res.paymentMethod.id)
       }
