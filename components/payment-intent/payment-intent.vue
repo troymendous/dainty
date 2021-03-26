@@ -110,6 +110,7 @@ export default {
 
       if (res.error) {
         this.displayError(result.error.message)
+        this.isLoading = false
       } else {
         this.createSubscription(res.paymentMethod.id)
       }
@@ -131,6 +132,9 @@ export default {
       const result = await res.json()
 
       this.isLoading = false
+
+      console.log("****************")
+      console.log(result)
 
       if (result.status === 400) {
         this.displayError(result.message)
