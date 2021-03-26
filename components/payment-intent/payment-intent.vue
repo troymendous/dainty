@@ -119,41 +119,42 @@ export default {
         this.createSubscription(res.paymentMethod.id)
       }
     },
-  async createSubscription(id) {
-    const res = await fetch("/api/subscribe", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: this.$store.state.fullname,
-        email: this.email,
-        payment_id: id,
-        plan_price: this.planPrice,
-      }),
-    })
+    async createSubscription(id) {
+      const res = await fetch("/api/subscribe", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: this.$store.state.fullname,
+          email: this.email,
+          payment_id: id,
+          plan_price: this.planPrice,
+        }),
+      })
 
-    const result = await res.json()
+      const result = await res.json()
 
-    this.isLoading = false
+      this.isLoading = false
 
-    if (result.status === 400) {
-      console.log(result.message)
-    }
+      if (result.status === 400) {
+        console.log(result.message)
+      }
 
-    if (result.status === 200) {
-      console.log(result.body)
-      // Reset the store
-      this.$store.commit("updateEmail", "")
-      this.$store.commit("updateFullname", "")
-    }
-  },
-  toggleShowSetupIntent() {
-    this.$emit("closePaymentIntent")
-  },
-  displayError(text) {
-    const cardErrors = document.querySelector("#card-errors")
-    cardErrors.textContent = text
+      if (result.status === 200) {
+        console.log(result.body)
+        // Reset the store
+        this.$store.commit("updateEmail", "")
+        this.$store.commit("updateFullname", "")
+      }
+    },
+    toggleShowSetupIntent() {
+      this.$emit("closePaymentIntent")
+    },
+    displayError(text) {
+      const cardErrors = document.querySelector("#card-errors")
+      cardErrors.textContent = text
+    },
   },
 }
 </script>
