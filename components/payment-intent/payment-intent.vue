@@ -84,60 +84,83 @@ export default {
       const el = document.getElementById("card-element")
       el.classList.remove("focused")
     })
+
+    card.on("change", function (event) {
+      displayError(event)
+    })
   },
   computed: {
     email() {
       return this.$store.state.email
     },
-    setupIntent() {
-      return this.$store.state.setupIntent
+    planPrice() {
+      if (this.slug === "plus") {
+        return "price_1IVInFF5dr8554IR6PCOPrGq"
+      }
+
+      if (this.slug === "enterprise") {
+        return "price_1IVIqyF5dr8554IRJNZvIHjq"
+      }
     },
   },
   methods: {
     async handleSubmit() {
       this.isLoading = true
-      const confirmationResult = await this.stripe.confirmCardSetup(
-        this.setupIntent.client_secret,
-        {
-          payment_method: {
-            card: this.card,
-            billing_details: { email: this.email },
-          },
-        }
-      )
 
-      if (confirmationResult.error) {
-        this.isLoading = false
-        const displayError = document.getElementById("card-errors")
-        displayError.textContent = confirmationResult.error.message
-      } else {
-        this.isLoading = false
-        document.querySelector(".setup-intent-form").classList.add("hidden")
-        document.querySelector(".sr-result").classList.remove("hidden")
-        const res = await this.subscribeFreeTrial(this.setupIntent)
-        const { status } = await res.json()
-        if (status === "success") {
-          console.log("The user is successfully subbed")
-        }
-
-        // Reset the store
-        this.$store.commit("updateEmail", "")
-        this.$store.commit("updateFullname", "")
-        this.$store.commit("updateSetupIntent", {})
-      }
-    },
-    subscribeFreeTrial({ customer }) {
-      return fetch("/api/subscriptions", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ customer }),
+      const res = await this.stripe.paymentMethods.create({
+        type: "card",
+        card: this.card,
       })
+
+      const result = await res.json()
+
+      if (result.error) {
+        displayError(error.message)
+      } else {
+        createSubscription(result.paymentMethod.id)
+      }
+
+      // // Reset the store
+      // this.$store.commit("updateEmail", "")
+      // this.$store.commit("updateFullname", "")
+      // this.$store.commit("updateSetupIntent", {})
     },
-    toggleShowSetupIntent() {
-      this.$emit("closePaymentIntent")
-    },
+  },
+  async createSubscription(id) {
+    const res = await fetch("/api/subscribe", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: this.$store.state.fullname,
+        email,
+        payment_id: id,
+        plan_price: this.planPrice,
+      }),
+    })
+
+    const result = await res.json()
+
+    this.isLoading = false
+
+    if (result.satus === 400) {
+      console.log(result.message)
+    }
+
+    if (result.satus === 200) {
+      console.log(result.body)
+      // Reset the store
+      this.$store.commit("updateEmail", "")
+      this.$store.commit("updateFullname", "")
+    }
+  },
+  toggleShowSetupIntent() {
+    this.$emit("closePaymentIntent")
+  },
+  displayError(text) {
+    const cardErrors = document.querySelector("#card-errors")
+    cardErrors.textContent = text
   },
 }
 </script>

@@ -5,7 +5,7 @@
       <div class="free-trial_content-wrapper">
         <div class="free-trial_content">
           <form
-            @submit.prevent="createCustomer"
+            @submit.prevent="handleSubmit"
             v-if="!showPaymentIntentStep"
             class="setup-intent-form"
           >
@@ -137,44 +137,10 @@ export default {
     },
   },
   methods: {
-    async getSetupIntent() {
-      this.isLoading = true
-      const res = await fetch("/api/create-setup-intent", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: this.email, name: this.fullname }),
-      })
-
-      const setupIntent = await res.json()
-
-      this.$store.commit("updateSetupIntent", setupIntent)
-
-      this.isLoading = false
-
-      this.showSetupIntentStep = true
-
-      // this.$router.push("/pricing/free-trial/finish")
-    },
     closePaymentIntentStep() {
       this.showPaymentIntentStep = false
     },
-    async createCustomer() {
-      this.isLoading = true
-
-      const res = await fetch("/api/customers", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: this.email, name: this.fullname }),
-      })
-
-      const { customer } = await res.json()
-
-      console.log(customer)
-
+    async handleSubmit() {
       this.showPaymentIntentStep = true
     },
   },

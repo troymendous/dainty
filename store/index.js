@@ -4,6 +4,7 @@ export const state = () => ({
   email: "",
   fullname: "",
   setupIntent: {},
+  customer: "",
 })
 
 export const mutations = {
@@ -25,5 +26,9 @@ export const mutations = {
 
   updateSetupIntent(state, payload) {
     state.setupIntent = payload
+  },
+
+  updateCustomer(state, payload) {
+    state.customer = payload
   },
 }
