@@ -116,7 +116,7 @@ export default {
       if (res.error) {
         displayError(error.message)
       } else {
-        createSubscription(result.paymentMethod.id)
+        this.zcreateSubscription(result.paymentMethod.id)
       }
 
       // // Reset the store
