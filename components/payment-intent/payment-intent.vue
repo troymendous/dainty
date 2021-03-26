@@ -113,7 +113,7 @@ export default {
         card: this.card,
       })
 
-      console.log("++++++++++++++++++++++++++++++++++++++")
+      console.log({ res })
       const result = await res.json()
 
       if (result.error) {
