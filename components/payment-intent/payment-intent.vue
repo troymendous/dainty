@@ -47,9 +47,17 @@ export default {
       stripe: "",
       card: null,
       isLoading: false,
+      price: "",
     }
   },
   mounted() {
+    const slug = this.$route.params.slug
+    if (slug === "plus") {
+      this.price = "price_1IVInFF5dr8554IR6PCOPrGq"
+    } else {
+      this.price = "price_1IVIqyF5dr8554IRJNZvIHjq"
+    }
+
     /* eslint-disable-next-line */
     this.stripe = Stripe(process.env.stripePublishableKey)
     const elements = this.stripe.elements({
@@ -124,7 +132,7 @@ export default {
           name: this.$store.state.fullname,
           email: this.email,
           payment_id: id,
-          price,
+          price: this.price,
         }),
       })
 
