@@ -127,6 +127,8 @@ export default {
         }),
       })
 
+      console.log({ res })
+
       const result = await res.json()
 
       this.isLoading = false
