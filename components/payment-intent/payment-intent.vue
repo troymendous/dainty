@@ -116,6 +116,7 @@ export default {
       }
     },
     async createSubscription(id) {
+      console.log(this.planPrice)
       const res = await fetch("/api/subscribe", {
         method: "post",
         headers: {
