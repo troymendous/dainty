@@ -1,6 +1,4 @@
 const stripe = require("stripe")(process.env.STRIPE_SK)
-const plusPlanPriceId = "price_1IVInFF5dr8554IR6PCOPrGq"
-const enterprisePlanPriceId = "price_1IVIqyF5dr8554IRJNZvIHjq"
 
 module.exports = async (req, res) => {
   try {
@@ -11,33 +9,17 @@ module.exports = async (req, res) => {
       payment_method: req.body.payment_id,
     })
 
-    if (req.body.plan_price === plusPlanPriceId) {
-      const subscription = await stripe.subscriptions.create({
-        customer: customer.id,
-        default_payment_method: req.body.payment_id,
-        items: [{ price: plusPlanPriceId }],
-      })
+    const subscription = await stripe.subscriptions.create({
+      customer: customer.id,
+      default_payment_method: req.body.payment_id,
+      items: [{ price: req.body.price }],
+    })
 
-      res.json({
-        status: 200,
-        body: subscription.id,
-        message: "SUCCESS",
-      })
-    }
-
-    if (req.body.plan_price === enterprisePlanPriceId) {
-      const subscription = await stripe.subscriptions.create({
-        customer: customer.id,
-        default_payment_method: req.body.payment_id,
-        items: [{ price: enterprisePlanPriceId }],
-      })
-
-      res.json({
-        status: 200,
-        body: subscription.id,
-        message: "SUCCESS",
-      })
-    }
+    res.json({
+      status: 200,
+      body: subscription.id,
+      message: "SUCCESS",
+    })
   } catch (error) {
     res.json({
       status: 400,

@@ -104,10 +104,6 @@ export default {
   methods: {
     async handleSubmit() {
       this.isLoading = true
-      console.log("***********************")
-      console.log(this.stripe.createPaymentMethod)
-      console.log("***********************")
-
       const res = await this.stripe.createPaymentMethod({
         type: "card",
         card: this.card,
@@ -129,7 +125,7 @@ export default {
           name: this.$store.state.fullname,
           email: this.email,
           payment_id: id,
-          plan_price: this.planPrice,
+          price: this.planPrice,
         }),
       })
 
