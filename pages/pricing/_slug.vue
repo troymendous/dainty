@@ -12,10 +12,11 @@
             <h4>Heading 1</h4>
             <input type="text" placeholder="Full name*" required v-model="fullname" />
             <input type="email" placeholder="Work Email*" required v-model="email" />
-            <button type="submit" :disabled="isLoading">
+            <str-button :isLoading="isLoading" :disabled="isLoading"> Proceed </str-button>
+            <!-- <button type="submit" :disabled="isLoading">
               <span>Proceed</span>
               <loader v-if="isLoading" class="animate-spin h-5 w-10 mr-3" />
-            </button>
+            </button> -->
             <p class="policy-agreement">
               By clicking this button, you agree to our Terms, Privacy Policy and Security Policy.
             </p>
@@ -66,10 +67,14 @@
 <script>
 import paymentIntent from "../../components/payment-intent/payment-intent.vue"
 import checkIcon from "../../components/home/plans/check-icon.vue"
-import loader from "../../components/loader.vue"
+// import loader from "../../components/loader.vue"
 
 export default {
-  components: { checkIcon, loader, paymentIntent },
+  components: {
+    checkIcon,
+    //  loader,
+    paymentIntent,
+  },
   data() {
     return {
       showPaymentIntentStep: false,
@@ -164,6 +169,10 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.5rem;
+
+  @screen sm {
+    grid-template-columns: repeat(1fr);
+  }
 }
 
 .free-trial_content-wrapper {

@@ -12,10 +12,11 @@
             <h4>Start your free trial</h4>
             <input type="text" placeholder="Full name*" required v-model="fullname" />
             <input type="email" placeholder="Work Email*" required v-model="email" />
-            <button type="submit" :disabled="isLoading">
+            <str-button :isLoading="isLoading" :disabled="isLoading"> Proceed </str-button>
+            <!-- <button type="submit" :disabled="isLoading">
               <span>Proceed</span>
               <loader v-if="isLoading" class="animate-spin h-5 w-10 mr-3" />
-            </button>
+            </button> -->
             <p class="policy-agreement">
               By clicking this button, you agree to our Terms, Privacy Policy and Security Policy.
             </p>
@@ -55,10 +56,15 @@
 <script>
 // import setupIntent from "../components/free-trial/setup-intent.vue"
 import checkIcon from "../components/home/plans/check-icon.vue"
-import loader from "../components/loader.vue"
+// import loader from "../components/loader.vue"
+import StrButton from "../components/stripe-checkout/str-button.vue"
 
 export default {
-  components: { checkIcon, loader },
+  components: {
+    checkIcon,
+    //  loader,
+    StrButton,
+  },
   data() {
     return {
       showSetupIntentStep: false,
