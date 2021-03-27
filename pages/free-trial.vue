@@ -12,10 +12,11 @@
             <h4>Start your free trial</h4>
             <input type="text" placeholder="Full name*" required v-model="fullname" />
             <input type="email" placeholder="Work Email*" required v-model="email" />
-            <button type="submit" :disabled="isLoading">
+            <str-button :isLoading="isLoading" :disabled="isLoading"> Proceed </str-button>
+            <!-- <button type="submit" :disabled="isLoading">
               <span>Proceed</span>
               <loader v-if="isLoading" class="animate-spin h-5 w-10 mr-3" />
-            </button>
+            </button> -->
             <p class="policy-agreement">
               By clicking this button, you agree to our Terms, Privacy Policy and Security Policy.
             </p>
@@ -24,15 +25,20 @@
         </div>
       </div>
 
-      <div class="free-trial_content-side">
+      <str-services :services="core.services">
+        <template v-slot:heading> {{ core.name }} </template>
+        <template v-slot:price> {{ core.price }}</template>
+      </str-services>
+
+      <!-- <div class="free-trial_content-side">
         <div class="free-trial_content-side-headliner">
           <div>
             <h4>Core</h4>
             <p>$99/month</p>
           </div>
-        </div>
+        </div> -->
 
-        <ul>
+      <!-- <ul>
           <div>
             <li v-for="service in services.slice(0, 9)" :key="service.length">
               <check-icon />
@@ -47,41 +53,50 @@
             </li>
           </div>
         </ul>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
 // import setupIntent from "../components/free-trial/setup-intent.vue"
-import checkIcon from "../components/home/plans/check-icon.vue"
-import loader from "../components/loader.vue"
+// import checkIcon from "../components/home/plans/check-icon.vue"
+// import loader from "../components/loader.vue"
+import StrButton from "../components/stripe-checkout/str-button.vue"
 
 export default {
-  components: { checkIcon, loader },
+  components: {
+    // checkIcon,
+    //  loader,
+    StrButton,
+  },
   data() {
     return {
       showSetupIntentStep: false,
       isLoading: false,
-      services: [
-        "Unlimited concepts and revisions",
-        "All source files",
-        "High quality work",
-        "Social Media Posts",
-        "Advertisements",
-        "Logo Design",
-        "Business Card Design",
-        "Letterhead Design",
-        "Stationary",
-        "E-Book Cover",
-        "Infographic",
-        "Flyer",
-        "Brochure",
-        "Packaging",
-        "T-shirt",
-        "and more...",
-        "No contracts - cancel anytime",
-      ],
+      core: {
+        name: "Core",
+        price: "99",
+        services: [
+          "Unlimited concepts and revisions",
+          "All source files",
+          "High quality work",
+          "Social Media Posts",
+          "Advertisements",
+          "Logo Design",
+          "Business Card Design",
+          "Letterhead Design",
+          "Stationary",
+          "E-Book Cover",
+          "Infographic",
+          "Flyer",
+          "Brochure",
+          "Packaging",
+          "T-shirt",
+          "and more...",
+          "No contracts - cancel anytime",
+        ],
+      },
     }
   },
   computed: {
