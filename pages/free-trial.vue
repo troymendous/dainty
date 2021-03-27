@@ -25,15 +25,20 @@
         </div>
       </div>
 
-      <div class="free-trial_content-side">
+      <str-services :services="core.services">
+        <template v-slot:heading> {{ core.name }} </template>
+        <template v-slot:price> {{ core.price }}</template>
+      </str-services>
+
+      <!-- <div class="free-trial_content-side">
         <div class="free-trial_content-side-headliner">
           <div>
             <h4>Core</h4>
             <p>$99/month</p>
           </div>
-        </div>
+        </div> -->
 
-        <ul>
+      <!-- <ul>
           <div>
             <li v-for="service in services.slice(0, 9)" :key="service.length">
               <check-icon />
@@ -48,20 +53,20 @@
             </li>
           </div>
         </ul>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
 // import setupIntent from "../components/free-trial/setup-intent.vue"
-import checkIcon from "../components/home/plans/check-icon.vue"
+// import checkIcon from "../components/home/plans/check-icon.vue"
 // import loader from "../components/loader.vue"
 import StrButton from "../components/stripe-checkout/str-button.vue"
 
 export default {
   components: {
-    checkIcon,
+    // checkIcon,
     //  loader,
     StrButton,
   },
@@ -69,25 +74,29 @@ export default {
     return {
       showSetupIntentStep: false,
       isLoading: false,
-      services: [
-        "Unlimited concepts and revisions",
-        "All source files",
-        "High quality work",
-        "Social Media Posts",
-        "Advertisements",
-        "Logo Design",
-        "Business Card Design",
-        "Letterhead Design",
-        "Stationary",
-        "E-Book Cover",
-        "Infographic",
-        "Flyer",
-        "Brochure",
-        "Packaging",
-        "T-shirt",
-        "and more...",
-        "No contracts - cancel anytime",
-      ],
+      core: {
+        name: "Core",
+        price: "99",
+        services: [
+          "Unlimited concepts and revisions",
+          "All source files",
+          "High quality work",
+          "Social Media Posts",
+          "Advertisements",
+          "Logo Design",
+          "Business Card Design",
+          "Letterhead Design",
+          "Stationary",
+          "E-Book Cover",
+          "Infographic",
+          "Flyer",
+          "Brochure",
+          "Packaging",
+          "T-shirt",
+          "and more...",
+          "No contracts - cancel anytime",
+        ],
+      },
     }
   },
   computed: {

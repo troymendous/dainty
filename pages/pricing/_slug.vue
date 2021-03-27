@@ -13,10 +13,6 @@
             <input type="text" placeholder="Full name*" required v-model="fullname" />
             <input type="email" placeholder="Work Email*" required v-model="email" />
             <str-button :isLoading="isLoading" :disabled="isLoading"> Proceed </str-button>
-            <!-- <button type="submit" :disabled="isLoading">
-              <span>Proceed</span>
-              <loader v-if="isLoading" class="animate-spin h-5 w-10 mr-3" />
-            </button> -->
             <p class="policy-agreement">
               By clicking this button, you agree to our Terms, Privacy Policy and Security Policy.
             </p>
@@ -25,54 +21,24 @@
         </div>
       </div>
 
-      <div class="free-trial_content-side" v-if="slug === 'plus'">
-        <div class="free-trial_content-side-headliner">
-          <div>
-            <h4>Plus</h4>
-            <p>$249/month</p>
-          </div>
-        </div>
+      <str-services :services="plus.services" :slug="slug" v-if="slug === 'plus'">
+        <template v-slot:heading> {{ plus.name }} </template>
+        <template v-slot:price> {{ plus.price }}</template>
+      </str-services>
 
-        <ul>
-          <div>
-            <li v-for="service in plusServices" :key="service.length">
-              <check-icon />
-              <span> {{ service }}</span>
-            </li>
-          </div>
-        </ul>
-      </div>
-
-      <div class="free-trial_content-side" v-else>
-        <div class="free-trial_content-side-headliner">
-          <div>
-            <h4>Enteprise</h4>
-            <p>$599/month</p>
-          </div>
-        </div>
-
-        <ul>
-          <div>
-            <li v-for="service in enterpriseServices" :key="service.length">
-              <check-icon />
-              <span> {{ service }}</span>
-            </li>
-          </div>
-        </ul>
-      </div>
+      <str-services :services="enterprise.services" :slug="slug" v-if="slug === 'enterprise'">
+        <template v-slot:heading> {{ enterprise.name }} </template>
+        <template v-slot:price> {{ enterprise.price }}</template>
+      </str-services>
     </div>
   </div>
 </template>
 
 <script>
 import paymentIntent from "../../components/payment-intent/payment-intent.vue"
-import checkIcon from "../../components/home/plans/check-icon.vue"
-// import loader from "../../components/loader.vue"
 
 export default {
   components: {
-    checkIcon,
-    //  loader,
     paymentIntent,
   },
   data() {
@@ -80,44 +46,52 @@ export default {
       showPaymentIntentStep: false,
       isLoading: false,
       slug: "",
-      plusServices: [
-        "Unlimited concepts and revisions",
-        "All source files",
-        "High quality work",
-        "Social Media Posts",
-        "Advertisements",
-        "Logo Design",
-        "Business Card Design",
-        "Letterhead Design",
-        "Stationary",
-        "E-Book Cover",
-        "Infographic",
-        "Flyer",
-        "Brochure",
-        "Packaging",
-        "T-shirt",
-        "and more...",
-        "No contracts - cancel anytime",
-      ],
-      enterpriseServices: [
-        "Unlimited concepts and revisions",
-        "All source files",
-        "High quality work",
-        "Social Media Posts",
-        "Advertisements",
-        "Logo Design",
-        "Business Card Design",
-        "Letterhead Design",
-        "Stationary",
-        "E-Book Cover",
-        "Infographic",
-        "Flyer",
-        "Brochure",
-        "Packaging",
-        "T-shirt",
-        "and more...",
-        "No contracts - cancel anytime",
-      ],
+      plus: {
+        name: "Plus",
+        price: "249",
+        services: [
+          "Unlimited concepts and revisions",
+          "All source files",
+          "High quality work",
+          "Social Media Posts",
+          "Advertisements",
+          "Logo Design",
+          "Business Card Design",
+          "Letterhead Design",
+          "Stationary",
+          "E-Book Cover",
+          "Infographic",
+          "Flyer",
+          "Brochure",
+          "Packaging",
+          "T-shirt",
+          "and more...",
+          "No contracts - cancel anytime",
+        ],
+      },
+      enterprise: {
+        name: "Enterprise",
+        price: "599",
+        services: [
+          "Unlimited concepts and revisions",
+          "All source files",
+          "High quality work",
+          "Social Media Posts",
+          "Advertisements",
+          "Logo Design",
+          "Business Card Design",
+          "Letterhead Design",
+          "Stationary",
+          "E-Book Cover",
+          "Infographic",
+          "Flyer",
+          "Brochure",
+          "Packaging",
+          "T-shirt",
+          "and more...",
+          "No contracts - cancel anytime",
+        ],
+      },
     }
   },
   mounted() {
@@ -234,28 +208,6 @@ export default {
   .policy-agreement {
     font-size: 12px;
     color: #556575;
-  }
-}
-
-.free-trial_content-side {
-  border-top: 6px solid var(--acc-purple-color);
-  padding: 30px 70px 60px;
-  box-shadow: 0 5px 30px 0 rgba(39, 63, 74, 0.15);
-
-  &-headliner {
-    display: flex;
-    justify-content: center;
-  }
-
-  li {
-    padding: 0.6rem 0;
-  }
-
-  svg {
-    display: inline-block !important;
-    margin-right: 0.3rem;
-    width: 12px;
-    height: 12px;
   }
 }
 </style>
