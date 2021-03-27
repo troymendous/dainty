@@ -25,10 +25,6 @@
             <str-button :isLoading="isLoading" :disabled="isLoading">
               Link your card to your account
             </str-button>
-            <!-- <button type="submit" :disabled="isLoading">
-              <span id="button-text"> Link your card to your account </span>
-              <loader v-if="isLoading" class="animate-spin h-5 w-10 mr-3" />
-            </button> -->
           </form>
           <div class="sr-result hidden">
             <p>Card setup completed 🎊<br /></p>
@@ -40,11 +36,9 @@
 </template>
 
 <script>
-// import loader from "../loader.vue"
 import StrButton from "../stripe-checkout/str-button.vue"
 export default {
   components: {
-    // loader,
     StrButton,
   },
   data() {
@@ -122,7 +116,7 @@ export default {
         const res = await this.subscribeFreeTrial(this.setupIntent)
         const { status } = await res.json()
         if (status === "success") {
-          console.log("The user is successfully subbed")
+          this.$router.push("/welcome")
         }
 
         // Reset the store
