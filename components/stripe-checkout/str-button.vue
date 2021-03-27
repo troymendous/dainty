@@ -8,7 +8,15 @@
 </template>
 
 <script>
-export default {}
+import loader from "../loader"
+export default {
+  props: {
+    isLoading: Boolean,
+  },
+  components: {
+    loader,
+  },
+}
 </script>
 
 <style lang="scss" scoped>
