@@ -107,7 +107,6 @@ export default {
       })
 
       if (res.error) {
-        console.log(res.error)
         this.displayError(res.error.message)
         this.isLoading = false
       } else {
