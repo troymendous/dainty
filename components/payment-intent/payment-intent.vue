@@ -28,7 +28,7 @@
             </button>
           </form>
           <div class="sr-result hidden">
-            <p>Card setup completed 🎊<br /></p>
+            <p>Subscription is sucessful 🎊<br /></p>
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@ export default {
       })
 
       if (res.error) {
-        this.displayError(result.error.message)
+        this.displayError(res.error.message)
         this.isLoading = false
       } else {
         this.createSubscription(res.paymentMethod.id)
@@ -129,16 +129,24 @@ export default {
 
       const result = await res.json()
 
-      this.isLoading = false
+      if (result) {
+        this.isLoading = false
+      }
+
+      if (result.status === 200) {
+        document.querySelector(".setup-intent-form").classList.add("hidden")
+        document.querySelector(".sr-result").classList.remove("hidden")
+        this.$router.push("/welcome")
+        this.$store.commit("updateEmail", "")
+        this.$store.commit("updateFullname", "")
+      }
 
       if (result.status === 400) {
         this.displayError(result.message)
       }
 
-      if (result.status === 200) {
-        this.$router.push("/welcome")
-        this.$store.commit("updateEmail", "")
-        this.$store.commit("updateFullname", "")
+      if (result.status === 500) {
+        this.displayError(result.message)
       }
     },
     toggleShowSetupIntent() {
@@ -147,6 +155,9 @@ export default {
     displayError(text) {
       const cardErrors = document.querySelector("#card-errors")
       cardErrors.textContent = text
+    },
+    validateInput() {
+      return
     },
   },
 }

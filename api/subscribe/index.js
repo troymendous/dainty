@@ -15,15 +15,22 @@ module.exports = async (req, res) => {
       items: [{ price: req.body.price }],
     })
 
-    res.json({
-      status: 200,
-      body: subscription.id,
-      message: "SUCCESS",
-    })
+    if (subscription.id) {
+      res.json({
+        status: 200,
+        message: "SUCCESS",
+      })
+    } else {
+      res.json({
+        status: 400,
+        message: "Please fill in all the required fields",
+      })
+    }
   } catch (error) {
     res.json({
-      status: 400,
-      message: error.message,
+      status: 500,
+      message: "Ooops something happened when processing your request!, Try Again Later",
+      error,
     })
   }
 }
