@@ -107,7 +107,8 @@ export default {
       })
 
       if (res.error) {
-        this.displayError(result.error.message)
+        console.log(res.error)
+        this.displayError(res.error.message)
         this.isLoading = false
       } else {
         this.createSubscription(res.paymentMethod.id)
@@ -147,6 +148,9 @@ export default {
     displayError(text) {
       const cardErrors = document.querySelector("#card-errors")
       cardErrors.textContent = text
+    },
+    validateInput() {
+      return
     },
   },
 }
