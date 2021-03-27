@@ -22,10 +22,11 @@
               </div>
             </div>
             <div class="sr-field-error" id="card-errors" role="alert"></div>
-            <button type="submit" :disabled="isLoading">
+            <str-button :disabled="isLoading"> Subscribe </str-button>
+            <!-- <button type="submit" :disabled="isLoading">
               <span id="button-text">Subscribe</span>
               <loader v-if="isLoading" class="animate-spin h-5 w-10 mr-3" />
-            </button>
+            </button> -->
           </form>
           <div class="sr-result hidden">
             <p>Subscription is sucessful 🎊<br /></p>
@@ -37,10 +38,12 @@
 </template>
 
 <script>
-import loader from "../loader.vue"
+// import loader from "../loader.vue"
+import StrButton from "../stripe-checkout/str-button.vue"
 export default {
   components: {
-    loader,
+    // loader,
+    StrButton,
   },
   data() {
     return {
@@ -156,9 +159,6 @@ export default {
       const cardErrors = document.querySelector("#card-errors")
       cardErrors.textContent = text
     },
-    validateInput() {
-      return
-    },
   },
 }
 </script>
@@ -191,29 +191,30 @@ export default {
     color: red;
   }
 
-  button {
-    border: 2px solid var(--acc-purple-color);
-    border-radius: 8px;
-    padding: 0.75rem;
-    font-weight: 500;
-    @apply text-accentPurple;
-    margin-top: 2rem;
+  // button {
+  //   border: 2px solid var(--acc-purple-color);
+  //   border-radius: 8px;
+  //   padding: 0.75rem;
+  //   font-weight: 500;
+  //   @apply text-accentPurple;
+  //   margin-top: 2rem;
+  //   min-width: 220px;
 
-    svg {
-      display: inline-block;
-    }
+  //   svg {
+  //     display: inline-block;
+  //   }
 
-    &:hover,
-    &:active,
-    &:disabled {
-      background: var(--acc-pink-color);
-      border: 2px solid transparent;
-      color: #fff;
-    }
+  //   &:hover,
+  //   &:active,
+  //   &:disabled {
+  //     background: var(--acc-pink-color);
+  //     border: 2px solid transparent;
+  //     color: #fff;
+  //   }
 
-    &:disabled {
-      opacity: 0.8;
-    }
-  }
+  //   &:disabled {
+  //     opacity: 0.8;
+  //   }
+  // }
 }
 </style>

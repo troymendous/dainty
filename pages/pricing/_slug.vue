@@ -140,7 +140,7 @@ export default {
     closePaymentIntentStep() {
       this.showPaymentIntentStep = false
     },
-    async handleSubmit() {
+    handleSubmit() {
       this.showPaymentIntentStep = true
     },
   },
