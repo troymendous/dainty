@@ -28,7 +28,7 @@
             </button>
           </form>
           <div class="sr-result hidden">
-            <p>Card setup completed 🎊<br /></p>
+            <p>Subscription is sucessful 🎊<br /></p>
           </div>
         </div>
       </div>
@@ -131,14 +131,18 @@ export default {
 
       this.isLoading = false
 
-      if (result.status === 400) {
-        this.displayError(result.message)
-      }
-
       if (result.status === 200) {
         this.$router.push("/welcome")
         this.$store.commit("updateEmail", "")
         this.$store.commit("updateFullname", "")
+      }
+
+      if (result.status === 400) {
+        this.displayError(result.message)
+      }
+
+      if (result.status === 500) {
+        this.displayError(result.message)
       }
     },
     toggleShowSetupIntent() {
