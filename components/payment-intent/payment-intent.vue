@@ -129,9 +129,13 @@ export default {
 
       const result = await res.json()
 
-      this.isLoading = false
+      if (result) {
+        this.isLoading = false
+      }
 
       if (result.status === 200) {
+        document.querySelector(".setup-intent-form").classList.add("hidden")
+        document.querySelector(".sr-result").classList.remove("hidden")
         this.$router.push("/welcome")
         this.$store.commit("updateEmail", "")
         this.$store.commit("updateFullname", "")
