@@ -40,7 +40,9 @@
 <script>
 // import loader from "../loader.vue"
 import StrButton from "../stripe-checkout/str-button.vue"
+import sendChannel from "../../mixins/slack-notification-action"
 export default {
+  mixins: [sendChannel],
   components: {
     // loader,
     StrButton,
@@ -140,6 +142,7 @@ export default {
         document.querySelector(".setup-intent-form").classList.add("hidden")
         document.querySelector(".sr-result").classList.remove("hidden")
         this.$router.push("/welcome")
+        sendChannel()
         this.$store.commit("updateEmail", "")
         this.$store.commit("updateFullname", "")
       }
