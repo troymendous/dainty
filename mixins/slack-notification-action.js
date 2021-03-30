@@ -6,8 +6,6 @@ export default {
   },
   methods: {
     sendToChannel() {
-      // const token = "xoxb-1605727333972-1907855916210-apu31JmYgwt6oegpDRPSGzWf";
-      // const channel_notifs = "C01SGHR0W14";
       //   const result = await fetch("https://slack.com/api/chat.postMessage", {
       //     method: "POST",
       //     headers: {
