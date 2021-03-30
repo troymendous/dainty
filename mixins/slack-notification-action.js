@@ -11,7 +11,7 @@ export default {
       console.log({ channel: process.env.channelNotifs })
       const res = await fetch("https://slack.com/api/chat.postMessage", {
         method: "POST",
-        Authorization: "Bearer xoxb-1605727333972-1907855916210-fKnBLqRTJlW4rwFPtAU8B1PB",
+        Authorization: "xoxb-1605727333972-1907855916210-fKnBLqRTJlW4rwFPtAU8B1PB",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
