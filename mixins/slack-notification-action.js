@@ -11,11 +11,12 @@ export default {
       console.log({ channel: process.env.channelNotifs })
       const res = await fetch("https://slack.com/api/chat.postMessage", {
         method: "POST",
-        Authorization: "xoxb-1605727333972-1907855916210-fKnBLqRTJlW4rwFPtAU8B1PB",
+        Authorization: "Bearer xoxb-1605727333972-1907855916210-fKnBLqRTJlW4rwFPtAU8B1PB",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json",
         },
-        data: `token=${process.env.slackBotToken}&channel=${process.env.channelNotifs}&text=${this.message}`,
+        // data: `token=${process.env.slackBotToken}&channel=${process.env.channelNotifs}&text=${this.message}`,
+        body: { channel: "", text: "Hello from Dainty client" },
       })
 
       const result = await res.json()
