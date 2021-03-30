@@ -14,7 +14,9 @@ export default {
         data: `token=${process.env.slackNotification}&channel=${process.env.channelNotifs}&text=${this.message}&as_user=false&pretty=1&link_names=true`,
       })
 
-      console.log({ res: res.body })
+      const result = await res.json()
+
+      console.log({ result })
     },
   },
 }
