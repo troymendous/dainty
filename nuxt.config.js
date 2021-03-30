@@ -102,5 +102,7 @@ export default {
   env: {
     baseUrl: development ? "http://localhost:3000" : process.env.BASE_URL,
     stripePublishableKey: process.env.STRIPE_PK,
+    slackBotToken: process.env.SLACK_BOT_TOKEN,
+    channelNotifs: process.env.CHANNEL_NOTIFS,
   },
 }

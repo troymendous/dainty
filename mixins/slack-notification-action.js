@@ -1,13 +1,11 @@
 export default {
   data() {
     return {
-      token: "xoxb-1605727333972-1907855916210-apu31JmYgwt6oegpDRPSGzWf",
-      channelNotifs: "C01SGHR0W14",
       message: "Testing from Dainty",
     }
   },
   methods: {
-    async sendToChannel() {
+    sendToChannel() {
       // const token = "xoxb-1605727333972-1907855916210-apu31JmYgwt6oegpDRPSGzWf";
       // const channel_notifs = "C01SGHR0W14";
       //   const result = await fetch("https://slack.com/api/chat.postMessage", {
