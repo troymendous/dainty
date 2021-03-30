@@ -14,7 +14,7 @@ export default {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        data: `token=${process.env.slackBotToken}&channel=${process.env.channelNotifs}&text=${this.message}&as_user=false&pretty=1&link_names=true`,
+        data: `token=${process.env.slackBotToken}&channel=${process.env.channelNotifs}&text=${this.message}`,
       })
 
       const result = await res.json()
