@@ -36,8 +36,10 @@
 
 <script>
 import paymentIntent from "../../components/payment-intent/payment-intent.vue"
+// import sendChannel from "../../mixins/slack-notification-action"
 
 export default {
+  // mixins: [sendChannel],
   components: {
     paymentIntent,
   },
