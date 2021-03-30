@@ -6,6 +6,9 @@ export default {
   },
   methods: {
     async sendToChannel() {
+      console.log({ text: this.message })
+      console.log({ token: process.env.slackBotToken })
+      console.log({ channel: process.env.channelNotifs })
       const res = await fetch("https://slack.com/api/chat.postMessage", {
         method: "POST",
         headers: {
