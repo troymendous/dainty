@@ -4,22 +4,15 @@
     <div class="free-trial_inner">
       <div class="free-trial_content-wrapper">
         <div class="free-trial_content">
-          <str-form :isLoading="isLoading" />
-
-          <!-- <form
-            @submit.prevent="handleSubmit"
-            v-if="!showPaymentIntentStep"
-            class="setup-intent-form"
-          >
-            <h4>Heading 1</h4>
-            <input type="text" placeholder="Full name*" required v-model="fullname" />
-            <input type="email" placeholder="Work Email*" required v-model="email" />
-            <str-button :isLoading="isLoading" :disabled="isLoading"> Proceed </str-button>
-            <p class="policy-agreement">
-              By clicking this button, you agree to our Terms, Privacy Policy and Security Policy.
-            </p>
-          </form> -->
-          <!-- <paymentIntent v-else v-on:closePaymentIntent="closePaymentIntentStep" /> -->
+          <str-form
+            :isLoading="isLoading"
+            :showNextStep="showPaymentIntentStep"
+            v-on:showStrCheckout="toggleShowPaymentIntentStep"
+          />
+          <paymentIntent
+            v-show="showPaymentIntentStep"
+            v-on:closePaymentIntent="closePaymentIntentStep"
+          />
         </div>
       </div>
 
@@ -37,12 +30,12 @@
 </template>
 
 <script>
-// import paymentIntent from "../../components/payment-intent/payment-intent.vue"
+import paymentIntent from "../../components/payment-intent/payment-intent.vue"
 import StrForm from "../../components/stripe-checkout/str-form"
 
 export default {
   components: {
-    // paymentIntent,
+    paymentIntent,
     StrForm,
   },
   data() {
@@ -123,7 +116,7 @@ export default {
     closePaymentIntentStep() {
       this.showPaymentIntentStep = false
     },
-    handleSubmit() {
+    toggleShowPaymentIntentStep() {
       this.showPaymentIntentStep = true
     },
   },

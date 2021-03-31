@@ -1,6 +1,6 @@
 <template>
   <ValidationObserver slim v-slot="{ invalid, validate }">
-    <form @submit.prevent="validate().handleSubmit" v-if="!showSetupIntentStep" class="str-form">
+    <form @submit.prevent="validate().then(handleSubmit)" v-if="!showNextStep" class="str-form">
       <h4>Create your account:</h4>
       <ValidationProvider name="fullname" rules="required|alpha_spaces|min:3" v-slot="{ errors }">
         <input type="text" v-model="fullname" placeholder="Full name*" />
@@ -24,11 +24,7 @@
 export default {
   props: {
     isLoading: Boolean,
-  },
-  data() {
-    return {
-      showSetupIntentStep: false,
-    }
+    showNextStep: Boolean,
   },
   computed: {
     email: {
@@ -50,9 +46,8 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log(this.fullname.trim())
-      console.log(this.email)
-      console.log("Hello World")
+      // console.log("Hello World")
+      this.$emit("showStrCheckout")
     },
   },
 }
