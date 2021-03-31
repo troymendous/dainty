@@ -21,6 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 button {
+  display: block;
   border: 2px solid var(--acc-purple-color);
   border-radius: 8px;
   padding: 0.75rem;
