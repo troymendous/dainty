@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import StrForm from "../components/stripe-checkout/str-button.vue"
+import StrForm from "../components/stripe-checkout/str-form.vue"
 
 export default {
   components: {
@@ -79,24 +79,24 @@ export default {
     handleSubmit() {
       console.log("Hello World")
     },
-    async getSetupIntent() {
-      this.isLoading = true
-      const res = await fetch("/api/create-setup-intent", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: this.email, name: this.fullname }),
-      })
+    // async getSetupIntent() {
+    //   this.isLoading = true
+    //   const res = await fetch("/api/create-setup-intent", {
+    //     method: "post",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({ email: this.email, name: this.fullname }),
+    //   })
 
-      const setupIntent = await res.json()
+    //   const setupIntent = await res.json()
 
-      this.$store.commit("updateSetupIntent", setupIntent)
+    //   this.$store.commit("updateSetupIntent", setupIntent)
 
-      this.isLoading = false
+    //   this.isLoading = false
 
-      this.showSetupIntentStep = true
-    },
+    //   this.showSetupIntentStep = true
+    // },
     closeSetupIntentStep() {
       this.showSetupIntentStep = false
     },
