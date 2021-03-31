@@ -99,6 +99,8 @@ export default {
 
       await this.getSetupIntent()
 
+      console.log(this.setupIntent)
+
       const confirmationResult = await this.stripe.confirmCardSetup(
         this.setupIntent.client_secret,
         {
