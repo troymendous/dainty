@@ -4,20 +4,12 @@
     <div class="free-trial_inner">
       <div class="free-trial_content-wrapper">
         <div class="free-trial_content">
-          <form
-            @submit.prevent="getSetupIntent"
-            v-if="!showSetupIntentStep"
-            class="setup-intent-form"
-          >
-            <h4>Start your free trial</h4>
-            <input type="text" placeholder="Full name*" required v-model="fullname" />
-            <input type="email" placeholder="Work Email*" required v-model="email" />
-            <str-button :isLoading="isLoading" :disabled="isLoading"> Proceed </str-button>
-            <p class="policy-agreement">
-              By clicking this button, you agree to our Terms, Privacy Policy and Security Policy.
-            </p>
-          </form>
-          <setup-intent v-else v-on:closeSetupIntent="closeSetupIntentStep" />
+          <str-form
+            :isLoading="isLoading"
+            :showNextStep="showSetupIntentStep"
+            v-on:showStrCheckout="toggleShowSetupIntentStep"
+          />
+          <setup-intent v-if="showSetupIntentStep" v-on:closeSetupIntent="closeSetupIntentStep" />
         </div>
       </div>
 
@@ -30,11 +22,11 @@
 </template>
 
 <script>
-import StrButton from "../components/stripe-checkout/str-button.vue"
+import StrForm from "../components/stripe-checkout/str-button.vue"
 
 export default {
   components: {
-    StrButton,
+    StrForm,
   },
   data() {
     return {
@@ -84,6 +76,9 @@ export default {
     },
   },
   methods: {
+    handleSubmit() {
+      console.log("Hello World")
+    },
     async getSetupIntent() {
       this.isLoading = true
       const res = await fetch("/api/create-setup-intent", {
@@ -101,11 +96,12 @@ export default {
       this.isLoading = false
 
       this.showSetupIntentStep = true
-
-      // this.$router.push("/pricing/free-trial/finish")
     },
     closeSetupIntentStep() {
       this.showSetupIntentStep = false
+    },
+    toggleShowSetupIntentStep() {
+      this.showSetupIntentStep = true
     },
   },
 }
