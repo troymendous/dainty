@@ -7,6 +7,10 @@
 </template>
 
 <script>
+const CORE_PLAN_PRICE_ID = "price_1Ib2uXF5dr8554IRCc5EDvHU"
+const PLUS_PLAN_PRICE_ID = "price_1Ib2tSF5dr8554IRccQ0lWa3"
+const ENTERPRISE_PLAN_PRICE_ID = "price_1Ib2quF5dr8554IR9Zxi4XWc"
+
 export default {
   props: {
     monthlyPriceId: String,
@@ -28,22 +32,18 @@ export default {
       /* eslint-disable-next-line */
       const stripe = Stripe(process.env.stripePublishableKey)
 
-      const corePlanPriceID = "price_1IVImBF5dr8554IROIgLmOEH"
-      const plusPlanPriceID = "price_1IVInFF5dr8554IR6PCOPrGq"
-      const enterprisePlanPriceID = "price_1IVIqyF5dr8554IRJNZvIHjq"
-
       this.isLoadingCheckout = true
 
-      if (priceId === corePlanPriceID) {
+      if (priceId === CORE_PLAN_PRICE_ID) {
         this.$router.push({ path: "/free-trial" })
         return
       }
 
-      if (priceId === plusPlanPriceID) {
+      if (priceId === PLUS_PLAN_PRICE_ID) {
         this.$router.push("/pricing/plus")
       }
 
-      if (priceId === enterprisePlanPriceID) {
+      if (priceId === ENTERPRISE_PLAN_PRICE_ID) {
         this.$router.push("/pricing/enterprise")
       }
     },

@@ -35,6 +35,10 @@
 
 <script>
 import StrButton from "../stripe-checkout/str-button.vue"
+
+const PLUS_PLAN_PRICE_ID = "price_1Ib2tSF5dr8554IRccQ0lWa3"
+const ENTERPRISE_PLAN_PRICE_ID = "price_1Ib2quF5dr8554IR9Zxi4XWc"
+
 export default {
   components: {
     StrButton,
@@ -50,9 +54,9 @@ export default {
   mounted() {
     const slug = this.$route.params.slug
     if (slug === "plus") {
-      this.price = "price_1IVInFF5dr8554IR6PCOPrGq"
+      this.price = PLUS_PLAN_PRICE_ID
     } else {
-      this.price = "price_1IVIqyF5dr8554IRJNZvIHjq"
+      this.price = ENTERPRISE_PLAN_PRICE_ID
     }
 
     /* eslint-disable-next-line */
