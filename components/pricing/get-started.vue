@@ -1,13 +1,15 @@
 <template>
-  <div>
+  <div class="get-started">
     <div>
       <img src="/pricing/get-started.png" width="85px" class="get-started_img" />
     </div>
     <div class="get-started_text">
-      Just getting started? The Core Plan includes all of the essentials for teams up to 5 Users: 1
-      Mailbox, 1 Docs site, and Beacon — all for just $99 per User per Month.
+      Not sure where to start? Our Core Plan includes all the design essentials that startups or
+      individuals could need. The best thing about it is, it’s risk-free, if you don’t get a design
+      you like within 15 days you pay nothing. After that, our core plan is only $99 for unlimited
+      concepts and revisions until you’re totally happy with the end result.
     </div>
-    <nuxt-link to="/">
+    <nuxt-link to="/free-trial">
       <div class="pricing-btn_animated">Free 15-day trial <span> > </span></div>
     </nuxt-link>
   </div>
@@ -20,6 +22,9 @@ export default {
 </script>
 
 <style lang="scss">
+.get-started {
+  margin: 3rem;
+}
 .get-started_img {
   margin: 20px auto;
 }
