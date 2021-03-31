@@ -3,7 +3,6 @@ export const state = () => ({
   showOverlay: false,
   email: "",
   fullname: "",
-  // setupIntent: {},
   customer: "",
 })
 
@@ -23,10 +22,6 @@ export const mutations = {
   updateFullname(state, payload) {
     state.fullname = payload
   },
-
-  // updateSetupIntent(state, payload) {
-  //   state.setupIntent = payload
-  // },
 
   updateCustomer(state, payload) {
     state.customer = payload

@@ -79,24 +79,6 @@ export default {
     handleSubmit() {
       console.log("Hello World")
     },
-    // async getSetupIntent() {
-    //   this.isLoading = true
-    //   const res = await fetch("/api/create-setup-intent", {
-    //     method: "post",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({ email: this.email, name: this.fullname }),
-    //   })
-
-    //   const setupIntent = await res.json()
-
-    //   this.$store.commit("updateSetupIntent", setupIntent)
-
-    //   this.isLoading = false
-
-    //   this.showSetupIntentStep = true
-    // },
     closeSetupIntentStep() {
       this.showSetupIntentStep = false
     },
