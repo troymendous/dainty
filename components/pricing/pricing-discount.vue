@@ -3,21 +3,23 @@
     <div class="pricing-discount_title"><h4>Looking for a discount?</h4></div>
     <div class="discount-options">
       <div class="discount-options_item">
-        <nuxt-link to="/">
+        <div>
           <div class="title">
-            Help Dainty
+            Dainty
             <span>for Good</span>
           </div>
-          <div class="text">For organizations with a focus on the environment & social impact.</div>
-          <!--          <div class="pricing-btn_animated">Learn more <span> > </span></div>-->
-        </nuxt-link>
+          <div class="text">
+            For charity organisations or those that have a focus on environment and social impact.
+          </div>
+          <div class="pricing-btn_animated" @click="openChat">Let us know <span> > </span></div>
+        </div>
       </div>
       <div class="discount-options_item">
-        <nuxt-link to="/">
-          <div class="title">Help Dainty for Startups <span></span></div>
+        <div>
+          <div class="title">Dainty For Startups <span></span></div>
           <div class="text">For new companies that could use a price break for the first year.</div>
-          <!--          <div class="pricing-btn_animated">Learn more <span> > </span></div>-->
-        </nuxt-link>
+          <div class="pricing-btn_animated" @click="openChat">Let us know <span> > </span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -26,6 +28,12 @@
 <script>
 export default {
   name: "PricingDiscount",
+  methods: {
+    openChat() {
+      // eslint-disable-next-line no-undef
+      Tawk_API.toggle()
+    },
+  },
 }
 </script>
 
