@@ -3,7 +3,7 @@
     "plan": "core",
     "monthlyPrice": 99,
     "annualPrice": 1000,
-    "monthlyPriceId": "price_1Ib2uXF5dr8554IRCc5EDvHU",
+    "monthlyPriceId": "price_1Ib5FJF5dr8554IRIF0KhudR",
     "headliner": "Perfect for an individual or a small business needing regular small single page designs done for one project at a time.",
     "services": [
       { "type": "Unlimited concepts and revisions", "isOffered": true, "serviceId": "1" },
@@ -32,7 +32,7 @@
     "plan": "plus",
     "monthlyPrice": 249,
     "annualPrice": 3000,
-    "monthlyPriceId": "price_1Ib2tSF5dr8554IRccQ0lWa3",
+    "monthlyPriceId": "price_1Ib5EYF5dr8554IRBnAavHaX",
     "headliner": "Great for a larger single business with a need for more projects and design needs to be done at one time. Or needing slightly more urgent timeframes? Then this is the plan for you.",
     "services": [
       { "type": "All in Core", "isOffered": true, "serviceId": "100" },
@@ -52,7 +52,7 @@
     "plan": "enterprise",
     "monthlyPrice": 599,
     "annualPrice": 6000,
-    "monthlyPriceId": "price_1Ib2quF5dr8554IR9Zxi4XWc",
+    "monthlyPriceId": "price_1Ib5BPF5dr8554IR6NMccYTf",
     "headliner": "If you’re a marketer with multiple clients, or own multiple businesses and/or looking to white label and resell designs to your clients that we do for you, look no further, this is the plan for you.",
     "services": [
       { "type": "All in Core & Plus", "isOffered": true, "serviceId": "10" },
