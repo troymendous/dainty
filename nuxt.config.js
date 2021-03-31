@@ -24,6 +24,20 @@ export default {
       { hid: "description", name: "description", content: "" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/icons/dainty.png" }],
+    script: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=AW-398726489",
+        async: true,
+      },
+      {
+        innerHTML:
+          "window.dataLayer = window.dataLayer || [];\n" +
+          "  function gtag(){dataLayer.push(arguments);}\n" +
+          "  gtag('js', new Date());\n" +
+          "\n" +
+          "  gtag('config', 'AW-398726489');",
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
