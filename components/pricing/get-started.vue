@@ -42,6 +42,7 @@ export default {
   text-align: center;
   width: fit-content;
   margin: 20px auto;
+  cursor: pointer;
   color: var(--acc-purple-color);
   font-weight: 600;
   span {
