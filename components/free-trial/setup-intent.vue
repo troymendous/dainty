@@ -46,6 +46,7 @@ export default {
       stripe: "",
       card: null,
       isLoading: false,
+      setupIntent: {},
     }
   },
   mounted() {
@@ -88,13 +89,16 @@ export default {
     email() {
       return this.$store.state.email
     },
-    setupIntent() {
-      return this.$store.state.setupIntent
+    fullname() {
+      return this.$store.state.fullname
     },
   },
   methods: {
     async handleSubmit() {
       this.isLoading = true
+
+      await this.getSetupIntent()
+
       const confirmationResult = await this.stripe.confirmCardSetup(
         this.setupIntent.client_secret,
         {
@@ -136,6 +140,23 @@ export default {
     },
     toggleShowSetupIntent() {
       this.$emit("closeSetupIntent")
+    },
+    async getSetupIntent() {
+      const res = await fetch("/api/create-setup-intent", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: this.email.trim(), name: this.fullname.trim() }),
+      })
+
+      this.setupIntent = await res.json()
+
+      // this.$store.commit("updateSetupIntent", setupIntent)
+
+      // this.isLoading = false
+
+      // this.showSetupIntentStep = true
     },
   },
 }
