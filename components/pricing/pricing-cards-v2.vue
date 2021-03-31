@@ -212,7 +212,7 @@ export default {
   }
 
   &-headliner {
-    height: 150px;
+    height: 200px;
     margin-bottom: 1rem;
     color: rgb(116, 132, 148) !important;
   }
