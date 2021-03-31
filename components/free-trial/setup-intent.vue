@@ -120,6 +120,7 @@ export default {
         const res = await this.subscribeFreeTrial(this.setupIntent)
         const { status } = await res.json()
         if (status === "success") {
+          console.log({ status })
           this.$router.push("/welcome")
         }
 
