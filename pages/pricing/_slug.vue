@@ -4,20 +4,15 @@
     <div class="free-trial_inner">
       <div class="free-trial_content-wrapper">
         <div class="free-trial_content">
-          <form
-            @submit.prevent="handleSubmit"
-            v-if="!showPaymentIntentStep"
-            class="setup-intent-form"
-          >
-            <h4>Heading 1</h4>
-            <input type="text" placeholder="Full name*" required v-model="fullname" />
-            <input type="email" placeholder="Work Email*" required v-model="email" />
-            <str-button :isLoading="isLoading" :disabled="isLoading"> Proceed </str-button>
-            <p class="policy-agreement">
-              By clicking this button, you agree to our Terms, Privacy Policy and Security Policy.
-            </p>
-          </form>
-          <paymentIntent v-else v-on:closePaymentIntent="closePaymentIntentStep" />
+          <str-form
+            :isLoading="isLoading"
+            :showNextStep="showPaymentIntentStep"
+            v-on:showStrCheckout="toggleShowPaymentIntentStep"
+          />
+          <paymentIntent
+            v-show="showPaymentIntentStep"
+            v-on:closePaymentIntent="closePaymentIntentStep"
+          />
         </div>
       </div>
 
@@ -36,10 +31,12 @@
 
 <script>
 import paymentIntent from "../../components/payment-intent/payment-intent.vue"
+import StrForm from "../../components/stripe-checkout/str-form"
 
 export default {
   components: {
     paymentIntent,
+    StrForm,
   },
   data() {
     return {
@@ -119,7 +116,7 @@ export default {
     closePaymentIntentStep() {
       this.showPaymentIntentStep = false
     },
-    handleSubmit() {
+    toggleShowPaymentIntentStep() {
       this.showPaymentIntentStep = true
     },
   },
@@ -154,60 +151,60 @@ export default {
   padding: 30px 60px 60px;
 }
 
-.setup-intent-form {
-  h1 {
-    font-weight: 500;
-    margin-bottom: 8px;
-    @apply text-darkColor;
-    font-size: 23px;
-  }
+// .setup-intent-form {
+//   h1 {
+//     font-weight: 500;
+//     margin-bottom: 8px;
+//     @apply text-darkColor;
+//     font-size: 23px;
+//   }
 
-  input {
-    display: block;
-    width: 100%;
-    background: transparent;
-    // border: 1px solid rgb(165, 178, 189);
-    height: 50px;
-    padding: 0 1rem;
-    margin: 1rem 0;
-    font-size: 14px;
-  }
+//   input {
+//     display: block;
+//     width: 100%;
+//     background: transparent;
+//     // border: 1px solid rgb(165, 178, 189);
+//     height: 50px;
+//     padding: 0 1rem;
+//     margin: 1rem 0;
+//     font-size: 14px;
+//   }
 
-  input[type="email"],
-  input[type="text"] {
-    border: 1px solid rgb(165, 178, 189);
-    border-radius: 3px;
-  }
+//   input[type="email"],
+//   input[type="text"] {
+//     border: 1px solid rgb(165, 178, 189);
+//     border-radius: 3px;
+//   }
 
-  button[type="submit"] {
-    border: 2px solid var(--acc-purple-color);
-    border-radius: 8px;
-    padding: 0.75rem;
-    font-weight: 500;
-    @apply text-accentPurple;
-    margin-top: 1rem;
-    width: 220px;
+//   button[type="submit"] {
+//     border: 2px solid var(--acc-purple-color);
+//     border-radius: 8px;
+//     padding: 0.75rem;
+//     font-weight: 500;
+//     @apply text-accentPurple;
+//     margin-top: 1rem;
+//     width: 220px;
 
-    svg {
-      display: inline-block;
-    }
+//     svg {
+//       display: inline-block;
+//     }
 
-    &:hover,
-    &:active,
-    &:disabled {
-      background: var(--acc-pink-color);
-      border: 2px solid transparent;
-      color: #fff;
-    }
+//     &:hover,
+//     &:active,
+//     &:disabled {
+//       background: var(--acc-pink-color);
+//       border: 2px solid transparent;
+//       color: #fff;
+//     }
 
-    &:disabled {
-      opacity: 0.8;
-    }
-  }
+//     &:disabled {
+//       opacity: 0.8;
+//     }
+//   }
 
-  .policy-agreement {
-    font-size: 12px;
-    color: #556575;
-  }
-}
+//   .policy-agreement {
+//     font-size: 12px;
+//     color: #556575;
+//   }
+// }
 </style>
