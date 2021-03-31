@@ -23,10 +23,6 @@
             </div>
             <div class="sr-field-error" id="card-errors" role="alert"></div>
             <str-button :isLoading="isLoading" :disabled="isLoading"> Subscribe </str-button>
-            <!-- <button type="submit" :disabled="isLoading">
-              <span id="button-text">Subscribe</span>
-              <loader v-if="isLoading" class="animate-spin h-5 w-10 mr-3" />
-            </button> -->
           </form>
           <div class="sr-result hidden">
             <p>Subscription is sucessful 🎊<br /></p>
