@@ -151,12 +151,6 @@ export default {
       })
 
       this.setupIntent = await res.json()
-
-      // this.$store.commit("updateSetupIntent", setupIntent)
-
-      // this.isLoading = false
-
-      // this.showSetupIntentStep = true
     },
   },
 }
