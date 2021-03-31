@@ -16,6 +16,10 @@
       <p class="policy-agreement">
         By clicking this button, you agree to our Terms, Privacy Policy and Security Policy.
       </p>
+      <p class="policy-agreement">
+        You will not be charged for your core plan until your 15 day trial is over, if you do not
+        wish to continue the paid Core Plan you just need to let us know
+      </p>
     </form></ValidationObserver
   >
 </template>
@@ -93,8 +97,10 @@ export default {
   }
 
   .policy-agreement {
+    margin-top: 0.5rem;
     font-size: 12px;
     color: #556575;
+    line-height: 1.1rem;
   }
 }
 </style>
