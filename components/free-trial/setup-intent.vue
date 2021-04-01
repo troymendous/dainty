@@ -45,7 +45,6 @@ import Mailgun from "mailgun.js"
 import formData from "form-data"
 
 import StrButton from "../stripe-checkout/str-button.vue"
-import welcomeHtml from "../../static/templates/welcome.html"
 
 export default {
   components: {
