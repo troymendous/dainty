@@ -185,11 +185,11 @@ export default {
         subject: "Hello",
         html: "<h1>Testing some Mailgun awesomness!</h1>",
       })
-      console.log("Hello World")
     },
     async sendMailAction() {
       const result = await this.createMail()
-      console.log(result)
+      console.log({ result })
+      console.log("Hello World")
     },
   },
 }
