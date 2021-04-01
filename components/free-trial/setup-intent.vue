@@ -21,10 +21,15 @@
                 <!-- A Stripe card Element will be inserted here. -->
               </div>
             </div>
-            <div class="sr-field-error" id="card-errors" role="alert"></div>
-            <str-button :isLoading="isLoading" :disabled="isLoading">
+            <div id="card-errors" class="sr-field-error" role="alert"></div>
+            <str-button :is-loading="isLoading" :disabled="isLoading">
               Link your card to your account
             </str-button>
+            <p class="policy-agreement">
+              You will not be charged for your core plan until your 15-day trial is over, if you do
+              not wish to continue the paid Core Plan you just need to let us know to avoid being
+              charged.
+            </p>
           </form>
           <div class="sr-result hidden">
             <p>Card setup completed 🎊<br /></p>
@@ -48,6 +53,14 @@ export default {
       isLoading: false,
       setupIntent: {},
     }
+  },
+  computed: {
+    email() {
+      return this.$store.state.email
+    },
+    fullname() {
+      return this.$store.state.fullname
+    },
   },
   mounted() {
     /* eslint-disable-next-line */
@@ -84,14 +97,6 @@ export default {
       const el = document.getElementById("card-element")
       el.classList.remove("focused")
     })
-  },
-  computed: {
-    email() {
-      return this.$store.state.email
-    },
-    fullname() {
-      return this.$store.state.fullname
-    },
   },
   methods: {
     async handleSubmit() {
@@ -210,6 +215,12 @@ export default {
     &:disabled {
       opacity: 0.8;
     }
+  }
+  .policy-agreement {
+    margin-top: 0.5rem;
+    font-size: 12px;
+    color: #556575;
+    line-height: 1.1rem;
   }
 }
 </style>
