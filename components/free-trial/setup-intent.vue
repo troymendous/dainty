@@ -138,7 +138,6 @@ export default {
         if (status === "success") {
           console.log({ status })
           this.$router.push("/welcome")
-          await this.sendUserEmail()
         }
 
         // Reset the store

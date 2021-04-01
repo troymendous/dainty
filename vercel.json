@@ -28,7 +28,6 @@
   "rewrites": [
     { "source": "/api/create-setup-intent", "destination": "/api/create-setup-intent" },
     { "source": "/api/subscriptions", "destination": "/api/subscriptions" },
-    { "source": "/api/subscribe", "destination": "/api/subscribe" },
-    { "source": "/api/send-mail", "destination": "/api/send-mails" }
+    { "source": "/api/subscribe", "destination": "/api/subscribe" }
   ]
 }
