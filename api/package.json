@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "form-data": "^4.0.0",
+    "mailgun.js": "^3.3.0",
     "stripe": "^8.139.0"
   }
 }

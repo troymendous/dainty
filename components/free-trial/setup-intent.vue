@@ -3,6 +3,7 @@
     <div>
       <div>
         <div>
+          <button @click="sendMailAction">Send mail</button>
           <form class="setup-intent-form" @submit.prevent="handleSubmit">
             <div class="setup-intent-form-heading">
               <h4>Card Details</h4>
@@ -41,7 +42,11 @@
 </template>
 
 <script>
+import Mailgun from "mailgun.js"
+import formData from "form-data"
+
 import StrButton from "../stripe-checkout/str-button.vue"
+
 export default {
   components: {
     StrButton,
@@ -52,6 +57,7 @@ export default {
       card: null,
       isLoading: false,
       setupIntent: {},
+      mg: {},
     }
   },
   computed: {
@@ -63,6 +69,9 @@ export default {
     },
   },
   mounted() {
+    // Instantiate mailgun
+    this.mg = new Mailgun(formData).client({ username: "api", key: process.env.mailgunApiKey })
+
     /* eslint-disable-next-line */
     this.stripe = Stripe(process.env.stripePublishableKey)
     const elements = this.stripe.elements({
@@ -129,6 +138,7 @@ export default {
         if (status === "success") {
           console.log({ status })
           this.$router.push("/welcome")
+          await this.sendUserEmail()
         }
 
         // Reset the store
@@ -146,6 +156,15 @@ export default {
         body: JSON.stringify({ customer }),
       })
     },
+    sendUserEmail() {
+      return fetch("/api/send-mail", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: {},
+      })
+    },
     toggleShowSetupIntent() {
       this.$emit("closeSetupIntent")
     },
@@ -159,6 +178,19 @@ export default {
       })
 
       this.setupIntent = await res.json()
+    },
+    createMail() {
+      return this.mg.messages.create("dainty.io", {
+        from: "Dainty <no-reply@dainty.io>",
+        to: ["jackie@dainty.io"],
+        subject: "Hello",
+        html: "<h1>Testing some Mailgun awesomness!</h1>",
+      })
+    },
+    async sendMailAction() {
+      const result = await this.createMail()
+      console.log({ result })
+      console.log("Hello World")
     },
   },
 }
