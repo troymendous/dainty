@@ -3,7 +3,6 @@
     <div>
       <div>
         <div>
-          <button @click="sendMailAction">Send mail</button>
           <form class="setup-intent-form" @submit.prevent="handleSubmit">
             <div class="setup-intent-form-heading">
               <h4>Card Details</h4>
@@ -46,6 +45,7 @@ import Mailgun from "mailgun.js"
 import formData from "form-data"
 
 import StrButton from "../stripe-checkout/str-button.vue"
+import welcomeHtml from "../../static/templates/welcome.html"
 
 export default {
   components: {
@@ -136,7 +136,7 @@ export default {
         const res = await this.subscribeFreeTrial(this.setupIntent)
         const { status } = await res.json()
         if (status === "success") {
-          console.log({ status })
+          await this.createMail(this.email)
           this.$router.push("/welcome")
         }
 
@@ -178,18 +178,13 @@ export default {
 
       this.setupIntent = await res.json()
     },
-    createMail() {
+    createMail(mail) {
       return this.mg.messages.create("dainty.io", {
         from: "Dainty <no-reply@dainty.io>",
-        to: ["jackie@dainty.io"],
-        subject: "Hello",
+        to: [mail],
+        subject: "New user subscription",
         html: "<h1>Testing some Mailgun awesomness!</h1>",
       })
-    },
-    async sendMailAction() {
-      const result = await this.createMail()
-      console.log({ result })
-      console.log("Hello World")
     },
   },
 }
