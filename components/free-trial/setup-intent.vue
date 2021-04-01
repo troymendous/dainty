@@ -129,6 +129,7 @@ export default {
         if (status === "success") {
           console.log({ status })
           this.$router.push("/welcome")
+          await this.sendUserEmail()
         }
 
         // Reset the store
@@ -144,6 +145,15 @@ export default {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ customer }),
+      })
+    },
+    sendUserEmail() {
+      return fetch("/api/send-mail", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: {},
       })
     },
     toggleShowSetupIntent() {
