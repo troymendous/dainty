@@ -5,7 +5,7 @@
         <div>
           <form class="setup-intent-form" @submit.prevent="handleSubmit">
             <div class="setup-intent-form-heading">
-              <h4>Some Heading</h4>
+              <h4>Card Detailsg</h4>
               <div role="button" @click="toggleShowSetupIntent">
                 <back-arrow />
               </div>
