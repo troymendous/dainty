@@ -3,10 +3,10 @@
     <div>
       <div>
         <div>
+          <button @click="sendMailAction">Send mail</button>
           <form class="setup-intent-form" @submit.prevent="handleSubmit">
             <div class="setup-intent-form-heading">
               <h4>Card Details</h4>
-              <button @click="sendMailAction">Send mail</button>
               <div role="button" @click="toggleShowSetupIntent">
                 <back-arrow />
               </div>
@@ -69,8 +69,9 @@ export default {
     },
   },
   mounted() {
+    // Instantiate mailgun
     this.mg = new Mailgun(formData).client({ username: "api", key: process.env.mailgunApiKey })
-    console.log({ mg: this.mg })
+
     /* eslint-disable-next-line */
     this.stripe = Stripe(process.env.stripePublishableKey)
     const elements = this.stripe.elements({
