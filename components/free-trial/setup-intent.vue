@@ -3,6 +3,7 @@
     <div>
       <div>
         <div>
+          <button @click="handleClick">Send Email</button>
           <form class="setup-intent-form" @submit.prevent="handleSubmit">
             <div class="setup-intent-form-heading">
               <h4>Card Details</h4>
@@ -188,11 +189,22 @@ export default {
       })
     },
     sendEmailJs() {
-      return emailjs.sendForm("service_ynbouxr", "template_00kc1pi", "user_clY0t1Azl5NpplpX85LoT", {
-        name: this.fullname,
-        email: this.email,
-        message: this.message,
-      })
+      return emailjs.send(
+        "service_ynbouxr",
+        "template_kufmutl",
+        {
+          name: this.fullname,
+          email: this.email,
+          message: this.message,
+        },
+        "user_clY0t1Azl5NpplpX85LoT"
+      )
+    },
+    async handleClick() {
+      console.log({ name: this.fullname })
+      console.log("****************************")
+      const res = await this.sendEmailJs()
+      console.log({ res })
     },
   },
 }
