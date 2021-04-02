@@ -3,7 +3,7 @@
     <div>
       <div>
         <div>
-          <button @click="handleClick">Send Email</button>
+          <!-- <button @click="handleClick">Send Email</button> -->
           <form class="setup-intent-form" @submit.prevent="handleSubmit">
             <div class="setup-intent-form-heading">
               <h4>Card Details</h4>
@@ -46,9 +46,12 @@ import Mailgun from "mailgun.js"
 import formData from "form-data"
 import emailjs from "emailjs-com"
 
+import mail from "../../mixins/mail"
+
 import StrButton from "../stripe-checkout/str-button.vue"
 
 export default {
+  mixins: [mail],
   components: {
     StrButton,
   },
@@ -60,6 +63,7 @@ export default {
       setupIntent: {},
       mg: {},
       message: "Hello new user",
+      plan: "Core",
     }
   },
   computed: {
@@ -138,8 +142,9 @@ export default {
         const res = await this.subscribeFreeTrial(this.setupIntent)
         const { status } = await res.json()
         if (status === "success") {
-          await this.createMail(this.email)
+          await this.sendUserMail()
           this.$router.push({ name: "welcome", params: { price: 0.0 } })
+         
         }
 
         // Reset the store

@@ -1,15 +1,32 @@
 export default {
+  data() {
+    return {
+      adminsEmailTemplateId: "template_kufmutl",
+      userEmailTemplateId: "template_aqip85c",
+    }
+  },
   methods: {
     sendAdminsMail() {
       emailjs.send(
-        "service_ynbouxr",
-        "template_kufmutl",
+        process.env.emailjsServiceId,
+        this.adminsEmailTemplateId,
+        {
+          name: this.fullname,
+          userEmail: this.email,
+          plan,
+        },
+        process.env.emailjsUserId
+      )
+    },
+    sendUserMail() {
+      emailjs.send(
+        process.env.emailjsServiceId,
+        this.adminsEmailTemplateId,
         {
           name: this.fullname,
           email: this.email,
-          message: this.message,
         },
-        "user_clY0t1Azl5NpplpX85LoT"
+        process.env.emailjsUserId
       )
     },
   },
