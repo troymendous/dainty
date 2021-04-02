@@ -3,7 +3,7 @@
     <div>
       <div>
         <div>
-          <!-- <button @click="handleClick">Send Email</button> -->
+          <button @click="handleClick">Send Email</button>
           <form class="setup-intent-form" @submit.prevent="handleSubmit">
             <div class="setup-intent-form-heading">
               <h4>Card Details</h4>
@@ -42,12 +42,7 @@
 </template>
 
 <script>
-import Mailgun from "mailgun.js"
-import formData from "form-data"
-import emailjs from "emailjs-com"
-
 import mail from "../../mixins/mail"
-
 import StrButton from "../stripe-checkout/str-button.vue"
 
 export default {
@@ -61,8 +56,6 @@ export default {
       card: null,
       isLoading: false,
       setupIntent: {},
-      mg: {},
-      message: "Hello new user",
       plan: "Core",
     }
   },
@@ -75,9 +68,6 @@ export default {
     },
   },
   mounted() {
-    // Instantiate mailgun
-    this.mg = new Mailgun(formData).client({ username: "api", key: process.env.mailgunApiKey })
-
     /* eslint-disable-next-line */
     this.stripe = Stripe(process.env.stripePublishableKey)
     const elements = this.stripe.elements({
@@ -143,8 +133,8 @@ export default {
         const { status } = await res.json()
         if (status === "success") {
           await this.sendUserMail()
+           await this.sendAdminsMail()
           this.$router.push({ name: "welcome", params: { price: 0.0 } })
-         
         }
 
         // Reset the store
@@ -162,15 +152,6 @@ export default {
         body: JSON.stringify({ customer }),
       })
     },
-    sendUserEmail() {
-      return fetch("/api/send-mail", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: {},
-      })
-    },
     toggleShowSetupIntent() {
       this.$emit("closeSetupIntent")
     },
@@ -184,32 +165,6 @@ export default {
       })
 
       this.setupIntent = await res.json()
-    },
-    createMail(mail) {
-      return this.mg.messages.create("dainty.io", {
-        from: "Dainty <no-reply@dainty.io>",
-        to: [mail],
-        subject: "New user subscription",
-        html: "<h1>Testing some Mailgun awesomness!</h1>",
-      })
-    },
-    sendEmailJs() {
-      return emailjs.send(
-        "service_ynbouxr",
-        "template_kufmutl",
-        {
-          name: this.fullname,
-          email: this.email,
-          message: this.message,
-        },
-        "user_clY0t1Azl5NpplpX85LoT"
-      )
-    },
-    async handleClick() {
-      console.log({ name: this.fullname })
-      console.log("****************************")
-      const res = await this.sendEmailJs()
-      console.log({ res })
     },
   },
 }

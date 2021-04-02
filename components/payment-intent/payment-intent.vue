@@ -34,12 +34,14 @@
 </template>
 
 <script>
+import mail from "../../mixins/mail"
 import StrButton from "../stripe-checkout/str-button.vue"
 
 const PLUS_PLAN_PRICE_ID = "price_1Ib5EYF5dr8554IRBnAavHaX"
 const ENTERPRISE_PLAN_PRICE_ID = "price_1Ib5BPF5dr8554IR6NMccYTf"
 
 export default {
+  mixins: [mail],
   components: {
     StrButton,
   },
@@ -48,16 +50,17 @@ export default {
       stripe: "",
       card: null,
       isLoading: false,
-      price: "",
+      // price: "",
+      plan: "",
     }
   },
   mounted() {
-    const slug = this.$route.params.slug
-    if (slug === "plus") {
-      this.price = PLUS_PLAN_PRICE_ID
-    } else {
-      this.price = ENTERPRISE_PLAN_PRICE_ID
-    }
+    this.plan = this.$route.params.slug
+    // if (slug === "plus") {
+    //   this.price = PLUS_PLAN_PRICE_ID
+    // } else {
+    //   this.price = ENTERPRISE_PLAN_PRICE_ID
+    // }
 
     /* eslint-disable-next-line */
     this.stripe = Stripe(process.env.stripePublishableKey)
@@ -98,6 +101,17 @@ export default {
     email() {
       return this.$store.state.email
     },
+    fullname() {
+      return this.$store.state.fullname
+    },
+    price() {
+      if (this.plan === "plus") {
+        return PLUS_PLAN_PRICE_ID
+      }
+      if (this.plan === "enterprise") {
+        return ENTERPRISE_PLAN_PRICE_ID
+      }
+    },
   },
   methods: {
     async handleSubmit() {
@@ -137,12 +151,21 @@ export default {
       if (result.status === 200) {
         document.querySelector(".setup-intent-form").classList.add("hidden")
         document.querySelector(".sr-result").classList.remove("hidden")
+<<<<<<< HEAD
         const slug = this.$route.params.slug
         if (slug === "plus") {
           this.$router.push({ name: "welcome", params: { price: 249.0 } })
         } else if (slug === "enterprise") {
           this.$router.push({ name: "welcome", params: { price: 599.0 } })
         }
+=======
+
+        // Send mail to subbed client and admins
+        await this.sendUserMail()
+        await this.sendAdminsMail()
+
+        this.$router.push("/welcome")
+>>>>>>> Optimizes logic for sending emails
         this.$store.commit("updateEmail", "")
         this.$store.commit("updateFullname", "")
       }

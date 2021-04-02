@@ -1,3 +1,5 @@
+import emailjs from "emailjs-com"
+
 export default {
   data() {
     return {
@@ -13,15 +15,15 @@ export default {
         {
           name: this.fullname,
           userEmail: this.email,
-          plan,
+          plan: this.plan,
         },
         process.env.emailjsUserId
       )
     },
     sendUserMail() {
-      emailjs.send(
+      return emailjs.send(
         process.env.emailjsServiceId,
-        this.adminsEmailTemplateId,
+        this.userEmailTemplateId,
         {
           name: this.fullname,
           email: this.email,
