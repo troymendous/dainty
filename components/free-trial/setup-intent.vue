@@ -43,6 +43,7 @@
 <script>
 import Mailgun from "mailgun.js"
 import formData from "form-data"
+import emailjs from "emailjs-com"
 
 import StrButton from "../stripe-checkout/str-button.vue"
 
@@ -183,6 +184,13 @@ export default {
         to: [mail],
         subject: "New user subscription",
         html: "<h1>Testing some Mailgun awesomness!</h1>",
+      })
+    },
+    async sendEmailJs() {
+      return emailjs.sendForm("service_ynbouxr", "template_00kc1pi", "user_clY0t1Azl5NpplpX85LoT", {
+        name: this.fullname,
+        email: this.email,
+        message: this.message,
       })
     },
   },
