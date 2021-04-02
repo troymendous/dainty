@@ -48,13 +48,14 @@ export default {
     return {
       script: [
         {
-          innerHTML: `"gtag('event', 'conversion', {\n" +
-          "      'send_to': 'AW-398726489/nE9uCNKGzP4BENmqkL4B',\n" +
-          "      'value': ${this.$route.params.price}\n" +
-          "      'currency': 'USD'\n" +
-          "  });"`,
+          innerHTML: `gtag("event", "conversion", {\n +
+                'send_to': 'AW-398726489/nE9uCNKGzP4BENmqkL4B',\n +
+                'value': ${this.$route.params.price}\n +
+                'currency': 'USD'\n +
+            });`,
         },
       ],
+      __dangerouslyDisableSanitizers: ["script"],
     }
   },
   methods: {
