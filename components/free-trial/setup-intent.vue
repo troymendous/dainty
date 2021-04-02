@@ -3,7 +3,6 @@
     <div>
       <div>
         <div>
-          <button @click="handleClick">Send Email</button>
           <form class="setup-intent-form" @submit.prevent="handleSubmit">
             <div class="setup-intent-form-heading">
               <h4>Card Details</h4>
