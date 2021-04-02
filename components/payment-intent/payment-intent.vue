@@ -137,7 +137,12 @@ export default {
       if (result.status === 200) {
         document.querySelector(".setup-intent-form").classList.add("hidden")
         document.querySelector(".sr-result").classList.remove("hidden")
-        this.$router.push("/welcome")
+        const slug = this.$route.params.slug
+        if (slug === "plus") {
+          this.$router.push({ name: "welcome", params: { price: 249.0 } })
+        } else if (slug === "enterprise") {
+          this.$router.push({ name: "welcome", params: { price: 599.0 } })
+        }
         this.$store.commit("updateEmail", "")
         this.$store.commit("updateFullname", "")
       }
