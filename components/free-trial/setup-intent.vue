@@ -58,6 +58,7 @@ export default {
       isLoading: false,
       setupIntent: {},
       mg: {},
+      message: "Hello new user",
     }
   },
   computed: {
@@ -186,7 +187,7 @@ export default {
         html: "<h1>Testing some Mailgun awesomness!</h1>",
       })
     },
-    async sendEmailJs() {
+    sendEmailJs() {
       return emailjs.sendForm("service_ynbouxr", "template_00kc1pi", "user_clY0t1Azl5NpplpX85LoT", {
         name: this.fullname,
         email: this.email,
