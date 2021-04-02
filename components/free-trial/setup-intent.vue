@@ -136,7 +136,7 @@ export default {
         const { status } = await res.json()
         if (status === "success") {
           await this.createMail(this.email)
-          this.$router.push("/welcome")
+          this.$router.push({ name: "welcome", params: { price: 0.0 } })
         }
 
         // Reset the store
