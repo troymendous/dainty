@@ -130,7 +130,8 @@ export default {
         const { status } = await res.json()
         if (status === "success") {
           await this.sendUserMail()
-           await this.sendAdminsMail()
+          await this.sendAdminsMail()
+
           this.$router.push({ name: "welcome", params: { price: 0.0 } })
         }
 

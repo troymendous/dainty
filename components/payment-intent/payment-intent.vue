@@ -151,21 +151,17 @@ export default {
       if (result.status === 200) {
         document.querySelector(".setup-intent-form").classList.add("hidden")
         document.querySelector(".sr-result").classList.remove("hidden")
-<<<<<<< HEAD
-        const slug = this.$route.params.slug
-        if (slug === "plus") {
-          this.$router.push({ name: "welcome", params: { price: 249.0 } })
-        } else if (slug === "enterprise") {
-          this.$router.push({ name: "welcome", params: { price: 599.0 } })
-        }
-=======
 
         // Send mail to subbed client and admins
         await this.sendUserMail()
         await this.sendAdminsMail()
 
-        this.$router.push("/welcome")
->>>>>>> Optimizes logic for sending emails
+        if (this.plan === "plus") {
+          this.$router.push({ name: "welcome", params: { price: 249.0 } })
+        } else if (this === "enterprise") {
+          this.$router.push({ name: "welcome", params: { price: 599.0 } })
+        }
+
         this.$store.commit("updateEmail", "")
         this.$store.commit("updateFullname", "")
       }
