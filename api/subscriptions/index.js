@@ -1,6 +1,7 @@
 const stripe = require("stripe")(process.env.STRIPE_SK)
 
-const CORE_PLAN_PRICE_ID = "price_1Ib5FJF5dr8554IRIF0KhudR"
+// const CORE_PLAN_PRICE_ID = "price_1Ib5FJF5dr8554IRIF0KhudR"
+const CORE_PLAN_PRICE_ID = "price_1Ib2uXF5dr8554IRCc5EDvHU"
 
 module.exports = async (req, res) => {
   await stripe.subscriptions.create({
