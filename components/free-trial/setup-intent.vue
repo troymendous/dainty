@@ -41,12 +41,11 @@
 </template>
 
 <script>
-import Mailgun from "mailgun.js"
-import formData from "form-data"
-
+import mail from "../../mixins/mail"
 import StrButton from "../stripe-checkout/str-button.vue"
 
 export default {
+  mixins: [mail],
   components: {
     StrButton,
   },
@@ -56,7 +55,7 @@ export default {
       card: null,
       isLoading: false,
       setupIntent: {},
-      mg: {},
+      plan: "Core",
     }
   },
   computed: {
@@ -68,9 +67,6 @@ export default {
     },
   },
   mounted() {
-    // Instantiate mailgun
-    this.mg = new Mailgun(formData).client({ username: "api", key: process.env.mailgunApiKey })
-
     /* eslint-disable-next-line */
     this.stripe = Stripe(process.env.stripePublishableKey)
     const elements = this.stripe.elements({
@@ -112,8 +108,6 @@ export default {
 
       await this.getSetupIntent()
 
-      console.log(this.setupIntent)
-
       const confirmationResult = await this.stripe.confirmCardSetup(
         this.setupIntent.client_secret,
         {
@@ -135,7 +129,9 @@ export default {
         const res = await this.subscribeFreeTrial(this.setupIntent)
         const { status } = await res.json()
         if (status === "success") {
-          await this.createMail(this.email)
+          await this.sendUserMail()
+          await this.sendAdminsMail()
+
           this.$router.push({ name: "welcome", params: { price: 0.0 } })
         }
 
@@ -154,15 +150,6 @@ export default {
         body: JSON.stringify({ customer }),
       })
     },
-    sendUserEmail() {
-      return fetch("/api/send-mail", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: {},
-      })
-    },
     toggleShowSetupIntent() {
       this.$emit("closeSetupIntent")
     },
@@ -176,14 +163,6 @@ export default {
       })
 
       this.setupIntent = await res.json()
-    },
-    createMail(mail) {
-      return this.mg.messages.create("dainty.io", {
-        from: "Dainty <no-reply@dainty.io>",
-        to: [mail],
-        subject: "New user subscription",
-        html: "<h1>Testing some Mailgun awesomness!</h1>",
-      })
     },
   },
 }

@@ -76,9 +76,6 @@ export default {
     },
   },
   methods: {
-    handleSubmit() {
-      console.log("Hello World")
-    },
     closeSetupIntentStep() {
       this.showSetupIntentStep = false
     },

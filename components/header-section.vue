@@ -100,7 +100,6 @@ export default {
     handleScroll() {
       if (window.scrollY > 80) {
         this.$refs.menuRef.classList.add("white-background")
-        console.log(this.$refs.menuRef.classList)
       } else {
         this.$refs.menuRef.classList.remove("white-background")
       }

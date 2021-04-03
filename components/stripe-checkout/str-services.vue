@@ -40,9 +40,6 @@ export default {
     services: Array,
     slug: String,
   },
-  mounted() {
-    console.log(this.currentRouteName)
-  },
   computed: {
     currentRouteName() {
       return this.$route.name

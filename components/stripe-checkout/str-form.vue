@@ -50,7 +50,6 @@ export default {
   },
   methods: {
     handleSubmit() {
-      // console.log("Hello World")
       this.$emit("showStrCheckout")
     },
   },
