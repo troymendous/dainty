@@ -161,7 +161,7 @@ export default {
 
         if (this.plan === "plus") {
           this.$router.push({ name: "welcome", params: { price: 249.0 } })
-        } else if (this === "enterprise") {
+        } else if (this.plan === "enterprise") {
           this.$router.push({ name: "welcome", params: { price: 599.0 } })
         }
 
