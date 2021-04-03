@@ -67,7 +67,6 @@ export default {
     },
   },
   mounted() {
-    console.log({ stripePk: process.env.stripePublishableKey })
     /* eslint-disable-next-line */
     this.stripe = Stripe(process.env.stripePublishableKey)
     const elements = this.stripe.elements({
@@ -108,8 +107,6 @@ export default {
       this.isLoading = true
 
       await this.getSetupIntent()
-
-      console.log(this.setupIntent)
 
       const confirmationResult = await this.stripe.confirmCardSetup(
         this.setupIntent.client_secret,
