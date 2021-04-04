@@ -103,11 +103,17 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.5rem;
+  @screen md {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .free-trial_content-wrapper {
   border-top: 1px solid #d5d5d5;
   padding: 30px 60px 60px;
+  @screen sm {
+    padding: 20px 30px;
+  }
 }
 
 .setup-intent-form {
