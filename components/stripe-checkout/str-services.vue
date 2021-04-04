@@ -50,6 +50,9 @@ export default {
 
 <style lang="scss" scoped>
 .str-services-wrapper {
+  @screen md {
+    padding: 5%;
+  }
   a {
     display: block;
     margin-top: 1rem;
