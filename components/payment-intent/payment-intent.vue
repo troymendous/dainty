@@ -21,8 +21,8 @@
                 <!-- A Stripe card Element will be inserted here. -->
               </div>
             </div>
-            <div class="sr-field-error" id="card-errors" role="alert"></div>
-            <str-button :isLoading="isLoading" :disabled="isLoading"> Subscribe </str-button>
+            <div id="card-errors" class="sr-field-error" role="alert"></div>
+            <str-button :is-loading="isLoading" :disabled="isLoading"> Subscribe </str-button>
           </form>
           <div class="sr-result hidden">
             <p>Subscription is sucessful 🎊<br /></p>
@@ -37,19 +37,19 @@
 import mail from "../../mixins/mail"
 import StrButton from "../stripe-checkout/str-button.vue"
 
-/**Stripe live mode **/
+/** Stripe live mode **/
 const PLUS_PLAN_PRICE_ID = "price_1Ib5EYF5dr8554IRBnAavHaX"
 const ENTERPRISE_PLAN_PRICE_ID = "price_1Ib5BPF5dr8554IR6NMccYTf"
 
-/**Stripe test mode **/
+/** Stripe test mode **/
 // const PLUS_PLAN_PRICE_ID = "price_1Ib2tSF5dr8554IRccQ0lWa3"
 // const ENTERPRISE_PLAN_PRICE_ID = "price_1Ib2quF5dr8554IR9Zxi4XWc"
 
 export default {
-  mixins: [mail],
   components: {
     StrButton,
   },
+  mixins: [mail],
   data() {
     return {
       stripe: "",
@@ -57,6 +57,23 @@ export default {
       isLoading: false,
       plan: "",
     }
+  },
+  computed: {
+    email() {
+      return this.$store.state.email
+    },
+    fullname() {
+      return this.$store.state.fullname
+    },
+    // eslint-disable-next-line vue/return-in-computed-property
+    price() {
+      if (this.plan === "plus") {
+        return PLUS_PLAN_PRICE_ID
+      }
+      if (this.plan === "enterprise") {
+        return ENTERPRISE_PLAN_PRICE_ID
+      }
+    },
   },
   mounted() {
     this.plan = this.$route.params.slug
@@ -94,22 +111,6 @@ export default {
       const el = document.getElementById("card-element")
       el.classList.remove("focused")
     })
-  },
-  computed: {
-    email() {
-      return this.$store.state.email
-    },
-    fullname() {
-      return this.$store.state.fullname
-    },
-    price() {
-      if (this.plan === "plus") {
-        return PLUS_PLAN_PRICE_ID
-      }
-      if (this.plan === "enterprise") {
-        return ENTERPRISE_PLAN_PRICE_ID
-      }
-    },
   },
   methods: {
     async handleSubmit() {
