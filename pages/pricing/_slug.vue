@@ -141,70 +141,17 @@ export default {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.5rem;
 
-  @screen sm {
-    grid-template-columns: repeat(1fr);
+  @screen md {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 .free-trial_content-wrapper {
   border-top: 1px solid #d5d5d5;
   padding: 30px 60px 60px;
+
+  @screen sm {
+    padding: 20px 30px;
+  }
 }
-
-// .setup-intent-form {
-//   h1 {
-//     font-weight: 500;
-//     margin-bottom: 8px;
-//     @apply text-darkColor;
-//     font-size: 23px;
-//   }
-
-//   input {
-//     display: block;
-//     width: 100%;
-//     background: transparent;
-//     // border: 1px solid rgb(165, 178, 189);
-//     height: 50px;
-//     padding: 0 1rem;
-//     margin: 1rem 0;
-//     font-size: 14px;
-//   }
-
-//   input[type="email"],
-//   input[type="text"] {
-//     border: 1px solid rgb(165, 178, 189);
-//     border-radius: 3px;
-//   }
-
-//   button[type="submit"] {
-//     border: 2px solid var(--acc-purple-color);
-//     border-radius: 8px;
-//     padding: 0.75rem;
-//     font-weight: 500;
-//     @apply text-accentPurple;
-//     margin-top: 1rem;
-//     width: 220px;
-
-//     svg {
-//       display: inline-block;
-//     }
-
-//     &:hover,
-//     &:active,
-//     &:disabled {
-//       background: var(--acc-pink-color);
-//       border: 2px solid transparent;
-//       color: #fff;
-//     }
-
-//     &:disabled {
-//       opacity: 0.8;
-//     }
-//   }
-
-//   .policy-agreement {
-//     font-size: 12px;
-//     color: #556575;
-//   }
-// }
 </style>

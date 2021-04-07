@@ -35,18 +35,18 @@ h2{
     }
 
     @screen sm{
-        @apply text-xl;
+        @apply text-2xl;
         line-height: 2.25rem;
     } 
 }
 
 h3{
     @apply font-medium;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     line-height:  3.438rem;
 
     @screen md{
-        @apply text-4xl;
+        @apply text-3xl;
         line-height: 3.438rem;
     }
 
@@ -62,7 +62,7 @@ h4{
     line-height: 3.125rem;
 
     @screen sm{
-    @apply text-2xl;  
+        font-size: 1.2rem; 
     }
 }
 
@@ -70,6 +70,10 @@ h5{
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 1.5rem;
+
+    @screen sm{
+        font-size: 1,1rem; 
+    }
 }
 
 p{
