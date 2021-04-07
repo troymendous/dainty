@@ -26,14 +26,16 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/icons/dainty.png" }],
     script: [
       {
-        src: "https://www.googletagmanager.com/gtag/js?id=AW-398726489",
+        src: "https://www.googletagmanager.com/gtag/js?id=G-Z56903WZJ3",
         async: true,
       },
       {
         innerHTML: `window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-398726489');`,
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-Z56903WZJ3');
+                    gtag('config', 'AW-398726489');`,
       },
     ],
     __dangerouslyDisableSanitizers: ["script"],
