@@ -26,6 +26,9 @@
           </form>
           <div class="sr-result hidden">
             <p>Subscription is sucessful 🎊<br /></p>
+            <div v-if="isSendingEmails" class="flex justify-center">
+              <loader class="animate-spin h-10 w-20 mt-2" />
+            </div>
           </div>
         </div>
       </div>
@@ -56,6 +59,7 @@ export default {
       card: null,
       isLoading: false,
       plan: "",
+      isSendingEmails: false,
     }
   },
   computed: {
@@ -152,8 +156,12 @@ export default {
         document.querySelector(".sr-result").classList.remove("hidden")
 
         // Send mail to subbed client and admins
+        this.isSendingEmails = true
+
         await this.sendUserMail()
         await this.sendAdminsMail()
+
+        this.isSendingEmails = false
 
         if (this.plan === "plus") {
           this.$router.push({ name: "welcome", params: { price: 249.0 } })

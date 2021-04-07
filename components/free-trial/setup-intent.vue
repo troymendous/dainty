@@ -33,6 +33,9 @@
           </form>
           <div class="sr-result hidden">
             <p>Card setup completed 🎊<br /></p>
+            <div v-if="isSendingEmails" class="flex justify-center">
+              <loader class="animate-spin h-10 w-20 mt-2" />
+            </div>
           </div>
         </div>
       </div>
@@ -56,6 +59,7 @@ export default {
       isLoading: false,
       setupIntent: {},
       plan: "Core",
+      isSendingEmails: false,
     }
   },
   computed: {
@@ -129,9 +133,15 @@ export default {
         const res = await this.subscribeFreeTrial(this.setupIntent)
         const { status } = await res.json()
         if (status === "success") {
+          // Send mail to subbed client and admins
+          this.isSendingEmails = true
+
           await this.sendUserMail()
           await this.sendAdminsMail()
 
+          this.isSendingEmails = true
+
+          // Redirect the user to the welcome page
           this.$router.push({ name: "welcome", params: { price: 0.0 } })
         }
 
