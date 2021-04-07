@@ -30,14 +30,13 @@ export default {
         async: true,
       },
       {
-        innerHTML:
-          "window.dataLayer = window.dataLayer || [];\n" +
-          "  function gtag(){dataLayer.push(arguments);}\n" +
-          "  gtag('js', new Date());\n" +
-          "\n" +
-          "  gtag('config', 'AW-398726489');",
+        innerHTML: `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-398726489');`,
       },
     ],
+    __dangerouslyDisableSanitizers: ["script"],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
