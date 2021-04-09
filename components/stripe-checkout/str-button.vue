@@ -18,8 +18,10 @@ export default {
   },
   watch: {
     isLoading: function (newValue, oldVal) {
-      if (newValue === true) const el = document.getElementById("str-btn")
-      el.disabled = true
+      if (newValue === true) {
+        const el = document.getElementById("str-btn")
+        el.disabled = true
+      }
     },
   },
 }
