@@ -110,7 +110,14 @@ export default {
     async handleSubmit() {
       this.isLoading = true
 
-      console.log({ card: this.card.complete })
+      this.card.on("change", function (event) {
+        console.log({ complete: event.complete })
+        // if (event.complete) {
+        //   // enable payment button
+        // } else if (event.error) {
+        //   // show validation to customer
+        // }
+      })
 
       await this.getSetupIntent()
 
