@@ -22,9 +22,7 @@
               </div>
             </div>
             <div id="card-errors" class="sr-field-error" role="alert"></div>
-            <str-button :is-loading="isLoading" disabled>
-              Link your card to your account
-            </str-button>
+            <str-button :is-loading="isLoading"> Link your card to your account </str-button>
             <p class="policy-agreement">
               You will not be charged for your core plan until your 15-day trial is over, if you do
               not wish to continue the paid Core Plan you just need to let us know to avoid being
@@ -110,6 +108,8 @@ export default {
       const el = document.getElementById("str-btn")
       if (event.complete) {
         el.disabled = false
+      } else if (!event.complete) {
+        el.disabled = true
       }
     })
   },
