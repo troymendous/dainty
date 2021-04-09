@@ -22,7 +22,7 @@
               </div>
             </div>
             <div id="card-errors" class="sr-field-error" role="alert"></div>
-            <str-button :is-loading="isLoading" :disabled="isLoading">
+            <str-button :is-loading="isLoading" disabled>
               Link your card to your account
             </str-button>
             <p class="policy-agreement">
@@ -104,6 +104,13 @@ export default {
     this.card.on("blur", function () {
       const el = document.getElementById("card-element")
       el.classList.remove("focused")
+    })
+
+    this.card.on("change", function (event) {
+      const el = document.getElementById("str-btn")
+      if (event.complete) {
+        el.disabled = false
+      }
     })
   },
   methods: {
