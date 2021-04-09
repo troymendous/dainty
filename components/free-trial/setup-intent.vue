@@ -110,7 +110,7 @@ export default {
     async handleSubmit() {
       this.isLoading = true
 
-      console.log({ card: this.card })
+      console.log({ card: this.card.complete })
 
       await this.getSetupIntent()
 
