@@ -211,6 +211,10 @@ export default {
     display: block;
   }
 
+  input[type="email"]:disabled {
+    background-color: transparent;
+  }
+
   .input-field {
     margin-top: 1rem;
   }
