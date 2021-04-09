@@ -1,5 +1,5 @@
 <template>
-  <button>
+  <button id="str-btn" :disabled="isLoading">
     <span>
       <slot></slot>
     </span>

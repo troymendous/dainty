@@ -22,9 +22,7 @@
               </div>
             </div>
             <div id="card-errors" class="sr-field-error" role="alert"></div>
-            <str-button :is-loading="isLoading" :disabled="isCardEmpty || isLoading">
-              Link your card to your account
-            </str-button>
+            <str-button :is-loading="isLoading"> Link your card to your account </str-button>
             <p class="policy-agreement">
               You will not be charged for your core plan until your 15-day trial is over, if you do
               not wish to continue the paid Core Plan you just need to let us know to avoid being
@@ -60,7 +58,7 @@ export default {
       setupIntent: {},
       plan: "Core",
       isSendingEmails: false,
-      isCardEmpty: true,
+      isCardEmpty: false,
     }
   },
   computed: {
@@ -109,8 +107,9 @@ export default {
 
     this.card.on("change", function (event) {
       console.log({ complete: event.complete })
+      const el = document.getElementById("str-btn")
       if (event.complete) {
-        this.isCardEmpty = true
+        el.disabled = false
       }
     })
   },
