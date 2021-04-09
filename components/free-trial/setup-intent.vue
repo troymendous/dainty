@@ -60,7 +60,6 @@ export default {
       setupIntent: {},
       plan: "Core",
       isSendingEmails: false,
-      isCardEmpty: false,
     }
   },
   computed: {
@@ -108,7 +107,6 @@ export default {
     })
 
     this.card.on("change", function (event) {
-      console.log({ complete: event.complete })
       const el = document.getElementById("str-btn")
       if (event.complete) {
         el.disabled = false
