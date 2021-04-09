@@ -10,14 +10,14 @@
 <script>
 import loader from "../loader"
 export default {
-  props: {
-    isLoading: Boolean,
-  },
   components: {
     loader,
   },
+  props: {
+    isLoading: Boolean,
+  },
   watch: {
-    isLoading: function (newValue, oldVal) {
+    isLoading(newValue, oldVal) {
       if (newValue === true) {
         const el = document.getElementById("str-btn")
         el.disabled = true
