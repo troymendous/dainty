@@ -110,6 +110,8 @@ export default {
     async handleSubmit() {
       this.isLoading = true
 
+      console.log({ card: this.card })
+
       await this.getSetupIntent()
 
       const confirmationResult = await this.stripe.confirmCardSetup(
