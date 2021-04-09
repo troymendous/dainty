@@ -211,6 +211,10 @@ export default {
     margin-top: 1rem;
   }
 
+  input[type="email"]:disabled {
+    background-color: transparent;
+  }
+
   .sr-field-error {
     color: red;
   }
