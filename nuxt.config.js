@@ -28,6 +28,7 @@ export default {
       {
         src: "https://www.googletagmanager.com/gtag/js?id=G-Z56903WZJ3",
         async: true,
+        innerHTML: `gtag('config', 'AW-398726489');`,
       },
       {
         innerHTML: `window.dataLayer = window.dataLayer || [];
