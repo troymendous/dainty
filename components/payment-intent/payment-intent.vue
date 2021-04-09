@@ -12,7 +12,7 @@
             </div>
             <div class="input-field">
               <label> Account details </label>
-              <input type="email" :value="email" />
+              <input type="email" :value="email" disabled />
             </div>
 
             <div class="input-field">
