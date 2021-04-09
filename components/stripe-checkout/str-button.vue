@@ -1,5 +1,5 @@
 <template>
-  <button id="str-btn" :disabled="isLoading">
+  <button id="str-btn">
     <span>
       <slot></slot>
     </span>
@@ -15,6 +15,12 @@ export default {
   },
   components: {
     loader,
+  },
+  watch: {
+    isLoading: function (newValue, oldVal) {
+      if (newValue === true) const el = document.getElementById("str-btn")
+      el.disabled = true
+    },
   },
 }
 </script>
