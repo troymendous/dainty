@@ -22,7 +22,7 @@
               </div>
             </div>
             <div id="card-errors" class="sr-field-error" role="alert"></div>
-            <str-button :is-loading="isLoading" :disabled="isLoading">
+            <str-button :is-loading="isLoading" disabled>
               Link your card to your account
             </str-button>
             <p class="policy-agreement">
@@ -105,19 +105,19 @@ export default {
       const el = document.getElementById("card-element")
       el.classList.remove("focused")
     })
+
+    this.card.on("change", function (event) {
+      console.log({ complete: event.complete })
+      if (event.complete) {
+        // enable payment button
+      } else if (event.error) {
+        // show validation to customer
+      }
+    })
   },
   methods: {
     async handleSubmit() {
       this.isLoading = true
-
-      this.card.on("change", function (event) {
-        console.log({ complete: event.complete })
-        // if (event.complete) {
-        //   // enable payment button
-        // } else if (event.error) {
-        //   // show validation to customer
-        // }
-      })
 
       await this.getSetupIntent()
 
