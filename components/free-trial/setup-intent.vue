@@ -22,7 +22,7 @@
               </div>
             </div>
             <div id="card-errors" class="sr-field-error" role="alert"></div>
-            <str-button :is-loading="isLoading" disabled>
+            <str-button :is-loading="isLoading" :disabled="isCardEmpty || isLoading">
               Link your card to your account
             </str-button>
             <p class="policy-agreement">
@@ -60,6 +60,7 @@ export default {
       setupIntent: {},
       plan: "Core",
       isSendingEmails: false,
+      isCardEmpty: true,
     }
   },
   computed: {
@@ -109,9 +110,7 @@ export default {
     this.card.on("change", function (event) {
       console.log({ complete: event.complete })
       if (event.complete) {
-        // enable payment button
-      } else if (event.error) {
-        // show validation to customer
+        this.isCardEmpty = true
       }
     })
   },
