@@ -39,10 +39,10 @@
             </div>
           </div>
         </div>
-        <div class="banner-content_showcase">
-          <img src="/home/banner/banner.png" alt="" />
-        </div>
       </div>
+    </div>
+    <div class="banner-content_img">
+      <img src="/home/banner/bear.png" alt="dainty-bear" />
     </div>
   </section>
 </template>
@@ -137,9 +137,11 @@ export default {
   }
 }
 
-.banner-content_text,
-.banner-content_showcase {
-  width: 100%;
+.banner-content_text {
+  width: 80%;
+  @screen sm {
+    width: 100%;
+  }
 }
 
 .banner-content_text > span {
@@ -155,6 +157,26 @@ export default {
 
   @screen sm {
     font-size: 16px;
+  }
+}
+
+.banner-content_img {
+  position: absolute;
+  right: 0;
+  top: 14rem;
+  height: 27rem;
+  width: 30%;
+  overflow: hidden;
+  z-index: -1;
+  img {
+    position: absolute;
+    right: -20%;
+    width: 60%;
+    height: auto;
+    transform: rotate(-50deg);
+  }
+  @screen sm {
+    display: none;
   }
 }
 
