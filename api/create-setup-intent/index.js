@@ -4,6 +4,7 @@ module.exports = async (req, res) => {
   // Create or use an existing Customer to associate with the SetupIntent.
   // The PaymentMethod will be stored to this Customer for later use.
   const customer = await stripe.customers.create({
+    description: "Core Plan",
     email: req.body.email,
     name: req.body.name,
   })
