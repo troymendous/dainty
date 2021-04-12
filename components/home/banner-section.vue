@@ -164,14 +164,14 @@ export default {
   position: absolute;
   right: 0;
   top: 14rem;
-  height: 27rem;
-  width: 30%;
+  height: 31rem;
+  width: 20rem;
   overflow: hidden;
   z-index: -1;
   img {
     position: absolute;
-    right: -20%;
-    width: 60%;
+    right: -28%;
+    width: 30rem;
     height: auto;
     transform: rotate(-50deg);
   }
