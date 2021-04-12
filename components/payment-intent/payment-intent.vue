@@ -78,6 +78,9 @@ export default {
         return ENTERPRISE_PLAN_PRICE_ID
       }
     },
+    capitalizedPlan() {
+      return this.plan.charAt(0).toUpperCase() + this.plan.slice(1)
+    },
   },
   mounted() {
     this.plan = this.$route.params.slug
@@ -142,6 +145,7 @@ export default {
           email: this.email,
           payment_id: id,
           price: this.price,
+          plan: this.capitalizedPlan,
         }),
       })
 

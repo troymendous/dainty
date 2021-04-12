@@ -3,7 +3,7 @@ const stripe = require("stripe")(process.env.STRIPE_SK)
 module.exports = async (req, res) => {
   try {
     const customer = await stripe.customers.create({
-      description: "Plus Plan",
+      description: `${req.body.plan} Plan`,
       email: req.body.email,
       name: req.body.name,
       payment_method: req.body.payment_id,
