@@ -55,7 +55,7 @@ import TeamMember from "./team-member"
 import TeamSwiper from "./team-swiper"
 import TeamMemberCard from "./team-member-card"
 
-/*** Troy's profile in json temporarily removed from the page ***/
+/** Troy's profile in json temporarily removed from the page  **/
 // {
 //     "id": 2,
 //     "name": "Troy",
