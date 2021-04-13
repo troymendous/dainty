@@ -17,14 +17,6 @@
   },
   {
     "id": 2,
-    "name": "Troy",
-    "link": "https://www.linkedin.com/",
-    "img": "/team/members/troy.jpg",
-    "role": "Marketing Director & COO",
-    "bio": "Troy is the Dainty Marketing Director & COO with more than 15 years leading digital product initiatives, experience design, and technical delivery across Web Applications, Fintech, Media, & E-Commerce, Troy has previously consulted companies such as Groupon, Citibank & City of Hobart. He has a wealth of experience in the growth of high-performing multi-functional technology and customer experience teams through strong collaborative cultural foundations. His passions include cryptography, clean & modern code, and a fond lover of beer."
-  },
-  {
-    "id": 3,
     "name": "Valeria",
     "link": "https://www.linkedin.com/",
     "img": "/team/members/valeria.jpg",
@@ -32,7 +24,7 @@
     "bio": "Valeria is focused, professional and hard working. Her ability to come up with the best solution that fits client’s needs is second to none. She ensures every last detail is taken care of from beginning to end of development. Valeria is always happy to help out (even when she’s not on the clock), and proves that every problem has a solution if you’re invested in finding one."
   },
   {
-    "id": 4,
+    "id": 3,
     "name": "John",
     "link": "https://www.linkedin.com/in/johnnguyen05/",
     "img": "/team/members/john.jpg",
