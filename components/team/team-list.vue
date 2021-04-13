@@ -12,7 +12,7 @@
       </div>
       <div class="container section2">
         <team-member
-          v-for="i in [3, 4]"
+          v-for="i in [3]"
           :key="i"
           :height="heights[i]"
           :member="members[i]"
@@ -54,6 +54,17 @@ import json from "../../static/data/team-members"
 import TeamMember from "./team-member"
 import TeamSwiper from "./team-swiper"
 import TeamMemberCard from "./team-member-card"
+
+/*** Troy's profile in json temporarily removed from the page ***/
+// {
+//     "id": 2,
+//     "name": "Troy",
+//     "link": "https://www.linkedin.com/",
+//     "img": "/team/members/troy.jpg",
+//     "role": "Marketing Director & COO",
+//     "bio": "Troy is the Dainty Marketing Director & COO with more than 15 years leading digital product initiatives, experience design, and technical delivery across Web Applications, Fintech, Media, & E-Commerce, Troy has previously consulted companies such as Groupon, Citibank & City of Hobart. He has a wealth of experience in the growth of high-performing multi-functional technology and customer experience teams through strong collaborative cultural foundations. His passions include cryptography, clean & modern code, and a fond lover of beer."
+//   }
+
 export default {
   name: "TeamList",
   components: { TeamMemberCard, TeamSwiper, TeamMember },

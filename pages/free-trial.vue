@@ -38,6 +38,7 @@ export default {
         services: [
           "Unlimited concepts and revisions",
           "All source files",
+          "Print Design",
           "High quality work",
           "Social Media Posts",
           "Advertisements",

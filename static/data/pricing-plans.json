@@ -40,7 +40,6 @@
       { "type": "Powerpoint templates", "isOffered": true, "serviceId": "300" },
       { "type": "Unlimited concepts and revisions ", "isOffered": true, "serviceId": "400" },
       { "type": "All source files", "isOffered": true, "serviceId": "500" },
-      { "type": "Web Design Mockups", "isOffered": true, "serviceId": "600" },
       { "type": "Reselling", "isOffered": true, "serviceId": "700" },
       { "type": "Quality Assurance", "isOffered": true, "serviceId": "800" },
       { "type": "No contracts - cancel anytime", "isOffered": true, "serviceId": "900" }
@@ -57,6 +56,7 @@
     "services": [
       { "type": "All in Core & Plus", "isOffered": true, "serviceId": "10" },
       { "type": "Unlimited concepts and revisions", "isOffered": true, "serviceId": "20" },
+      { "type": "Web Design Mockups", "isOffered": true, "serviceId": "600" },
       { "type": "White-labelling", "isOffered": true, "serviceId": "40" },
       { "type": "Agency support", "isOffered": true, "serviceId": "50" },
       { "type": "Priority support", "isOffered": true, "serviceId": "60" },
