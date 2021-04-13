@@ -69,7 +69,6 @@ export default {
           "Priority support",
           "Basic Custom Illustrations",
           "Fillable PDFs",
-          "Powerpoint / Presentation templates",
           "No contracts - cancel anytime",
         ],
       },
