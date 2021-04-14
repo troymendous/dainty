@@ -21,5 +21,5 @@ module.exports = async (req, res) => {
 
   // data = await slackApiResult.json()
 
-  res.json(slackApiResult)
+  res.send(slackApiResult)
 }
