@@ -24,9 +24,7 @@ module.exports = async (req, res) => {
   console.log(message)
   console.log({ data })
 
-  res.json({
-    result,
-  })
+  res.json({ message: "SUCCESS" })
 
   // if (result.ok) {
   //   res.status(200).json({
