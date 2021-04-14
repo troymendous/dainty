@@ -19,13 +19,17 @@ module.exports = async (req, res) => {
     },
   })
 
-  if (result.ok) {
-    res.status(200).json({
-      message: "SUCCESS",
-    })
-  } else {
-    res.status(400).json({
-      error: result.error,
-    })
-  }
+  res.json({
+    result,
+  })
+
+  // if (result.ok) {
+  //   res.status(200).json({
+  //     message: "SUCCESS",
+  //   })
+  // } else {
+  //   res.status(400).json({
+  //     error: result.error,
+  //   })
+  // }
 }
