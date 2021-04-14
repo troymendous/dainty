@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
     },
   })
 
-  data = res.json(slackApiResult)
+  data = await slackApiResult.json()
 
   console.log(message)
   console.log({ data })
