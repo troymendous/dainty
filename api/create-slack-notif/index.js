@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
     Email: ${req.body.email},
     Plan: Name: ${req.body.plan},
     `
-  const result = await fetch("https://slack.com/api/chat.postMessage", {
+  const slackApiResult = await fetch("https://slack.com/api/chat.postMessage", {
     method: "post",
     headers: {
       Authorization: `Bearer ${process.env.SLACK_BOT_TOKEN}`,
@@ -19,7 +19,10 @@ module.exports = async (req, res) => {
     },
   })
 
-  console.log({ result })
+  data = res.json(slackApiResult)
+
+  console.log(message)
+  console.log({ data })
 
   res.json({
     result,

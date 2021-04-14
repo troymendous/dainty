@@ -203,8 +203,7 @@ export default {
           plan: "Core Plan",
         }),
       })
-      const { result } = await res.json()
-      console.log({ result })
+      const result = await res.json()
     },
   },
 }
