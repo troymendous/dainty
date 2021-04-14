@@ -149,10 +149,10 @@ export default {
         if (status === "success") {
           try {
             // Send slack notifications
-            await this.sendSlackNotifs()
+            await this.sendSlackNotifs(this.plan)
 
             // Send mail to subbed client and admins
-            await this.sendUserMail(this.plan)
+            await this.sendUserMail()
             await this.sendAdminsMail()
           } catch (error) {
             console.log(error)
