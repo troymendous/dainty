@@ -45,10 +45,12 @@
 
 <script>
 import mail from "../../mixins/mail"
+import slackNotifs from "../../mixins/slack-notifs"
+
 import StrButton from "../stripe-checkout/str-button.vue"
 
 export default {
-  mixins: [mail],
+  mixins: [mail, slackNotifs],
   components: {
     StrButton,
   },
@@ -190,23 +192,23 @@ export default {
 
       this.setupIntent = await res.json()
     },
-    async sendSlackNotifs() {
-      const res = await fetch("/api/create-slack-notif", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: this.email.trim(),
-          name: this.fullname.trim(),
-          plan: "Core Plan",
-        }),
-      })
+    // async sendSlackNotifs() {
+    //   const res = await fetch("/api/create-slack-notif", {
+    //     method: "post",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       email: this.email.trim(),
+    //       name: this.fullname.trim(),
+    //       plan: "Core Plan",
+    //     }),
+    //   })
 
-      const result = await res.json()
+    //   const result = await res.json()
 
-      if (result.error) console.log("Slack notifications not sent")
-    },
+    //   if (result.error) console.log("Slack notifications not sent")
+    // },
   },
 }
 </script>

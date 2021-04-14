@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
     New subscription🎊
     Name: ${req.body.name},
     Email: ${req.body.email},
-    Plan: ${req.body.plan},
+    Plan: ${req.body.plan} Plan,
     `
   const slackApiResult = await fetch("https://slack.com/api/chat.postMessage", {
     method: "post",
