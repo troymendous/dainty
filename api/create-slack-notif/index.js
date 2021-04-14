@@ -22,18 +22,4 @@ module.exports = async (req, res) => {
   // data = await slackApiResult.json()
 
   res.json(slackApiResult)
-
-  console.log({ data })
-
-  // res.json({ message: "SUCCESS" })
-
-  // if (result.ok) {
-  //   res.status(200).json({
-  //     message: "SUCCESS",
-  //   })
-  // } else {
-  //   res.status(400).json({
-  //     error: result.error,
-  //   })
-  // }
 }
