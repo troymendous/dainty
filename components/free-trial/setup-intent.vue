@@ -150,8 +150,6 @@ export default {
 
           try {
             await this.sendSlackNotifs()
-
-            console.log({ data })
           } catch (error) {
             console.log(error)
           }
@@ -203,6 +201,7 @@ export default {
           plan: "Core Plan",
         }),
       })
+
       const result = await res.json()
 
       console.log({ result })
