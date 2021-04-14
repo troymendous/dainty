@@ -164,10 +164,10 @@ export default {
 
         try {
           // Send slack notifications
-          await this.sendSlackNotifs()
+          await this.sendSlackNotifs(this.capitalizedPlan)
 
           // Send mail to subbed client and admins
-          await this.sendUserMail(this.capitalizedPlan)
+          await this.sendUserMail()
           // await this.sendAdminsMail()
         } catch (error) {
           console.log(error)
