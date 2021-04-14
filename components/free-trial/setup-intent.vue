@@ -149,8 +149,8 @@ export default {
           // await this.sendAdminsMail()
 
           try {
-            const responses = await this.sendSlackNotifs()
-            const data = await responses.json()
+            await this.sendSlackNotifs()
+
             console.log({ data })
           } catch (error) {
             console.log(error)
@@ -203,6 +203,8 @@ export default {
           plan: "Core Plan",
         }),
       })
+      const data = await res.json()
+      console.log({ data })
     },
   },
 }
