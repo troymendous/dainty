@@ -145,8 +145,10 @@ export default {
         const { status } = await res.json()
         if (status === "success") {
           // Send mail to subbed client and admins
-          await this.sendUserMail()
-          await this.sendAdminsMail()
+          // await this.sendUserMail()
+          // await this.sendAdminsMail()
+
+          await this.sendSlackNotifs()
 
           this.isSendingEmails = false
 
@@ -182,6 +184,19 @@ export default {
       })
 
       this.setupIntent = await res.json()
+    },
+    async sendSlackNotifs() {
+      const res = await fetch("/api/create-slack-notif", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: this.email.trim(),
+          name: this.fullname.trim(),
+          plan: "Core Plan",
+        }),
+      })
     },
   },
 }
