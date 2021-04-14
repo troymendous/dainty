@@ -38,6 +38,8 @@
 
 <script>
 import mail from "../../mixins/mail"
+import slackNotifs from "../../mixins/slack-notifs"
+
 import StrButton from "../stripe-checkout/str-button.vue"
 
 /** Stripe live mode **/
@@ -52,7 +54,7 @@ export default {
   components: {
     StrButton,
   },
-  mixins: [mail],
+  mixins: [mail, slackNotifs],
   data() {
     return {
       stripe: "",
@@ -158,11 +160,20 @@ export default {
       if (result.status === 200) {
         document.querySelector(".setup-intent-form").classList.add("hidden")
         document.querySelector(".sr-result").classList.remove("hidden")
+
         this.isSendingEmails = true
 
-        // Send mail to subbed client and admins
-        await this.sendUserMail()
-        await this.sendAdminsMail()
+        try {
+          // Send slack notifications
+          await this.sendSlackNotifs(this.capitalizedPlan)
+
+          // Send mail to subbed client and admins
+          await this.sendUserMail()
+          await this.sendAdminsMail()
+        } catch (error) {
+          // TODO: How to effectively handle errors
+          console.log(error)
+        }
 
         this.isSendingEmails = false
 

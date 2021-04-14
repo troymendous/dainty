@@ -45,10 +45,12 @@
 
 <script>
 import mail from "../../mixins/mail"
+import slackNotifs from "../../mixins/slack-notifs"
+
 import StrButton from "../stripe-checkout/str-button.vue"
 
 export default {
-  mixins: [mail],
+  mixins: [mail, slackNotifs],
   components: {
     StrButton,
   },
@@ -139,14 +141,22 @@ export default {
         this.isLoading = false
         document.querySelector(".setup-intent-form").classList.add("hidden")
         document.querySelector(".sr-result").classList.remove("hidden")
+
         this.isSendingEmails = true
 
         const res = await this.subscribeFreeTrial(this.setupIntent)
         const { status } = await res.json()
         if (status === "success") {
-          // Send mail to subbed client and admins
-          await this.sendUserMail()
-          await this.sendAdminsMail()
+          try {
+            // Send slack notifications
+            await this.sendSlackNotifs(this.plan)
+
+            // Send mail to subbed client and admins
+            await this.sendUserMail()
+            await this.sendAdminsMail()
+          } catch (error) {
+            console.log(error)
+          }
 
           this.isSendingEmails = false
 
