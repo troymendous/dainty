@@ -13,15 +13,14 @@ module.exports = async (req, res) => {
       Authorization: `Bearer ${process.env.SLACK_BOT_TOKEN}`,
       "Content-Type": "application/json",
     },
-    body: {
+    body: JSON.stringify({
       channel: process.env.CHANNEL_NOTIFS,
       text: message,
-    },
+    }),
   })
 
   data = await slackApiResult.json()
 
-  console.log(message)
   console.log({ data })
 
   // res.json({ message: "SUCCESS" })
