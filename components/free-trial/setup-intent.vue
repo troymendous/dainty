@@ -147,18 +147,17 @@ export default {
         const { status } = await res.json()
         if (status === "success") {
           try {
-            // Send mail to subbed client and admins
-            await this.sendUserMail()
-            // await this.sendAdminsMail()
-
             // Send slack notifications
             await this.sendSlackNotifs()
+
+            // Send mail to subbed client and admins
+            await this.sendUserMail(this.plan)
+            // await this.sendAdminsMail()
           } catch (error) {
             console.log(error)
           }
 
           this.isSendingEmails = false
-
           // Redirect the user to the welcome page
           this.$router.push({ name: "welcome", params: { price: 0.0 } })
         }
