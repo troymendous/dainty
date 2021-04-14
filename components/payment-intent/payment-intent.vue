@@ -160,6 +160,7 @@ export default {
       if (result.status === 200) {
         document.querySelector(".setup-intent-form").classList.add("hidden")
         document.querySelector(".sr-result").classList.remove("hidden")
+
         this.isSendingEmails = true
 
         try {
@@ -168,8 +169,9 @@ export default {
 
           // Send mail to subbed client and admins
           await this.sendUserMail()
-          // await this.sendAdminsMail()
+          await this.sendAdminsMail()
         } catch (error) {
+          // TODO: How to effectively handle errors
           console.log(error)
         }
 
