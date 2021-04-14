@@ -193,23 +193,6 @@ export default {
 
       this.setupIntent = await res.json()
     },
-    // async sendSlackNotifs() {
-    //   const res = await fetch("/api/create-slack-notif", {
-    //     method: "post",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       email: this.email.trim(),
-    //       name: this.fullname.trim(),
-    //       plan: "Core Plan",
-    //     }),
-    //   })
-
-    //   const result = await res.json()
-
-    //   if (result.error) console.log("Slack notifications not sent")
-    // },
   },
 }
 </script>
