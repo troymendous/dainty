@@ -19,7 +19,5 @@ module.exports = async (req, res) => {
     }),
   })
 
-  // data = await slackApiResult.json()
-
   res.send(await slackApiResult.json())
 }

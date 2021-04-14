@@ -144,11 +144,12 @@ export default {
         const res = await this.subscribeFreeTrial(this.setupIntent)
         const { status } = await res.json()
         if (status === "success") {
-          // Send mail to subbed client and admins
-          // await this.sendUserMail()
-          // await this.sendAdminsMail()
-
           try {
+            // Send mail to subbed client and admins
+            await this.sendUserMail()
+            // await this.sendAdminsMail()
+
+            // Send slack notifications
             await this.sendSlackNotifs()
           } catch (error) {
             console.log(error)
@@ -204,7 +205,7 @@ export default {
 
       const result = await res.json()
 
-      console.log({ result })
+      if (result.error) console.log("Slack notifications not sent")
     },
   },
 }
