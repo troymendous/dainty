@@ -148,7 +148,11 @@ export default {
           // await this.sendUserMail()
           // await this.sendAdminsMail()
 
-          await this.sendSlackNotifs()
+          try {
+            await this.sendSlackNotifs()
+          } catch (error) {
+            console.log(error)
+          }
 
           this.isSendingEmails = false
 
