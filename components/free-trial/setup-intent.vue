@@ -149,8 +149,9 @@ export default {
           // await this.sendAdminsMail()
 
           try {
-            const response = await this.sendSlackNotifs()
-            console.log({ response })
+            const responses = await this.sendSlackNotifs()
+            const data = await responses.json()
+            console.log({ data })
           } catch (error) {
             console.log(error)
           }
