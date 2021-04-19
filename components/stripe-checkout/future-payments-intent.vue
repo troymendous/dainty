@@ -60,7 +60,7 @@ export default {
       card: null,
       isLoading: false,
       setupIntent: {},
-      plan: "Core",
+      plan: "Yet to be named",
       isSendingEmails: false,
     }
   },
@@ -190,7 +190,11 @@ export default {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email: this.email.trim(), name: this.fullname.trim() }),
+        body: JSON.stringify({
+          email: this.email.trim(),
+          name: this.fullname.trim(),
+          plan: this.plan,
+        }),
       })
 
       this.setupIntent = await res.json()

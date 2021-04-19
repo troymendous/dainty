@@ -60,7 +60,7 @@ export default {
       card: null,
       isLoading: false,
       setupIntent: {},
-      plan: "Core",
+      plan: "Core Plan",
       isSendingEmails: false,
     }
   },
