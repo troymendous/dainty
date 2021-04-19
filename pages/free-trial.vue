@@ -69,24 +69,6 @@ export default {
       },
     }
   },
-  computed: {
-    email: {
-      get() {
-        return this.$store.state.email
-      },
-      set(value) {
-        this.$store.commit("updateEmail", value)
-      },
-    },
-    fullname: {
-      get() {
-        return this.$store.state.fullname
-      },
-      set(value) {
-        this.$store.commit("updateFullname", value)
-      },
-    },
-  },
   methods: {
     async userDataCollected() {
       this.isSendingNotifs = true
