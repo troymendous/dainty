@@ -1,20 +1,20 @@
 <template>
-  <section>
+  <section class="job-description-section">
     <div class="icon-container">
       <div class="icon-container_inner">
         <div class="icon-col">
           <span class="sprite-image-front sprite-hand"></span>
-          <div class="heading">Never lift a finger</div>
+          <h5 class="heading">Never lift a finger</h5>
           <p class="text">Because time is better spent not wrestling WordPress</p>
         </div>
         <div class="icon-col">
           <span class="sprite-image-front sprite-bug"></span>
-          <div class="heading">A bug free site</div>
+          <h5 class="heading">A bug free site</h5>
           <p class="text">Because broken sites mean lost customers</p>
         </div>
         <div class="icon-col">
           <span class="sprite-image-front sprite-cal"></span>
-          <div class="heading">24/7/365</div>
+          <h5 class="heading">24/7/365</h5>
           <p class="text">Because problems happen at the worst possible time</p>
         </div>
       </div>
@@ -33,6 +33,14 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
+.job-description-section {
+  padding: 2rem 0 4rem;
+  margin: 4rem 2rem 2rem;
+
+  @screen sm {
+    margin-top: 2rem;
+  }
+}
 .icon-container {
   margin: 0 auto;
   width: 92%;
@@ -41,6 +49,11 @@ export default {}
 .icon-container_inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
+  @screen sm {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 2rem;
+  }
 }
 .sprite-image-front {
   background: url(../../static/web-development/sprite-front.png) no-repeat transparent;
@@ -87,6 +100,10 @@ export default {}
     max-width: 607px;
     width: 70%;
     height: auto;
+  }
+
+  @screen sm {
+    display: none;
   }
 }
 
