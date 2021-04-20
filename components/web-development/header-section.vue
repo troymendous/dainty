@@ -71,7 +71,15 @@ export default {
   }
 
   @screen md {
-    height: 545px;
+    height: 635px;
+  }
+
+  @media (max-width: 768px) {
+    height: 570px;
+  }
+
+  @screen sm {
+    height: 690px;
   }
 }
 
@@ -125,6 +133,10 @@ export default {
     color: #ffffff;
     font-weight: 300;
     font-size: 36px;
+
+    @screen sm {
+      font-size: 25px;
+    }
   }
 
   &_text {

@@ -53,7 +53,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .banner {
   width: 100%;
   max-width: 1140px;
