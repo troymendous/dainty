@@ -44,6 +44,7 @@
           <p>Reduce your bounce rate</p>
         </div>
       </div>
+      <p class="filler">Hello World</p>
     </div>
   </section>
 </template>
@@ -85,6 +86,7 @@ export default {}
 }
 
 .grid-icon-container_primary {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
@@ -96,6 +98,7 @@ export default {}
 }
 
 .grid-icon-container_secondary {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-bottom: 5rem;
@@ -182,5 +185,9 @@ export default {}
     display: block;
     margin: 2rem 0;
   }
+}
+
+.filler {
+  color: transparent;
 }
 </style>
