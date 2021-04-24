@@ -6,8 +6,8 @@
     <how-it-works />
     <div id="map-wrap" style="height: 100vh">
       <no-ssr>
-        <l-map :zoom="13" :center="[55.9464418, 8.1277591]">
-          <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
+        <l-map :zoom="2" :center="[0, 0]">
+          <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" :noWrap="true"></l-tile-layer>
           <l-marker :lat-lng="[55.9464418, 8.1277591]"></l-marker>
         </l-map>
       </no-ssr>
@@ -27,6 +27,14 @@ export default {
     JobDescription,
     ServicesOffered,
     HowItWorks,
+  },
+  mounted() {
+    // console.log(this.$L.)
+    // const map = this.$L.map("map", {
+    //   minZoom: 1,
+    //   maxZoom: 1,
+    // })
+    // map.setView([0, 0], 0)
   },
 }
 </script>
