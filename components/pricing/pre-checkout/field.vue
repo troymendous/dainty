@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <h2>Field</h2>
+</template>
 
 <script>
 export default {}
