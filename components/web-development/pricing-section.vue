@@ -213,7 +213,6 @@ export default {
 
 <style lang="scss" scoped>
 .pricing-section {
-  width: 100%;
   padding: 2rem 0 4rem;
   margin: 4rem 2rem 2rem;
 
