@@ -100,8 +100,13 @@ export default {
         console.log(error)
       }
 
+      //Reset email and full name
+      this.$store.commit("updateEmail", "")
+      this.$store.commit("updateFullname", "")
+
       this.isSendingNotifs = false
 
+      // Redirect the user to the welcome page
       this.$router.push("/welcome")
     },
   },
