@@ -187,6 +187,8 @@ export default {
           this.$router.push({ name: "welcome", params: { price: 249.0 } })
         } else if (this.plan === "enterprise") {
           this.$router.push({ name: "welcome", params: { price: 599.0 } })
+        } else if (this.plan === "core") {
+          this.$router.push({ name: "welcome", params: { price: 99.0 } })
         }
 
         this.$store.commit("updateEmail", "")
