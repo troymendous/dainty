@@ -1,7 +1,8 @@
 <template>
   <button :disabled="isLoadingCheckout" @click="checkout(monthlyPriceId)">
-    <span v-if="plan === 'core'">15 Days Free</span>
-    <span v-else>Select Plan</span>
+    <!-- <span v-if="plan === 'core'">15 Days Free</span>
+    <span v-else>Select Plan</span> -->
+    <span> Select Plan</span>
     <loader v-if="isLoadingCheckout" class="animate-spin h-5 w-10 mr-3" />
   </button>
 </template>
@@ -41,7 +42,7 @@ export default {
       this.isLoadingCheckout = true
 
       if (priceId === CORE_PLAN_PRICE_ID) {
-        this.$router.push({ path: "/free-trial" })
+        this.$router.push({ path: "/pricing/core" })
         return
       }
 
