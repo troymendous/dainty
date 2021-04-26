@@ -29,8 +29,8 @@ export default {
   mixins: [mail, slackNotifs],
   data() {
     return {
-      showSetupIntentStep: false,
       isLoading: false,
+      isSendingNotifs: false,
       plan: "Free Trial",
       core: {
         name: "Core",
@@ -78,6 +78,7 @@ export default {
   },
   methods: {
     async userDataCollected() {
+      this.isSendingNotifs = true
       try {
         // Send slack notifications
         await this.sendSlackNotifs(this.plan)
@@ -88,6 +89,8 @@ export default {
         // TODO: How to effectively handle errors
         console.log(error)
       }
+
+      this.isSendingNotifs = false
 
       this.$router.push("/welcome")
     },
