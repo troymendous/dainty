@@ -19,15 +19,21 @@
         </div>
       </ul>
     </div>
-    <nuxt-link to="/free-trial" v-if="slug === 'plus' || slug === 'enterprise'">
+    <nuxt-link to="/pricing/core" v-if="slug === 'plus' || slug === 'enterprise'">
       <h4>Core</h4>
       <p>$99/month</p>
     </nuxt-link>
-    <nuxt-link to="/pricing/plus" v-if="slug === 'enterprise' || currentRouteName === 'free-trial'">
+    <nuxt-link
+      to="/pricing/plus"
+      v-if="slug === 'enterprise' || slug === 'core' || currentRouteName === 'free-trial'"
+    >
       <h4>Plus</h4>
       <p>$249/month</p>
     </nuxt-link>
-    <nuxt-link to="/pricing/enterprise" v-if="slug === 'plus' || currentRouteName === 'free-trial'">
+    <nuxt-link
+      to="/pricing/enterprise"
+      v-if="slug === 'plus' || slug === 'core' || currentRouteName === 'free-trial'"
+    >
       <h4>Enterprise</h4>
       <p>$599/month</p></nuxt-link
     >
@@ -35,10 +41,14 @@
 </template>
 
 <script>
+import checkIcon from "../home/plans/check-icon"
 export default {
   props: {
     services: Array,
     slug: String,
+  },
+  components: {
+    checkIcon,
   },
   computed: {
     currentRouteName() {
