@@ -21,7 +21,6 @@
           class="pricing-plans_content-item"
         >
           <h4>{{ plan }}</h4>
-          <h3>Testing</h3>
           <subscription-price
             :is-monthly="isMonthly"
             :annual-price="annualPrice"
