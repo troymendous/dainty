@@ -28,7 +28,10 @@
 export default {
   props: {
     isLoading: Boolean,
-    showNextStep: Boolean,
+    showNextStep: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     email: {

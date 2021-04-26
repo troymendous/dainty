@@ -4,12 +4,7 @@
     <div class="free-trial_inner">
       <div class="free-trial_content-wrapper">
         <div class="free-trial_content">
-          <str-form
-            :isLoading="isLoading"
-            :showNextStep="showSetupIntentStep"
-            v-on:showStrCheckout="toggleShowSetupIntentStep"
-          />
-          <!-- <setup-intent v-if="showSetupIntentStep" v-on:closeSetupIntent="closeSetupIntentStep" /> -->
+          <str-form :isLoading="isLoading" v-on:showStrCheckout="userDataCollected" />
         </div>
       </div>
 
@@ -77,11 +72,8 @@ export default {
     },
   },
   methods: {
-    closeSetupIntentStep() {
-      this.showSetupIntentStep = false
-    },
-    toggleShowSetupIntentStep() {
-      this.showSetupIntentStep = true
+    userDataCollected() {
+      this.$router.push("/welcome")
     },
   },
 }
