@@ -31,7 +31,7 @@ export default {
     return {
       showSetupIntentStep: false,
       isLoading: false,
-      plan: 'Free Trial',
+      plan: "Free Trial",
       core: {
         name: "Core",
         price: "99",
@@ -77,17 +77,17 @@ export default {
     },
   },
   methods: {
-    userDataCollected() {
+    async userDataCollected() {
       try {
-          // Send slack notifications
-          await this.sendSlackNotifs(this.plan)
+        // Send slack notifications
+        await this.sendSlackNotifs(this.plan)
 
-          // Send mail to subbed client and admins
-          await this.sendUserMail()
-        } catch (error) {
-          // TODO: How to effectively handle errors
-          console.log(error)
-        }
+        // Send mail to subbed client and admins
+        await this.sendUserMail()
+      } catch (error) {
+        // TODO: How to effectively handle errors
+        console.log(error)
+      }
 
       this.$router.push("/welcome")
     },
