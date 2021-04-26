@@ -9,7 +9,7 @@
             :showNextStep="showSetupIntentStep"
             v-on:showStrCheckout="toggleShowSetupIntentStep"
           />
-          <setup-intent v-if="showSetupIntentStep" v-on:closeSetupIntent="closeSetupIntentStep" />
+          <!-- <setup-intent v-if="showSetupIntentStep" v-on:closeSetupIntent="closeSetupIntentStep" /> -->
         </div>
       </div>
 
