@@ -4,8 +4,12 @@
     <div class="free-trial_inner">
       <div class="free-trial_content-wrapper">
         <div class="free-trial_content">
-          <str-form :isLoading="isLoading" v-on:showStrCheckout="userDataCollected" />
-          <div v-if="isSendingNotifs">
+          <str-form
+            v-if="!isSendingNotifs"
+            :isLoading="isLoading"
+            v-on:showStrCheckout="userDataCollected"
+          />
+          <div v-else>
             <p>Subscription is sucessful 🎊<br /></p>
             <div class="flex justify-center text-gray-500">
               <loader class="animate-spin h-10 w-20 mt-2" />
