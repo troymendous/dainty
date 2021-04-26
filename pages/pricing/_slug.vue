@@ -16,6 +16,11 @@
         </div>
       </div>
 
+      <str-services :services="core.services" :slug="slug" v-if="slug === 'core'">
+        <template v-slot:heading> {{ core.name }} </template>
+        <template v-slot:price> {{ core.price }}</template>
+      </str-services>
+
       <str-services :services="plus.services" :slug="slug" v-if="slug === 'plus'">
         <template v-slot:heading> {{ plus.name }} </template>
         <template v-slot:price> {{ plus.price }}</template>
@@ -43,6 +48,30 @@ export default {
       showPaymentIntentStep: false,
       isLoading: false,
       slug: "",
+      core: {
+        name: "Core",
+        price: "99",
+        services: [
+          "Unlimited concepts and revisions",
+          "All source files",
+          "Print Design",
+          "High quality work",
+          "Social Media Posts",
+          "Advertisements",
+          "Logo Design",
+          "Business Card Design",
+          "Letterhead Design",
+          "Stationary",
+          "E-Book Cover",
+          "Infographic",
+          "Flyer",
+          "Brochure",
+          "Packaging",
+          "T-shirt",
+          "and more...",
+          "No contracts - cancel anytime",
+        ],
+      },
       plus: {
         name: "Plus",
         price: "249",

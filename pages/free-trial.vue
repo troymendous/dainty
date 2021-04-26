@@ -5,11 +5,16 @@
       <div class="free-trial_content-wrapper">
         <div class="free-trial_content">
           <str-form
+            v-if="!isSendingNotifs"
             :isLoading="isLoading"
-            :showNextStep="showSetupIntentStep"
-            v-on:showStrCheckout="toggleShowSetupIntentStep"
+            v-on:showStrCheckout="userDataCollected"
           />
-          <setup-intent v-if="showSetupIntentStep" v-on:closeSetupIntent="closeSetupIntentStep" />
+          <div v-else>
+            <p>Subscription is sucessful 🎊<br /></p>
+            <div class="flex justify-center text-gray-500">
+              <loader class="animate-spin h-10 w-20 mt-2" />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -22,16 +27,21 @@
 </template>
 
 <script>
+import mail from "../mixins/mail"
+import slackNotifs from "../mixins/slack-notifs"
+
 import StrForm from "../components/stripe-checkout/str-form.vue"
 
 export default {
   components: {
     StrForm,
   },
+  mixins: [mail, slackNotifs],
   data() {
     return {
-      showSetupIntentStep: false,
       isLoading: false,
+      isSendingNotifs: false,
+      plan: "Free Trial",
       core: {
         name: "Core",
         price: "99",
@@ -77,11 +87,27 @@ export default {
     },
   },
   methods: {
-    closeSetupIntentStep() {
-      this.showSetupIntentStep = false
-    },
-    toggleShowSetupIntentStep() {
-      this.showSetupIntentStep = true
+    async userDataCollected() {
+      this.isSendingNotifs = true
+      try {
+        // Send slack notifications
+        await this.sendSlackNotifs(this.plan)
+
+        // Send mail to subbed client and admins
+        await this.sendUserMail()
+      } catch (error) {
+        // TODO: How to effectively handle errors
+        console.log(error)
+      }
+
+      //Reset email and full name
+      this.$store.commit("updateEmail", "")
+      this.$store.commit("updateFullname", "")
+
+      this.isSendingNotifs = false
+
+      // Redirect the user to the welcome page
+      this.$router.push("/welcome")
     },
   },
 }
