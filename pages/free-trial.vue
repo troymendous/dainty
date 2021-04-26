@@ -17,16 +17,21 @@
 </template>
 
 <script>
+import mail from "../mixins/mail"
+import slackNotifs from "../mixins/slack-notifs"
+
 import StrForm from "../components/stripe-checkout/str-form.vue"
 
 export default {
   components: {
     StrForm,
   },
+  mixins: [mail, slackNotifs],
   data() {
     return {
       showSetupIntentStep: false,
       isLoading: false,
+      plan: 'Free Trial',
       core: {
         name: "Core",
         price: "99",
@@ -73,6 +78,17 @@ export default {
   },
   methods: {
     userDataCollected() {
+      try {
+          // Send slack notifications
+          await this.sendSlackNotifs(this.plan)
+
+          // Send mail to subbed client and admins
+          await this.sendUserMail()
+        } catch (error) {
+          // TODO: How to effectively handle errors
+          console.log(error)
+        }
+
       this.$router.push("/welcome")
     },
   },
