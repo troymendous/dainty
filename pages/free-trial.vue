@@ -1,5 +1,10 @@
 <template>
   <div class="free-trial">
+    <pre>
+    {{ todos }}
+  </pre
+    >
+
     <h2>15 Day Free Trial</h2>
     <div class="free-trial_inner">
       <div class="free-trial_content-wrapper">
@@ -67,6 +72,10 @@ export default {
         ],
       },
     }
+  },
+  async asyncData({ $supabase }) {
+    const { data } = await $supabase.from("todos").select("*")
+    return { todos: data }
   },
   computed: {
     email: {

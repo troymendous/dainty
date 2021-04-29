@@ -93,7 +93,14 @@ export default {
     "@nuxtjs/eslint-module",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/dotenv",
+    "@nuxtclub/supabase",
   ],
+
+  supabase: {
+    url: "https://ikuihfacanpvexhyvlxk.supabase.co",
+    key:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxOTU1NzUwMCwiZXhwIjoxOTM1MTMzNTAwfQ.Lpt5hXBzo22MOlNSRLN0WGwhmFJZw6QOxBnOHjYkkkA",
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
