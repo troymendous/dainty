@@ -30,6 +30,7 @@
     "vue-tawk": "^1.0.1"
   },
   "devDependencies": {
+    "@nuxtclub/supabase": "^1.0.1",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
