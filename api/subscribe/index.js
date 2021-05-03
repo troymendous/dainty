@@ -29,7 +29,6 @@ module.exports = async (req, res) => {
   } catch (error) {
     res.json({
       status: 500,
-      message: "Ooops something happened when processing your request!, Try Again Later",
       error,
     })
   }
