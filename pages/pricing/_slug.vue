@@ -16,17 +16,32 @@
         </div>
       </div>
 
-      <str-services :services="core.services" :slug="slug" v-if="slug === 'core'">
+      <str-services
+        :services="core.services"
+        :price="core.price"
+        :slug="slug"
+        v-if="slug === 'core'"
+      >
         <template v-slot:heading> {{ core.name }} </template>
         <template v-slot:price> {{ core.price }}</template>
       </str-services>
 
-      <str-services :services="plus.services" :slug="slug" v-if="slug === 'plus'">
+      <str-services
+        :services="plus.services"
+        :price="plus.price"
+        :slug="slug"
+        v-if="slug === 'plus'"
+      >
         <template v-slot:heading> {{ plus.name }} </template>
         <template v-slot:price> {{ plus.price }}</template>
       </str-services>
 
-      <str-services :services="enterprise.services" :slug="slug" v-if="slug === 'enterprise'">
+      <str-services
+        :services="enterprise.services"
+        :price="enterprise.price"
+        :slug="slug"
+        v-if="slug === 'enterprise'"
+      >
         <template v-slot:heading> {{ enterprise.name }} </template>
         <template v-slot:price> {{ enterprise.price }}</template>
       </str-services>
