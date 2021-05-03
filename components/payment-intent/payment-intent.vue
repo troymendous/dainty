@@ -201,7 +201,6 @@ export default {
 
       if (result.status === 500) {
         this.displayError(result.error.raw.message)
-        console.log(result.error)
       }
     },
     toggleShowSetupIntent() {
