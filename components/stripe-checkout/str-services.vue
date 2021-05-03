@@ -6,7 +6,10 @@
           <h4>
             <slot name="heading"></slot>
           </h4>
-          <p>$<slot name="price"></slot>/month</p>
+          <p>
+            <span v-if="!price.length">15 days free of the Core plan</span>
+            <span v-else> $<slot name="price"></slot><span>/month</span></span>
+          </p>
         </div>
       </div>
 
@@ -19,7 +22,10 @@
         </div>
       </ul>
     </div>
-    <nuxt-link to="/pricing/core" v-if="slug === 'plus' || slug === 'enterprise'">
+    <nuxt-link
+      to="/pricing/core"
+      v-if="slug === 'plus' || slug === 'enterprise' || currentRouteName === 'free-trial'"
+    >
       <h4>Core</h4>
       <p>$99/month</p>
     </nuxt-link>
@@ -46,6 +52,7 @@ export default {
   props: {
     services: Array,
     slug: String,
+    price: String,
   },
   components: {
     checkIcon,
