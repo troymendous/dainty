@@ -22,6 +22,10 @@
         </div>
       </ul>
     </div>
+    <nuxt-link to="/free-trial" v-if="slug === 'core' || slug === 'plus' || slug === 'enterprise'">
+      <h4>Core</h4>
+      <p>$99/month</p>
+    </nuxt-link>
     <nuxt-link
       to="/pricing/core"
       v-if="slug === 'plus' || slug === 'enterprise' || currentRouteName === 'free-trial'"
