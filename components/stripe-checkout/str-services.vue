@@ -23,8 +23,8 @@
       </ul>
     </div>
     <nuxt-link to="/free-trial" v-if="slug === 'core' || slug === 'plus' || slug === 'enterprise'">
-      <h4>Core</h4>
-      <p>$99/month</p>
+      <h4>Trial</h4>
+      <p>15 days free of the Core plan</p>
     </nuxt-link>
     <nuxt-link
       to="/pricing/core"
