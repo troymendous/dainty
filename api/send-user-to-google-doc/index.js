@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: req.email,
+        email: req.body.email,
         name: req.body.name,
         plan: req.body.plan,
         createdDateTime: req.body.createdDateTime,

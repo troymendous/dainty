@@ -93,6 +93,7 @@ export default {
     "@nuxtjs/eslint-module",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/dotenv",
+    "@nuxtjs/date-fns",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

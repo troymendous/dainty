@@ -10,7 +10,7 @@ export default {
           email: this.email.trim(),
           name: this.fullname.trim(),
           plan,
-          createdDateTime: new Date(),
+          createdDateTime: $dateFns.format(new Date(), "yyyy-MM-dd"),
         }),
       })
 
