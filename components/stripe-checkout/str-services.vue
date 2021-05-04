@@ -2,11 +2,14 @@
   <div class="str-services-wrapper">
     <div class="free-trial_content-side">
       <div class="free-trial_content-side-headliner">
-        <div>
+        <div class="free-trial_content-side-headliner-inner">
           <h4>
             <slot name="heading"></slot>
           </h4>
-          <p>$<slot name="price"></slot>/month</p>
+          <p>
+            <span v-if="!price.length">15 days free of the Core plan</span>
+            <span v-else> $<slot name="price"></slot><span>/month</span></span>
+          </p>
         </div>
       </div>
 
@@ -19,7 +22,14 @@
         </div>
       </ul>
     </div>
-    <nuxt-link to="/pricing/core" v-if="slug === 'plus' || slug === 'enterprise'">
+    <nuxt-link to="/free-trial" v-if="slug === 'core' || slug === 'plus' || slug === 'enterprise'">
+      <h4>Trial</h4>
+      <p>15 days free of the Core plan</p>
+    </nuxt-link>
+    <nuxt-link
+      to="/pricing/core"
+      v-if="slug === 'plus' || slug === 'enterprise' || currentRouteName === 'free-trial'"
+    >
       <h4>Core</h4>
       <p>$99/month</p>
     </nuxt-link>
@@ -46,6 +56,7 @@ export default {
   props: {
     services: Array,
     slug: String,
+    price: String,
   },
   components: {
     checkIcon,
@@ -81,6 +92,10 @@ export default {
     justify-content: center;
   }
 
+  &-headliner-inner {
+    text-align: center;
+  }
+
   li {
     padding: 0.6rem 0;
   }
@@ -90,10 +105,6 @@ export default {
     margin-right: 0.3rem;
     width: 12px;
     height: 12px;
-  }
-
-  p {
-    text-align: center;
   }
 }
 </style>

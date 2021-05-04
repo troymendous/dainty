@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <str-services :services="core.services">
+      <str-services :services="core.services" :price="core.price">
         <template v-slot:heading> {{ core.name }} </template>
         <template v-slot:price> {{ core.price }}</template>
       </str-services>
@@ -43,8 +43,8 @@ export default {
       isSendingNotifs: false,
       plan: "Free Trial",
       core: {
-        name: "Core",
-        price: "99",
+        name: "Trial",
+        price: "",
         services: [
           "Unlimited concepts and revisions",
           "All source files",
@@ -100,7 +100,7 @@ export default {
         console.log(error)
       }
 
-      //Reset email and full name
+      // Reset email and full name
       this.$store.commit("updateEmail", "")
       this.$store.commit("updateFullname", "")
 
