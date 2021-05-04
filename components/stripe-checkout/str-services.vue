@@ -2,7 +2,7 @@
   <div class="str-services-wrapper">
     <div class="free-trial_content-side">
       <div class="free-trial_content-side-headliner">
-        <div>
+        <div class="free-trial_content-side-headliner-inner">
           <h4>
             <slot name="heading"></slot>
           </h4>
@@ -92,6 +92,10 @@ export default {
     justify-content: center;
   }
 
+  &-headliner-inner {
+    text-align: center;
+  }
+
   li {
     padding: 0.6rem 0;
   }
@@ -101,10 +105,6 @@ export default {
     margin-right: 0.3rem;
     width: 12px;
     height: 12px;
-  }
-
-  p {
-    text-align: center;
   }
 }
 </style>
