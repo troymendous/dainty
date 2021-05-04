@@ -1,7 +1,7 @@
 export default {
   methods: {
     async appendUsersToGoogleDocs(plan) {
-      const result = await fetch("/api/send-user-to-google-docs", {
+      const result = await fetch("/api/send-user-to-google-doc", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
