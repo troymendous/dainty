@@ -39,6 +39,7 @@
 <script>
 import mail from "../../mixins/mail"
 import slackNotifs from "../../mixins/slack-notifs"
+import zapierDocs from "../../mixin/zapier-docs"
 
 import StrButton from "../stripe-checkout/str-button.vue"
 
@@ -57,7 +58,7 @@ export default {
   components: {
     StrButton,
   },
-  mixins: [mail, slackNotifs],
+  mixins: [mail, slackNotifs, zapierDocs],
   data() {
     return {
       stripe: "",
@@ -176,6 +177,9 @@ export default {
           // Send mail to subbed client and admins
           await this.sendUserMail()
           await this.sendAdminsMail()
+
+          // Append the user to Google Doc
+          await this.appendUsersToGoogleDocs(this.capitalizedPlan)
         } catch (error) {
           // TODO: How to effectively handle errors
           console.log(error)
