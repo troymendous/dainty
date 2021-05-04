@@ -39,7 +39,7 @@
 <script>
 import mail from "../../mixins/mail"
 import slackNotifs from "../../mixins/slack-notifs"
-import zapierDocs from "../../mixin/zapier-docs"
+import zapierDocs from "../../mixins/zapier-docs"
 
 import StrButton from "../stripe-checkout/str-button.vue"
 
