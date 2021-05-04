@@ -1,7 +1,7 @@
 export default {
   methods: {
     async appendUsersToGoogleDocs(plan) {
-      const result = await fetch("https://hooks.zapier.com/hooks/catch/1488591/byuh4il/", {
+      const result = await fetch("/api/send-user-to-google-docs", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -10,6 +10,7 @@ export default {
           email: this.email.trim(),
           name: this.fullname.trim(),
           plan,
+          createdDateTime: new Date(),
         }),
       })
 
