@@ -29,6 +29,7 @@
 <script>
 import mail from "../mixins/mail"
 import slackNotifs from "../mixins/slack-notifs"
+import zapierDocs from "../mixins/zapier-docs"
 
 import StrForm from "../components/stripe-checkout/str-form.vue"
 
@@ -36,7 +37,7 @@ export default {
   components: {
     StrForm,
   },
-  mixins: [mail, slackNotifs],
+  mixins: [mail, slackNotifs, zapierDocs],
   data() {
     return {
       isLoading: false,
@@ -95,6 +96,9 @@ export default {
 
         // Send mail to subbed client and admins
         await this.sendUserMail()
+
+        // Append the user to Google Doc
+        await this.appendUsersToGoogleDocs(this.plan)
       } catch (error) {
         // TODO: How to effectively handle errors
         console.log(error)
