@@ -10,7 +10,7 @@ export default {
           email: this.email.trim(),
           name: this.fullname.trim(),
           plan,
-          createdDateTime: this.$dateFns.format(new Date(), "yyyy-MM-dd"),
+          createdDateTime: new Date().toUTCString(),
         }),
       })
 
