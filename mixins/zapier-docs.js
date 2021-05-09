@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     createdDateTime() {
-      return new Date()
+      return new Date().toString()
     },
   },
 }
