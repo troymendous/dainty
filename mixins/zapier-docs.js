@@ -1,8 +1,4 @@
 export default {
-  mounted() {
-    console.log(new Date())
-    console.log({ time: this.createdDateTime })
-  },
   methods: {
     async appendUsersToGoogleDocs(plan) {
       const result = await fetch("/api/send-user-to-google-doc", {
