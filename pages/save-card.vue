@@ -9,7 +9,6 @@
             :showNextStep="showSetupIntentStep"
             v-on:showStrCheckout="toggleShowSetupIntentStep"
           />
-          <h3 v-if="showSetupIntentStep">Hello Wordl</h3>
           <future-payments
             v-if="showSetupIntentStep"
             v-on:closeSetupIntent="closeSetupIntentStep"
