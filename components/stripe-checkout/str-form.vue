@@ -1,7 +1,8 @@
 <template>
   <ValidationObserver slim v-slot="{ invalid, validate }">
     <form @submit.prevent="validate().then(handleSubmit)" v-if="!showNextStep" class="str-form">
-      <h4>Create your account:</h4>
+      <h4 v-if="currentRouteName === 'save-card'">Personal Details</h4>
+      <h4 v-else>Create your account:</h4>
       <ValidationProvider name="fullname" rules="required|alpha_spaces|min:3" v-slot="{ errors }">
         <input type="text" v-model="fullname" placeholder="Full name*" />
         <span v-show="errors.length > 0" class="is-invalid">{{ errors[0] }}</span>

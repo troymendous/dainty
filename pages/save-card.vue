@@ -1,6 +1,6 @@
 <template>
   <div class="free-trial">
-    <h2>Card Details</h2>
+    <h2>Create your account</h2>
     <div class="free-trial_inner">
       <div class="free-trial_content-wrapper">
         <div class="free-trial_content">
@@ -21,10 +21,12 @@
 
 <script>
 import StrForm from "../components/stripe-checkout/str-form.vue"
+import FuturePaymentsIntent from "../components/stripe-checkout/future-payments-intent.vue"
 
 export default {
   components: {
     StrForm,
+    FuturePaymentsIntent,
   },
   data() {
     return {
