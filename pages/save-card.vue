@@ -10,7 +10,7 @@
             v-on:showStrCheckout="toggleShowSetupIntentStep"
           />
           <h3 v-if="showSetupIntentStep">Hello Wordl</h3>
-          <FuturePaymentsIntent
+          <future-payments
             v-if="showSetupIntentStep"
             v-on:closeSetupIntent="closeSetupIntentStep"
           />
@@ -22,12 +22,12 @@
 
 <script>
 import StrForm from "../components/stripe-checkout/str-form.vue"
-import FuturePaymentsIntent from "../components/stripe-checkout/future-payments-intent.vue"
+import FuturePayments from "../components/stripe-checkout/future-payments.vue"
 
 export default {
   components: {
     StrForm,
-    FuturePaymentsIntent,
+    FuturePayments,
   },
   data() {
     return {

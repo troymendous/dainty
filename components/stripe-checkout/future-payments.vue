@@ -47,7 +47,7 @@
 import mail from "../../mixins/mail"
 import slackNotifs from "../../mixins/slack-notifs"
 
-import StrButton from "../stripe-checkout/str-button.vue"
+import StrButton from "./str-button.vue"
 
 export default {
   mixins: [mail, slackNotifs],
