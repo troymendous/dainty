@@ -47,7 +47,7 @@
 import mail from "../../mixins/mail"
 import slackNotifs from "../../mixins/slack-notifs"
 
-import StrButton from "../stripe-checkout/str-button.vue"
+import StrButton from "./str-button.vue"
 
 export default {
   mixins: [mail, slackNotifs],
@@ -60,7 +60,7 @@ export default {
       card: null,
       isLoading: false,
       setupIntent: {},
-      plan: "Core Plan",
+      plan: "Yet to be named",
       isSendingEmails: false,
     }
   },
@@ -142,27 +142,29 @@ export default {
         document.querySelector(".setup-intent-form").classList.add("hidden")
         document.querySelector(".sr-result").classList.remove("hidden")
 
-        this.isSendingEmails = true
+        this.$router.push({ name: "welcome", params: { price: 0.0 } })
 
-        const res = await this.subscribeFreeTrial(this.setupIntent)
-        const { status } = await res.json()
-        if (status === "success") {
-          try {
-            // Send slack notifications
-            await this.sendSlackNotifs(this.plan)
+        // this.isSendingEmails = true
 
-            // Send mail to subbed client and admins
-            await this.sendUserMail()
-            await this.sendAdminsMail()
-          } catch (error) {
-            console.log(error)
-          }
+        // const res = await this.subscribeFreeTrial(this.setupIntent)
+        // const { status } = await res.json()
+        // if (status === "success") {
+        //   try {
+        //     // Send slack notifications
+        //     await this.sendSlackNotifs(this.plan)
 
-          this.isSendingEmails = false
+        //     // Send mail to subbed client and admins
+        //     await this.sendUserMail()
+        //     await this.sendAdminsMail()
+        //   } catch (error) {
+        //     console.log(error)
+        //   }`
 
-          // Redirect the user to the welcome page
-          this.$router.push({ name: "welcome", params: { price: 0.0 } })
-        }
+        //   this.isSendingEmails = false
+
+        //   // Redirect the user to the welcome page
+        //   this.$router.push({ name: "welcome", params: { price: 0.0 } })
+        // }
 
         // Reset the store
         this.$store.commit("updateEmail", "")
@@ -170,15 +172,15 @@ export default {
         this.$store.commit("updateSetupIntent", {})
       }
     },
-    subscribeFreeTrial({ customer }) {
-      return fetch("/api/subscriptions", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ customer }),
-      })
-    },
+    // subscribeFreeTrial({ customer }) {
+    //   return fetch("/api/subscriptions", {
+    //     method: "post",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({ customer }),
+    //   })
+    // },
     toggleShowSetupIntent() {
       this.$emit("closeSetupIntent")
     },
@@ -188,7 +190,11 @@ export default {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email: this.email.trim(), name: this.fullname.trim() }),
+        body: JSON.stringify({
+          email: this.email.trim(),
+          name: this.fullname.trim(),
+          plan: this.plan,
+        }),
       })
 
       this.setupIntent = await res.json()
