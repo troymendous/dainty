@@ -9,10 +9,11 @@
             :showNextStep="showSetupIntentStep"
             v-on:showStrCheckout="toggleShowSetupIntentStep"
           />
-          <future-payments
+          <h2 v-if="showSetupIntentStep">Hello World</h2>
+          <!-- <future-payments
             v-if="showSetupIntentStep"
             v-on:closeSetupIntent="closeSetupIntentStep"
-          />
+          /> -->
         </div>
       </div>
     </div>
