@@ -43,7 +43,10 @@
 <script>
 export default {
   props: {
-    isLoading: Boolean,
+    isLoading: {
+      type: Boolean,
+      default: false,
+    },
     showNextStep: {
       type: Boolean,
       default: false,
