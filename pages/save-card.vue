@@ -1,19 +1,18 @@
 <template>
   <div class="free-trial">
-    <h2>Create your account</h2>
+    <h2>Checkout</h2>
     <div class="free-trial_inner">
       <div class="free-trial_content-wrapper">
         <div class="free-trial_content">
           <str-form
             :isLoading="isLoading"
-            :showNextStep="showSetupIntentStep"
-            v-on:showStrCheckout="toggleShowSetupIntentStep"
+            :showNextStep="showPaymentIntentStep"
+            v-on:showStrCheckout="toggleShowPaymentIntentStep"
           />
-          <h2 v-if="showSetupIntentStep">Hello World</h2>
-          <!-- <future-payments
-            v-if="showSetupIntentStep"
-            v-on:closeSetupIntent="closeSetupIntentStep"
-          /> -->
+          <paymentIntent
+            v-show="showPaymentIntentStep"
+            v-on:closePaymentIntent="closePaymentIntentStep"
+          />
         </div>
       </div>
     </div>
@@ -21,26 +20,48 @@
 </template>
 
 <script>
-import StrForm from "../components/stripe-checkout/str-form.vue"
-import FuturePayments from "../components/stripe-checkout/future-payments.vue"
+import paymentIntent from "../components/payment-intent/payment-intent.vue"
+import StrForm from "../components/stripe-checkout/str-form"
 
 export default {
   components: {
+    paymentIntent,
     StrForm,
-    FuturePayments,
   },
   data() {
     return {
-      showSetupIntentStep: false,
+      showPaymentIntentStep: false,
       isLoading: false,
+      slug: "",
     }
   },
-  methods: {
-    closeSetupIntentStep() {
-      this.showSetupIntentStep = false
+  mounted() {
+    this.slug = this.$route.params.slug
+  },
+  computed: {
+    email: {
+      get() {
+        return this.$store.state.email
+      },
+      set(value) {
+        this.$store.commit("updateEmail", value)
+      },
     },
-    toggleShowSetupIntentStep() {
-      this.showSetupIntentStep = true
+    fullname: {
+      get() {
+        return this.$store.state.fullname
+      },
+      set(value) {
+        this.$store.commit("updateFullname", value)
+      },
+    },
+  },
+  methods: {
+    closePaymentIntentStep() {
+      this.showPaymentIntentStep = false
+    },
+    toggleShowPaymentIntentStep() {
+      this.showPaymentIntentStep = true
     },
   },
 }
@@ -63,6 +84,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.5rem;
+
   @screen md {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -71,6 +93,7 @@ export default {
 .free-trial_content-wrapper {
   border-top: 1px solid #d5d5d5;
   padding: 30px 60px 60px;
+
   @screen sm {
     padding: 20px 30px;
   }
