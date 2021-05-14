@@ -15,6 +15,36 @@
           />
         </div>
       </div>
+
+      <str-services
+        :services="core.services"
+        :price="core.price"
+        :slug="slug"
+        v-if="slug === 'core'"
+      >
+        <template v-slot:heading> {{ core.name }} </template>
+        <template v-slot:price> {{ core.price }}</template>
+      </str-services>
+
+      <str-services
+        :services="plus.services"
+        :price="plus.price"
+        :slug="slug"
+        v-if="slug === 'plus'"
+      >
+        <template v-slot:heading> {{ plus.name }} </template>
+        <template v-slot:price> {{ plus.price }}</template>
+      </str-services>
+
+      <str-services
+        :services="enterprise.services"
+        :price="enterprise.price"
+        :slug="slug"
+        v-if="slug === 'enterprise'"
+      >
+        <template v-slot:heading> {{ enterprise.name }} </template>
+        <template v-slot:price> {{ enterprise.price }}</template>
+      </str-services>
     </div>
   </div>
 </template>
@@ -33,6 +63,59 @@ export default {
       showPaymentIntentStep: false,
       isLoading: false,
       slug: "",
+      core: {
+        name: "Core",
+        price: "99",
+        services: [
+          "Unlimited concepts and revisions",
+          "All source files",
+          "Print Design",
+          "High quality work",
+          "Social Media Posts",
+          "Advertisements",
+          "Logo Design",
+          "Business Card Design",
+          "Letterhead Design",
+          "Stationary",
+          "E-Book Cover",
+          "Infographic",
+          "Flyer",
+          "Brochure",
+          "Packaging",
+          "T-shirt",
+          "and more...",
+          "No contracts - cancel anytime",
+        ],
+      },
+      plus: {
+        name: "Plus",
+        price: "249",
+        services: [
+          "All in Core",
+          "Presentation templates",
+          "Powerpoint templates",
+          "Unlimited concepts and revisions",
+          "All source files",
+          "Reselling",
+          "Quality Assurance",
+          "No contracts - cancel anytime",
+        ],
+      },
+      enterprise: {
+        name: "Enterprise",
+        price: "599",
+        services: [
+          "All in Core & Plus",
+          "Unlimited concepts and revisions",
+          "Web Design Mockups",
+          "White-labelling",
+          "Agency support",
+          "Priority support",
+          "Basic Custom Illustrations",
+          "Fillable PDFs",
+          "No contracts - cancel anytime",
+        ],
+      },
     }
   },
   mounted() {
