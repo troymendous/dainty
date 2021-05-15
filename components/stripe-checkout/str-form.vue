@@ -1,7 +1,7 @@
 <template>
-  <ValidationObserver slim v-slot="{ invalid, validate }">
+  <ValidationObserver v-slot="{ invalid, validate }">
     <form @submit.prevent="validate().then(handleSubmit)" v-if="!showNextStep" class="str-form">
-      <h4 v-if="currentRouteName === 'save-card'">Personal Details</h4>
+      <h4 v-if="currentRouteName === 'save-card'">Personal Details:</h4>
       <h4 v-else>Create your account:</h4>
       <ValidationProvider name="fullname" rules="required|alpha_spaces|min:3" v-slot="{ errors }">
         <input type="text" v-model="fullname" placeholder="Full name*" />
@@ -72,6 +72,7 @@ export default {
   },
   methods: {
     handleSubmit() {
+      console.log("Clicked")
       this.$emit("showStrCheckout")
     },
   },
