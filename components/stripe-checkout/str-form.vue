@@ -1,5 +1,5 @@
 <template>
-  <ValidationObserver slim v-slot="{ invalid, validate }">
+  <ValidationObserver v-slot="{ invalid, validate }">
     <form @submit.prevent="validate().then(handleSubmit)" v-if="!showNextStep" class="str-form">
       <h4 v-if="currentRouteName === 'save-card'">Personal Details:</h4>
       <h4 v-else>Create your account:</h4>
