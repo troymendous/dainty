@@ -1,125 +1,55 @@
 <template>
-  <div class="free-trial">
-    <h2>Checkout</h2>
-    <div class="free-trial_inner">
-      <div class="free-trial_content-wrapper">
-        <div class="free-trial_content">
-          <str-form
-            :isLoading="isLoading"
-            :showNextStep="showPaymentIntentStep"
-            v-on:showStrCheckout="toggleShowPaymentIntentStep"
-          />
-          <paymentIntent
-            v-show="showPaymentIntentStep"
-            v-on:closePaymentIntent="closePaymentIntentStep"
-          />
-        </div>
+  <ValidationObserver slim v-slot="{ invalid, validate }">
+    <form @submit.prevent="validate().then(handleSubmit)" v-if="!showNextStep" class="str-form">
+      <h4 v-if="currentRouteName === 'save-card'">Personal Details:</h4>
+      <h4 v-else>Create your account:</h4>
+      <ValidationProvider name="fullname" rules="required|alpha_spaces|min:3" v-slot="{ errors }">
+        <input type="text" v-model="fullname" placeholder="Full name*" />
+        <span v-show="errors.length > 0" class="is-invalid">{{ errors[0] }}</span>
+      </ValidationProvider>
+
+      <ValidationProvider name="email" rules="required|email" v-slot="{ errors }">
+        <input type="email" v-model="email" placeholder="Work Email*" />
+        <span v-show="errors.length > 0" class="is-invalid">{{ errors[0] }}</span>
+      </ValidationProvider>
+
+      <str-button :isLoading="isLoading" :disabled="invalid || isLoading"> Proceed </str-button>
+      <div v-if="currentRouteName === 'save-card'">
+        <p class="policy-agreement">
+          By clicking this button, you agree to our Terms, Privacy Policy and Security Policy.
+        </p>
+
+        <p class="policy-agreement">
+          Inaddition to that, you also authorise Dainty to send instructions to the financial
+          institution that issued your card to take payments from your card account in accordance
+          with the terms of your agreement.
+        </p>
       </div>
 
-      <str-services
-        :services="core.services"
-        :price="core.price"
-        :slug="slug"
-        v-if="slug === 'core'"
-      >
-        <template v-slot:heading> {{ core.name }} </template>
-        <template v-slot:price> {{ core.price }}</template>
-      </str-services>
+      <div v-else>
+        <p class="policy-agreement">
+          By clicking this button, you agree to our Terms, Privacy Policy and Security Policy.
+        </p>
 
-      <str-services
-        :services="plus.services"
-        :price="plus.price"
-        :slug="slug"
-        v-if="slug === 'plus'"
-      >
-        <template v-slot:heading> {{ plus.name }} </template>
-        <template v-slot:price> {{ plus.price }}</template>
-      </str-services>
-
-      <str-services
-        :services="enterprise.services"
-        :price="enterprise.price"
-        :slug="slug"
-        v-if="slug === 'enterprise'"
-      >
-        <template v-slot:heading> {{ enterprise.name }} </template>
-        <template v-slot:price> {{ enterprise.price }}</template>
-      </str-services>
-    </div>
-  </div>
+        <p class="policy-agreement">
+          You will not be charged for your core plan until your 15 day trial is over, if you do not
+          wish to continue the paid Core Plan you just need to let us know.
+        </p>
+      </div>
+    </form></ValidationObserver
+  >
 </template>
 
 <script>
-import paymentIntent from "../components/payment-intent/payment-intent.vue"
-import StrForm from "../components/stripe-checkout/str-form"
-
+import StrButton from "../components/stripe-checkout/str-button"
 export default {
   components: {
-    paymentIntent,
-    StrForm,
+    StrButton,
   },
   data() {
     return {
-      showPaymentIntentStep: false,
       isLoading: false,
-      slug: "",
-      core: {
-        name: "Core",
-        price: "99",
-        services: [
-          "Unlimited concepts and revisions",
-          "All source files",
-          "Print Design",
-          "High quality work",
-          "Social Media Posts",
-          "Advertisements",
-          "Logo Design",
-          "Business Card Design",
-          "Letterhead Design",
-          "Stationary",
-          "E-Book Cover",
-          "Infographic",
-          "Flyer",
-          "Brochure",
-          "Packaging",
-          "T-shirt",
-          "and more...",
-          "No contracts - cancel anytime",
-        ],
-      },
-      plus: {
-        name: "Plus",
-        price: "249",
-        services: [
-          "All in Core",
-          "Presentation templates",
-          "Powerpoint templates",
-          "Unlimited concepts and revisions",
-          "All source files",
-          "Reselling",
-          "Quality Assurance",
-          "No contracts - cancel anytime",
-        ],
-      },
-      enterprise: {
-        name: "Enterprise",
-        price: "599",
-        services: [
-          "All in Core & Plus",
-          "Unlimited concepts and revisions",
-          "Web Design Mockups",
-          "White-labelling",
-          "Agency support",
-          "Priority support",
-          "Basic Custom Illustrations",
-          "Fillable PDFs",
-          "No contracts - cancel anytime",
-        ],
-      },
     }
-  },
-  mounted() {
-    this.slug = this.$route.params.slug
   },
   computed: {
     email: {
@@ -138,47 +68,63 @@ export default {
         this.$store.commit("updateFullname", value)
       },
     },
+    currentRouteName() {
+      return this.$route.name
+    },
   },
   methods: {
-    closePaymentIntentStep() {
-      this.showPaymentIntentStep = false
-    },
-    toggleShowPaymentIntentStep() {
-      this.showPaymentIntentStep = true
+    handleSubmit() {
+      console.log("Clicked")
+      this.$emit("showStrCheckout")
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.free-trial {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding-top: 9rem;
-
-  h2 {
-    text-align: center;
+.str-form {
+  h1 {
+    font-weight: 500;
+    margin-bottom: 8px;
+    @apply text-darkColor;
+    font-size: 23px;
   }
-}
 
-.free-trial_inner {
-  margin-top: 3rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1.5rem;
-
-  @screen md {
-    grid-template-columns: repeat(1, 1fr);
+  input {
+    display: block;
+    width: 100%;
+    background: transparent;
+    // border: 1px solid rgb(165, 178, 189);
+    height: 50px;
+    padding: 0 1rem;
+    margin: 1rem 0;
+    font-size: 14px;
   }
-}
 
-.free-trial_content-wrapper {
-  border-top: 1px solid #d5d5d5;
-  padding: 30px 60px 60px;
+  input[type="email"],
+  input[type="text"] {
+    border: 1px solid rgb(165, 178, 189);
+    border-radius: 3px;
+  }
 
-  @screen sm {
-    padding: 20px 30px;
+  .is-invalid {
+    color: red;
+    font-size: 14px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  .is-invalid::first-line {
+    text-transform: capitalize;
+  }
+
+  .policy-agreement {
+    margin-top: 0.5rem;
+    font-size: 12px;
+    color: #556575;
+    line-height: 1.1rem;
   }
 }
 </style>
