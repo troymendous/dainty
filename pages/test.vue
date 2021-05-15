@@ -49,6 +49,7 @@ export default {
   data() {
     return {
       isLoading: false,
+      showNextStep: false,
     }
   },
   computed: {
@@ -75,7 +76,7 @@ export default {
   methods: {
     handleSubmit() {
       console.log("Clicked")
-      this.$emit("showStrCheckout")
+      // this.$emit("showStrCheckout")
     },
   },
 }
