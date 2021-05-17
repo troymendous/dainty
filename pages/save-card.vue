@@ -6,13 +6,13 @@
         <div class="free-trial_content">
           <str-form
             :isLoading="isLoading"
-            :showNextStep="showPaymentIntentStep"
-            v-on:showStrCheckout="toggleShowPaymentIntentStep"
+            :showNextStep="showFuturePaymentsStep"
+            v-on:showStrCheckout="toggleShowFuturePaymentsStep"
           />
-          <paymentIntent
-            v-show="showPaymentIntentStep"
-            v-on:closePaymentIntent="closePaymentIntentStep"
-          />
+          <!-- <future-payments
+            v-show="showFuturePaymentsStep"
+            v-on:closeSetupIntent="closeFuturePaymentsStep"
+          /> -->
         </div>
       </div>
     </div>
@@ -20,17 +20,17 @@
 </template>
 
 <script>
-import paymentIntent from "../components/payment-intent/payment-intent.vue"
+// import futurePayments from "../components/stripe-checkout/future-payments"
 import StrForm from "../components/stripe-checkout/str-form"
 
 export default {
   components: {
-    paymentIntent,
+    // futurePayments,
     StrForm,
   },
   data() {
     return {
-      showPaymentIntentStep: false,
+      showFuturePaymentsStep: false,
       isLoading: false,
       slug: "",
     }
@@ -57,11 +57,11 @@ export default {
     },
   },
   methods: {
-    closePaymentIntentStep() {
-      this.showPaymentIntentStep = false
+    closeFuturePaymentsStep() {
+      this.showFuturePaymentsStep = false
     },
-    toggleShowPaymentIntentStep() {
-      this.showPaymentIntentStep = true
+    toggleShowFuturePaymentsStep() {
+      this.showFuturePaymentsStep = true
     },
   },
 }
