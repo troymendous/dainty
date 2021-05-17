@@ -77,7 +77,6 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log("Clicked")
       this.$emit("showStrCheckout")
     },
   },
