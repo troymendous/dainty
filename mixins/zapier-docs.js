@@ -1,7 +1,7 @@
 export default {
   methods: {
     async appendUsersToGoogleDocs(plan) {
-      const result = await fetch("/api/send-user-to-google-doc", {
+      await fetch("/api/send-user-to-google-doc", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -13,8 +13,6 @@ export default {
           createdDateTime: this.createdDateTime,
         }),
       })
-
-      console.log(result)
     },
   },
   computed: {

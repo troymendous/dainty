@@ -41,6 +41,8 @@
 </template>
 
 <script>
+import strButton from "./str-button"
+
 export default {
   props: {
     isLoading: Boolean,
@@ -48,6 +50,9 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  components: {
+    strButton,
   },
   computed: {
     email: {
@@ -72,7 +77,6 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log("Clicked")
       this.$emit("showStrCheckout")
     },
   },
