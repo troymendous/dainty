@@ -1,5 +1,8 @@
 <template>
   <div class="homepage">
+    <!-- <ul>
+      <li v-for="{ id, todo } in todos" :key="id">{{ todo }}</li>
+    </ul> -->
     <banner-section />
     <services-section />
     <media-section />
@@ -7,6 +10,7 @@
     <!--    <call-to-action />-->
     <portfolio-examples />
     <pricing-cards-v-2 :is-stripe-loaded="isStripeLoaded" />
+    <button @click="createUser">Create a user</button>
   </div>
 </template>
 
@@ -45,6 +49,27 @@ export default {
         },
       ],
     }
+  },
+  // async asyncData() {
+  //   const data = await this.$fire.firestore.collection("todos").get()
+  //   const todos = data.docs.map((doc) => ({
+  //     ...doc.data(),
+  //     id: doc.id,
+  //   }))
+  //   return { todos }
+  // },
+  mounted() {
+    console.log(this.$fire.firestore)
+  },
+  methods: {
+    async createUser() {
+      try {
+        console.log("Creating a user....")
+        await this.$fire.auth.createUserWithEmailAndPassword("foo@foo.foo", "testing")
+      } catch (e) {
+        console.log(e)
+      }
+    },
   },
 }
 </script>

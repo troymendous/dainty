@@ -97,7 +97,26 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    [
+      "@nuxtjs/firebase",
+      {
+        config: {
+          apiKey: "AIzaSyCa4YLYQzoyj-tVtj4Bs1JrlEjncBmBV0I",
+          authDomain: "dainty-70c5b.firebaseapp.com",
+          projectId: "dainty-70c5b",
+          storageBucket: "dainty-70c5b.appspot.com",
+          messagingSenderId: "171080204153",
+          appId: "1:171080204153:web:6ae80e35d9d7aebfbf79a8",
+          measurementId: "G-PTEK781NCY",
+        },
+        services: {
+          auth: true, // Just as example. Can be any other service.
+          firestore: true,
+        },
+      },
+    ],
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
