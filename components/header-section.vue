@@ -28,7 +28,7 @@
 
             <ul class="menu_links">
               <li>
-                <NuxtLink to="/services">Services</NuxtLink>
+                <dropdown />
               </li>
               <li>
                 <NuxtLink to="/portfolio">Portfolio</NuxtLink>
@@ -85,11 +85,13 @@
 
 <script>
 import Logo from "./logo.vue"
+import Dropdown from "./services/dropdown"
 
 export default {
   name: "HeaderSection",
   components: {
     Logo,
+    Dropdown,
   },
   computed: {
     menuIsActive() {
