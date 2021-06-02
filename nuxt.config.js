@@ -96,7 +96,10 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ["nuxt-intercom"],
+  intercom: {
+    appId: "hglv9vbw",
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

@@ -25,6 +25,10 @@ export default {
       ],
     }
   },
+  mounted() {
+    this.$intercom()
+    // console.log(this)
+  },
 }
 </script>
 
