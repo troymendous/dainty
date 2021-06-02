@@ -81,7 +81,6 @@ export default {
   plugins: [
     { src: "~/plugins/vue-awesome-swiper.js", mode: "client" },
     { src: "~/plugins/vee-validate.js", mode: "client" },
-    { src: "~/plugins/tawk.js", ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
