@@ -26,8 +26,7 @@
     "vee-validate": "^2.2.15",
     "vue": "^2.6.12",
     "vue-awesome-swiper": "^4.1.1",
-    "vue-js-counter": "^1.0.3",
-    "vue-tawk": "^1.0.1"
+    "vue-js-counter": "^1.0.3"
   },
   "devDependencies": {
     "@nuxtjs/date-fns": "^1.5.0",
