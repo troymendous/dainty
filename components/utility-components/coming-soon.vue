@@ -10,9 +10,7 @@
 </template>
 
 <script>
-export default {
-  name: "Coming",
-}
+export default {}
 </script>
 
 <style lang="scss">
