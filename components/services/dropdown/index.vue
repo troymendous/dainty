@@ -15,7 +15,7 @@
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/services/website-maintanance" class="services-dropdown_links">
+        <nuxt-link to="/services/website-mantainance" class="services-dropdown_links">
           <website-mantainance-icon />
           <span>Website Mantainance</span>
         </nuxt-link>
