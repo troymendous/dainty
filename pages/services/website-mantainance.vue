@@ -1,11 +1,12 @@
 <template>
-  <coming-soon />
+  <website-mantainance-intro />
 </template>
 
 <script>
-import comingSoon from "../../components/utility-components/coming-soon.vue"
+import WebsiteMantainanceIntro from "../../components/services/website-mantainance/website-mantainance-intro.vue"
+
 export default {
-  components: { comingSoon },
+  components: { WebsiteMantainanceIntro },
 }
 </script>
 
