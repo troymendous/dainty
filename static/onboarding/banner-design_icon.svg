@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="62.004" height="60.004" viewBox="0 0 62.004 60.004">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #707070;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #ffdbf8;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_296" data-name="Rectangle 296" class="cls-1" width="20" height="40" transform="translate(-0.203)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_848" data-name="Group 848" transform="translate(-5156 -2842)">
+    <g id="Mask_Group_14" data-name="Mask Group 14" class="cls-2" transform="translate(5167 2861.797) rotate(-90)">
+      <circle id="Ellipse_145" data-name="Ellipse 145" class="cls-3" cx="20" cy="20" r="20" transform="translate(39.797 40) rotate(180)"/>
+    </g>
+    <g id="billboard" transform="translate(5148 2826)">
+      <path id="Path_22596" data-name="Path 22596" d="M69,24H60V22h4a1,1,0,0,0,1-1V17a1,1,0,0,0-1-1H54a1,1,0,0,0-1,1v4a1,1,0,0,0,1,1h4v2H40V22h4a1,1,0,0,0,1-1V17a1,1,0,0,0-1-1H34a1,1,0,0,0-1,1v4a1,1,0,0,0,1,1h4v2H20V22h4a1,1,0,0,0,1-1V17a1,1,0,0,0-1-1H14a1,1,0,0,0-1,1v4a1,1,0,0,0,1,1h4v2H9a1,1,0,0,0-1,1V60a1,1,0,0,0,1,1H22v1H12a1,1,0,0,0-1,1v3a1,1,0,0,0,1,1H22v7H11a1,1,0,1,0,0,2H67a1,1,0,1,0,0-2H56V67H66a1,1,0,0,0,1-1V63a1,1,0,0,0-1-1H56V61H69a1,1,0,0,0,1-1V25A1,1,0,0,0,69,24ZM55,20V18h8v2ZM35,20V18h8v2ZM15,20V18h8v2ZM26,74H24V67h2Zm24,0H28V67H50Zm4,0H52V67h2ZM65,64v1H13V64ZM24,62V61h2v1Zm4,0V61H50v1Zm24,0V61h2v1Zm16-3H10V26H68Z"/>
+      <circle id="Ellipse_138" data-name="Ellipse 138" cx="1" cy="1" r="1" transform="translate(64.685 27)"/>
+      <circle id="Ellipse_139" data-name="Ellipse 139" cx="1" cy="1" r="1" transform="translate(10.685 27)"/>
+      <circle id="Ellipse_140" data-name="Ellipse 140" cx="1" cy="1" r="1" transform="translate(64.685 56)"/>
+      <circle id="Ellipse_141" data-name="Ellipse 141" cx="1" cy="1" r="1" transform="translate(10.685 56)"/>
+    </g>
+  </g>
+</svg>
