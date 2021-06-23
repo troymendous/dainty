@@ -26,9 +26,9 @@
               Link your card to your account
             </str-button>
             <p class="policy-agreement">
-              You will not be charged for your core plan until your 15-day trial is over, if you do
-              not wish to continue the paid Core Plan you just need to let us know to avoid being
-              charged.
+              I authorise Dainty to send instructions to the financial institution that issued my
+              card to take payments from my card account in accordance with the terms of my
+              agreement with you.
             </p>
           </form>
           <div class="sr-result hidden">
@@ -60,7 +60,7 @@ export default {
       card: null,
       isLoading: false,
       setupIntent: {},
-      plan: "Yet to be named",
+      plan: "Secret Checkout",
       isSendingEmails: false,
     }
   },

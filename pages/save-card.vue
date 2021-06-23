@@ -9,10 +9,10 @@
             :showNextStep="showFuturePaymentsStep"
             v-on:showStrCheckout="toggleShowFuturePaymentsStep"
           />
-          <!-- <future-payments
+          <future-payments
             v-show="showFuturePaymentsStep"
             v-on:closeSetupIntent="closeFuturePaymentsStep"
-          /> -->
+          />
         </div>
       </div>
     </div>
@@ -20,12 +20,12 @@
 </template>
 
 <script>
-// import futurePayments from "../components/stripe-checkout/future-payments"
+import futurePayments from "../components/stripe-checkout/future-payments"
 import StrForm from "../components/stripe-checkout/str-form"
 
 export default {
   components: {
-    // futurePayments,
+    futurePayments,
     StrForm,
   },
   data() {
