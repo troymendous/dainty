@@ -4,7 +4,7 @@
       <img class="card-image" :src="image" />
       <img
         class="checked-image"
-        :src="checked ? '/web-development/checked.svg' : '/web-development/unchecked.svg'"
+        :src="checked ? '/web-development/checked.png' : '/web-development/unchecked.svg'"
       />
     </div>
     <h5>{{ text }}</h5>
@@ -39,7 +39,7 @@ export default {
   .card-top {
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     .card-image {
       @screen sm {
         width: 36px;
