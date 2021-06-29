@@ -1,5 +1,5 @@
 <template>
-  <div class="development-card">
+  <div :class="`development-card ${checked ? 'checked-card' : ''}`">
     <div class="card-top">
       <img class="card-image" :src="image" />
       <img
@@ -32,10 +32,22 @@ export default {
 
 <style lang="scss" scoped>
 .development-card {
-  box-shadow: 0px 3px 16px #77777729;
   border-radius: 8px;
+  box-shadow: 0px 3px 16px #77767629;
   padding: 24px;
   background: white;
+  width: calc(25% - 18.75px);
+  box-sizing: border-box;
+  @screen md {
+    width: calc(50% - 12.5px);
+  }
+  @screen sm {
+    width: calc(50% - 5px);
+  }
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 3px 16px #77767660;
+  }
   .card-top {
     display: flex;
     justify-content: space-between;
@@ -58,5 +70,8 @@ export default {
   h5 {
     margin: 17px 0 0;
   }
+}
+.checked-card {
+  box-shadow: 0px 3px 16px #77767665;
 }
 </style>
