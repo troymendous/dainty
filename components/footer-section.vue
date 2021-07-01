@@ -4,7 +4,7 @@
       <hr />
       <div class="footer-primary">
         <div class="footer-primary_headliner">
-          <Logo />
+          <footerLogo />
           <p>
             You know that feeling when you swipe right on what you feel is your soul mate and they
             match you? Well yeah, that’s us…
@@ -54,12 +54,12 @@
 </template>
 
 <script>
-import Logo from "./logo.vue"
+import footerLogo from "./footer-logo.vue"
 // import TwitterIcon from "./social-icons/twitter-icon.vue"
 
 export default {
   components: {
-    Logo,
+    footerLogo,
     // TwitterIcon,
   },
 }

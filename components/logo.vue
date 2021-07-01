@@ -1,6 +1,9 @@
 <template>
   <nuxt-link to="/">
-    <img src="/icons/dainty.png" alt="logo" />
+    <div class="logo">
+      <img src="/icons/logoOnly.png" alt="logo" />
+      <p>Dainty</p>
+    </div>
   </nuxt-link>
 </template>
 <style lang="scss" scoped>
@@ -9,7 +12,12 @@ a {
 }
 
 img {
-  width: 35px;
-  height: 35px;
+  width: 75px;
+  height: 70px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 </style>
