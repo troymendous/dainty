@@ -12,6 +12,7 @@
         @click.native="activeStage.activeCardIndex = i + 1"
       />
     </div>
+    <web-development-form v-if="activeStage.isForm" />
     <div class="btn-next-previous-group">
       <div
         class="previous-btn"
@@ -34,9 +35,12 @@
 
 <script>
 import WebDevelopmentCard from "./web-development-card.vue"
+import WebDevelopmentForm from "./web-development-form.vue"
+
 export default {
   components: {
     WebDevelopmentCard,
+    WebDevelopmentForm,
   },
   computed: {
     activeStage() {
@@ -58,6 +62,7 @@ export default {
         activeCardIndex: null,
         nextValue: 1,
         previousValue: 0,
+        isForm: false,
       },
       {
         title: "What was this design used for?",
@@ -68,8 +73,16 @@ export default {
           { image: "/web-development/other.svg", text: "Other" },
         ],
         activeCardIndex: null,
+        nextValue: 1,
+        previousValue: 1,
+        isForm: false,
+      },
+      {
+        title: "Questionnaire.",
+        activeCardIndex: null,
         nextValue: 0,
         previousValue: 1,
+        isForm: true,
       },
     ],
   }),
