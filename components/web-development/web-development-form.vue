@@ -7,10 +7,11 @@
     </div>
     <div class="form-group">
       <label>Give us the size you need</label><br />
-      <div class="radio-group" v-for="(size, index) in designSizes" :key="index">
-        <input type="radio" :id="index" :value="size" v-model="answers.designSize" />
-        <label :for="index">{{ size }}</label>
-      </div>
+      <input
+        placeholder="Your desired size (Eg: 820 х 312 px)"
+        class="input"
+        v-model="answers.designSize"
+      />
     </div>
     <div class="form-group">
       <label
@@ -48,12 +49,14 @@ export default {
     margin: 30px 0;
     .input {
       border-radius: 8px;
-      box-shadow: 0px 3px 16px #77767650;
+      box-shadow: 0px 3px 16px #77767615;
+      box-sizing: border-box;
       padding: 12px 16px;
       margin: 10px 0;
       width: 100%;
       &:focus {
         outline: none;
+        border: 2px solid var(--acc-pink-color);
       }
     }
     label {

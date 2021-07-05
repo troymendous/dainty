@@ -24,11 +24,13 @@
       </div>
       <div
         :class="`next-btn ${!activeStage.activeCardIndex ? 'disabled' : ''}`"
+        v-if="activeStage.nextValue"
         @click="nextStage(activeStage.nextValue, !activeStage.activeCardIndex)"
       >
         Next
         <img src="/web-development/next.svg" />
       </div>
+      <div class="submit-btn" v-if="activeStage.submit">Submit</div>
     </div>
   </section>
 </template>
@@ -80,8 +82,9 @@ export default {
       {
         title: "Questionnaire.",
         activeCardIndex: null,
-        nextValue: 0,
-        previousValue: 1,
+        nextValue: null,
+        previousValue: null,
+        submit: true,
         isForm: true,
       },
     ],
@@ -147,7 +150,8 @@ export default {
     display: flex;
     gap: 24px;
     .next-btn,
-    .previous-btn {
+    .previous-btn,
+    .submit-btn {
       display: flex;
       align-items: center;
       gap: 16px;
