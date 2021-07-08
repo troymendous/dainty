@@ -28,6 +28,9 @@
 
             <ul class="menu_links">
               <li>
+                <NuxtLink to="/services">Services</NuxtLink>
+              </li>
+              <li>
                 <NuxtLink to="/portfolio">Portfolio</NuxtLink>
               </li>
               <li>
@@ -51,6 +54,10 @@
 
     <div v-if="menuIsActive" class="menu_popup-wrapper" @click="handleMenu">
       <ul class="menu_popup" @click.stop>
+        <li>
+          <NuxtLink to="/services">Services</NuxtLink>
+          <hr />
+        </li>
         <li>
           <NuxtLink to="/portfolio">Portfolio</NuxtLink>
           <hr />
