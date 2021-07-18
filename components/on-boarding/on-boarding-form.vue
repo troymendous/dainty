@@ -29,6 +29,17 @@
       <label>What style do you prefer? (vintage, modern, upmarket, minimalistic, etc) </label><br />
       <input placeholder="Your preferred style" class="input" v-model="answers.preferredStyle" />
     </div>
+    <div class="form-group">
+      <label
+        >Please provide some links to designs you'd like us to use as inspiration for this design </label
+      ><br />
+      <textarea
+        placeholder="Inspiration design links"
+        class="input"
+        rows="5"
+        v-model="answers.links"
+      />
+    </div>
   </div>
 </template>
 

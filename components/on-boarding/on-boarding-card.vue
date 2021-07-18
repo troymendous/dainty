@@ -4,7 +4,7 @@
       <img class="card-image" :src="image" />
       <img
         class="checked-image"
-        :src="checked ? '/web-development/checked.png' : '/web-development/unchecked.svg'"
+        :src="checked ? '/on-boarding/checked.png' : '/on-boarding/unchecked.svg'"
       />
     </div>
     <h5>{{ text }}</h5>

@@ -4,7 +4,7 @@
     <h3>{{ activeStage.title }}</h3>
     <div class="h3-bottom-border"></div>
     <div class="development-cards">
-      <web-development-card
+      <on-boarding-card
         v-for="(card, i) in activeStage.cards"
         :key="i"
         v-bind="card"
@@ -12,14 +12,14 @@
         @click.native="activeStage.activeCardIndex = i + 1"
       />
     </div>
-    <web-development-form v-if="activeStage.isForm" />
+    <on-boarding-form v-if="activeStage.isForm" />
     <div class="btn-next-previous-group">
       <div
         class="previous-btn"
         v-if="activeStage.previousValue === 1"
         @click="previousStage(activeStage.previousValue, !activeStage.activeCardIndex)"
       >
-        <img src="/web-development/next.svg" />
+        <img src="/on-boarding/next.svg" />
         Back
       </div>
       <div
@@ -28,7 +28,7 @@
         @click="nextStage(activeStage.nextValue, !activeStage.activeCardIndex)"
       >
         Next
-        <img src="/web-development/next.svg" />
+        <img src="/on-boarding/next.svg" />
       </div>
       <div class="submit-btn" v-if="activeStage.submit">Submit</div>
     </div>
@@ -36,13 +36,13 @@
 </template>
 
 <script>
-import WebDevelopmentCard from "./web-development-card.vue"
-import WebDevelopmentForm from "./web-development-form.vue"
+import OnBoardingCard from "./on-boarding-card.vue"
+import OnBoardingForm from "./on-boarding-form.vue"
 
 export default {
   components: {
-    WebDevelopmentCard,
-    WebDevelopmentForm,
+    OnBoardingCard,
+    OnBoardingForm,
   },
   computed: {
     activeStage() {
@@ -54,12 +54,12 @@ export default {
     stages: [
       {
         title: "What was the design you are after?",
-        mainImage: "/web-development/header1.png",
+        mainImage: "/on-boarding/header1.png",
         cards: [
-          { image: "/web-development/1.svg", text: "Banner Design" },
-          { image: "/web-development/2.svg", text: "Logo Design" },
-          { image: "/web-development/3.svg", text: "Social Media Post" },
-          { image: "/web-development/4.svg", text: "Other Design" },
+          { image: "/on-boarding/1.svg", text: "Banner Design" },
+          { image: "/on-boarding/2.svg", text: "Logo Design" },
+          { image: "/on-boarding/3.svg", text: "Social Media Post" },
+          { image: "/on-boarding/4.svg", text: "Other Design" },
         ],
         activeCardIndex: null,
         nextValue: 1,
@@ -68,11 +68,11 @@ export default {
       },
       {
         title: "What was this design used for?",
-        mainImage: "/web-development/header2.svg",
+        mainImage: "/on-boarding/header2.svg",
         cards: [
-          { image: "/web-development/personal.svg", text: "Personal" },
-          { image: "/web-development/business.svg", text: "Business" },
-          { image: "/web-development/other.svg", text: "Other" },
+          { image: "/on-boarding/personal.svg", text: "Personal" },
+          { image: "/on-boarding/business.svg", text: "Business" },
+          { image: "/on-boarding/other.svg", text: "Other" },
         ],
         activeCardIndex: null,
         nextValue: 1,
