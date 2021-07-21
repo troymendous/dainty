@@ -30,7 +30,13 @@
         Next
         <img src="/on-boarding/next.svg" />
       </div>
-      <div class="submit-btn" v-if="activeStage.submit">Submit</div>
+      <div
+        class="submit-btn"
+        v-if="activeStage.submit"
+        @click="$router.push('/welcome-onboarding')"
+      >
+        Submit
+      </div>
     </div>
   </section>
 </template>
