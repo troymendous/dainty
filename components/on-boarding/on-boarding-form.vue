@@ -76,5 +76,8 @@ export default {
       margin: 10px 0 0;
     }
   }
+  @screen sm {
+    width: 95%;
+  }
 }
 </style>

@@ -127,5 +127,8 @@ export default {
       margin-top: 50px;
     }
   }
+  @screen sm {
+    width: 90%;
+  }
 }
 </style>
