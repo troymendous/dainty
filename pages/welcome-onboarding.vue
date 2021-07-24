@@ -48,20 +48,6 @@ import Logo from "../components/logo.vue"
 
 export default {
   name: "Welcome",
-  head() {
-    return {
-      script: [
-        {
-          innerHTML: `gtag("event", "conversion", {
-                'send_to': 'AW-398726489/nE9uCNKGzP4BENmqkL4B',
-                'value': ${this.$route.params.price},
-                'currency': 'USD'
-            });`,
-        },
-      ],
-      __dangerouslyDisableSanitizers: ["script"],
-    }
-  },
   components: {
     Logo,
   },

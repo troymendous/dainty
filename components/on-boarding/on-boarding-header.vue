@@ -12,7 +12,7 @@
         @click.native="activeStage.activeCardIndex = i + 1"
       />
     </div>
-    <on-boarding-form v-if="activeStage.isForm" />
+    <on-boarding-form v-if="activeStage.isForm" @answers="answers = $event" />
     <div class="btn-next-previous-group">
       <div
         class="previous-btn"
@@ -30,18 +30,14 @@
         Next
         <img src="/on-boarding/next.svg" />
       </div>
-      <div
-        class="submit-btn"
-        v-if="activeStage.submit"
-        @click="$router.push('/welcome-onboarding')"
-      >
-        Submit
-      </div>
+      <div class="submit-btn" v-if="activeStage.submit" @click="submitForm">Submit</div>
     </div>
   </section>
 </template>
 
 <script>
+import emailjs from "emailjs-com"
+
 import OnBoardingCard from "./on-boarding-card.vue"
 import OnBoardingForm from "./on-boarding-form.vue"
 
@@ -94,6 +90,7 @@ export default {
         isForm: true,
       },
     ],
+    answers: null,
   }),
   methods: {
     nextStage(value = 0, disbaled) {
@@ -101,6 +98,19 @@ export default {
     },
     previousStage(value = 0) {
       this.step -= 1
+    },
+    submitForm() {
+      emailjs
+        .send("service_iiroml5", "template_4q3wj1p", this.answers, "user_NsbWvYbF6hZg2LBMGWQHb")
+        .then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text)
+          },
+          function (error) {
+            console.log("FAILED...", error)
+          }
+        )
+      this.$router.push("/welcome-onboarding")
     },
   },
 }
