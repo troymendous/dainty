@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import emailjs from "emailjs-com"
+import ApiService from "@/service/index.js"
 
 import OnBoardingCard from "./on-boarding-card.vue"
 import OnBoardingForm from "./on-boarding-form.vue"
@@ -90,7 +90,14 @@ export default {
         isForm: true,
       },
     ],
-    answers: null,
+    answers: {
+      projectName: null,
+      email: null,
+      designSize: null,
+      instruction: null,
+      preferredStyle: null,
+      links: null,
+    },
   }),
   methods: {
     nextStage(value = 0, disbaled) {
@@ -100,17 +107,42 @@ export default {
       this.step -= 1
     },
     submitForm() {
-      emailjs
-        .send("service_iiroml5", "template_4q3wj1p", this.answers, "user_NsbWvYbF6hZg2LBMGWQHb")
-        .then(
-          function (response) {
-            console.log("SUCCESS!", response.status, response.text)
-          },
-          function (error) {
-            console.log("FAILED...", error)
-          }
-        )
-      this.$router.push("/welcome-onboarding")
+      const message = `
+        From /onboarding
+
+        ${this.getCardString()}
+
+        Form Data
+        Name your project ( 'business name here' logo, marketing content, banner, etc)
+          ${this.answers.projectName}
+
+        Your business email
+          ${this.answers.email}
+
+        Give us the size you need
+          ${this.answers.designSize}
+
+        Give us your content and instructions (you can give suggestions, or anything you wish to be used for your project)
+          ${this.answers.instruction}
+
+        What style do you prefer? (vintage, modern, upmarket, minimalistic, etc)
+          ${this.answers.preferredStyle}
+
+        Please provide some links to designs you'd like us to use as inspiration for this design
+          ${this.answers.links}
+      `
+      ApiService.submitOnboardingForm({ message })
+        .then(() => {
+          this.$router.push("/welcome-onboarding")
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    },
+    getCardString() {
+      return `'${this.stages[0].cards[this.stages[0].activeCardIndex - 1].text}' -> '${
+        this.stages[1].cards[this.stages[1].activeCardIndex - 1].text
+      }'`
     },
   },
 }

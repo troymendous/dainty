@@ -147,9 +147,11 @@ export default {
   },
 
   env: {
+    apiUrl: "https://dainty-api.vercel.app",
     baseUrl: development ? "http://localhost:3000" : process.env.BASE_URL,
     stripePublishableKey: process.env.STRIPE_PK,
     emailjsServiceId: process.env.EMAILJS_SERVICE_ID,
     emailjsUserId: process.env.EMAILJS_USER_ID,
+    DAINTY_API_ACCESS_TOKEN: process.env.DAINTY_API_ACCESS_TOKEN,
   },
 }
