@@ -131,7 +131,19 @@ export default {
         Please provide some links to designs you'd like us to use as inspiration for this design
           ${this.answers.links}
       `
-      ApiService.submitOnboardingForm({ message })
+      ApiService.submitOnboardingForm(
+        { message, 
+          data: {
+            designType: this.stages[0].cards[this.stages[0].activeCardIndex - 1].text ? this.stages[0].cards[this.stages[0].activeCardIndex - 1].text : null,
+            designFor: this.stages[1].cards[this.stages[1].activeCardIndex - 1].text ? this.stages[1].cards[this.stages[1].activeCardIndex - 1].text : null,
+            projectName: this.answers.projectName ? this.answers.projectName : null, 
+            businessEmail: this.answers.email ? this.answers.email : null, 
+            designSize: this.answers.designSize ? this.answers.designSize : null, 
+            instructions: this.answers.instruction ? this.answers.instruction : null,
+            preferredStyle: this.answers.preferredStyle ? this.answers.preferredStyle : null,
+            links: this.answers.links ? this.answers.links : null
+          } 
+        })
         .then(() => {
           this.$router.push("/welcome-onboarding")
         })
