@@ -31,11 +31,18 @@
           <span class="contact-btn" @click="openChat">clicking here</span>
         </div>
         <br />
-        <div class="text">
+        <!-- <div class="text">
           Alternatively, if you don’t want to wait for us, you can send us an email with your design
           description here <a href="mailto:hello@dainty.io">hello@dainty.io</a> and we’ll let you
           know if we have any questions to fill in any missing gaps.
+        </div> -->
+        <div class="text">
+          Alternatively, if you don’t want to wait for us, you can submit a design
         </div>
+        and we’ll let you know if we have any questions to fill in any missing gaps.
+      </div>
+      <div class="banner-links">
+        <nuxt-link to="/onboarding" class="link-primary pink">Submit Design</nuxt-link>
       </div>
     </section>
   </div>
@@ -66,6 +73,13 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.banner-links {
+  text-align: center;
+  margin-top: 2rem;
+}
+</style>
 
 <style lang="scss" scoped>
 @import "~/assets/scss/pages/about-header.scss";
