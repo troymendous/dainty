@@ -2,7 +2,7 @@ const apiUrl = process.env.apiUrl
 
 export default {
   async submitOnboardingForm(formData) {
-    const res = await fetch(`${apiUrl}/notify/slack`, {
+    return fetch(`${apiUrl}/notify/slack`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -11,6 +11,5 @@ export default {
       method: "POST",
       body: JSON.stringify(formData),
     })
-    return res
   },
 }

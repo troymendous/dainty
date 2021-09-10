@@ -30,10 +30,68 @@
         Next
         <img src="/on-boarding/next.svg" />
       </div>
-      <div class="submit-btn" v-if="activeStage.submit" @click="submitForm">Submit</div>
+      <div
+        class="submit-btn"
+        id="onboarding-submitForm"
+        v-if="activeStage.submit"
+        @click="submitForm"
+      >
+        <span id="onboarding-submitForm-txt">Submit</span>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+#onboarding-submitForm.lds-ring {
+  height: 48px;
+  width: 80px;
+}
+
+.pd-l-20 {
+  padding-left: 20px !important;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin: 8px;
+  border: 8px solid #000;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: white transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
 
 <script>
 import ApiService from "@/service/index.js"
@@ -55,7 +113,7 @@ export default {
     step: 0,
     stages: [
       {
-        title: "What was the design you are after?",
+        title: "What is the design you are after?",
         mainImage: "/on-boarding/header1.png",
         cards: [
           { image: "/on-boarding/1.svg", text: "Banner Design" },
@@ -69,7 +127,7 @@ export default {
         isForm: false,
       },
       {
-        title: "What was this design used for?",
+        title: "What will this design be used for?",
         mainImage: "/on-boarding/header2.svg",
         cards: [
           { image: "/on-boarding/personal.svg", text: "Personal" },
@@ -106,7 +164,44 @@ export default {
     previousStage(value = 0) {
       this.step -= 1
     },
-    submitForm() {
+    async submitForm() {
+      if (document.getElementById("projname").value === "") {
+        alert("Missing 'Name your project'")
+        return false
+      }
+
+      if (document.getElementById("bizemail").value === "") {
+        alert("Missing 'Your business email'")
+        return false
+      }
+
+      if (document.getElementById("size").value === "") {
+        alert("Missing 'Give us the size you need'")
+        return false
+      }
+
+      if (document.getElementById("inst").value === "") {
+        alert("Missing 'Give us your content and instructions'")
+        return false
+      }
+
+      if (document.getElementById("style").value === "") {
+        alert("Missing 'What style do you prefer?'")
+        return false
+      }
+
+      if (document.getElementById("insp").value === "") {
+        alert(
+          "Missing 'Please provide some links to designs you'd like us to use as inspiration for this design'"
+        )
+        return false
+      }
+      var element = window.document.getElementById("onboarding-submitForm")
+      element.classList.add("disabled")
+      element.classList.add("pd-l-20")
+      window.document.getElementById("onboarding-submitForm-txt").innerText = ""
+      element.classList.add("lds-ring")
+
       const message = `
         From /onboarding
 
@@ -131,19 +226,23 @@ export default {
         Please provide some links to designs you'd like us to use as inspiration for this design
           ${this.answers.links}
       `
-      ApiService.submitOnboardingForm(
-        { message, 
-          data: {
-            designType: this.stages[0].cards[this.stages[0].activeCardIndex - 1].text ? this.stages[0].cards[this.stages[0].activeCardIndex - 1].text : null,
-            designFor: this.stages[1].cards[this.stages[1].activeCardIndex - 1].text ? this.stages[1].cards[this.stages[1].activeCardIndex - 1].text : null,
-            projectName: this.answers.projectName ? this.answers.projectName : null, 
-            businessEmail: this.answers.email ? this.answers.email : null, 
-            designSize: this.answers.designSize ? this.answers.designSize : null, 
-            instructions: this.answers.instruction ? this.answers.instruction : null,
-            preferredStyle: this.answers.preferredStyle ? this.answers.preferredStyle : null,
-            links: this.answers.links ? this.answers.links : null
-          } 
-        })
+      await ApiService.submitOnboardingForm({
+        message,
+        data: {
+          designType: this.stages[0].cards[this.stages[0].activeCardIndex - 1].text
+            ? this.stages[0].cards[this.stages[0].activeCardIndex - 1].text
+            : null,
+          designFor: this.stages[1].cards[this.stages[1].activeCardIndex - 1].text
+            ? this.stages[1].cards[this.stages[1].activeCardIndex - 1].text
+            : null,
+          projectName: this.answers.projectName ? this.answers.projectName : null,
+          businessEmail: this.answers.email ? this.answers.email : null,
+          designSize: this.answers.designSize ? this.answers.designSize : null,
+          instructions: this.answers.instruction ? this.answers.instruction : null,
+          preferredStyle: this.answers.preferredStyle ? this.answers.preferredStyle : null,
+          links: this.answers.links ? this.answers.links : null,
+        },
+      })
         .then(() => {
           this.$router.push("/welcome-onboarding")
         })
@@ -213,12 +312,14 @@ export default {
     .previous-btn,
     .submit-btn {
       display: flex;
+      height: auto;
       align-items: center;
       gap: 16px;
       background: var(--acc-purple-color);
       color: white;
       padding: 12px 30px;
       border-radius: 8px;
+      width: 115px;
       &:hover {
         cursor: pointer;
       }

@@ -1,21 +1,29 @@
 <template>
   <div class="web-development-form">
     <ValidationObserver v-slot="{ validate }">
-      <form @submit.prevent="validate()" class="str-form">
+      <form @submit.prevent="validate()" class="str-form" id="str-form">
         <div class="form-group">
           <label
             >Name your project ( 'business name here' logo, marketing content, banner, etc) </label
           ><br />
-          <input placeholder="Name your project" class="input" v-model="answers.projectName" />
+          <input
+            id="projname"
+            placeholder="Name your project"
+            class="input"
+            v-model="answers.projectName"
+            required
+          />
         </div>
         <ValidationProvider name="email" rules="required|email" v-slot="{ errors }">
           <div class="form-group">
             <label>Your business email </label><br />
             <input
-              placeholder="Name your project"
+              id="bizemail"
+              placeholder="example@domain.com"
               type="email"
               class="input"
               v-model="answers.email"
+              required
             />
             <span v-show="errors.length > 0" class="is-invalid">{{ errors[0] }}</span>
           </div>
@@ -23,9 +31,11 @@
         <div class="form-group">
           <label>Give us the size you need</label><br />
           <input
+            id="size"
             placeholder="Your desired size (Eg: 820 х 312 px)"
             class="input"
             v-model="answers.designSize"
+            required
           />
         </div>
         <div class="form-group">
@@ -34,19 +44,23 @@
             to be used for your project) </label
           ><br />
           <textarea
+            id="inst"
             placeholder="Your content or instruction"
             class="input"
             rows="5"
             v-model="answers.instruction"
+            required
           />
         </div>
         <div class="form-group">
           <label>What style do you prefer? (vintage, modern, upmarket, minimalistic, etc) </label
           ><br />
           <input
+            id="style"
             placeholder="Your preferred style"
             class="input"
             v-model="answers.preferredStyle"
+            required
           />
         </div>
         <div class="form-group">
@@ -55,10 +69,12 @@
             design </label
           ><br />
           <textarea
+            id="insp"
             placeholder="Inspiration design links"
             class="input"
             rows="5"
             v-model="answers.links"
+            required
           />
         </div>
       </form>
