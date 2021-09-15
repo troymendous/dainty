@@ -94,6 +94,7 @@
 </style>
 
 <script>
+/* eslint-disable */
 import ApiService from "@/service/index.js"
 
 import OnBoardingCard from "./on-boarding-card.vue"
@@ -105,6 +106,14 @@ export default {
     OnBoardingForm,
   },
   computed: {
+    email: {
+      get() {
+        return this.$store.state.email
+      },
+      set(value) {
+        this.$store.commit("updateEmail", value)
+      },
+    },
     activeStage() {
       return this.stages[this.step]
     },
@@ -157,6 +166,7 @@ export default {
       links: null,
     },
   }),
+  mounted() {},
   methods: {
     nextStage(value = 0, disbaled) {
       if (!disbaled) this.step += value

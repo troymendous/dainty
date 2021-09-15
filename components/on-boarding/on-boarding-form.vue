@@ -93,6 +93,28 @@ export default {
       this.$emit("answers", value)
     },
   },
+  mounted() {
+    try {
+      const email = this.email
+
+      setTimeout(function () {
+        document.getElementById("bizemail").value = email
+      }, 500)
+    } catch (error) {
+      // alert(error)
+      //
+    }
+  },
+  computed: {
+    email: {
+      get() {
+        return this.$store.state.email
+      },
+      set(value) {
+        this.$store.commit("updateEmail", value)
+      },
+    },
+  },
 }
 </script>
 

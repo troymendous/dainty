@@ -17,11 +17,5 @@ module.exports = {
   ],
   plugins: ["prettier"],
   // add your custom rules here
-  "prettier/prettier": [
-    "error",
-    {
-      endOfLine: "auto",
-    },
-  ],
-  rules: {},
+  rules: { "prettier/prettier": ["error", { endOfLine: "auto" }] },
 }

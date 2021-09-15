@@ -1,3 +1,4 @@
+/* eslint-disable */
 const apiUrl = process.env.apiUrl
 
 export default {

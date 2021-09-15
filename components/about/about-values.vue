@@ -5,7 +5,7 @@
     </div>
     <div class="about-list_description">
       We want you to have the best and most awesome design. Visit
-      <a href="/plans">our Plans </a>page for a complete overview of resources or see some
+      <a href="/pricing">our Plans </a>page for a complete overview of resources or see some
       highlights below.
     </div>
     <ul class="about-list">

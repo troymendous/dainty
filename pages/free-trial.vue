@@ -69,6 +69,9 @@ export default {
       },
     }
   },
+  mounted() {
+    this.$store.commit("updateEmail", "")
+  },
   computed: {
     email: {
       get() {
@@ -106,13 +109,13 @@ export default {
       }
 
       // Reset email and full name
-      this.$store.commit("updateEmail", "")
+      // this.$store.commit("updateEmail", "")
       this.$store.commit("updateFullname", "")
 
       this.isSendingNotifs = false
 
-      // Redirect the user to the welcome page
-      this.$router.push("/welcome")
+      // Redirect the user to the onboarding / request page
+      this.$router.push("/onboarding")
     },
   },
 }

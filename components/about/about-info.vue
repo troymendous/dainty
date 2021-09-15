@@ -23,9 +23,9 @@
         <div class="about-list_description">
           We know what we do best. We keep our subscription prices low by making sure our team can
           deliver the the most bang for your buck. How do we do it? We have specially crafted our
-          <a href="/donts">do's and don’ts list</a>, and built a team to match, ensuring we can
-          offer the most essential services you’d need for your project or business. Websites
-          mockups, web and print designs, that’s our jam. Wanna see? Mmmm…
+          <a href="/">do's and don’ts list</a>, and built a team to match, ensuring we can offer the
+          most essential services you’d need for your project or business. Websites mockups, web and
+          print designs, that’s our jam. Wanna see? Mmmm…
           <a href="/portfolio">Dainty flavoured jam.</a>
         </div>
       </li>
