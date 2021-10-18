@@ -13,7 +13,7 @@ $ yarn
 $ yarn run dev
 
 # serve with hot reload and serverless functions at localhost:3000
-$ vercel dev
+$ vercel dev -A vercel.dev.json
 
 Note: requires `yarn run dev` be added as development command override in vercel project
 
