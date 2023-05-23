@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="menu_call">
-          <nuxt-link to="/free-trial"> 15 Days Free </nuxt-link>
+          <nuxt-link to="/free-trial"> Book Free Consult </nuxt-link>
         </div>
       </div>
     </div>
