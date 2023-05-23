@@ -2,7 +2,7 @@
   "name": "dainty",
   "version": "1.0.2",
   "private": true,
-  "type": "module",
+  "type": "commonjs",
   "engines": {
     "node": ">18.0"
   },
