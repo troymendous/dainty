@@ -26,3 +26,7 @@ $ yarn run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+---
+
+gcloud builds submit --tag gcr.io/dainty-inc/dainty-web && gcloud run deploy dainty-web --region us-east1 --allow-unauthenticated --image gcr.io/dainty-inc/dainty-web --platform managed

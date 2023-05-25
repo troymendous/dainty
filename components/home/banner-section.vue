@@ -14,7 +14,7 @@
       <div class="banner-content">
         <div class="banner-content_text">
           <h1>
-            Need a design done affordably?
+            Need a hosting done affordably?
             <br />
             We got you.
           </h1>
