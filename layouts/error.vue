@@ -5,7 +5,7 @@
       <h5>Sorry, we couldn't find that page...</h5>
     </div>
     <div class="not-found_img">
-      <img src="/error/not-found.png" alt="" />
+      <img src="/static/error/not-found.png" alt="" />
     </div>
   </div>
 </template>

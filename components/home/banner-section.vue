@@ -2,13 +2,13 @@
   <section class="banner">
     <div class="banner-inner">
       <!-- <div class="banner-animations">
-        <img src="/home/banner/animations/shaps1.png" class="shape shape1" alt="Animated shapes" />
-        <img src="/home/banner/animations/shaps2.png" class="shape shape2" alt="Animated shapes" />
-        <img src="/home/banner/animations/shaps3.png" class="shape shape3" alt="Animated shapes" />
-        <img src="/home/banner/animations/shaps4.png" class="shape shape4" alt="Animated shapes" />
-        <img src="/home/banner/animations/shaps5.png" class="shape shape5" alt="Animated shapes" />
-        <img src="/home/banner/animations/shaps6.png" class="shape shape6" alt="Animated shapes" />
-        <img src="/home/banner/animations/shaps7.png" class="shape shape7" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps1.png" class="shape shape1" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps2.png" class="shape shape2" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps3.png" class="shape shape3" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps4.png" class="shape shape4" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps5.png" class="shape shape5" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps6.png" class="shape shape6" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps7.png" class="shape shape7" alt="Animated shapes" />
       </div> -->
 
       <div class="banner-content">
@@ -34,7 +34,7 @@
             </p>
             <!-- TODO name & image -->
             <div>
-              <img src="/testimonials/testimonial-01.webp" alt="Avatar" />
+              <img src="/static/testimonials/testimonial-01.webp" alt="Avatar" />
               <span>Sophia Lewis, Statusbrew</span>
             </div>
           </div>
@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="banner-content_img">
-      <img src="/home/banner/bear.png" alt="dainty-bear" />
+      <img src="/static/home/banner/bear.png" alt="dainty-bear" />
     </div>
   </section>
 </template>

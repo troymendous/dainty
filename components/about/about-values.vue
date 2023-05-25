@@ -11,7 +11,7 @@
     <ul class="about-list">
       <li class="flex">
         <div class="about-list_img">
-          <img src="/about/add-value.svg" alt="value icon" />
+          <img src="/static/about/add-value.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_header">Add value</div>
@@ -24,7 +24,7 @@
       </li>
       <li class="flex">
         <div class="about-list_img">
-          <img src="/about/be-human.svg" alt="value icon" />
+          <img src="/static/about/be-human.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_header">Be human and be excited</div>
@@ -37,7 +37,7 @@
       </li>
       <li class="flex">
         <div class="about-list_img">
-          <img src="/about/be-hungry.svg" alt="value icon" />
+          <img src="/static/about/be-hungry.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_header">Be hungry to grow and learn</div>
@@ -50,7 +50,7 @@
       </li>
       <li class="flex">
         <div class="about-list_img">
-          <img src="/about/team.svg" alt="value icon" />
+          <img src="/static/about/team.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_header">Build a positive team spirit</div>
@@ -63,7 +63,7 @@
       </li>
       <li class="flex">
         <div class="about-list_img">
-          <img src="/about/do-more.svg" alt="value icon" />
+          <img src="/static/about/do-more.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_header">Do more with less</div>

@@ -1,6 +1,6 @@
 <template>
   <nuxt-link to="/">
-    <img src="/icons/daintyLogo.png" alt="logo" />
+    <img src="/static/icons/daintyLogo.png" alt="logo" />
   </nuxt-link>
 </template>
 <style lang="scss" scoped>

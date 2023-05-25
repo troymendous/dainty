@@ -74,7 +74,8 @@ export default {
     "~/assets/scss/styles.scss",
     "~/assets/scss/themes.scss",
     "~/assets/scss/fonts.scss",
-    "swiper/css/swiper.css",
+    // "swiper/css/swiper.css",
+    "swiper/swiper-bundle.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -96,10 +97,10 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["nuxt-intercom"],
-  intercom: {
-    appId: "hglv9vbw",
-  },
+  // modules: ["nuxt-intercom"],
+  // intercom: {
+  //   appId: "hglv9vbw",
+  // },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

@@ -5,7 +5,7 @@
         <div class="about-header_title">
           <h2>
             Who the heck are we
-            <img class="text-img" src="/about/common_questions.png" alt="" />
+            <img class="text-img" src="/static/about/common_questions.png" alt="" />
           </h2>
         </div>
       </div>

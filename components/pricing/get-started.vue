@@ -1,7 +1,7 @@
 <template>
   <div class="get-started">
     <div>
-      <img src="/pricing/get-started.png" width="85px" class="get-started_img" />
+      <img src="/static/pricing/get-started.png" width="85px" class="get-started_img" />
     </div>
     <div class="get-started_text">
       Not sure where to start? Our Core Plan includes all the design essentials that startups or

@@ -3,10 +3,10 @@
     <div class="call-to-action_primary">
       <div class="call-to-action_base">
         <div class="call-to-action_image">
-          <img src="/home/call-to-action/collabos.svg" alt="" />
+          <img src="/static/home/call-to-action/collabos.svg" alt="" />
         </div>
         <div class="call-to-action_text">
-          <img src="/home/call-to-action/teamwork.svg" alt="" />
+          <img src="/static/home/call-to-action/teamwork.svg" alt="" />
           <h2>Interact with your users on every platform.</h2>
           <p>
             There are many duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -19,7 +19,7 @@
     </div>
     <div class="call-to-action_base">
       <div class="call-to-action_text">
-        <img src="/home/call-to-action/solution1.svg" alt="" />
+        <img src="/static/home/call-to-action/solution1.svg" alt="" />
         <h2>Interact with your users on every platform.</h2>
         <p>
           There are many duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -29,7 +29,7 @@
         <nuxt-link to="/coming">Get Started</nuxt-link>
       </div>
       <div class="call-to-action_image">
-        <img src="/home/call-to-action/feedback.svg" alt="" />
+        <img src="/static/home/call-to-action/feedback.svg" alt="" />
       </div>
     </div>
   </section>
