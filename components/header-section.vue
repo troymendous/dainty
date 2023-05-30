@@ -30,9 +30,9 @@
               <!-- <li>
                 <NuxtLink to="/services">Services</NuxtLink>
               </li> -->
-              <li>
+              <!-- <li>
                 <NuxtLink to="/portfolio">Portfolio</NuxtLink>
-              </li>
+              </li> -->
               <li>
                 <NuxtLink to="/web-development">Web development</NuxtLink>
               </li>
@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="menu_call">
-          <nuxt-link to="/free-trial"> 15 Days Free </nuxt-link>
+          <nuxt-link to="/free-trial"> Book Free Consult </nuxt-link>
         </div>
       </div>
     </div>
@@ -58,10 +58,10 @@
           <NuxtLink to="/services">Services</NuxtLink>
           <hr />
         </li> -->
-        <li>
+        <!-- <li>
           <NuxtLink to="/portfolio">Portfolio</NuxtLink>
           <hr />
-        </li>
+        </li> -->
         <li>
           <NuxtLink to="/web-development">Web Development</NuxtLink>
           <hr />

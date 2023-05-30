@@ -7,7 +7,7 @@
             <slot name="heading"></slot>
           </h4>
           <p>
-            <span v-if="!price.length">15 days free of the Core plan</span>
+            <span v-if="!price.length">Book Free Consult of the Core plan</span>
             <span v-else> $<slot name="price"></slot><span>/month</span></span>
           </p>
         </div>
@@ -24,7 +24,7 @@
     </div>
     <nuxt-link to="/free-trial" v-if="slug === 'core' || slug === 'plus' || slug === 'enterprise'">
       <h4>Trial</h4>
-      <p>15 days free of the Core plan</p>
+      <p>Book Free Consult of the Core plan</p>
     </nuxt-link>
     <nuxt-link
       to="/pricing/core"

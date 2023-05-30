@@ -1,5 +1,5 @@
 <template>
-  <div class="examples">
+  <div class="examples" style="display: none">
     <div class="examples-title">
       <h2>A designer for any job and every job</h2>
       <h6>
@@ -20,9 +20,14 @@
         <div slot="button-next" class="swiper-button-next"></div>
       </swiper>
     </div>
-    <div class="text-btn">
+    <!-- <div class="text-btn">
       <nuxt-link to="/portfolio">View More</nuxt-link>
+    </div> -->
+
+    <div class="text-btn">
+      <nuxt-link to="/">View More</nuxt-link>
     </div>
+
     <div v-if="showPopUp" class="overlay" @click="togglePopUp">
       <div class="portfolio-modal-img"><img :src="imageSelected" alt="" /></div>
     </div>

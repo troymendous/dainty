@@ -18,9 +18,9 @@
             <li>
               <nuxt-link to="/team">Team</nuxt-link>
             </li>
-            <li>
+            <!-- <li>
               <nuxt-link to="/portfolio">Portfolio</nuxt-link>
-            </li>
+            </li> -->
             <li>
               <nuxt-link to="/pricing">Pricing</nuxt-link>
             </li>

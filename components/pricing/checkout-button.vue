@@ -1,6 +1,6 @@
 <template>
   <button :disabled="isLoadingCheckout" @click="checkout(monthlyPriceId)">
-    <!-- <span v-if="plan === 'core'">15 Days Free</span>
+    <!-- <span v-if="plan === 'core'">Book Free Consult</span>
     <span v-else>Select Plan</span> -->
     <span> Select Plan</span>
     <loader v-if="isLoadingCheckout" class="animate-spin h-5 w-10 mr-3" />

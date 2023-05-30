@@ -26,7 +26,7 @@
           <a href="/">do's and don’ts list</a>, and built a team to match, ensuring we can offer the
           most essential services you’d need for your project or business. Websites mockups, web and
           print designs, that’s our jam. Wanna see? Mmmm…
-          <a href="/portfolio">Dainty flavoured jam.</a>
+          <!-- <a href="/portfolio">Dainty flavoured jam.</a> -->
         </div>
       </li>
       <li>
