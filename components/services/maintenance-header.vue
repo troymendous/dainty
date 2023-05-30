@@ -1,7 +1,7 @@
 <template>
   <div class="maintenance-header">
-    <img class="maintenance-bg1" src="/services/maintenance1-web.png" />
-    <!-- <img class="maintenance-bg2" src="/services/maintenance2.png" /> -->
+    <img class="maintenance-bg1" src="/static/services/maintenance1-web.png" />
+    <!-- <img class="maintenance-bg2" src="/static/services/maintenance2.png" /> -->
     <div class="content">
       <h4>Website Maintenance</h4>
       <div class="content-group">
@@ -9,7 +9,8 @@
           <h3>
             Imagine never having another <br />
             <div class="heading">
-              <span>WordPress headache... </span><img class="emoticon" src="/services/emoji1.png" />
+              <span>WordPress headache... </span
+              ><img class="emoticon" src="/static/services/emoji1.png" />
             </div>
           </h3>
           <div class="desc">
@@ -21,15 +22,15 @@
         <div class="right-group">
           <div class="msg-box">
             affordable and fast turnaround
-            <img class="emoticon" src="/services/msg-1.svg" />
+            <img class="emoticon" src="/static/services/msg-1.svg" />
           </div>
           <div class="msg-box right">
             Awesome as always
-            <img class="emoticon" src="/services/msg-2.svg" />
+            <img class="emoticon" src="/static/services/msg-2.svg" />
           </div>
           <div class="msg-box">
             <div>Creative deliverables</div>
-            <img class="emoticon" src="/services/msg-3.png" />
+            <img class="emoticon" src="/static/services/msg-3.png" />
           </div>
           <div class="checkout-text">
             <div class="border"></div>

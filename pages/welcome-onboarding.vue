@@ -11,7 +11,7 @@
         Firstly… thank you so much for signing up with us, we’re genuinely so excited to get to know
         you and your projects.
       </p>
-      <img src="/welcome/tick.gif" class="tick-img" />
+      <img src="/static/welcome/tick.gif" class="tick-img" />
       <div class="about-header_title">
         <h2>Your Task Has Been Submitted</h2>
       </div>

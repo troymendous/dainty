@@ -35,12 +35,12 @@
             </div>
           </div>
           <div class="development-section_item">
-            <img src="/web-development/1.jpg" alt="" />
+            <img src="/static/web-development/1.jpg" alt="" />
           </div>
         </div>
         <div class="development-section">
           <div class="development-section_item">
-            <img src="/web-development/2.png" alt="" />
+            <img src="/static/web-development/2.png" alt="" />
           </div>
           <div class="development-section_item">
             <div class="info">
@@ -74,12 +74,12 @@
             </div>
           </div>
           <div class="development-section_item">
-            <img src="/web-development/3.jpg" alt="" />
+            <img src="/static/web-development/3.jpg" alt="" />
           </div>
         </div>
         <div class="development-section">
           <div class="development-section_item">
-            <img src="/web-development/4.png" alt="" />
+            <img src="/static/web-development/4.png" alt="" />
           </div>
           <div class="development-section_item">
             <div class="info">

@@ -11,7 +11,7 @@
     <ul class="about-list">
       <li class="flex">
         <div class="about-list_img">
-          <img src="/about/get-started.svg" alt="value icon" />
+          <img src="/static/about/get-started.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_description">
@@ -25,7 +25,7 @@
       </li>
       <li class="flex">
         <div class="about-list_img">
-          <img src="/about/facebook.svg" alt="value icon" style="min-width: 52px" />
+          <img src="/static/about/facebook.svg" alt="value icon" style="min-width: 52px" />
         </div>
         <div>
           <div class="about-list_description">
@@ -38,7 +38,7 @@
       </li>
       <li class="flex">
         <div class="about-list_img">
-          <img src="/about/help.svg" alt="value icon" />
+          <img src="/static/about/help.svg" alt="value icon" />
         </div>
         <div>
           <div class="about-list_description">

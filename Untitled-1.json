@@ -29,11 +29,12 @@
     "mailgun.js": "^8.2.1",
     "node-fetch": "^3.3.1",
     "nuxt": "^3.5.1",
-    "sass": "^1.62.1",
+    "nuxt-intercom": "^1.1.1",
     "stripe": "^12.6.0",
-    "swiper": "^5.2.0",
+    "swiper": "^9.3.2",
     "vee-validate": "^4.9.5",
     "vue": "^3.3.4",
+    "vue-awesome-swiper": "^5.0.1",
     "vue-js-counter": "^1.0.3"
   },
   "devDependencies": {

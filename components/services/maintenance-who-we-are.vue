@@ -15,17 +15,17 @@
     </div>
     <div class="bottom-bg">
       <div class="content">
-        <img class="left-icon" src="/services/arrow-left.png" />
+        <img class="left-icon" src="/static/services/arrow-left.png" />
         <div class="main-content">
           <div class="internal-main-content">
-            <img class="five-star" src="/services/five-star.png" />
+            <img class="five-star" src="/static/services/five-star.png" />
             <div class="text">
               “I’ve been with Dainty for a few years now, I continue to see positive changes in
               their platforms, communication and designers skills. Can’t really complain for the
               price I’m paying.“
             </div>
             <div class="user">
-              <img class="user-image" src="/services/user.png" />
+              <img class="user-image" src="/static/services/user.png" />
               <div class="user-detail">
                 <b>Matthew Smith</b>
                 <div class="position">CEO, MS Technologies</div>
@@ -33,7 +33,7 @@
             </div>
           </div>
         </div>
-        <img class="right-icon" src="/services/arrow-left.png" />
+        <img class="right-icon" src="/static/services/arrow-left.png" />
       </div>
     </div>
     <div class="features">

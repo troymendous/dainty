@@ -19,7 +19,7 @@
         v-if="activeStage.previousValue === 1"
         @click="previousStage(activeStage.previousValue, !activeStage.activeCardIndex)"
       >
-        <img src="/on-boarding/next.svg" />
+        <img src="/static/on-boarding/next.svg" />
         Back
       </div>
       <div
@@ -28,7 +28,7 @@
         @click="nextStage(activeStage.nextValue, !activeStage.activeCardIndex)"
       >
         Next
-        <img src="/on-boarding/next.svg" />
+        <img src="/static/on-boarding/next.svg" />
       </div>
       <div
         class="submit-btn"

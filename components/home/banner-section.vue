@@ -2,13 +2,13 @@
   <section class="banner">
     <div class="banner-inner">
       <!-- <div class="banner-animations">
-        <img src="/home/banner/animations/shaps1.png" class="shape shape1" alt="Animated shapes" />
-        <img src="/home/banner/animations/shaps2.png" class="shape shape2" alt="Animated shapes" />
-        <img src="/home/banner/animations/shaps3.png" class="shape shape3" alt="Animated shapes" />
-        <img src="/home/banner/animations/shaps4.png" class="shape shape4" alt="Animated shapes" />
-        <img src="/home/banner/animations/shaps5.png" class="shape shape5" alt="Animated shapes" />
-        <img src="/home/banner/animations/shaps6.png" class="shape shape6" alt="Animated shapes" />
-        <img src="/home/banner/animations/shaps7.png" class="shape shape7" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps1.png" class="shape shape1" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps2.png" class="shape shape2" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps3.png" class="shape shape3" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps4.png" class="shape shape4" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps5.png" class="shape shape5" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps6.png" class="shape shape6" alt="Animated shapes" />
+        <img src="/static/home/banner/animations/shaps7.png" class="shape shape7" alt="Animated shapes" />
       </div> -->
 
       <div class="banner-content">
@@ -16,7 +16,8 @@
           <h1>
             More than just a hosting company,
             <br />
-            the perfect home for your website.
+            <<<<<<< HEAD the perfect home for your website. ======= we’re the perfect home for your
+            website >>>>>>> 07548d3490adf83f535775c0f5d63e039510ea15
           </h1>
           <span>
             Websites break, and can get slower with every automated update, let us make sure your
@@ -30,12 +31,11 @@
           <div class="banner-user-review" style="display: none">
             <p>
               “Dainty has been a huge help for our agency, I highly recommend these guys for any
-              agency or even an individual just wanting some regular designs or web development
-              done”
+              agency or even an individual just wanting some regular WordPress hosting”
             </p>
             <!-- TODO name & image -->
             <div>
-              <img src="/testimonials/testimonial-01.webp" alt="Avatar" />
+              <img src="/static/testimonials/testimonial-01.webp" alt="Avatar" />
               <span>Sophia Lewis, Statusbrew</span>
             </div>
           </div>
@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="banner-content_img">
-      <img src="/home/banner/bear.png" alt="dainty-bear" />
+      <img src="/static/home/banner/bear.png" alt="dainty-bear" />
     </div>
   </section>
 </template>

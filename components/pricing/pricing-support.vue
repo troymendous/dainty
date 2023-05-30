@@ -13,9 +13,9 @@
       <div class="pricing-support_item">
         <div class="image">
           <div class="background" style="background-image: url('/pricing/Business.svg')">
-            <!--            <img src="/pricing/team&#45;&#45;1.jpg" alt="" />-->
-            <!--            <img src="/pricing/team&#45;&#45;2.jpg" alt="" />-->
-            <!--            <img src="/pricing/team&#45;&#45;3.jpg" alt="" />-->
+            <!--            <img src="/static/pricing/team&#45;&#45;1.jpg" alt="" />-->
+            <!--            <img src="/static/pricing/team&#45;&#45;2.jpg" alt="" />-->
+            <!--            <img src="/static/pricing/team&#45;&#45;3.jpg" alt="" />-->
           </div>
         </div>
       </div>

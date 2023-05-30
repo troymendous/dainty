@@ -1,6 +1,11 @@
 {
   "version": 2,
+  "installCommand": "npm install --save --legacy-peer-deps",
   "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    },
     {
       "src": "nuxt.config.js",
       "use": "@nuxtjs/vercel-builder",
