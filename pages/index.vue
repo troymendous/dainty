@@ -3,9 +3,9 @@
     <banner-section />
     <services-section />
     <media-section />
-    <reviews />
+    <!-- <reviews /> -->
     <!--    <call-to-action />-->
-    <portfolio-examples />
+    <!-- <portfolio-examples /> -->
     <pricing-cards-v-2 :is-stripe-loaded="isStripeLoaded" />
   </div>
 </template>

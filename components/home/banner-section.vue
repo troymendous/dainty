@@ -14,30 +14,31 @@
       <div class="banner-content">
         <div class="banner-content_text">
           <h1>
-            Need a design done affordably?
+            More than just a hosting company,
             <br />
-            We got you.
+            the perfect home for your website.
           </h1>
           <span>
-            Unlimited graphic design requests and revisions for one monthly rate, No hourly billing
-            or contracts, cancel anytime. Start your free trial today!
+            Websites break, and can get slower with every automated update, let us make sure your
+            website is safe, fast & keeps up to date without breakages so you can focus on what you
+            do best.
           </span>
           <div class="banner-links">
             <nuxt-link to="/free-trial" class="link-primary pink">Start Free Trial</nuxt-link>
             <nuxt-link to="/pricing" class="link-primary purple">Learn More</nuxt-link>
           </div>
-          <div class="banner-user-review">
+          <!-- <div class="banner-user-review">
             <p>
               “Dainty has been a huge help for our agency, I highly recommend these guys for any
               agency or even an individual just wanting some regular designs or web development
               done”
             </p>
-            <!-- TODO name & image -->
+
             <div>
               <img src="/testimonials/testimonial-01.webp" alt="Avatar" />
               <span>Sophia Lewis, Statusbrew</span>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
