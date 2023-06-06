@@ -8,8 +8,8 @@
         "serviceId": 1,
         "availability": {
           "core": "1",
-          "plus": "2",
-          "enterprise": "4"
+          "plus": "1",
+          "enterprise": "2"
         }
       },
       {
@@ -29,6 +29,15 @@
     "id": 100,
     "services": [
       {
+        "service": "Website Migration",
+        "serviceId": 1,
+        "availability": {
+          "core": "Available",
+          "plus": "Available",
+          "enterprise": "Available"
+        }
+      },
+      {
         "service": "No minimum term, cancel or change plans anytime",
         "serviceId": 1,
         "availability": {
@@ -38,7 +47,7 @@
         }
       },
       {
-        "service": "Unlimited concepts and revisions",
+        "service": "Unlimited Revisions *",
         "serviceId": 2,
         "availability": {
           "core": "Available",

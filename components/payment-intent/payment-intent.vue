@@ -188,9 +188,9 @@ export default {
         this.isSendingEmails = false
 
         if (this.plan === "plus") {
-          this.$router.push({ name: "welcome", params: { price: 249.0 } })
+          this.$router.push({ name: "welcome", params: { price: 499.0 } })
         } else if (this.plan === "enterprise") {
-          this.$router.push({ name: "welcome", params: { price: 599.0 } })
+          this.$router.push({ name: "welcome", params: { price: 499.0 } })
         } else if (this.plan === "core") {
           this.$router.push({ name: "welcome", params: { price: 99.0 } })
         }

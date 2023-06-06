@@ -89,7 +89,7 @@ export default {
       },
       plus: {
         name: "Plus",
-        price: "249",
+        price: "499",
         services: [
           "All in Core",
           "Presentation templates",
@@ -103,7 +103,7 @@ export default {
       },
       enterprise: {
         name: "Enterprise",
-        price: "599",
+        price: "999",
         services: [
           "All in Core & Plus",
           "Unlimited concepts and revisions",

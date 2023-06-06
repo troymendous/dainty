@@ -38,14 +38,14 @@
       v-if="slug === 'enterprise' || slug === 'core' || currentRouteName === 'free-trial'"
     >
       <h4>Plus</h4>
-      <p>$249/month</p>
+      <p>$499/month</p>
     </nuxt-link>
     <nuxt-link
       to="/pricing/enterprise"
       v-if="slug === 'plus' || slug === 'core' || currentRouteName === 'free-trial'"
     >
       <h4>Enterprise</h4>
-      <p>$599/month</p></nuxt-link
+      <p>$999/month</p></nuxt-link
     >
   </div>
 </template>
