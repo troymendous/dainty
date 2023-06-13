@@ -34,21 +34,21 @@
                 <NuxtLink to="/portfolio">Portfolio</NuxtLink>
               </li> -->
               <li>
-                <NuxtLink to="/web-development">Web development</NuxtLink>
+                <NuxtLink to="/pricing-hosting">Premium Hosting Plans</NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/about">About us</NuxtLink>
               </li>
-              <li>
+              <!-- <li>
                 <NuxtLink to="/team">Team</NuxtLink>
-              </li>
-              <li><NuxtLink to="/pricing">Pricing</NuxtLink></li>
+              </li>  -->
+              <!-- <li><NuxtLink to="/pricing">Pricing</NuxtLink></li> -->
             </ul>
           </div>
         </div>
-        <div class="menu_call">
+        <!-- <div class="menu_call">
           <nuxt-link to="/free-trial"> Book a Free Consult </nuxt-link>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -63,21 +63,21 @@
           <hr />
         </li> -->
         <li>
-          <NuxtLink to="/web-development">Web Development</NuxtLink>
+          <NuxtLink to="/pricing-hosting">Premium Hosting Plans</NuxtLink>
           <hr />
         </li>
         <li>
           <NuxtLink to="/about">About us</NuxtLink>
           <hr />
         </li>
-        <li>
+        <!-- <li>
           <NuxtLink to="/team">Team</NuxtLink>
           <hr />
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <NuxtLink to="/pricing">Pricing</NuxtLink>
           <hr />
-        </li>
+        </li> -->
       </ul>
     </div>
   </header>

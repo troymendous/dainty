@@ -1,8 +1,8 @@
 <template>
   <div class="homepage">
     <banner-section />
-    <services-section />
-    <media-section />
+    <!-- <services-section /> -->
+    <!-- <media-section /> -->
     <!-- <reviews /> -->
     <!--    <call-to-action />-->
     <!-- <portfolio-examples /> -->
@@ -11,21 +11,21 @@
 </template>
 
 <script>
-import BannerSection from "../components/home/banner-section"
+import BannerSection from "../components/home/banner-section-hosting"
 // import CallToAction from "../components/home/call-to-action.vue"
-import PricingCardsV2 from "../components/pricing/pricing-cards-v2.vue"
-import MediaSection from "../components/home/media-section"
-import PortfolioExamples from "../components/home/portfolio-examples"
-import Reviews from "../components/home/reviews/reviews.vue"
+import PricingCardsV2 from "../components/pricing-hosting/pricing-cards-v2.vue"
+// import MediaSection from "../components/home/media-section"
+// import PortfolioExamples from "../components/home/portfolio-examples"
+// import Reviews from "../components/home/reviews/reviews.vue"
 
 export default {
   components: {
-    PortfolioExamples,
-    MediaSection,
+    // PortfolioExamples,
+    // MediaSection,
     BannerSection,
     // CallToAction,
     PricingCardsV2,
-    Reviews,
+    // Reviews,
   },
   data() {
     return {

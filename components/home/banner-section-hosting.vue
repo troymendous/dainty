@@ -25,7 +25,7 @@
           </span>
           <div class="banner-links">
             <!-- <nuxt-link to="/free-trial" class="link-primary pink">Book a Free Consult</nuxt-link> -->
-            <nuxt-link to="/pricing" class="link-primary purple">Learn More</nuxt-link>
+            <nuxt-link to="/pricing-hosting" class="link-primary purple">Learn More</nuxt-link>
           </div>
           <!-- <div class="banner-user-review">
             <p>

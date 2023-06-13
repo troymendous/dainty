@@ -15,14 +15,17 @@
             <li>
               <nuxt-link to="/about">About</nuxt-link>
             </li>
-            <li>
+            <!-- <li>
               <nuxt-link to="/team">Team</nuxt-link>
-            </li>
+            </li> -->
             <!-- <li>
               <nuxt-link to="/portfolio">Portfolio</nuxt-link>
             </li> -->
-            <li>
+            <!-- <li>
               <nuxt-link to="/pricing">Pricing</nuxt-link>
+            </li> -->
+            <li>
+              <nuxt-link to="/pricing-hosting">Premium Hosting Plans</nuxt-link>
             </li>
           </ul>
 
@@ -45,7 +48,7 @@
         </div>
         <div class="footer-secondary">
           <div class="footer-secondary_copyright">
-            <span>© 2021 Dainty</span>
+            <span>© 2023 Dainty</span>
           </div>
         </div>
       </div>

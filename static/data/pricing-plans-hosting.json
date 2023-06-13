@@ -1,0 +1,58 @@
+[
+  {
+    "plan": "hobby",
+    "monthlyPrice": 19,
+    "annualPrice": 220,
+    "monthlyPriceId": "price_1Ib5FJF5dr8554IRIF0KhudR",
+    "headliner": "Perfect for an individual or small businesses.",
+    "services": [
+      { "type": "Storage 5 GB", "isOffered": true, "serviceId": "1" },
+      { "type": "Bandwidth Unmetered", "isOffered": true, "serviceId": "3" },
+      { "type": "Email Accounts 10", "isOffered": true, "serviceId": "4" },
+      { "type": "Subdomains 5", "isOffered": true, "serviceId": "5" },
+      { "type": "MySQL Databases 2", "isOffered": true, "serviceId": "12" },
+      { "type": "Reliable Uptime", "isOffered": true, "serviceId": "6" },
+      { "type": "Fast Load Times", "isOffered": true, "serviceId": "7" },
+      { "type": "24/7 Support", "isOffered": true, "serviceId": "8" },
+      { "type": "Free Migration", "isOffered": true, "serviceId": "9" },
+      { "type": "Free SSL Certificate", "isOffered": true, "serviceId": "10" },
+      { "type": "Free SEO Audit:", "isOffered": true, "serviceId": "11" }
+    ],
+    "id": 1,
+    "slug": "core-plan"
+  },
+  {
+    "plan": "growth",
+    "monthlyPrice": 49,
+    "annualPrice": 3000,
+    "monthlyPriceId": "price_1Ib5EYF5dr8554IRBnAavHaX",
+    "headliner": "Great for a larger single business with a need for more projects and design needs to be done at one time. Or needing slightly more urgent timeframes? Then this is the plan for you.",
+    "services": [
+      { "type": "All in Hobby", "isOffered": true, "serviceId": "100" },
+      { "type": "Storage 20 GB", "isOffered": true, "serviceId": "200" },
+      { "type": "Bandwidth Unmetered", "isOffered": true, "serviceId": "300" },
+      { "type": "Email Accounts 50", "isOffered": true, "serviceId": "400," },
+      { "type": "Subdomains 25", "isOffered": true, "serviceId": "500" },
+      { "type": "MySQL Databases 10", "isOffered": true, "serviceId": "600" }
+    ],
+    "id": 2,
+    "slug": "plus-plan"
+  },
+  {
+    "plan": "rocket",
+    "monthlyPrice": 99,
+    "annualPrice": 6000,
+    "monthlyPriceId": "price_1Ib5BPF5dr8554IR6NMccYTf",
+    "headliner": "If you’re a marketer with multiple clients, or own multiple businesses and/or looking to white label and resell designs to your clients that we do for you, look no further, this is the plan for you.",
+    "services": [
+      { "type": "All in Hobby & Growth", "isOffered": true, "serviceId": "10" },
+      { "type": "Storage 50 GB", "isOffered": true, "serviceId": "20" },
+      { "type": "Bandwidth Unlimited", "isOffered": true, "serviceId": "600" },
+      { "type": "Email Accounts Unlimited", "isOffered": true, "serviceId": "40" },
+      { "type": "Subdomains Unlimited", "isOffered": true, "serviceId": "50" },
+      { "type": "MySQL Databases Unlimited", "isOffered": true, "serviceId": "60" }
+    ],
+    "id": 3,
+    "slug": "enterprise-plan"
+  }
+]
