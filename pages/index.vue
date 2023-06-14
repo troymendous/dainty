@@ -6,7 +6,7 @@
     <!-- <reviews /> -->
     <!--    <call-to-action />-->
     <!-- <portfolio-examples /> -->
-    <pricing-cards-v-2 :is-stripe-loaded="isStripeLoaded" />
+    <PricingCardsV2 :is-stripe-loaded="isStripeLoaded" />
   </div>
 </template>
 
