@@ -3,7 +3,7 @@
     <span>
       <slot></slot>
     </span>
-    <loader v-if="isLoading" class="animate-spin h-5 w-10 mr-3" />
+    <loader v-if="isLoading" class="mr-3 h-5 w-10 animate-spin" />
   </button>
 </template>
 

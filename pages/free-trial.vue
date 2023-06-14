@@ -6,21 +6,21 @@
         <div class="free-trial_content">
           <str-form
             v-if="!isSendingNotifs"
-            :isLoading="isLoading"
-            v-on:showStrCheckout="userDataCollected"
+            :is-loading="isLoading"
+            @showStrCheckout="userDataCollected"
           />
           <div v-else>
             <p>Subscription is sucessful 🎊<br /></p>
             <div class="flex justify-center text-gray-500">
-              <loader class="animate-spin h-10 w-20 mt-2" />
+              <loader class="mt-2 h-10 w-20 animate-spin" />
             </div>
           </div>
         </div>
       </div>
 
       <str-services :services="core.services" :price="core.price">
-        <template v-slot:heading> {{ core.name }} </template>
-        <template v-slot:price> {{ core.price }}</template>
+        <template #heading> {{ core.name }} </template>
+        <template #price> {{ core.price }}</template>
       </str-services>
     </div>
   </div>
@@ -69,9 +69,6 @@ export default {
       },
     }
   },
-  mounted() {
-    this.$store.commit("updateEmail", "")
-  },
   computed: {
     email: {
       get() {
@@ -89,6 +86,9 @@ export default {
         this.$store.commit("updateFullname", value)
       },
     },
+  },
+  mounted() {
+    this.$store.commit("updateEmail", "")
   },
   methods: {
     async userDataCollected() {

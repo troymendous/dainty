@@ -27,7 +27,7 @@
           <div class="sr-result hidden">
             <p>Subscription is sucessful 🎊<br /></p>
             <div v-if="isSendingEmails" class="flex justify-center text-gray-500">
-              <loader class="animate-spin h-10 w-20 mt-2" />
+              <loader class="mt-2 h-10 w-20 animate-spin" />
             </div>
           </div>
         </div>

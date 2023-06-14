@@ -35,13 +35,13 @@
     <nuxt-link class="modal-link_read" to="/about">
       <div class="modal-container_read">Read About Us</div>
     </nuxt-link>
-    <div class="container nav">
+    <div class="nav container">
       <div slot="button-prev" class="item modal-button-prev">
-        <div class="container bg"></div>
+        <div class="bg container"></div>
         <span>Prev</span>
       </div>
       <div slot="button-next" class="item modal-button-next">
-        <div class="container bg"></div>
+        <div class="bg container"></div>
         <span>Next</span>
       </div>
     </div>

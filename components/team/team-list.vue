@@ -1,7 +1,7 @@
 <template>
-  <div id="team" class="container team">
+  <div id="team" class="team container">
     <div v-if="members" class="wrapper">
-      <div class="container section1">
+      <div class="section1 container">
         <team-member
           v-for="i in [0, 1, 2]"
           :key="i"
@@ -10,7 +10,7 @@
           @memberClicked="showMember"
         ></team-member>
       </div>
-      <div class="container section2">
+      <div class="section2 container">
         <team-member
           v-for="i in [3]"
           :key="i"

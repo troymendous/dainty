@@ -34,7 +34,7 @@
           <div class="sr-result hidden">
             <p>Card setup completed 🎊<br /></p>
             <div v-if="isSendingEmails" class="flex justify-center text-gray-500">
-              <loader class="animate-spin h-10 w-20 mt-2" />
+              <loader class="mt-2 h-10 w-20 animate-spin" />
             </div>
           </div>
         </div>
@@ -50,10 +50,10 @@ import slackNotifs from "../../mixins/slack-notifs"
 import StrButton from "./str-button.vue"
 
 export default {
-  mixins: [mail, slackNotifs],
   components: {
     StrButton,
   },
+  mixins: [mail, slackNotifs],
   data() {
     return {
       stripe: "",
@@ -216,7 +216,7 @@ export default {
     // display: inline-block;
     font-weight: 500;
     margin-bottom: 8px;
-    @apply text-darkColor;
+    // @apply text-darkColor;
   }
 
   input {
@@ -240,7 +240,7 @@ export default {
     border-radius: 8px;
     padding: 0.75rem;
     font-weight: 500;
-    @apply text-accentPurple;
+    // @apply text-accentPurple;
     margin-top: 2rem;
 
     svg {

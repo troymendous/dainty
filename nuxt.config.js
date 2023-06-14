@@ -1,4 +1,4 @@
-const dynamicRoutes = async () => {
+const dynamicRoutes = () => {
   const pricingSlugRoutes = ["core", "plus", "enterprise"]
 
   return new Promise((resolve) => {
@@ -90,6 +90,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     "@nuxtjs/eslint-module",
+    // https://go.nuxtjs.dev/stylelint
+    "@nuxtjs/stylelint-module",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/dotenv",
     "@nuxtjs/date-fns",

@@ -1,6 +1,6 @@
 <template>
   <div class="about-body_info">
-    <div class="text-center section-title">
+    <div class="section-title text-center">
       <h2>About Us</h2>
     </div>
     <ul class="about-list">

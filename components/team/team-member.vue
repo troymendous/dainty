@@ -13,7 +13,7 @@
       style="visibility: hidden; height: 100%; width: 100%"
     />
     <div class="text">
-      <div class="container padding">
+      <div class="padding container">
         <div class="name">{{ member.name }}</div>
         <a :href="member.link" target="_blank" class="linkedin">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -28,7 +28,7 @@
       <div class="line"></div>
     </div>
     <div class="text hover">
-      <div class="container padding">
+      <div class="padding container">
         <div class="name">{{ member.name }}</div>
         <a :href="member.link" target="_blank" class="linkedin">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

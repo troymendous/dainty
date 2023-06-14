@@ -166,7 +166,7 @@ export default {
   @apply grid-cols-12;
 
   a {
-    @apply text-darkColor;
+    // @apply text-darkColor;
     @apply font-medium;
   }
 
@@ -211,7 +211,7 @@ export default {
 
 .menu_icon > svg {
   @apply font-semibold;
-  @apply text-accentPink;
+  // @apply text-accentPink;
   display: none;
 
   @screen md {
@@ -243,7 +243,7 @@ export default {
   }
 
   a:hover {
-    @apply text-accentPink;
+    // @apply text-accentPink;
   }
 
   @screen md {

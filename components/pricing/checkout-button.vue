@@ -3,7 +3,7 @@
     <!-- <span v-if="plan === 'core'">15 Days Free</span>
     <span v-else>Select Plan</span> -->
     <span> Select Plan</span>
-    <loader v-if="isLoadingCheckout" class="animate-spin h-5 w-10 mr-3" />
+    <loader v-if="isLoadingCheckout" class="mr-3 h-5 w-10 animate-spin" />
   </button>
 </template>
 

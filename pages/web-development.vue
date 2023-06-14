@@ -9,7 +9,7 @@
         </div>
       </section>
       <section class="about-body">
-        <div class="text-center section-title">
+        <div class="section-title text-center">
           <h2>Web Development</h2>
         </div>
         <div class="development-section">
