@@ -39,6 +39,73 @@
               <li>
                 <NuxtLink to="/about">About us</NuxtLink>
               </li>
+              <li>
+                <div class="relative" x-data="{ open: false }" @click="open = !open">
+                  <button class="focus:outline-none flex items-center font-medium">
+                    <span>Services</span>
+                    <svg
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      :class="{ 'rotate-180': open, 'rotate-0': !open }"
+                      class="ml-1 inline h-4 w-4 transform transition-transform duration-200"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </button>
+                  <div
+                    v-if="open"
+                    class="dropdown-menu border absolute right-0 mt-4 w-full rounded-md shadow-lg"
+                  >
+                    <div class="relative z-10">
+                      <ul class="-mx-2 flex w-full flex-wrap px-3 pt-3">
+                        <li class="w-1/2 px-2 pb-3">
+                          <a href="#" class="flex items-center rounded-md p-2 hover:bg-gray-100">
+                            <div class="image-holder">
+                              <ServerIcon />
+                            </div>
+                            <div class="pl-3 text-sm">
+                              <strong class="mb-px block">Website Hosting</strong>
+                              <p class="text-sm font-normal leading-normal">
+                                Estimate the timeframe of your project
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="w-1/2 px-2 pb-3">
+                          <a href="#" class="flex items-center rounded-md p-2 hover:bg-gray-100">
+                            <div class="image-holder">
+                              <WebIcon />
+                            </div>
+                            <div class="pl-3 text-sm">
+                              <strong class="mb-px block">Website Management</strong>
+                              <p class="text-sm font-normal leading-normal">
+                                See a list of the types of tasks we don't do
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="w-1/2 px-2 pb-3">
+                          <a href="#" class="flex items-center rounded-md p-2 hover:bg-gray-100">
+                            <div class="image-holder">
+                              <RocketIcon />
+                            </div>
+                            <div class="pl-3 text-sm">
+                              <strong class="mb-px block">SEO</strong>
+                              <p class="text-sm font-normal leading-normal">
+                                See a list of the types of tasks we don't do
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
               <!-- <li>
                 <NuxtLink to="/team">Team</NuxtLink>
               </li>  -->
@@ -84,12 +151,23 @@
 </template>
 
 <script>
+import RocketIcon from "@/components/icons/rocket.vue"
+import WebIcon from "@/components/icons/web.vue"
+import ServerIcon from "@/components/icons/server.vue"
 import Logo from "./logo.vue"
 
 export default {
   name: "HeaderSection",
   components: {
     Logo,
+    RocketIcon,
+    WebIcon,
+    ServerIcon,
+  },
+  data() {
+    return {
+      open: false,
+    }
   },
   computed: {
     menuIsActive() {
@@ -174,7 +252,38 @@ export default {
     padding: 1rem;
   }
 }
-
+.dropdown-menu {
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 0);
+  width: 600px;
+  &::before {
+    @apply rounded-md;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.94902);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    z-index: 9;
+  }
+  &::after {
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border: 1px solid #ececec;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: 8;
+    content: "";
+    margin: 0 0 -12px;
+  }
+}
 .white-background {
   background: #fff !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
@@ -237,7 +346,7 @@ export default {
   display: flex;
   justify-content: flex-end;
 
-  li {
+  > li {
     padding: 0.5rem 0;
     margin: 1rem;
   }
