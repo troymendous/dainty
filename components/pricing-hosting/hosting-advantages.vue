@@ -1,86 +1,35 @@
 <template>
-  <section class="pricing-cards-section">
-    <div class="pricing-headliner">
-      <h2 v-if="isAtHome">Plans and Pricing</h2>
-      <h2 v-else>PREMIUM HOSTING PLANS:</h2>
-      <p v-if="isAtHome">All the subscription prices are pegged in US Dollars.</p>
-      <p v-else>Why Choose Dainty: The Perfect Home for Your Website</p>
-    </div>
-    <div v-if="!isAtHome">
-      <hosting-advantages />
-    </div>
+  <div class="pricing-cards-section">
     <div class="pricing-plans">
-      <div class="pricing-plans_content">
-        <div
-          v-for="{
-            plan,
-            id,
-            monthlyPrice,
-            annualPrice,
-            monthlyPriceId,
-            headliner,
-            services,
-          } in plans"
-          :key="id"
-          class="pricing-plans_content-item"
-        >
-          <h4>{{ plan }}</h4>
-          <subscription-price
-            :is-monthly="isMonthly"
-            :annual-price="annualPrice"
-            :monthly-price="monthlyPrice"
-          />
-          <p class="pricing-plans_content-item-headliner">
-            {{ headliner }}
-          </p>
-          <services ref="services" :services="services" :card-id="id" :plan="plan" />
-          <div v-if="!isAtHome">
-            <checkout-button :monthly-price-id="monthlyPriceId" :plan="plan" />
-          </div>
-        </div>
-      </div>
-      <div class="pricing-link-wrapper">
-        <nuxt-link
-          v-if="isAtHome"
-          :to="{ path: '/pricing', hash: '#pricing-table-headliner' }"
-          class="pricing-link"
-          >View More
-        </nuxt-link>
-      </div>
+      <ol type="1" style="list-style-type: decimal">
+        <li>Reliable Uptime: We ensure that your site is always available for your visitors.</li>
+        <li>Fast Load Times: Speed is crucial in today's online world, and we deliver.</li>
+        <li>Secure Environment: We take security seriously, protecting your site from threats.</li>
+        <li>Scalability: Our plans grow with your business, allowing you to upgrade anytime.</li>
+        <li>24/7 Support: We're always here to help, day or night.</li>
+        <li>Free Migration: Switching to us? We'll migrate your site for free.</li>
+        <li>
+          Three-Hourly Backups: We keep regular backups every three hours to ensure your data's
+          safety.
+        </li>
+        <li>Free SSL Certificate: Keep your customers' data secure with HTTPS.</li>
+        <li>User-Friendly Control Panel: Manage your site with ease.</li>
+        <li>Eco-Friendly: Our servers are powered by renewable energy.</li>
+        <li>
+          Free SEO Audit: Upon migrating, we'll conduct an SEO audit and optimize your site's
+          on-page elements, including meta tags, image optimization, internal linking, and website
+          speed enhancement.
+        </li>
+      </ol>
+      <br />
     </div>
-  </section>
+  </div>
 </template>
-
 <script>
-import plans from "../../static/data/pricing-plans-hosting.json"
-import Services from "./services.vue"
-
 export default {
-  components: { Services },
-  props: {
-    isStripeLoaded: Boolean,
-  },
-  data() {
-    return {
-      isMonthly: true,
-      isAtHome: null,
-      plans,
-      show: false,
-      isLoadingCheckout: false,
-      stripeError: "",
-    }
-  },
-  // async fetch() {
-  //   this.plans = await this.$content("pricing-and-plans").fetch()
-  // },
-  created() {
-    if (this.$route.path === "/pricing") this.isAtHome = false
-
-    if (this.$route.path === "/") this.isAtHome = true
-  },
+  name: "HostingPlans",
 }
 </script>
-
 <style lang="scss" scoped>
 .pricing-cards-section {
   width: 100%;
@@ -192,7 +141,6 @@ export default {
     grid-template-columns: 320px;
   }
 }
-
 .pricing-plans_content-item {
   h4 {
     text-transform: capitalize;
@@ -240,7 +188,6 @@ export default {
       font-size: 16px;
     }
   }
-
   > span:not(:first-child) {
     display: inline-block;
     text-indent: 102px;
@@ -285,7 +232,6 @@ export default {
     width: 270px;
   }
 }
-
 @keyframes shimmer {
   100% {
     transform: translateX(100%);
