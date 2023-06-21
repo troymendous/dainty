@@ -1,12 +1,12 @@
 <template>
   <div>
     <ul>
-      <li v-for="{ type, isOffered, serviceId } in services.slice(0, 9)" :key="serviceId">
+      <li v-for="{ type, isOffered, serviceId } in services.slice(0, 12)" :key="serviceId">
         <check-icon v-if="isOffered" />
         <cross-icon v-else />
         <span>{{ type }}</span>
       </li>
-      <div v-if="!isAtHome">
+      <!-- <div v-if="!isAtHome">
         <div></div>
         <li
           role="button"
@@ -15,7 +15,7 @@
         >
           View more
         </li>
-      </div>
+      </div> -->
     </ul>
   </div>
 </template>

@@ -1,32 +1,23 @@
 <template>
   <div class="homepage">
     <banner-section />
-    <!-- <services-section /> -->
-    <!-- <media-section /> -->
-    <!-- <reviews /> -->
-    <!--    <call-to-action />-->
-    <!-- <portfolio-examples /> -->
-    <!-- <PricingCardsV2 :is-stripe-loaded="isStripeLoaded" /> -->
+
+    <welcome-section />
+    <services-section />
+    <hr style="margin-left: 8%; margin-right: 8%" />
+    <section class="about-body"><home-detail /></section>
+
+    <!-- <services-section />
+    <media-section />
+    <reviews />
+    <call-to-action />
+    <portfolio-examples />
+    <PricingCardsV2 :is-stripe-loaded="isStripeLoaded" /> -->
   </div>
 </template>
 
 <script>
-import BannerSection from "../components/home/banner-section-hosting"
-// import CallToAction from "../components/home/call-to-action.vue"
-// import PricingCardsV2 from "../components/pricing-hosting/pricing-cards-v2.vue"
-// import MediaSection from "../components/home/media-section"
-// import PortfolioExamples from "../components/home/portfolio-examples"
-// import Reviews from "../components/home/reviews/reviews.vue"
-
 export default {
-  components: {
-    // PortfolioExamples,
-    // MediaSection,
-    BannerSection,
-    // CallToAction,
-    // PricingCardsV2,
-    // Reviews,
-  },
   data() {
     return {
       isStripeLoaded: false,

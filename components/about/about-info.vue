@@ -6,42 +6,38 @@
     <ul class="about-list">
       <li>
         <div class="about-list_header">An open way of looking at things</div>
-        <div class="about-list_description">
-          Dainty thinks about design and web design mockups a little differently. We don’t think you
-          should have to chase a gaggle of different freelancers or pay a truckload of money for
-          sexy designs. So we’ve wedged ourselves somewhere in the middle. Into the sweet spot!
-          <br />
-          <br />
-          Our subscription model means you can use our team of designers for one low, fixed monthly
-          payment. Plain and simple. That’s us.
-          <br />
-          And if you’ve got ideas you want to fruition, we can’t wait to meet you.
+        <div class="about-list_description text-justify">
+          A fresh perspective on hosting Dainty reimagines web hosting in a unique way. We believe
+          you shouldn't have to juggle multiple providers or shell out a fortune for reliable,
+          high-performance hosting. So, we've positioned ourselves in that ideal middle ground.
+          Right in the sweet spot! <br />
+          Our subscription model allows you access to our robust hosting infrastructure for one low,
+          fixed monthly payment. Straightforward and uncomplicated. That’s us. And if you're seeking
+          a partner to bring your digital world to life, we can’t wait to meet you.
         </div>
       </li>
       <li>
         <div class="about-list_header">We hear you ask “So how can Dainty help me?”</div>
-        <div class="about-list_description">
-          We know what we do best. We keep our subscription prices low by making sure our team can
-          deliver the the most bang for your buck. How do we do it? We have specially crafted our
-          <a href="/">do's and don’ts list</a>, and built a team to match, ensuring we can offer the
-          most essential services you’d need for your project or business. Websites mockups, web and
-          print designs, that’s our jam. Wanna see? Mmmm…
-          <a href="/portfolio">Dainty flavoured jam.</a>
+        <div class="about-list_description text-justify">
+          We recognize our strengths. We maintain our subscription prices affordably by ensuring our
+          team delivers the maximum value for your investment. How do we achieve this? We've
+          strategically defined our service offerings and assembled a team to match, guaranteeing we
+          can provide the most crucial hosting services your project or business could need. Web
+          hosting, server maintenance, and site security - that’s our specialty. Eager for a
+          glimpse? Mmmm… Dainty-flavored expertise
         </div>
       </li>
       <li>
         <div class="about-list_header">The magic of subscription</div>
-        <div class="about-list_description">
-          The greatest thing about an ongoing subscription is that there are no nasty surprises. We
-          won’t charge you extra because things got delayed or you changed your mind halfway through
-          a task! One revision or five, it all comes at the same cost!
-          <br />
-          <br />
-          Subscription service means you can also pop in with design needs at any time, and we’re
-          ready and waiting. Got an idea at 2 am that you need to get going now? No need to call
-          someone tomorrow and organize meetings (ewww). Ain’t nobody got time for that. Hop on and
-          let us know when the inspiration strikes and we’ll get busy cooking. Welcome to the good
-          life, my friend.
+        <div class="about-list_description text-justify">
+          The beauty of a continuous subscription is its predictability - no unpleasant surprises.
+          We won’t charge you extra because of unexpected issues or if you need to adjust your
+          requirements halfway through a project! One change or five, it's all covered under the
+          same cost! <br />Subscription service also means you can reach out with your hosting needs
+          at any time, and we're prepared and eager to assist. Got a server issue at 2 am that needs
+          immediate attention? No need to wait until tomorrow and schedule tedious meetings. We
+          understand that time is of the essence. Just connect with us when the need arises, and
+          we'll jump right into action. Welcome to the world of hassle-free hosting, my friend.
         </div>
       </li>
       <li>

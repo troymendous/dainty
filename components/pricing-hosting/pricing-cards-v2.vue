@@ -1,13 +1,8 @@
 <template>
   <section class="pricing-cards-section">
     <div class="pricing-headliner">
-      <h2 v-if="isAtHome">Plans and Pricing</h2>
-      <h2 v-else>PREMIUM HOSTING PLANS:</h2>
-      <p v-if="isAtHome">All the subscription prices are pegged in US Dollars.</p>
-      <p v-else>Why Choose Dainty: The Perfect Home for Your Website</p>
-    </div>
-    <div v-if="!isAtHome">
-      <hosting-advantages />
+      <h2>Plans and Pricing</h2>
+      <p>All the subscription prices are pegged in US Dollars.</p>
     </div>
     <div class="pricing-plans">
       <div class="pricing-plans_content">
@@ -38,6 +33,7 @@
           <p>
             {{ additional_line }}
           </p>
+
           <services ref="services" :services="services" :card-id="id" :plan="plan" />
 
           <div v-if="!isAtHome">
@@ -50,7 +46,7 @@
           v-if="isAtHome"
           :to="{ path: '/pricing', hash: '#pricing-table-headliner' }"
           class="pricing-link"
-          >View More
+          >View More12
         </nuxt-link>
       </div>
     </div>

@@ -157,28 +157,6 @@
           any loss of data, use, goodwill, or other intangible losses.
         </div>
       </li>
-      <li class="collapsible-item">
-        <div class="collapsible-button" @click="collapseToggle(12)">
-          Indemnity
-          <collapse-button></collapse-button>
-        </div>
-        <div class="collapsible-content">
-          You agree to indemnify and hold harmless Dainty Web Services and its officers, directors,
-          employees and agents, from and against any liabilities, damages or costs arising from your
-          use of our services.
-        </div>
-      </li>
-      <li class="collapsible-item">
-        <div class="collapsible-button" @click="collapseToggle(12)">
-          Governing Law
-          <collapse-button></collapse-button>
-        </div>
-        <div class="collapsible-content">
-          These terms will be governed by and construed in accordance with the laws of Australia,
-          and any disputes relating to these terms will be subject to the jurisdiction of the courts
-          of Melbourne Australia.
-        </div>
-      </li>
     </ul>
   </div>
 </template>

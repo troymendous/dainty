@@ -2,9 +2,7 @@
   <section class="services-homepage">
     <div class="services-homepage-inner">
       <h2>
-        <span>Dainty is your one-stop development</span>
-        <br />
-        <span> and digital marketing agency</span>
+        <span>Discover Dainty's Services</span>
       </h2>
       <div class="service-cards">
         <div v-for="{ heading, text, icon, id } in services" :key="id">
@@ -13,7 +11,11 @@
             <h5>{{ heading }}</h5>
           </nuxt-link>
           <p>{{ text }}</p>
-          <!--          <nuxt-link class="arrow-link" to="/"></nuxt-link>-->
+          <div
+            style="width: 100%; height: 50px; font-size: 16px; font-style: italic; margin-top: 60px"
+          >
+            <a href="https://www.daintydigital.com/services">Learn more</a>
+          </div>
         </div>
       </div>
     </div>
@@ -26,32 +28,27 @@ export default {
     return {
       services: [
         {
-          heading: "All Your Design Needs",
+          heading: "Reliable Website Hosting",
           text:
-            "Why go to all the headaches of hiring a freelancer when you can have an amazing dedicated designer for all your needs.",
+            "Experience unmatched website performance with our fast, secure, and reliable hosting services. We guarantee 99.9% uptime, giving your customers the best possible experience.",
           icon: "laptop",
+          linkto: "https://www.daintydigital.com/website-hosting",
           id: "03",
         },
         {
-          heading: "Website & App Development",
+          heading: "Proactive Website Management",
           text:
-            "No templates here. We custom design your website because it is your digital asset that best represents your brand. ",
+            "Don't stress over the day-to-day upkeep of your site. Our team takes care of everything – from updates and backups to performance optimization.",
+          linkto: "https://www.daintydigital.com/website-management",
           icon: "presentation",
           id: "09",
         },
         {
-          heading: "Marketing",
+          heading: "Comprehensive SEO Services",
           text:
-            "Imagine your product/service is on one side of a ledge and your customers are on the other side. We are the bridge that brings the two together.",
+            "Stay ahead of the competition with our SEO services. Our experts employ the latest strategies to improve your online visibility and drive more organic traffic to your site.",
           icon: "target",
           id: "012",
-        },
-        {
-          heading: "Tweaks & Improvements",
-          text:
-            "Got an existing site and just need something touched up? We got you covered… don’t outsource, try us first. We promise you won’t regret it.",
-          icon: "visualization",
-          id: "015",
         },
       ],
     }
@@ -110,14 +107,16 @@ h2 {
 .service-cards {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 260px);
-  grid-gap: 16px;
-  padding: 0 2rem;
+  height: 470px;
+
+  grid-template-columns: repeat(3, 260px);
+  grid-gap: 100px;
+  padding: 0 7rem;
   > div {
     font-size: 20px;
-    line-height: 34px;
+    line-height: 30px;
     border-radius: 4px;
-    padding: 36px 16px 16px;
+    padding: 36px 25px 16px 25px;
     box-shadow: rgba(46, 61, 98, 0.1) 0px 10px 60px 0px;
     &:hover {
       h5,

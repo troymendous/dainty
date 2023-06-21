@@ -4,7 +4,7 @@
       <div class="about-header">
         <div class="about-header_title">
           <h2>
-            Who the heck are we
+            So how can Dainty help me
             <img class="text-img" src="/about/common_questions.png" alt="" />
           </h2>
         </div>

@@ -3,10 +3,9 @@
     <div class="section-title">
       <h2>Core Values</h2>
     </div>
-    <div class="about-list_description">
-      We want you to have the best and most awesome design. Visit
-      <a href="/pricing">our Plans </a>page for a complete overview of resources or see some
-      highlights below.
+    <div class="about-list_description text-justify">
+      Our goal is to provide you with the best, most reliable hosting service. Visit our Plans page
+      for a detailed overview of offerings or see some highlights below.
     </div>
     <ul class="about-list">
       <li class="flex">
@@ -14,11 +13,12 @@
           <img src="/about/add-value.svg" alt="value icon" />
         </div>
         <div>
-          <div class="about-list_header">Add value</div>
-          <div class="about-list_description">
-            Our mission is to make life easier for our clients. We know that when you run your own
-            business or manage an important venture, things can get really hectic and stressful. Our
-            team is here to support you so you can be a little more Zen!
+          <div class="about-list_header">Adding Value</div>
+          <div class="about-list_description text-justify">
+            Our mission is to simplify your digital experience. We understand the challenges of
+            running a business or leading an important project – it can become incredibly busy and
+            stressful. Our team is here to shoulder your hosting burdens so you can maintain your
+            peace of mind!
           </div>
         </div>
       </li>
@@ -27,11 +27,11 @@
           <img src="/about/be-human.svg" alt="value icon" />
         </div>
         <div>
-          <div class="about-list_header">Be human and be excited</div>
-          <div class="about-list_description">
-            We believe in having personality, and not being a boring professional robot that’s just
-            running through scripts, we love what we do, and were excited and passionate about the
-            direction of the company.
+          <div class="about-list_header">Keeping it Human and Enthusiastic</div>
+          <div class="about-list_description text-justify">
+            We believe in showing our personality, not just being a professional entity running on
+            auto-pilot. We love what we do, and we're passionate about the direction our company is
+            taking.
           </div>
         </div>
       </li>
@@ -40,11 +40,11 @@
           <img src="/about/be-hungry.svg" alt="value icon" />
         </div>
         <div>
-          <div class="about-list_header">Be hungry to grow and learn</div>
-          <div class="about-list_description">
-            Our entire team is driven to find solutions for growth inside of our company, and we’re
-            always researching and learning what is the latest when it comes to modern amazing
-            design and web design mockups so our clients can have only the best.
+          <div class="about-list_header">Constant Growth and Learning</div>
+          <div class="about-list_description text-justify">
+            Our entire team is motivated to find pathways for growth within our company, continually
+            researching and learning about the latest trends in web hosting and server technology.
+            This ensures our clients always receive cutting-edge services.
           </div>
         </div>
       </li>
@@ -53,11 +53,11 @@
           <img src="/about/team.svg" alt="value icon" />
         </div>
         <div>
-          <div class="about-list_header">Build a positive team spirit</div>
-          <div class="about-list_description">
-            We’re close, I mean really close ... We’re always joking with each other and creating a
-            fun workspace, we dance, we play music, we send funny pictures to our clients, we’re
-            weird and we like it.
+          <div class="about-list_header">Fostering a Positive Team Spirit</div>
+          <div class="about-list_description text-justify">
+            We're close-knit, truly close... We maintain a playful workspace, where we joke around,
+            play music, and even send funny pictures to our clients. We're a bit quirky, and we love
+            it.
           </div>
         </div>
       </li>
@@ -67,11 +67,11 @@
         </div>
         <div>
           <div class="about-list_header">Do more with less</div>
-          <div class="about-list_description">
-            We’re all about efficiency, and we won’t try something on just for fun or to see how
-            it’ll pan out because vague ideas result in lost time. Time is the most valuable
-            resource we have so we’re always looking for ways to be more efficient because this
-            means we stay affordable to our clients!
+          <div class="about-list_description text-justify">
+            We're all about efficiency. We avoid indulging in vague ideas or untested projects, as
+            they often result in lost time. Time is our most precious resource, so we’re constantly
+            seeking ways to be more efficient. This approach helps us remain cost-effective for our
+            clients!
           </div>
         </div>
       </li>
