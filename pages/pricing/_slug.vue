@@ -5,45 +5,45 @@
       <div class="free-trial_content-wrapper">
         <div class="free-trial_content">
           <str-form
-            :isLoading="isLoading"
-            :showNextStep="showPaymentIntentStep"
-            v-on:showStrCheckout="toggleShowPaymentIntentStep"
+            :is-loading="isLoading"
+            :show-next-step="showPaymentIntentStep"
+            @showStrCheckout="toggleShowPaymentIntentStep"
           />
           <paymentIntent
             v-show="showPaymentIntentStep"
-            v-on:closePaymentIntent="closePaymentIntentStep"
+            @closePaymentIntent="closePaymentIntentStep"
           />
         </div>
       </div>
 
       <str-services
+        v-if="slug === 'core'"
         :services="core.services"
         :price="core.price"
         :slug="slug"
-        v-if="slug === 'core'"
       >
-        <template v-slot:heading> {{ core.name }} </template>
-        <template v-slot:price> {{ core.price }}</template>
+        <template #heading> {{ core.name }} </template>
+        <template #price> {{ core.price }}</template>
       </str-services>
 
       <str-services
+        v-if="slug === 'plus'"
         :services="plus.services"
         :price="plus.price"
         :slug="slug"
-        v-if="slug === 'plus'"
       >
-        <template v-slot:heading> {{ plus.name }} </template>
-        <template v-slot:price> {{ plus.price }}</template>
+        <template #heading> {{ plus.name }} </template>
+        <template #price> {{ plus.price }}</template>
       </str-services>
 
       <str-services
+        v-if="slug === 'enterprise'"
         :services="enterprise.services"
         :price="enterprise.price"
         :slug="slug"
-        v-if="slug === 'enterprise'"
       >
-        <template v-slot:heading> {{ enterprise.name }} </template>
-        <template v-slot:price> {{ enterprise.price }}</template>
+        <template #heading> {{ enterprise.name }} </template>
+        <template #price> {{ enterprise.price }}</template>
       </str-services>
     </div>
   </div>
@@ -118,9 +118,6 @@ export default {
       },
     }
   },
-  mounted() {
-    this.slug = this.$route.params.slug
-  },
   computed: {
     email: {
       get() {
@@ -138,6 +135,9 @@ export default {
         this.$store.commit("updateFullname", value)
       },
     },
+  },
+  mounted() {
+    this.slug = this.$route.params.slug
   },
   methods: {
     closePaymentIntentStep() {

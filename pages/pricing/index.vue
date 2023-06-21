@@ -1,7 +1,7 @@
 <template>
   <div class="pricing">
     <div v-if="isActive" class="overlay" @click="hideOverlay"></div>
-    <PricingCardsV2 :isStripeLoaded="isStripeLoaded" ref="cards2" />
+    <PricingCardsV2 ref="cards2" :is-stripe-loaded="isStripeLoaded" />
     <get-started />
     <pricing-discount />
     <pricing-support />
@@ -31,6 +31,11 @@ export default {
       isStripeLoaded: false,
     }
   },
+  computed: {
+    isActive() {
+      return this.$store.state.showOverlay
+    },
+  },
   methods: {
     hideOverlay() {
       const services = this.$refs.cards2.$refs.services
@@ -39,11 +44,6 @@ export default {
           services[i].hideOverlay()
         }
       }
-    },
-  },
-  computed: {
-    isActive() {
-      return this.$store.state.showOverlay
     },
   },
 }

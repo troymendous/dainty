@@ -4,9 +4,9 @@
       <h2>Getting Started</h2>
     </div>
     <div class="about-list_description">
-      We try to make things as simple as possible! When you sign up you’ll get access to our
-      communication tool, Slack and all of our questionnaires. Fill out the required questionnaire,
-      return it on Slack and voila – easy as 123!
+      Our goal is to keep things as straightforward as possible! When you sign up, you'll get access
+      to our communication tool, Slack, and all of our introductory resources. Complete the
+      necessary setup information, submit it via Slack, and you're all set – as easy as 123!
     </div>
     <ul class="about-list">
       <li class="flex">
@@ -15,11 +15,10 @@
         </div>
         <div>
           <div class="about-list_description">
-            Your first step with getting started is going to our plans page and selecting a plan
-            that has the features you need for your business, keeping in mind that each plan has the
-            features of the plan before it. You don’t need to have your end goal in mind or know
-            exactly how you want things to be because we allow you to change plans based on your
-            requirements.
+            Your first step is to visit our Plans page and select a plan that has the features your
+            business needs, remembering that each plan includes all the features of the preceding
+            one. You don’t need to know your exact end goal or how you want everything to be just
+            yet, as we allow you to switch plans based on your evolving requirements.
           </div>
         </div>
       </li>
@@ -29,10 +28,9 @@
         </div>
         <div>
           <div class="about-list_description">
-            Be sure to
-            <a href="https://www.facebook.com/pebbled.io/">follow us on Facebook </a> so you can be
-            in the loop about what design jobs other people are sending through to us, this may give
-            you inspiration for your future projects!
+            Be sure to <a href="https://www.facebook.com/pebbled.io/">follow us on Facebook </a> to
+            stay updated about the latest in hosting trends and what services other clients are
+            availing, which may spark ideas for your own projects!
           </div>
         </div>
       </li>
@@ -42,10 +40,10 @@
         </div>
         <div>
           <div class="about-list_description">
-            Last but not least, we’re here to help! And if you can’t find the answer to your
-            question in our FAQ, be sure to ask us by clicking here which will open up a chat so you
-            can ask us anything (although we’re not sure about the meaning of life so maybe don’t
-            ask us that)
+            Last but not least, we’re here to help! If you can't find the answer to your question in
+            our FAQ, don't hesitate to ask us by clicking here, which will open up a chat so you can
+            ask us anything (although we're still figuring out the meaning of life, so perhaps hold
+            off on that one).
           </div>
         </div>
       </li>

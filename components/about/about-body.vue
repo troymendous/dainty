@@ -19,5 +19,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~/assets/scss/pages/about-body.scss";
+@import "@/assets/scss/pages/about-body.scss";
 </style>

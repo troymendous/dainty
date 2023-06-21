@@ -22,27 +22,27 @@
         </div>
       </ul>
     </div>
-    <nuxt-link to="/free-trial" v-if="slug === 'core' || slug === 'plus' || slug === 'enterprise'">
+    <nuxt-link v-if="slug === 'core' || slug === 'plus' || slug === 'enterprise'" to="/free-trial">
       <h4>Trial</h4>
       <p>15 days free of the Core plan</p>
     </nuxt-link>
     <nuxt-link
-      to="/pricing/core"
       v-if="slug === 'plus' || slug === 'enterprise' || currentRouteName === 'free-trial'"
+      to="/pricing/core"
     >
       <h4>Core</h4>
       <p>$99/month</p>
     </nuxt-link>
     <nuxt-link
-      to="/pricing/plus"
       v-if="slug === 'enterprise' || slug === 'core' || currentRouteName === 'free-trial'"
+      to="/pricing/plus"
     >
       <h4>Plus</h4>
       <p>$499/month</p>
     </nuxt-link>
     <nuxt-link
-      to="/pricing/enterprise"
       v-if="slug === 'plus' || slug === 'core' || currentRouteName === 'free-trial'"
+      to="/pricing/enterprise"
     >
       <h4>Enterprise</h4>
       <p>$999/month</p></nuxt-link
@@ -53,13 +53,13 @@
 <script>
 import checkIcon from "../home/plans/check-icon"
 export default {
+  components: {
+    checkIcon,
+  },
   props: {
     services: Array,
     slug: String,
     price: String,
-  },
-  components: {
-    checkIcon,
   },
   computed: {
     currentRouteName() {

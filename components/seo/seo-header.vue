@@ -21,5 +21,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/assets/scss/pages/seo-header.scss";
+@import "@/assets/scss/pages/seo-header.scss";
 </style>

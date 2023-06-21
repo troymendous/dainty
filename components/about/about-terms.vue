@@ -72,12 +72,9 @@
         </div>
         <div class="collapsible-content">
           <div class="about-list_description">
-            In the event any one or more of the provisions of this agreement shall be held to be
-            invalid, illegal or unenforceable, the remaining provisions of this Agreement shall be
-            unimpaired and the Agreement shall not be void for this reason alone. Such invalid,
-            illegal or unenforceable provision shall be replaced by a mutually acceptable valid,
-            legal and enforceable provision, which comes closest to the intention of the parties
-            underlying the invalid.
+            Our Fair Use Policy ensures all clients receive quality service. "Unlimited" services
+            are subject to a reasonable use clause. The definition of reasonable use is determined
+            by Dainty Web Services at its sole discretion.
           </div>
         </div>
       </li>
@@ -100,6 +97,11 @@
           <div class="about-list_description">
             Refund and cancellation requests must be made in writing and will be subject to our
             review.
+            <br />
+            Domain Management: If Dainty is managing the domain renewal process, note that domain
+            prices are subject to change based on the domain registrar's policies. We will notify
+            and confirm with you before renewing if there are any significant changes in the domain
+            renewal cost.
           </div>
         </div>
       </li>
@@ -157,12 +159,35 @@
           any loss of data, use, goodwill, or other intangible losses.
         </div>
       </li>
+      <li class="collapsible-item">
+        <div class="collapsible-button" @click="collapseToggle(12)">
+          Indemnity
+          <collapse-button></collapse-button>
+        </div>
+        <div class="collapsible-content">
+          You agree to indemnify and hold harmless Dainty Web Services and its officers, directors,
+          employees and agents, from and against any liabilities, damages or costs arising from your
+          use of our services.
+        </div>
+      </li>
+      <li class="collapsible-item">
+        <div class="collapsible-button" @click="collapseToggle(12)">
+          Governing Law
+          <collapse-button></collapse-button>
+        </div>
+        <div class="collapsible-content">
+          These terms will be governed by and construed in accordance with the laws of Australia,
+          and any disputes relating to these terms will be subject to the jurisdiction of the courts
+          of Melbourne Australia
+        </div>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 import CollapseButton from "./collapse-button"
+
 export default {
   name: "AboutTerms",
   components: { CollapseButton },
@@ -187,13 +212,16 @@ export default {
   border-top: 2px solid #e9edf5;
   margin-top: 30px;
 }
+
 .collapsible-item:hover {
   background: #fbfcfd;
 }
+
 .collapsible-content {
   display: none;
   padding: 30px 30px 10px 0;
 }
+
 .collapsible-button {
   font-weight: 600;
   font-size: 1.2rem;
@@ -222,24 +250,29 @@ export default {
       border: none;
     }
   }
+
   .collapsible-button-img_plus {
     border-color: var(--acc-purple-color);
     color: var(--acc-purple-color);
   }
+
   .collapsible-button-img_minus {
     display: none;
     border-color: grey;
     color: grey;
   }
+
   .collapsible-button-img_minus:hover {
     border-color: var(--acc-purple-color);
     color: var(--acc-purple-color);
   }
 }
+
 .collapsible-button_active {
   .collapsible-button-img_plus {
     display: none;
   }
+
   .collapsible-button-img_minus {
     display: inline;
   }

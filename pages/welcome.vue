@@ -82,8 +82,8 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-@import "~/assets/scss/pages/about-header.scss";
-@import "~/assets/scss/pages/about-body.scss";
+@import "@/assets/scss/pages/about-header.scss";
+@import "@/assets/scss/pages/about-body.scss";
 .contact-btn {
   color: var(--acc-purple-color);
   &:hover {

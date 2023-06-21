@@ -5,13 +5,13 @@
       <div class="free-trial_content-wrapper">
         <div class="free-trial_content">
           <str-form
-            :isLoading="isLoading"
-            :showNextStep="showFuturePaymentsStep"
-            v-on:showStrCheckout="toggleShowFuturePaymentsStep"
+            :is-loading="isLoading"
+            :show-next-step="showFuturePaymentsStep"
+            @showStrCheckout="toggleShowFuturePaymentsStep"
           />
           <future-payments
             v-show="showFuturePaymentsStep"
-            v-on:closeSetupIntent="closeFuturePaymentsStep"
+            @closeSetupIntent="closeFuturePaymentsStep"
           />
         </div>
       </div>
@@ -35,9 +35,6 @@ export default {
       slug: "",
     }
   },
-  mounted() {
-    this.slug = this.$route.params.slug
-  },
   computed: {
     email: {
       get() {
@@ -55,6 +52,9 @@ export default {
         this.$store.commit("updateFullname", value)
       },
     },
+  },
+  mounted() {
+    this.slug = this.$route.params.slug
   },
   methods: {
     closeFuturePaymentsStep() {

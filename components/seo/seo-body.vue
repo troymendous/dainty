@@ -77,5 +77,5 @@
 <script></script>
 
 <style lang="scss">
-@import "~/assets/scss/pages/seo-body.scss";
+@import "@/assets/scss/pages/seo-body.scss";
 </style>
