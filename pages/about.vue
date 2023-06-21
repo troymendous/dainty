@@ -6,11 +6,8 @@
 </template>
 
 <script>
-import AboutHeader from "../components/about/about-header"
-import AboutBody from "../components/about/about-body"
 export default {
   name: "About",
-  components: { AboutBody, AboutHeader },
 }
 </script>
 
