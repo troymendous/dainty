@@ -64,30 +64,38 @@
                     <div class="relative z-10">
                       <ul class="-mx-2 flex w-full flex-wrap px-3 pt-3">
                         <li class="w-1/2 px-2 pb-3">
-                          <a href="#" class="flex items-center rounded-md p-2 hover:bg-gray-100">
+                          <NuxtLink
+                            to="/website-hosting"
+                            class="flex items-center rounded-md p-2 hover:bg-gray-100"
+                          >
                             <div class="image-holder">
                               <ServerIcon />
                             </div>
                             <div class="pl-3 text-sm">
                               <strong class="mb-px block">Website Hosting</strong>
                               <p class="text-sm font-normal leading-normal">
-                                Estimate the timeframe of your project
+                                Discover the exceptional performance and uptime of our hosting
+                                services.
                               </p>
                             </div>
-                          </a>
+                          </NuxtLink>
                         </li>
                         <li class="w-1/2 px-2 pb-3">
-                          <a href="#" class="flex items-center rounded-md p-2 hover:bg-gray-100">
+                          <NuxtLink
+                            to="/website-management"
+                            class="flex items-center rounded-md p-2 hover:bg-gray-100"
+                          >
                             <div class="image-holder">
                               <WebIcon />
                             </div>
                             <div class="pl-3 text-sm">
                               <strong class="mb-px block">Website Management</strong>
                               <p class="text-sm font-normal leading-normal">
-                                See a list of the types of tasks we don't do
+                                Explore the diverse range of services we offer to maintain and
+                                improve your website.
                               </p>
                             </div>
-                          </a>
+                          </NuxtLink>
                         </li>
                         <li class="w-1/2 px-2 pb-3">
                           <NuxtLink
@@ -100,7 +108,8 @@
                             <div class="pl-3 text-sm">
                               <strong class="mb-px block">SEO</strong>
                               <p class="text-sm font-normal leading-normal">
-                                See a list of the types of tasks we don't do
+                                Learn how we can help enhance your online visibility and drive
+                                targeted traffic to your website.
                               </p>
                             </div>
                           </NuxtLink>
