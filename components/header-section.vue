@@ -39,6 +39,7 @@
               <li>
                 <NuxtLink to="/about">About us</NuxtLink>
               </li>
+
               <li>
                 <div class="relative" x-data="{ open: false }" @click="open = !open">
                   <button class="focus:outline-none flex items-center font-medium">
@@ -89,7 +90,10 @@
                           </a>
                         </li>
                         <li class="w-1/2 px-2 pb-3">
-                          <a href="#" class="flex items-center rounded-md p-2 hover:bg-gray-100">
+                          <NuxtLink
+                            to="/seo"
+                            class="flex items-center rounded-md p-2 hover:bg-gray-100"
+                          >
                             <div class="image-holder">
                               <RocketIcon />
                             </div>
@@ -99,7 +103,7 @@
                                 See a list of the types of tasks we don't do
                               </p>
                             </div>
-                          </a>
+                          </NuxtLink>
                         </li>
                       </ul>
                     </div>
