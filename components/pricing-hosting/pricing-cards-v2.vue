@@ -19,6 +19,7 @@
             annualPrice,
             monthlyPriceId,
             headliner,
+            additional_line,
             services,
           } in plans"
           :key="id"
@@ -33,7 +34,12 @@
           <p class="pricing-plans_content-item-headliner">
             {{ headliner }}
           </p>
+          <br />
+          <p>
+            {{ additional_line }}
+          </p>
           <services ref="services" :services="services" :card-id="id" :plan="plan" />
+
           <div v-if="!isAtHome">
             <checkout-button :monthly-price-id="monthlyPriceId" :plan="plan" />
           </div>

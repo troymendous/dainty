@@ -2,7 +2,7 @@
   <button :disabled="isLoadingCheckout" @click="checkout(monthlyPriceId)">
     <!-- <span v-if="plan === 'core'">15 Days Free</span>
     <span v-else>Select Plan</span> -->
-    <span> Select Plan</span>
+    <span> Select Plan </span>
     <loader v-if="isLoadingCheckout" class="mr-3 h-5 w-10 animate-spin" />
   </button>
 </template>
@@ -37,21 +37,25 @@ export default {
        */
 
       /* eslint-disable-next-line */
-      const stripe = Stripe(process.env.stripePublishableKey)
-
+      // following line commented out
+      // const stripe = Stripe(process.env.stripePublishableKey)
       this.isLoadingCheckout = true
 
       if (priceId === CORE_PLAN_PRICE_ID) {
-        this.$router.push({ path: "/pricing/core" })
+        // this.$router.push({ path: "https://buy.stripe.com/test_fZe3g13KJauP75K000" })
+        window.open("https://buy.stripe.com/test_fZe3g13KJauP75K000", "_blank")
+
         return
       }
 
       if (priceId === PLUS_PLAN_PRICE_ID) {
-        this.$router.push("/pricing/plus")
+        // this.$router.push("https://buy.stripe.com/test_28og2N6WV32n3Ty4gh")
+        window.open("https://buy.stripe.com/test_28og2N6WV32n3Ty4gh", "_blank")
       }
 
       if (priceId === ENTERPRISE_PLAN_PRICE_ID) {
-        this.$router.push("/pricing/enterprise")
+        // this.$router.push("https://buy.stripe.com/test_28og2N6WV32n3Ty4gh")
+        window.open("https://buy.stripe.com/test_28og2N6WV32n3Ty4gh", "_blank")
       }
     },
   },

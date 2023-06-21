@@ -6,14 +6,14 @@
     <!-- <reviews /> -->
     <!--    <call-to-action />-->
     <!-- <portfolio-examples /> -->
-    <PricingCardsV2 :is-stripe-loaded="isStripeLoaded" />
+    <!-- <PricingCardsV2 :is-stripe-loaded="isStripeLoaded" /> -->
   </div>
 </template>
 
 <script>
 import BannerSection from "../components/home/banner-section-hosting"
 // import CallToAction from "../components/home/call-to-action.vue"
-import PricingCardsV2 from "../components/pricing-hosting/pricing-cards-v2.vue"
+// import PricingCardsV2 from "../components/pricing-hosting/pricing-cards-v2.vue"
 // import MediaSection from "../components/home/media-section"
 // import PortfolioExamples from "../components/home/portfolio-examples"
 // import Reviews from "../components/home/reviews/reviews.vue"
@@ -24,7 +24,7 @@ export default {
     // MediaSection,
     BannerSection,
     // CallToAction,
-    PricingCardsV2,
+    // PricingCardsV2,
     // Reviews,
   },
   data() {

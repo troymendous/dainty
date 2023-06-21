@@ -1,57 +1,90 @@
 [
   {
-    "plan": "Core Plan",
-    "monthlyPrice": 99,
+    "plan": "Starter Plan",
+    "monthlyPrice": 19,
     "annualPrice": 1188,
     "monthlyPriceId": "price_1Ib5FJF5dr8554IRIF0KhudR",
-    "headliner": "Perfect for start-ups and small businesses",
+    "headliner": "Perfect For Start-Ups And Small Businesses",
     "services": [
-      { "type": "Reliable Hosting", "isOffered": true, "serviceId": "1" },
-      { "type": "24/7 Monitoring", "isOffered": true, "serviceId": "3" },
-      { "type": "3 Hour Website backups", "isOffered": true, "serviceId": "4" },
+      { "type": "Secure and Reliable Hosting", "isOffered": true, "serviceId": "1" },
+      { "type": "24/7 Monitoring & Support", "isOffered": true, "serviceId": "3" },
+      { "type": "Daily Website Backups", "isOffered": true, "serviceId": "4" },
       { "type": "Basic SEO Optimization", "isOffered": true, "serviceId": "5" },
-      { "type": "Website Maintenance", "isOffered": true, "serviceId": "12" },
-      { "type": "Plug in Updates", "isOffered": true, "serviceId": "6" },
-      { "type": "1 Concurrent Small Job @ a Time", "isOffered": true, "serviceId": "7" },
-      { "type": "Monthly Reports & Improvement Suggestions", "isOffered": true, "serviceId": "8" },
-      { "type": "Bug Fixes & Code Updates (x amount of dedicated development time per month We’ll pop this in fair use policy, and keep pricing page a selling point, but thinking essentially 1 job at a time across all plans) Need to define a job (approx) in the fair use TOS", "isOffered": true, "serviceId": "9" }
+      { "type": "Monthly Website Maintenance", "isOffered": true, "serviceId": "12" },
+      { "type": "Regular Plug-In Updates", "isOffered": true, "serviceId": "6" },
+      {
+        "type": "Custom Monthly Reports & Improvement Suggestions",
+        "isOffered": true,
+        "serviceId": "7"
+      }
     ],
     "id": 1,
-    "slug": "core-plan"
+    "slug": "starter-plan"
   },
   {
-    "plan": "Plus Plan",
-    "monthlyPrice": 499,
+    "plan": "Pro Plan",
+    "monthlyPrice": 49,
     "annualPrice": 5988,
     "monthlyPriceId": "price_1Ib5EYF5dr8554IRBnAavHaX",
-    "headliner": "Ideal for growing e-commerce businesses.",
+    "headliner": "Ideal For Growing E-Commerce Businesses.",
+    "additional_line": "Includes all Starter Plan features, plus:",
     "services": [
-      { "type": "All Core Plan features", "isOffered": true, "serviceId": "100" },
-      { "type": "Advanced SEO Optimization", "isOffered": true, "serviceId": "200" },
-      { "type": "E-commerce Support", "isOffered": true, "serviceId": "300" },
-      { "type": "Bug fixes on cart breaks", "isOffered": true, "serviceId": "400," },
-      { "type": "Website Performance Optimization", "isOffered": true, "serviceId": "500" },
-      { "type": "Page speed Optimization", "isOffered": true, "serviceId": "600" },
-      { "type": "More Concurrent Small Jobs", "isOffered": true, "serviceId": "700" }
+      { "type": "Advanced SEO Optimization", "isOffered": true, "serviceId": "800" },
+      { "type": "Full E-commerce Support & Integration", "isOffered": true, "serviceId": "900" },
+      {
+        "type": "Priority Bug Fixes including Cart Breaks",
+        "isOffered": true,
+        "serviceId": "1000"
+      },
+      {
+        "type": "Advanced Website Performance Optimization",
+        "isOffered": true,
+        "serviceId": "1100"
+      },
+      { "type": "Increased Concurrent Small Jobs", "isOffered": true, "serviceId": "1200" },
+      {
+        "type": "Bi-weekly Consultation with Hosting Expert",
+        "isOffered": true,
+        "serviceId": "1300"
+      }
     ],
     "id": 2,
-    "slug": "plus-plan"
+    "slug": "pro-plan"
   },
   {
     "plan": "Enterprise Plan",
-    "monthlyPrice": 999,
+    "monthlyPrice": 99,
     "annualPrice": 11988,
     "monthlyPriceId": "price_1Ib5BPF5dr8554IR6NMccYTf",
-    "headliner": "Perfect for large-scale e-commerce businesses & those wanting consistent landing page creation for A/B Split Testing?",
+    "headliner": "Perfect for Large-Scale E-commerce Businesses & Those Requiring Consistent Support for Growth and Maintenance.",
+    "additional_line": "Includes all Pro Plan features, plus:",
     "services": [
-      { "type": "All Plus & Core Plan features", "isOffered": true, "serviceId": "10" },
-      { "type": "Custom Website Design & Redesign", "isOffered": true, "serviceId": "20" },
-      { "type": "Landing Page Creation & Copywriting", "isOffered": true, "serviceId": "30" },
-      { "type": "Dedicated Lead Developer", "isOffered": true, "serviceId": "40" },
-      { "type": "Unlimited Concurrent Small Jobs", "isOffered": true, "serviceId": "50" },
-      { "type": "Advanced E-commerce Solutions", "isOffered": true, "serviceId": "60" },
-      { "type": "Enterprise Level Solutions", "isOffered": true, "serviceId": "70" },
-      { "type": "Monthly Consultations", "isOffered": true, "serviceId": "80" }
+      {
+        "type": "Dedicated Hosting Environment with Increased Bandwidth",
+        "isOffered": true,
+        "serviceId": "10"
+      },
+      {
+        "type": "Advanced Landing Page Hosting & Maintenance",
+        "isOffered": true,
+        "serviceId": "20"
+      },
+      {
+        "type": "Dedicated Account Manager for Personalized Support",
+        "isOffered": true,
+        "serviceId": "30"
+      },
+      {
+        "type": "Comprehensive E-commerce Hosting Solutions",
+        "isOffered": true,
+        "serviceId": "40"
+      },
+      {
+        "type": "Enterprise-Level Security and DDoS Protection",
+        "isOffered": true,
+        "serviceId": "50"
+      },
+      { "type": "Weekly Consultations with Hosting Expert", "isOffered": true, "serviceId": "60" }
     ],
     "id": 3,
     "slug": "enterprise-plan"
