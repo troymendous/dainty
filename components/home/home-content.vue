@@ -4,10 +4,10 @@
       <!-- <h2 class="text-lg font-bold">Main Card</h2> -->
       <div class="mt-4 flex flex-col">
         <div class="mx-auto w-full overflow-hidden rounded-xl bg-white shadow-md md:max-w-2xl">
-          <div class="md:flex">
+          <div class="md:flex md:flex-col">
             <div class="md:flex-shrink-0">
               <img
-                class="h-48 w-full object-cover md:w-48"
+                class="h-48 w-full object-cover md:h-auto md:w-48"
                 src="../../public/images/bg2.jpeg"
                 alt="Card 1"
               />
@@ -23,16 +23,16 @@
                 to help whenever you need us.
               </p>
               <!-- <div class="mt-4">
-                <a href="#" class="font-bold text-blue-500">Read More</a>
-              </div> -->
+              <a href="#" class="font-bold text-blue-500">Read More</a>
+            </div> -->
             </div>
           </div>
         </div>
         <div class="mx-auto mt-4 w-full overflow-hidden rounded-xl bg-white shadow-md md:max-w-2xl">
-          <div class="md:flex">
+          <div class="md:flex md:flex-col">
             <div class="md:flex-shrink-0">
               <img
-                class="h-48 w-full object-cover md:w-48"
+                class="h-48 w-full object-cover md:h-auto md:w-48"
                 src="../../public/images/bg1.jpg"
                 alt="Card 2"
               />

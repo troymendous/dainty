@@ -1,9 +1,13 @@
 <template>
-  <div class="container mr-24 p-4">
+  <div class="container mx-auto p-4">
     <div class="rounded-lg bg-white p-4 shadow-lg">
       <!-- <h2 class="text-lg font-bold">Main Card</h2> -->
-      <div class="mt-4 flex flex-row">
-        <div class="w-1/3 p-2" v-for="{ heading, text, linkto, id } in services" :key="id">
+      <div class="mt-4 flex flex-wrap">
+        <div
+          class="lg:w-1/4 xl:w-1/4 w-full p-2 md:w-1/3 sm:w-1/2"
+          v-for="{ heading, text, linkto, id } in services"
+          :key="id"
+        >
           <div class="rounded-lg bg-white p-4 shadow-lg">
             <h3 class="text-lg font-bold">{{ heading }}</h3>
             <p>{{ text }}</p>
