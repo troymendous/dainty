@@ -1,25 +1,20 @@
 <template>
-  <section class="services-homepage">
-    <div class="services-homepage-inner">
-      <h2>
-        <span>Discover Dainty's Services</span>
-      </h2>
-      <div class="service-cards">
-        <div v-for="{ heading, text, icon, id } in services" :key="id">
-          <div :class="`dainty-icon dainty-icon-${icon}`"></div>
-          <nuxt-link to="/">
-            <h5>{{ heading }}</h5>
-          </nuxt-link>
-          <p>{{ text }}</p>
-          <div
-            style="width: 100%; height: 50px; font-size: 16px; font-style: italic; margin-top: 60px"
-          >
-            <a href="https://www.daintydigital.com/services">Learn more</a>
+  <div class="container mr-24 p-4">
+    <div class="rounded-lg bg-white p-4 shadow-lg">
+      <!-- <h2 class="text-lg font-bold">Main Card</h2> -->
+      <div class="mt-4 flex flex-row">
+        <div class="w-1/3 p-2" v-for="{ heading, text, linkto, id } in services" :key="id">
+          <div class="rounded-lg bg-white p-4 shadow-lg">
+            <h3 class="text-lg font-bold">{{ heading }}</h3>
+            <p>{{ text }}</p>
+            <div class="mt-4">
+              <a :href="linkto" class="font-bold text-blue-500">Read More</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

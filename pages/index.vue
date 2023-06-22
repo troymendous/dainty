@@ -5,8 +5,7 @@
     <welcome-section />
     <services-section />
     <hr style="margin-left: 8%; margin-right: 8%" />
-    <section class="about-body"><home-detail /></section>
-
+    <home-content />
     <!-- <services-section />
     <media-section />
     <reviews />
