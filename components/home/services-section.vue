@@ -12,7 +12,7 @@
             <h3 class="text-lg font-bold">{{ heading }}</h3>
             <p>{{ text }}</p>
             <div class="mt-4">
-              <a :href="linkto" class="font-bold text-blue-500">Read More</a>
+              <a :href="linkto" class="font-bold text-blue-500">Learn More</a>
             </div>
           </div>
         </div>
