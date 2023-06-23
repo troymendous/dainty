@@ -98,3 +98,4 @@ sw.*
 .vercel
 
 .node-version
+yarn.lock
